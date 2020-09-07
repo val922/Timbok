@@ -1,0 +1,110 @@
+description = "Footer Mainbar"
+
+[viewBag]
+
+[mailSignup]
+
+[staticMenu categoriesMenu]
+code = "product-categories"
+
+[products topProducts]
+filterComponent = "productsFilter"
+setPageTitle = 0
+includeVariants = 0
+includeChildren = 0
+perPage = 4
+paginate = 0
+sort = "ratings"
+
+[products bestsellerProducts]
+filterComponent = "productsFilter"
+setPageTitle = 0
+includeVariants = 0
+includeChildren = 0
+perPage = 4
+paginate = 0
+sort = "bestseller"
+
+[staticMenu informationMenu]
+code = "information"
+==
+<div class="container f-main py-10">
+    <div class="row">
+        <div class="col-lg-3 col-md-6 mb-7">
+            <h6 class="font-weight-medium text-white">{{ 'Bangoe Mall'|_ }}</h6>
+            <div class="pt-2 text-white opacity-50">{{ 'Bangoe Mall of Afrika, free shipping and top notch products all under one virtual roof.'|_ }}</div>
+            <div class="mt-5 mb-7">
+            {% for fields in this.theme.social_media %}
+                <a href="{{ fields.social_media_url }}" class="py-4 pr-3 text-white opacity-50 hover:opacity-100">
+                    <i class="w-4" data-feather="{{ fields.social_media_icon }}"></i>
+                </a>
+            {% endfor %}
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-7">
+            <h6 class="font-weight-medium text-white">{{ 'About Us'|_ }}</h6>
+            <ul class="list-unstyled">
+				{% if informationMenu.menuItems %}
+				{% set items = informationMenu.menuItems %}
+				{% for item in items %}
+                <li class="py-2">
+                    <a href="{{ item.url }}" class="text-white opacity-50 hover:opacity-100">{{ item.title }}</a>
+                </li>
+                {% endfor %}
+                {% endif %}
+            </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-7">
+            <h6 class="font-weight-medium text-white">{{ 'Contact Us'|_ }}</h6>
+            <div class="d-flex mb-2 mt-5">
+                <div class="font-10 mr-5 align-self-top">
+                    <i class="text-white opacity-50" data-feather="map-pin"></i>
+                </div>
+                <span class="d-block text-white opacity-50 hover:opacity-100">{{ 'Unit 10, Plot 43173, Phakalane, Gaborone, Botswana'|_ }}</span>
+            </div>
+            <div class="d-flex mb-2 mt-5">
+                <div class="font-10 mr-5 align-self-top">
+                    <i class="text-white opacity-50" data-feather="clock"></i>
+                </div>
+                <span class="d-block text-white opacity-50 hover:opacity-100">{{ '24/7'|_ }}</span>
+            </div>
+            <div class="d-flex mb-2 mt-5">
+                <div class="font-10 mr-5 align-self-top">
+                    <i class="text-white opacity-50" data-feather="phone"></i>
+                </div>
+                <a class="d-block text-white opacity-50 hover:opacity-100" href="tel:{{ 'Phone'|_ }}">{{ '+267 3116181'|_ }}</a>
+            </div>
+            <div class="d-flex mb-2 mt-5">
+                <div class="font-10 mr-5 align-self-top">
+                    <i class="text-white opacity-50" data-feather="mail"></i>
+                </div>
+                <a class="d-block text-white opacity-50 hover:opacity-100" href="mailto:{{ 'Email'|_ }}">{{ 'info@bangoe.co.bw'|_ }}</a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-7">
+        {% partial 'mailSignup/default' mailSignup=mailSignup id='Footer' %}
+        </div>
+        <div class="col-lg-3 col-md-6 mb-7">
+            <h6 class="font-weight-medium text-white">{{ 'Popular'|_ }}</h6>
+            {% partial 'widgetFooterProducts/default' products=topProducts ratings=true %}
+        </div>
+        <div class="col-lg-3 col-md-6 mb-7">
+            <h6 class="font-weight-medium text-white">{{ 'Bestsellers'|_ }}</h6>
+            {% partial 'widgetFooterProducts/default' products=bestsellerProducts ratings=false %}
+        </div>
+        <div class="col-lg-6 col-md-6 mb-7">
+            <h6 class="font-weight-medium text-white">{{ 'Brands'|_ }}</h6>
+            <div class="d-flex flex-wrap">
+                {% if brands %}
+                {% for brand in brands %}
+                {% set postCount = item.posts|length %}
+                <a href="/brand/{{ brand.slug }}?brand={{ brand.slug }}&sort=latest" class="btn btn-sm font-1 font-weight-light btn-outline-white px-1 m-1">
+                    {{ brand.name }}
+                </a>
+                {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+        
+    </div>
+</div>

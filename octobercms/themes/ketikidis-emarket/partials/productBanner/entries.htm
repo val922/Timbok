@@ -1,0 +1,5 @@
+[viewBag]
+==
+{% if products.items.count %}
+{% partial 'productBanner/items' items=products.items %}
+{% endif %}

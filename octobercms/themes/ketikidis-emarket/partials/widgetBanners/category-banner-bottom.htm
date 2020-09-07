@@ -1,0 +1,14 @@
+description = "Category Banner Bottom"
+
+[viewBag]
+==
+<a class="d-block mx-auto max-w-md" href="/category/{{ category.nested_slug }}">
+    <div class="bg-secondary">
+        <div class="px-4 py-6 text-center">
+            <h4 class="font-5 font-weight-normal pt-1 mb-2">{{ category.name }}</h4>
+            <div class="h5 pb-2">{{ category.description|raw }}</div>
+            <div class="btn btn-primary btn-sm">Shop now</div>
+        </div>
+        <img src="{{ category.image.thumb(550, 450, 'crop') }}" width="550" height="450" alt="{{ category.name }}" loading="lazy" class="img-fluid w-100">
+    </div>
+</a>

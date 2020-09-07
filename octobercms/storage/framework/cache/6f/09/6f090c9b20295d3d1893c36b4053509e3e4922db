@@ -1,0 +1,17 @@
+1599460962a:1:{s:27:"currencypicker/selector.htm";a:5:{s:8:"fileName";s:27:"currencypicker/selector.htm";s:7:"content";s:391:"{{ form_open() }}
+<select name="currency" data-request="{{ __SELF__ }}::onSwitchCurrency" class="mall-selectbox-sm form-control form-control-sm">
+    {% for currency in __SELF__.currencies %}
+        <option value="{{ currency.id }}" {{ currency.id == __SELF__.activeCurrency.id ? 'selected' }}>
+            {{ currency.code }}
+        </option>
+    {% endfor %}
+</select>
+{{ form_close() }}";s:5:"mtime";i:1592589916;s:6:"markup";s:391:"{{ form_open() }}
+<select name="currency" data-request="{{ __SELF__ }}::onSwitchCurrency" class="mall-selectbox-sm form-control form-control-sm">
+    {% for currency in __SELF__.currencies %}
+        <option value="{{ currency.id }}" {{ currency.id == __SELF__.activeCurrency.id ? 'selected' }}>
+            {{ currency.code }}
+        </option>
+    {% endfor %}
+</select>
+{{ form_close() }}";s:4:"code";N;}}

@@ -1,0 +1,7 @@
+1599304294a:1:{s:24:"cookiebanner/message.htm";a:6:{s:8:"fileName";s:24:"cookiebanner/message.htm";s:7:"content";s:145:"[viewBag]
+==
+<div class="text-muted font-2 font-sm-5 gdpr-banner__message">
+    {{ 'offline.gdpr::lang.cookie_banner.message' | trans }}
+</div>";s:5:"mtime";i:1592589910;s:6:"markup";s:132:"<div class="text-muted font-2 font-sm-5 gdpr-banner__message">
+    {{ 'offline.gdpr::lang.cookie_banner.message' | trans }}
+</div>";s:4:"code";N;s:7:"viewBag";a:0:{}}}

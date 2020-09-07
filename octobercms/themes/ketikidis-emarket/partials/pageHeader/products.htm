@@ -1,0 +1,22 @@
+description = "Products Page Header"
+
+[viewBag]
+
+[staticMenu]
+code = "product-categories"
+==
+<div class="py-10">
+    <div class="container">
+		<nav aria-label="breadcrumb">
+			<ol class="breadcrumb bg-white align-items-end p-0 font-5">
+				<li class="breadcrumb-item"><a class="text-link" href="{{ 'index'|page }}"><i class="w-4" data-feather="home"></i></a></li>
+				{% partial 'pageHeader/items' items=staticMenu.menuItems %}
+			</ol>
+		</nav>
+		<h1 class="font-weight-semibold">{{ products.category.name }}</h1>
+		<span class="lead font-weight-semibold text-muted font-6">
+			{{ products.category.description|raw }}
+		</span>
+        <hr class="mt-6">
+    </div>
+</div>

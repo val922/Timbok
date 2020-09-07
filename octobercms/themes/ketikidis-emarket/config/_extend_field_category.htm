@@ -1,0 +1,8 @@
+<?php
+
+/** @var \Cms\Models\ThemeData $formModel */
+
+//Add category banners
+$formModel->addDynamicMethod('getCategoryOptions', function () {
+    return \Offline\Mall\Models\Category::lists('name', 'id');
+});

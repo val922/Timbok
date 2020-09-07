@@ -1,0 +1,23 @@
+1599460954a:1:{s:25:"productsfilter/labels.htm";a:6:{s:8:"fileName";s:25:"productsfilter/labels.htm";s:7:"content";s:444:"[viewBag]
+==
+{% if __SELF__.showOnSaleFilter %}
+    <div class="mall-property-group mb-6 pb-1">
+        <h3 class="mall-property-group__name position-relative font-6 font-weight-semibold pb-3 mb-5 decorated-right">
+            <span>{{ 'offline.mall::frontend.labels' | trans }}</span>
+        </h3>
+
+        {% if __SELF__.showOnSaleFilter %}
+            {% partial __SELF__ ~ '::onsale' %}
+        {% endif %}
+    </div>
+{% endif %}";s:5:"mtime";i:1592589912;s:6:"markup";s:431:"{% if __SELF__.showOnSaleFilter %}
+    <div class="mall-property-group mb-6 pb-1">
+        <h3 class="mall-property-group__name position-relative font-6 font-weight-semibold pb-3 mb-5 decorated-right">
+            <span>{{ 'offline.mall::frontend.labels' | trans }}</span>
+        </h3>
+
+        {% if __SELF__.showOnSaleFilter %}
+            {% partial __SELF__ ~ '::onsale' %}
+        {% endif %}
+    </div>
+{% endif %}";s:4:"code";N;s:7:"viewBag";a:0:{}}}

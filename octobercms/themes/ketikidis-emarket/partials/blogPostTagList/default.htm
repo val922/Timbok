@@ -1,0 +1,23 @@
+[viewBag]
+==
+{% set tags = tagList.tags %}
+{% if tags | length %}
+    <div class="d-inline-block mt-4 mr-4 mb-sm-0 mb-4" id="{{ tagSectionId }}">
+        <i class="d-inline-block w-4 h-4 mb-2 mr-1" data-feather="tag"></i>
+        <div class="d-inline-block block">
+        {% for item in tags %}
+            {% set postCount = item.posts_count %}
+            <a href="{{ item.url }}" class="font-3 px-2 py-1 text-muted btn border hover:text-primary mb-2 {% if not loop.last %}mr-1{% endif %}">
+                {{ item.name }}
+                {% if postCount %}
+                    <span class="badge">{{ postCount }}</span>
+                {% endif %}
+            </a>
+        {% endfor %}
+        </div>
+    </div>
+{% else %}
+    <div class="mt-4 mr-4">
+    {{ "ginopane.blogtaxonomy::lang.components.tag_list.no_tags_message" | trans }}
+    </div>
+{% endif %}

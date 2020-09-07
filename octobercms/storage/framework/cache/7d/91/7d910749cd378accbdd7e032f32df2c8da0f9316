@@ -1,0 +1,47 @@
+1599460963a:1:{s:22:"header/account-btn.htm";a:8:{s:8:"fileName";s:22:"header/account-btn.htm";s:7:"content";s:1168:"description = "Account Button"
+
+[viewBag]
+
+[myAccount]
+==
+{% if user %}
+<li class="nav-item text-center">
+	<a class="nav-link opacity-70 hover:opacity-100 text-dark my-sm-4 my-3 py-0 px-2 w-16 w-md-18 border-right" href="{{ myAccount.accountPage | page }}">
+		<i class="d-block mx-auto w-5 h-5 mb-1" data-feather="user"></i>
+		<span class="d-block text-uppercase font-1">{{ 'Account'|_ }}</span>
+	</a>
+</li>
+<li class="nav-item text-center d-none d-sm-block">
+	<a class="nav-link opacity-70 hover:opacity-100 text-dark my-sm-4 my-3 py-0 px-2 w-16 w-md-18 border-right" href="javascript:;" data-request="onLogout" data-request-data="redirect: '/'">
+		<i class="d-block mx-auto w-5 h-5 mb-1" data-feather="log-out"></i>
+		<span class="d-block text-uppercase font-1">{{ 'Sign Out'|_ }}</span>
+	</a>
+</li>
+{% else %}
+<li class="nav-item text-center">
+	<a class="nav-link opacity-70 hover:opacity-100 text-dark my-sm-4 my-3 py-0 px-2 w-16 w-md-18 border-right" href="{{ '/login' | app }}">
+		<i class="d-block mx-auto w-5 h-5 mb-1" data-feather="log-in"></i>
+		<span class="d-block text-uppercase font-1">{{ 'Sign In'|_ }}</span>
+	</a>
+</li>
+{% endif %}";s:5:"mtime";i:1598434909;s:6:"markup";s:1110:"{% if user %}
+<li class="nav-item text-center">
+	<a class="nav-link opacity-70 hover:opacity-100 text-dark my-sm-4 my-3 py-0 px-2 w-16 w-md-18 border-right" href="{{ myAccount.accountPage | page }}">
+		<i class="d-block mx-auto w-5 h-5 mb-1" data-feather="user"></i>
+		<span class="d-block text-uppercase font-1">{{ 'Account'|_ }}</span>
+	</a>
+</li>
+<li class="nav-item text-center d-none d-sm-block">
+	<a class="nav-link opacity-70 hover:opacity-100 text-dark my-sm-4 my-3 py-0 px-2 w-16 w-md-18 border-right" href="javascript:;" data-request="onLogout" data-request-data="redirect: '/'">
+		<i class="d-block mx-auto w-5 h-5 mb-1" data-feather="log-out"></i>
+		<span class="d-block text-uppercase font-1">{{ 'Sign Out'|_ }}</span>
+	</a>
+</li>
+{% else %}
+<li class="nav-item text-center">
+	<a class="nav-link opacity-70 hover:opacity-100 text-dark my-sm-4 my-3 py-0 px-2 w-16 w-md-18 border-right" href="{{ '/login' | app }}">
+		<i class="d-block mx-auto w-5 h-5 mb-1" data-feather="log-in"></i>
+		<span class="d-block text-uppercase font-1">{{ 'Sign In'|_ }}</span>
+	</a>
+</li>
+{% endif %}";s:4:"code";N;s:11:"description";s:14:"Account Button";s:7:"viewBag";a:0:{}s:9:"myAccount";a:0:{}}}

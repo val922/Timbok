@@ -1,0 +1,38 @@
+[viewBag]
+==
+<div class="mall-shipping-selector">
+    {% partial __SELF__ ~ '::selector' %}
+</div>
+
+{% if dataLayer %}
+    {% partial __SELF__ ~ '::datalayer' %}
+{% endif %}
+
+{% put scripts %}
+<script>
+    $(function () {
+        var $form = $('#mall-shipping-form')
+        var $overlay = $('.mall-overlay');
+        var $body = $('body')
+
+        $body.on('submit', '#mall-shipping-form', function (e) {
+            if (e.originalEvent.defaultPrevented) {
+                return false;
+            }
+            e.preventDefault();
+            $overlay.prependTo($('body')).show()
+
+            var submit = this.querySelector('[type="submit"]')
+            submit.classList.add('oc-loading')
+            submit.disabled = true
+            $form.request('{{ __SELF__ }}::onSubmit', {
+                error: function(res) {
+                    submit.classList.remove('oc-loading')
+                    submit.disabled = false
+                    this.error(res)
+                }
+            })
+        })
+    })
+</script>
+{% endput %}

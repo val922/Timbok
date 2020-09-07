@@ -1,0 +1,123 @@
+[viewBag]
+snippetCode = "news"
+snippetName = "news"
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "blog/category"
+postPage = "blog/item"
+==
+{% if newsEnable %}
+<section class="news-section">
+    <div class="auto-container">
+        {% if newsTitle %}
+        <div class="top-inner">
+            <div class="row clearfix">
+                <div class="col-lg-5 col-md-12 col-sm-12 title-column">
+                    <div class="sec-title">
+                        {% if newsTop %}<p>{{newsTop}}</p>{% endif %}
+                        <h2>{{newsTitle}}</h2>
+                        <div class="dotted-box">
+                            <span class="dotted"></span>
+                            <span class="dotted"></span>
+                            <span class="dotted"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-12 col-sm-12 text-column">
+                    <div class="text">
+                        <p>{{newsInfo??('Please set it in the backend'|_)}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        <div class="row clearfix">
+            {% set posts = blogPosts.posts %}
+
+            {% for post in posts %}
+                {% partial 'html/blog-list-item' post=post %}
+            {% endfor %}
+
+        </div>
+    </div>
+</section>
+{% else %}
+<section class="news-section">
+    <div class="auto-container">
+        <div class="top-inner">
+            <div class="row clearfix">
+                <div class="col-lg-5 col-md-12 col-sm-12 title-column">
+                    <div class="sec-title">
+                        <p>How we help clients</p>
+                        <h2>World Immigration News & Updates</h2>
+                        <div class="dotted-box">
+                            <span class="dotted"></span>
+                            <span class="dotted"></span>
+                            <span class="dotted"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-12 col-sm-12 text-column">
+                    <div class="text">
+                        <p>Sponsoring and managing work visas parts now becoming results the experience aute irure dolor in reprehenderit cepteur sint ocae cat cupidatat non proident sunt in culpa quis.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-lg-4 col-md-6 col-sm-12 news-block">
+                <div class="news-block-one wow fadeInUp animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image-box"><a href="blog-details.html"><img src="{{'assets/images/news/news-1.jpg'|theme }}" alt=""></a></figure>
+                        <div class="lower-content">
+                            <div class="post-date"><h2>18</h2><span>apr</span></div>
+                            <h3><a href="blog-details.html">Covid-19 And Its Impact On USA Immigration</a></h3>
+                            <ul class="post-info clearfix">
+                                <li><a href="">By Admin</a></li>
+                                <li><a href="">Study Visa</a>,<a href="">Work</a></li>
+                            </ul>
+                            <div class="link"><a href="blog-details.html">Learn More<i class="flaticon-send"></i></a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 news-block">
+                <div class="news-block-one wow fadeInUp animated animated" data-wow-delay="300ms" data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image-box"><a href="blog-details.html"><img src="{{'assets/images/news/news-2.jpg'|theme }}" alt=""></a></figure>
+                        <div class="lower-content">
+                            <div class="post-date"><h2>17</h2><span>apr</span></div>
+                            <h3><a href="blog-details.html">UK To Offers Point-Based Immigration Process</a></h3>
+                            <ul class="post-info clearfix">
+                                <li><a href="">By Admin</a></li>
+                                <li><a href="">Europe Permit</a></li>
+                            </ul>
+                            <div class="link"><a href="blog-details.html">Learn More<i class="flaticon-send"></i></a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 news-block">
+                <div class="news-block-one wow fadeInUp animated animated" data-wow-delay="600ms" data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image-box"><a href="blog-details.html"><img src="{{'assets/images/news/news-3.jpg'|theme }}" alt=""></a></figure>
+                        <div class="lower-content">
+                            <div class="post-date"><h2>16</h2><span>apr</span></div>
+                            <h3><a href="blog-details.html">Kickstart Your Visa ApprovalWith 4 Easy Steps</a></h3>
+                            <ul class="post-info clearfix">
+                                <li><a href="">By Admin</a></li>
+                                <li><a href="">Immigration</a></li>
+                            </ul>
+                            <div class="link"><a href="blog-details.html">Learn More<i class="flaticon-send"></i></a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}

@@ -1,0 +1,82 @@
+description = "Default Layout"
+
+[cart]
+showDiscountApplier = 1
+showTaxes = 1
+showShipping = 1
+showProceedToCheckoutButton = 0
+
+[mallDependencies]
+
+[session]
+security = "all"
+
+[currencyPicker]
+
+[localePicker]
+forceUrl = 0
+
+[enhancedEcommerceAnalytics]
+
+[staticPage]
+useContent = 1
+default = 1
+
+[searchInput]
+useAutoComplete = 1
+autoCompleteResultCount = 5
+showProviderBadge = 1
+searchPage = "search.htm"
+
+[searchInput searchInputMobile]
+useAutoComplete = 1
+autoCompleteResultCount = 5
+showProviderBadge = 1
+searchPage = "search.htm"
+
+[cookieBanner]
+include_css = 0
+update_selector = "#gdpr-reload"
+cookie_manager_page = "gdpr"
+==
+{% spaceless %}
+<!DOCTYPE html>
+<html lang="{{ activeLocale }}">
+    <head>
+        {% partial 'metaData/default' %}
+        {% partial 'site/css' %}
+        <!-- Jquery -->
+        <script src="{{ ['@jquery']|theme }}"></script>
+        <!--Ecommerce Analytics -->
+        {% component 'enhancedEcommerceAnalytics' %}
+        <!--Eshop Dependencies -->
+        {% component 'mallDependencies' %}
+    </head><!--/#head-->
+    <body class="page-{{ this.page.id }} layout-{{ this.page.layout }}">
+        <!--Google Analytics -->
+        {{ this.theme.google_analytics|raw }}
+        <!-- Loader -->
+        {% partial 'site/loader' %}
+        <!-- Main Wrapper -->
+        <div class="main-wrapper overflow-hidden">
+            <!-- Wrapper -->
+            <div class="page-wrapper">
+                <!-- Header -->
+                {% partial 'header/default' %}
+                <!-- Page -->
+                {% page %}
+                <!-- Info -->
+                {% partial 'site/info' %}
+                <!-- Footer -->
+                {% partial 'footer/default' %}
+                <!-- GDPR -->
+                {% component 'cookieBanner' %}
+                <!-- Scroll to top -->
+                {% partial 'site/scrolltop' %}
+            </div>
+        </div>
+        <!-- Scripts -->
+        {% partial 'site/scripts' %}
+    </body><!--/#body-->
+</html>
+{% endspaceless %}

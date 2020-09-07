@@ -1,0 +1,60 @@
+[viewBag]
+==
+<div class="row mall-products__products">
+    {% for item in items %}
+        {% partial __SELF__ ~ '::item' item=item %}
+    {% endfor %}
+</div>
+<hr class="pb-6 mb-2">
+{% if __SELF__.paginate %}
+    <div class="mall-pagination mall-pagination--products">
+        {{ items | raw }}
+    </div>
+{% endif %}
+
+<script>
+$( document ).ready(function() {
+    
+    // Slick slider
+    $('.slider-for').each(function(key, item) {
+    
+        var sliderIdName = 'slider' + key;
+        var sliderNavIdName = 'sliderNav' + key;
+        
+        this.id = sliderIdName;
+        $('.slider-nav')[key].id = sliderNavIdName;
+        
+        var sliderId = '#' + sliderIdName;
+        var sliderNavId = '#' + sliderNavIdName;
+        
+        $(sliderId).slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            fade: true,
+            asNavFor: sliderNavId,
+            lazyLoad: 'ondemand',
+            draggable: false,
+            accessibility: false
+        });
+        
+        $(sliderNavId).slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            asNavFor: sliderId,
+            dots: false,
+            arrows: false,
+            centerMode: false,
+            focusOnSelect: true,
+            lazyLoad: 'ondemand',
+            draggable: false,
+            accessibility: false
+        });
+    
+    });
+    
+    // Feather Icons
+    feather.replace()
+    
+});
+</script>

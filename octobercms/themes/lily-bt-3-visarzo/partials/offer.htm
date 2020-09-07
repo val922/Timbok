@@ -1,0 +1,77 @@
+[viewBag]
+snippetCode = "offer"
+snippetName = "offer"
+==
+{% if immigrationEnable %}
+
+<section class="offer-section">
+    <div class="pattern-layer" style="background-image: url({{'assets/images/shape/pattern-5.png'|theme}});"></div>
+    <div class="auto-container">
+        {% if immigrationTitle %}
+        <div class="sec-title light centred">
+            {% if immigrationTop %}<p>{{immigrationTop}}</p>{% endif %}
+            <h2>{{immigrationTitle}}</h2>
+            <div class="dotted-box">
+                <span class="dotted"></span>
+                <span class="dotted"></span>
+                <span class="dotted"></span>
+            </div>
+        </div>
+        {% endif %}
+        <div class="four-item-carousel owl-carousel owl-theme owl-dots-none">
+
+            {% for item in immigrations %}
+            <div class="single-item">
+                <div class="inner-box">
+                    <figure class="image-box"><img src="{{ item.image|media }}" alt=""></figure>
+                    <div class="text"><h4><a href="{{item.url}}">{{item.title}}</a></h4></div>
+                </div>
+            </div>
+            {% endfor%}
+
+        </div>
+    </div>
+</section>
+
+{% else %}
+<section class="offer-section">
+            <div class="pattern-layer" style="background-image: url({{'assets/images/shape/pattern-5.png'|theme}});"></div>
+            <div class="auto-container">
+                <div class="sec-title light centred">
+                    <p>countries we offer support</p>
+                    <h2>Apply For Quick Visa</h2>
+                    <div class="dotted-box">
+                        <span class="dotted"></span>
+                        <span class="dotted"></span>
+                        <span class="dotted"></span>
+                    </div>
+                </div>
+                <div class="four-item-carousel owl-carousel owl-theme owl-dots-none">
+                    <div class="single-item">
+                        <div class="inner-box">
+                            <figure class="image-box"><img src="{{'assets/images/resource/offer-1.jpg'|theme}}" alt=""></figure>
+                            <div class="text"><h4><a href="">United States</a></h4></div>
+                        </div>
+                    </div>
+                    <div class="single-item">
+                        <div class="inner-box">
+                            <figure class="image-box"><img src="{{'assets/images/resource/offer-2.jpg'|theme}}" alt=""></figure>
+                            <div class="text"><h4><a href="">Europe</a></h4></div>
+                        </div>
+                    </div>
+                    <div class="single-item">
+                        <div class="inner-box">
+                            <figure class="image-box"><img src="{{'assets/images/resource/offer-3.jpg'|theme}}" alt=""></figure>
+                            <div class="text"><h4><a href="">Australia</a></h4></div>
+                        </div>
+                    </div>
+                    <div class="single-item">
+                        <div class="inner-box">
+                            <figure class="image-box"><img src="{{'assets/images/resource/offer-4.jpg'|theme}}" alt=""></figure>
+                            <div class="text"><h4><a href="">NewZealand</a></h4></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+{% endif %}

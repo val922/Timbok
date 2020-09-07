@@ -1,0 +1,35 @@
+1599460931a:1:{s:11:"contact.htm";a:7:{s:8:"fileName";s:11:"contact.htm";s:7:"content";s:1211:"[viewBag]
+title = "Contact"
+url = "/contact"
+layout = "contact"
+is_hidden = 0
+navigation_hidden = 0
+contact_container = "container"
+contact_size = "col-lg-12"
+contact_bg = "bg-white"
+contact_column[0][contact_size] = "col-xl-3"
+contact_column[0][contact_icon] = "map-pin"
+contact_column[0][contact_title] = "Address"
+contact_column[0][contact_text] = "<p>Unit 10, 43173 Phakalane,
+	<br>Across the market, Gaborone- Botswana</p>"
+contact_column[1][contact_size] = "col-xl-3"
+contact_column[1][contact_icon] = "clock"
+contact_column[1][contact_title] = "Hours"
+contact_column[1][contact_text] = "<p>Mon - Sun: 00:00AM - 23:59PM
+	<br>24/7</p>"
+contact_column[2][contact_size] = "col-xl-3"
+contact_column[2][contact_icon] = "phone"
+contact_column[2][contact_title] = "Phone"
+contact_column[2][contact_text] = "<p>+267 3116181
+	<br>+267 3116182</p>"
+contact_column[3][contact_size] = "col-xl-3"
+contact_column[3][contact_icon] = "mail"
+contact_column[3][contact_title] = "Email"
+contact_column[3][contact_text] = "<p>Support: <a href=\"mailto:support@bangoe.com\">support@bangoe.com</a>
+	<br>Service:<a href=\"mailto:info@bangoe.com\"> info@bangoe.com</a></p>"
+contact_map_address = "787, 7th Avenue New York"
+==";s:5:"mtime";i:1599125534;s:6:"markup";s:0:"";s:4:"code";N;s:7:"viewBag";a:10:{s:5:"title";s:7:"Contact";s:3:"url";s:8:"/contact";s:6:"layout";s:7:"contact";s:9:"is_hidden";s:1:"0";s:17:"navigation_hidden";s:1:"0";s:17:"contact_container";s:9:"container";s:12:"contact_size";s:9:"col-lg-12";s:10:"contact_bg";s:8:"bg-white";s:14:"contact_column";a:4:{i:0;a:4:{s:12:"contact_size";s:8:"col-xl-3";s:12:"contact_icon";s:7:"map-pin";s:13:"contact_title";s:7:"Address";s:12:"contact_text";s:75:"<p>Unit 10, 43173 Phakalane,
+	<br>Across the market, Gaborone- Botswana</p>";}i:1;a:4:{s:12:"contact_size";s:8:"col-xl-3";s:12:"contact_icon";s:5:"clock";s:13:"contact_title";s:5:"Hours";s:12:"contact_text";s:45:"<p>Mon - Sun: 00:00AM - 23:59PM
+	<br>24/7</p>";}i:2;a:4:{s:12:"contact_size";s:8:"col-xl-3";s:12:"contact_icon";s:5:"phone";s:13:"contact_title";s:5:"Phone";s:12:"contact_text";s:37:"<p>+267 3116181
+	<br>+267 3116182</p>";}i:3;a:4:{s:12:"contact_size";s:8:"col-xl-3";s:12:"contact_icon";s:4:"mail";s:13:"contact_title";s:5:"Email";s:12:"contact_text";s:141:"<p>Support: <a href="mailto:support@bangoe.com">support@bangoe.com</a>
+	<br>Service:<a href="mailto:info@bangoe.com"> info@bangoe.com</a></p>";}}s:19:"contact_map_address";s:24:"787, 7th Avenue New York";}s:12:"parsedMarkup";s:0:"";}}

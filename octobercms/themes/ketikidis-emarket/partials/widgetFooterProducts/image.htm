@@ -1,0 +1,5 @@
+[viewBag]
+==
+<a class="d-block position-relative w-14 mr-3" href="{{ productPage|page({slug: item.slug, variant: item.variantHashId}) }}" data-mall-item-id="{{ item.prefixedId }}">
+    <img src="{{ item.image.thumb(100, 100, 'crop') }}" width="100" height="100" alt="{{ image.title }}" loading="lazy" class="img-fluid w-16">
+</a>

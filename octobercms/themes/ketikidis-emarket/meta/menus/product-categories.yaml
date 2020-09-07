@@ -1,0 +1,15 @@
+items:
+    -
+        title: 'New menu item'
+        nesting: ''
+        type: all-mall-categories
+        url: ''
+        code: ''
+        reference: ''
+        cmsPage: ''
+        replace: '1'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+name: 'Product Categories'

@@ -1,0 +1,27 @@
+[viewBag]
+==
+<ul class="d-flex flex-wrap list-unstyled align-items-center font-5">
+{% for wishlist in items %}
+    {% partial __SELF__ ~ '::item'
+        name=wishlist.name
+        count=wishlist.items.count
+        total=wishlist.totals.totalPostTaxes
+        list_id=wishlist.hash_id
+        product_id=__SELF__.property('product')
+        variant_id=__SELF__.property('variant') %}
+{% endfor %}
+</ul>
+
+<script>
+    var activeClass = 'btn-primary'
+    var items = document.querySelectorAll('.mall-wishlist-item')
+    Array.prototype.forEach.call(items, function (item) {
+        item.addEventListener('click', function () {
+            var active = document.querySelector('.' + activeClass)
+            if (active) {
+                active.classList.remove(activeClass)
+            }
+            this.classList.add(activeClass)
+        })
+    })
+</script>

@@ -1,0 +1,83 @@
+[viewBag]
+snippetCode = "immigration2"
+snippetName = "immigration2"
+==
+{% if immigrationEnable %}
+<section class="immigration-section pb-0">
+    {% if immigrationTitle %}
+    <div class="sec-title centred">
+        {% if immigrationTop %}<p>{{immigrationTop}}</p>{% endif %}
+        <h2>{{immigrationTitle}}</h2>
+        <div class="dotted-box">
+            <span class="dotted"></span>
+            <span class="dotted"></span>
+            <span class="dotted"></span>
+        </div>
+    </div>
+    {% endif %}
+    <div class="outer-container">
+        <div class="three-item-carousel-2 owl-carousel owl-theme owl-nav-none owl-dots-none">
+
+            {% for item in immigrations %}
+            <div class="immigration-block-two">
+                <div class="inner-box">
+                    <figure class="image-box"><img src="{{ item.image|media }}" alt=""></figure>
+                    <div class="content-box">
+                        <h2><a href="{{item.url}}" target="_blank">{{item.title}}</a></h2>
+                        <div class="btn-box"><a href="{{item.url}}" class="theme-btn-one" target="_blank">{{'Get Started'|_}}<i class="flaticon-send"></i></a></div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% else %}
+<section class="immigration-section pb-0">
+    <div class="auto-container">
+        <div class="sec-title centred">
+            <p>countries we offer support</p>
+            <h2>Immigration & Visa Services <br>Following Countries</h2>
+            <div class="dotted-box">
+                <span class="dotted"></span>
+                <span class="dotted"></span>
+                <span class="dotted"></span>
+            </div>
+        </div>
+    </div>
+    <div class="outer-container">
+        <div class="three-item-carousel-2 owl-carousel owl-theme owl-nav-none owl-dots-none">
+            <div class="immigration-block-two">
+                <div class="inner-box">
+                    <figure class="image-box"><img src="{{'assets/images/resource/immigration-7.jpg'|theme}}" alt=""></figure>
+                    <div class="content-box">
+                        <h4><a href="">Apply Free Assessment Today!</a></h4>
+                        <h2>World Immigration Trends</h2>
+                        <div class="btn-box"><a href="" class="theme-btn-one">Get Started<i class="flaticon-send"></i></a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="immigration-block-two">
+                <div class="inner-box">
+                    <figure class="image-box"><img src="{{'assets/images/resource/immigration-8.jpg'|theme}}" alt=""></figure>
+                    <div class="content-box">
+                        <h4><a href="">Apply Free Assessment Today!</a></h4>
+                        <h2>USA Immigration Service</h2>
+                        <div class="btn-box"><a href="" class="theme-btn-one">Get Started<i class="flaticon-send"></i></a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="immigration-block-two">
+                <div class="inner-box">
+                    <figure class="image-box"><img src="{{'assets/images/resource/immigration-9.jpg'|theme}}" alt=""></figure>
+                    <div class="content-box">
+                        <h4><a href="">Apply Free Assessment Today!</a></h4>
+                        <h2>Global Immigration Service</h2>
+                        <div class="btn-box"><a href="" class="theme-btn-one">Get Started<i class="flaticon-send"></i></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}

@@ -1,0 +1,34 @@
+[viewBag]
+==
+<div class="mb-6 py-1">
+    <h3 class="position-relative font-6 font-weight-semibold pb-3 mb-5 decorated-right">
+    	<span>Popular Posts</span>
+    </h3>
+    {% set mostVisitedPosts = topPosts.mostVisitedPosts %}
+    {% for post in mostVisitedPosts %}
+    <div class="d-flex align-items-start justify-content-between mb-4">
+        <div class="d-flex flex-column">
+            <h6 class="font-weight-medium my-1">
+                <a class="d-block text-link" href="{{ post.url }}">
+                    {{ post.title }}
+                </a>
+            </h6>
+            <p class="mb-0 font-5">
+                <i class="text-muted mr-1 w-4 h-4" data-feather="user"></i>
+                by&nbsp;
+                {{ post.user.first_name}}
+            </p>
+        </div>
+        {% if post.featured_images.count %}
+        <a class="d-block position-relative w-16 ml-3" href="{{ post.url }}">
+            <img src="{{ post.featured_images.first.getThumb(128, 128, 'crop') }}" width="128" height="128" alt="{{ image.title }}" loading="lazy" class="img-fluid">
+        </a>
+        {% endif %}
+    </div>
+    {% if not loop.last %}<hr class="opacity-50">{% endif %}
+    {% else %}
+    <div class="mb-4 pt-1">
+        {{ blogPosts.noPostsMessage }}
+    </div>
+    {% endfor %}
+</div>

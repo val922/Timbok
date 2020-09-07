@@ -1,0 +1,11 @@
+[viewBag]
+==
+<div class="ss-autocomplete-result d-flex my-3">
+    <div class="ss-autocomplete-result__content">
+        {% partial 'searchInputMobile/content' result = result %}
+    </div>
+    {% if result.thumb %}
+        {% partial  'searchInputMobile/thumbnail' result = result %}
+    {% endif %}
+</div>
+{% if not loop.last %}<hr class="opacity-50">{% endif %}

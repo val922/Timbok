@@ -1,0 +1,8 @@
+[viewBag]
+==
+<div class="mall-callout alert alert-success text-center mb-0" role="alert">
+    {{ 'offline.mall::frontend.reviews.callout' | trans }}
+    {% if __SELF__.isModerated and isNew %}
+    {{ 'offline.mall::frontend.reviews.moderated' | trans }}
+    {% endif %}
+</div>

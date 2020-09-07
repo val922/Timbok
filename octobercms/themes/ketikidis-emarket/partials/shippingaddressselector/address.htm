@@ -1,0 +1,21 @@
+[viewBag]
+==
+<div class="mall-address d-flex justify-content-between flex-column min-h-xs font-4">
+    <p>
+        {% if address.company %}
+            {{ address.company }}<br/>
+        {% endif %}
+        {{ address.name }}<br/>
+        {{ address.lines }} <br/>
+        {{ address.zip }} {{ address.city }}<br/>
+        {% if address.state_id %}
+            {{ address.state.name }} <br/>
+        {% endif %}
+        {{ address.country.name }}
+    </p>
+    <p class="mall-address__actions mb-0">
+        <a href="javascript:;" class="js-change-address text-link" data-type="{{ __SELF__.type }}">
+            {{ 'offline.mall::frontend.change' | trans }}
+        </a>
+    </p>
+</div>

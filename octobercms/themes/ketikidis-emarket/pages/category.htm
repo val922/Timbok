@@ -1,0 +1,49 @@
+title = "Category"
+url = "/category/:slug*"
+layout = "default"
+is_hidden = 0
+
+[viewBag]
+localeUrl[en] = "/category/:slug*"
+
+[products]
+category = ":slug"
+filterComponent = "productsFilter"
+setPageTitle = 1
+includeVariants = 1
+includeChildren = 1
+perPage = 12
+paginate = 1
+sort = "latest"
+
+[productsFilter]
+category = ":slug"
+includeChildren = 1
+includeVariants = 1
+showPriceFilter = 1
+showBrandFilter = 1
+showOnSaleFilter = 1
+includeSliderAssets = 1
+
+[wishlistButton wishlistButtons]
+==
+{% partial 'pageHeader/products' %}
+
+<div class="container pb-12">
+    <div class="row">
+        <div class="col-lg-9 mb-6 {{ this.theme.shop_layout == 'order-lg-1' ? 'order-lg-2' : 'order-lg-1' }}">
+            {% component 'products' %}
+        </div>
+        <div class="col-lg-3 mb-6 {{ this.theme.shop_layout }}">
+            {% partial 'productCategories/default' %}
+            {% component 'productsFilter' %}
+            {% if this.theme.shop_product_banner_section %}
+            {% if this.theme.shop_product_banner_type == 'product' %}
+            {% partial 'widgetBanners/product-banner-bottom' %}
+            {% elseif this.theme.shop_product_banner_type == 'variant' %}
+            {% partial 'widgetBanners/variant-banner-bottom' %}
+            {% endif %}
+            {% endif %}
+        </div>
+    </div>
+</div>

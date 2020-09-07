@@ -1,0 +1,47 @@
+[viewBag]
+snippetCode = "list1"
+snippetName = "list1"
+
+==
+{% if list1Enable %}
+<section class="news-section">
+    <div class="auto-container">
+        {% if list1Title %}
+        <div class="top-inner">
+            <div class="row clearfix">
+                <div class="col-lg-5 col-md-12 col-sm-12 title-column">
+                    <div class="sec-title">
+                        <h2>{{list1Title}}</h2>
+                        <div class="dotted-box">
+                            <span class="dotted"></span>
+                            <span class="dotted"></span>
+                            <span class="dotted"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        <div class="row clearfix">
+
+            {% for item in lists1 %}
+            <div class="col-lg-4 col-md-6 col-sm-12 news-block mt-5">
+                <div class="news-block-one wow fadeInUp animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image-box"><img src="{{item.image|media}}" alt=""></figure>
+                        <div class="lower-content p-3">
+                            <ul class="post-info clearfix mb-2">
+                                <li><a href="{{ item.url1 }}">{{'front show'|_}}</a></li>
+                                <li><a href="{{ item.url2 }}">{{'backend show'|_}}</a></li>
+                            </ul>
+                            <h4>{{ item.title }}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</section>
+{% endif %}

@@ -1,0 +1,33 @@
+description = "Scroll to top"
+
+[viewBag]
+==
+<a class="back-top d-flex justify-content-center align-items-center invisible rounded-circle w-8 w-md-12 h-8 h-md-12 position-fixed right-4 bottom-4 z-100 opacity-0 transition-80 btn p-0 btn-primary text-white" href="#top">
+    <i class="w-6 w-md-4 h-6 h-md-4" data-feather="chevron-up"></i>
+</a>
+
+{% put scripts %}
+<script>
+$( document ).ready(function() {
+
+//Scroll to top
+var btn = $('.back-top');
+
+$(window).scroll(function() {
+  if ($(window).scrollTop() > 300) {
+    btn.addClass('visible opacity-100');
+    btn.removeClass('invisible');
+  } else {
+    btn.removeClass('visible opacity-100');
+    btn.addClass('invisible');
+  }
+});
+
+btn.on('click', function(e) {
+  e.preventDefault();
+  $('html, body').animate({scrollTop:0}, '300');
+});
+
+});
+</script>
+{% endput %}

@@ -1,0 +1,25 @@
+[viewBag]
+==
+<ul class="pagination">
+    {% if posts.currentPage > 1 %}
+        <li>
+            <a href="{{ this.page.baseFileName|page({ (blogPosts.pageParam): (posts.currentPage-1) }) }}">
+                <span aria-hidden="true"><i class="fa fa-angle-double-left" aria-hidden="true"></i></span>
+            </a>
+        </li>
+    {% endif %}
+
+    {% for page in 1..posts.lastPage %}
+        <li>
+            <a class="{{ posts.currentPage == page ? 'active' : null }}" href="{{ this.page.baseFileName|page({ (blogPosts.pageParam): page }) }}">{{ page }}</a>
+        </li>
+    {% endfor %}
+
+    {% if posts.lastPage > posts.currentPage %}
+        <li>
+            <a href="{{ this.page.baseFileName|page({ (blogPosts.pageParam): (posts.currentPage+1) }) }}">
+                <span aria-hidden="true"><i class="fa fa-angle-double-right" aria-hidden="true"></i></span>
+            </a>
+        </li>
+    {% endif %}
+</ul>

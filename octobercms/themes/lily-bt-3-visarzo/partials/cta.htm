@@ -1,0 +1,44 @@
+[viewBag]
+snippetCode = "cta"
+snippetName = "cta"
+==
+{% if ctaEnable %}
+<section class="cta-section bg-color-1 centred">
+    <div class="auto-container">
+        <div class="inner-box">
+            <h2>{{ctaTitle??('This is a damo'|_)}}</h2>
+            <div class="text">
+                <p>{{ctaInfo??('Please set it in the backend'|_)}}</p>
+                <div class="dotted-box">
+                    <div class="dotted"></div>
+                    <div class="dotted"></div>
+                    <div class="dotted"></div>
+                    <div class="dotted"></div>
+                    <div class="dotted"></div>
+                    <div class="dotted"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% else %}
+<section class="cta-section bg-color-1 centred">
+    <div class="auto-container">
+        <div class="inner-box">
+            <h2>Advantages of a modern system, Timbok!</h2>
+            <div class="text">
+                <p>Give yourself the edge by improving the quality of your services without sacrificing operating costs.</p>
+                <p>Choose Timbok, and overcome any restrictions.</p>
+                <div class="dotted-box">
+                    <div class="dotted"></div>
+                    <div class="dotted"></div>
+                    <div class="dotted"></div>
+                    <div class="dotted"></div>
+                    <div class="dotted"></div>
+                    <div class="dotted"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}

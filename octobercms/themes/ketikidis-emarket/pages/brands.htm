@@ -1,0 +1,27 @@
+title = "Brands"
+url = "/brands"
+layout = "default"
+is_hidden = 0
+==
+<?php
+function onStart()
+{
+    $this['brands'] = \OFFLINE\Mall\Models\Brand::with('products')->get();
+}
+?>
+==
+{% partial 'pageHeader/page' %}
+
+<div class="container pb-6 mt-md-4">
+    <div class="row">
+        {% for brand in brands %}
+        <div class="col-md-3 col-sm-4 col-6">
+            <div class="position-relative group">
+                <a class="d-block border py-4 py-sm-6 mb-7" href="/brand/{{ brand.slug }}?brand={{ brand.slug }}&sort=latest">
+                    <img class="d-block mx-auto w-40 img-fluid" src="{{ brand.logo.thumb(300, 160, 'crop') }}" width="300" height="160" alt="{{ brand.name }}" loading="lazy">
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>

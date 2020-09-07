@@ -1,0 +1,42 @@
+[viewBag]
+snippetCode = "clients"
+snippetName = "clients"
+==
+{% if clientEnable %}
+<section class="clients-section service-page">
+    <div class="auto-container">
+        <div class="four-item-carousel owl-carousel owl-theme owl-dots-none owl-nav-none">
+
+            {% for item in clients %}
+
+            <figure class="logo-image"><a href="{{item.url}}" target="_blank"><img src="{{item.image|media}}" alt=""></a></figure>
+
+            {% endfor%}
+
+        </div>
+    </div>
+</section>
+{% else %}
+<section class="clients-section service-page">
+    <div class="auto-container">
+        <div class="four-item-carousel owl-carousel owl-theme owl-dots-none owl-nav-none">
+            <figure class="logo-image"><a href="https://www.bolux.bw"><img src="{{'assets/images/clients/client-logo-1.png'|theme }}" alt="Bolux Logo"></a></figure>
+            <figure class="logo-image"><a href="https://www.mercedes-benz.com/"><img src="{{'assets/images/clients/client-logo-12.png'|theme }}" alt="MercedesBenz Logo"></a></figure>
+            <figure class="logo-image"><a href="https://www.debeersgroup.com/"><img src="{{'assets/images/clients/client-logo-3.png'|theme }}" alt="DeBeers Logo"></a></figure>
+            <figure class="logo-image"><a href="https://www.telkom.co.za/"><img src="{{'assets/images/clients/client-logo-4.png'|theme }}" alt="Telkom Logo"></a></figure>
+            <figure class="logo-image"><a href="https://www.volvo.com/"><img src="{{'assets/images/clients/client-logo-15.png'|theme }}" alt="Volvo Logo"></a></figure>
+            <figure class="logo-image"><a href="https://tesla.com/"><img src="{{'assets/images/clients/client-logo-6.png'|theme }}" alt="Tesla Logo"></a></figure>
+            <figure class="logo-image"><a href="https://www.spacex.com/"><img src="{{'assets/images/clients/client-logo-7.png'|theme }}" alt="SpaceX Logo"></a></figure>
+            <figure class="logo-image"><a href="https://www.ford.com/"><img src="{{'assets/images/clients/client-logo-14.png'|theme }}" alt="Ford Logo"></a></figure>
+            <figure class="logo-image"><a href="https://www.dangote.com/"><img src="{{'assets/images/clients/client-logo-9.png'|theme }}" alt="Dangote Logo"></a></figure>
+            <figure class="logo-image"><a href="https://www.ge.com/"><img src="{{'assets/images/clients/client-logo-10.png'|theme }}" alt="GE Logo"></a></figure>
+            <figure class="logo-image"><a href="https://www.gm.com/"><img src="{{'assets/images/clients/client-logo-11.png'|theme }}" alt="GM Logo"></a></figure>
+            <figure class="logo-image"><a href="https://angloamerican.com/"><img src="{{'assets/images/clients/client-logo-2.png'|theme }}" alt="AngloAmerican Logo"></a></figure>
+            <figure class="logo-image"><a href="https://www.toyota.com/"><img src="{{'assets/images/clients/client-logo-13.png'|theme }}" alt="Toyota Logo"></a></figure>
+            <figure class="logo-image"><a href="https://www.amazon.com/"><img src="{{'assets/images/clients/client-logo-8.png'|theme }}" alt="Amazon Logo"></a></figure>
+            <figure class="logo-image"><a href="https://www.alibaba.com/"><img src="{{'assets/images/clients/client-logo-5.png'|theme }}" alt="Alibaba Logo"></a></figure>
+            <figure class="logo-image"><a href="https://www.boeing.com/"><img src="{{'assets/images/clients/client-logo-16.png'|theme }}" alt="Boeing Logo"></a></figure>
+        </div>
+    </div>
+</section>
+{% endif %}

@@ -1,0 +1,52 @@
+[viewBag]
+==
+<form data-request="{{ __SELF__ }}::onSubmit" data-request-validate data-request-flash>
+    <div class="form-group">
+        <label for="email">{{ 'offline.mall::frontend.form.email' | trans }}</label>
+        <input id="email" type="email" placeholder="email@email.com" name="email" value="{{ __SELF__.user.email }}" class="form-control hover:border-primary">
+        <div data-validate-for="email" class="text-danger font-4 mt-2 ml-1"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="firstname">{{ 'offline.mall::frontend.form.firstname' | trans }}</label>
+                <input id="firstname" type="text" name="firstname" value="{{ __SELF__.user.customer.firstname }}" class="form-control hover:border-primary">
+                <div data-validate-for="firstname" class="text-danger font-4 mt-2 ml-1"></div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="lastname">{{ 'offline.mall::frontend.form.lastname' | trans }}</label>
+                <input id="lastname" type="text" name="lastname" value="{{ __SELF__.user.customer.lastname }}" class="form-control hover:border-primary">
+                <div data-validate-for="lastname" class="text-danger font-4 mt-2 ml-1"></div>
+            </div>
+        </div>
+    </div>
+    {% if user.customer.is_guest %}
+    <div class="mall-callout alert alert-warning" role="alert">">
+        {{ 'offline.mall::frontend.guest_upgrade.callout' | trans }}
+    </div>
+    {% endif %}
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="password">{{ 'offline.mall::frontend.form.new_password' | trans }}</label>
+                <input id="password" type="password" name="password" class="form-control hover:border-primary">
+                <div data-validate-for="password" class="text-danger font-4 mt-2 ml-1"></div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="password_repeat">{{ 'offline.mall::frontend.form.password_repeat' | trans }}</label>
+                <input id="password_repeat" type="password" name="password_repeat" class="form-control hover:border-primary">
+                <div data-validate-for="password_repeat" class="text-danger font-4 mt-2 ml-1"></div>
+            </div>
+        </div>
+    </div>
+    <hr class="mt-2 mb-3">
+    <div class="d-flex flex-wrap justify-content-end align-items-center">
+        <button class="mall-btn mall-btn--primary btn btn-sm btn-primary btn-icon-right mt-3 px-6 mt-sm-0" type="submit" data-attach-loading>
+            <span>{{ 'offline.mall::frontend.save' | trans }} <i data-feather="chevron-right"></i></span>
+        </button>
+    </div>
+</form>

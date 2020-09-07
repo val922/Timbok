@@ -1,0 +1,9 @@
+1599340788a:1:{s:28:"featuredProducts/default.htm";a:6:{s:8:"fileName";s:28:"featuredProducts/default.htm";s:7:"content";s:236:"[viewBag]
+==
+<section class="mall-products container pt-4 pb-6">
+    <h2 class="h3 font-weight-semibold pb-6 decorated max-w-md mx-auto"><span>{{ 'Hot Products'|_ }}</span></h2>
+    {% partial 'featuredProducts/entries' %}
+</section>";s:5:"mtime";i:1598433269;s:6:"markup";s:223:"<section class="mall-products container pt-4 pb-6">
+    <h2 class="h3 font-weight-semibold pb-6 decorated max-w-md mx-auto"><span>{{ 'Hot Products'|_ }}</span></h2>
+    {% partial 'featuredProducts/entries' %}
+</section>";s:4:"code";N;s:7:"viewBag";a:0:{}}}

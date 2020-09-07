@@ -1,0 +1,77 @@
+//
+// Background Utilities
+//
+
+// Background gradients
+//
+
+//@each $color, $value in $theme-colors {
+//	@include bg-gradient-variant(".bg-gradient-#{$color}", $value);
+//}
+
+//@each $color, $value in $colors { 
+//	@include bg-gradient-variant(".bg-gradient-#{$color}", $value);
+//}
+
+
+// Faded background color
+//
+
+//@each $color, $value in $theme-colors {
+//	@include bg-variant(".bg-faded-#{$color}", rgba($value, 0.1));
+//}
+
+
+// Background hover
+//
+
+@each $color, $value in $theme-colors {
+	@include bg-variant(".hover\:bg-#{$color}:hover", $value, true);
+}
+
+@each $color, $value in $theme-colors {
+	@include bg-variant(".group:hover .group-hover\:bg-#{$color}", $value, true);
+}
+
+
+// Background size, position
+//
+
+.bg-size-cover { background-size: cover !important; }
+.bg-position-center { background-position: center !important; }
+.bg-position-right-top { background-position: right top !important; }
+.bg-position-right-center { background-position: right center !important; }
+.bg-no-repeat { background-repeat: no-repeat !important; }
+.bg-repeat-x { background-repeat: repeat-x !important; }
+.bg-repeat-y { background-repeat: repeat-y !important; }
+
+
+// Shape (svg) fill colors
+//
+
+//@each $color, $value in $theme-colors {
+//    .fill-#{$color} {
+//        fill: $value;
+//    }
+//
+//    .stroke-#{$color} {
+//        stroke: $value;
+//    }
+//}
+
+//.fill-transparent { fill: transparent; }
+//.stroke-transparent { stroke: transparent; }
+
+
+// Shape hover (svg) fill colors
+//
+
+//@each $color, $value in $theme-colors {
+//    .hover\:fill-#{$color}:hover {
+//        fill: $value;
+//    }
+//
+//    .hover\:stroke-#{$color}:hover {
+//        stroke: $value;
+//    }
+//}

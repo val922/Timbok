@@ -1,0 +1,31 @@
+1599460967a:1:{s:27:"mainMenu/category-image.htm";a:6:{s:8:"fileName";s:27:"mainMenu/category-image.htm";s:7:"content";s:730:"[viewBag]
+==
+<?php
+function onStart()
+{
+    $this['categories'] = \OFFLINE\Mall\Models\Category::orderBy('created_at', 'DESC')->get();
+}
+?>
+==
+{% for category in categories if item.title|slug == category.slug %}
+<a href="/category/{{ category.nested_slug }}" class="block">
+	<div class="bg-cover position-relative px-4 py-6 mb-4" style="background-image:url({{ category.image.thumb(400, 180, 'crop') }})">
+		<div class="position-absolute overflow-hidden inset-0 w-100 h-100 bg-dark opacity-50"></div>
+		<div class="position-relative d-flex aligns-items-center justify-content-center h-100">
+            <h3 class="font-7 font-weight-semibold text-white my-4">{{ category.name }}</h3>
+		</div>
+	</div>
+</a>
+{% endfor %}";s:5:"mtime";i:1592589912;s:6:"markup";s:584:"{% for category in categories if item.title|slug == category.slug %}
+<a href="/category/{{ category.nested_slug }}" class="block">
+	<div class="bg-cover position-relative px-4 py-6 mb-4" style="background-image:url({{ category.image.thumb(400, 180, 'crop') }})">
+		<div class="position-absolute overflow-hidden inset-0 w-100 h-100 bg-dark opacity-50"></div>
+		<div class="position-relative d-flex aligns-items-center justify-content-center h-100">
+            <h3 class="font-7 font-weight-semibold text-white my-4">{{ category.name }}</h3>
+		</div>
+	</div>
+</a>
+{% endfor %}";s:4:"code";s:120:"function onStart()
+{
+    $this['categories'] = \OFFLINE\Mall\Models\Category::orderBy('created_at', 'DESC')->get();
+}";s:7:"viewBag";a:0:{}}}

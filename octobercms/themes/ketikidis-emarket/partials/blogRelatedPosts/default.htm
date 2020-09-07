@@ -1,0 +1,68 @@
+[viewBag]
+==
+<h3 class="h4 pt-12 pb-6 mt-2">{{ "ginopane.blogtaxonomy::lang.components.related_posts.related_posts" | trans }}</h3>
+<div class="related-posts-slider mb-md-0 mb-6">
+    {% if relatedPosts.posts | length %}
+    {% for post in relatedPosts.posts %}
+    <div class="mx-3">
+        {% if post.featured_images.count %}
+        <a class="d-block mb-4" href="{{ post.url }}">
+            <img src="{{ post.featured_images.first.getThumb(450, 300, 'crop') }}" width="450" height="300" loading="lazy" alt="{{ post.title }}" class="img-fluid">
+        </a>
+        {% endif %}
+        <div class="font-5 text-muted pb-2 d-flex align-items-center">
+            by&nbsp;
+            <span class="text-muted">{{ post.user.first_name}}</span>
+            <i class="w-4 h-4" data-feather="more-vertical"></i>
+            <span>{{ post.published_at|date('M d, Y') }}</span>
+        </div>
+        <h4 class="h6">
+            <a class="text-link" href="{{ post.url }}">{{ post.title }}</a>
+        </h4>
+    </div>
+    {% endfor %}
+    {% else %}
+    {{ "ginopane.blogtaxonomy::lang.components.related_posts.no_posts_message" | trans }}
+    {% endif %}
+</div>
+
+{% put scripts %}
+<script>
+$('.related-posts-slider').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 6000,
+    dots: false,
+    arrows: false,
+    lazyLoad: 'ondemand',
+    accessibility: false,
+    responsive: [
+        {
+          breakpoint: 992,
+          settings: {
+            slidesToShow: 3
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 3
+          }
+        },
+        {
+          breakpoint: 576,
+          settings: {
+            slidesToShow: 2
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1
+          }
+        }
+    ]
+});
+</script>
+{% endput %}

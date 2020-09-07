@@ -1,0 +1,28 @@
+[viewBag]
+==
+<div class="form-group">
+    <div class="mall-signup-terms custom-control custom-checkbox">
+        <input class="js-mall-toggle-signup-terms custom-control-input"
+               type="checkbox"
+               name="terms_accepted"
+               value="1"
+               id="mall-signup-terms"
+        >
+        <label class="mall-checkbox custom-control-label" for="mall-signup-terms">
+            {% partial __SELF__ ~ '::termslabel' %}
+            <div data-validate-for="terms_accepted" class="text-danger font-4 mt-2 ml-1"></div>
+        </label>
+    </div>
+</div>
+
+{% put scripts %}
+    <script>
+        $(function () {
+            {# Disable the signup  button until the terms are accepted #}
+            $('.mall-btn-signup').prop('disabled', true)
+            $('.js-mall-toggle-signup-terms').on('click', function () {
+                $('.mall-btn-signup').prop('disabled', ! this.checked);
+            });
+        })
+    </script>
+{% endput %}

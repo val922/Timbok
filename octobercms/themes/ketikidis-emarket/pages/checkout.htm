@@ -1,0 +1,22 @@
+title = "Checkout"
+url = "/checkout/:step?"
+layout = "default"
+is_hidden = 0
+
+[viewBag]
+localeUrl[en] = "/checkout/:step?"
+
+[signUp]
+
+[checkout]
+step = "{{ :step }}"
+==
+{% partial 'pageHeader/page' %}
+
+<div class="container pb-12 mb-sm-6">
+    {% if not user %}
+        {% component 'signUp' %}
+    {% else %}
+        {% component 'checkout' %}
+    {% endif %}
+</div>

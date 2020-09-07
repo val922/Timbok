@@ -1,0 +1,51 @@
+[viewBag]
+==
+<nav class="main-menu navbar-expand-md navbar-light">
+    <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
+        <ul class="navigation clearfix">
+        
+{% if items %}
+    {% for item in items %}
+        {% if item.items %}
+        
+            <li class="dropdown {{ item.isActive or item.isChildActive ? 'current' : '' }}"><a href="{{ item.url }}">{{item.title|_}}</a>
+                <ul>
+                    {% for child1 in item.items %}
+                    
+                        {% if child1.items %}
+        
+                            <li class="dropdown {{ child1.isActive or child1.isChildActive ? 'current' : '' }}"><a href="{{ child1.url }}">{{child1.title|_}}</a>
+                                <ul>
+                                    {% for child2 in child1.items %}
+                                            <li class="{{ child2.isActive or child2.isChildActive ? 'current' : '' }}"><a href="{{ child2.url }}">{{child2.title|_}}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </li>
+                        
+                        {% else %}
+                            <li class="{{ child1.isActive or child1.isChildActive ? 'current' : '' }}"><a href="{{ child1.url }}">{{child1.title|_}}</a></li>
+                        {% endif %}   
+                    {% endfor %}
+                </ul>
+            </li>
+        
+        {% else %}
+            <li class="{{ item.isActive or item.isChildActive ? 'current' : '' }}"><a href="{{ item.url }}">{{item.title|_}}</a></li>
+        {% endif %}     
+    {% endfor %}
+{% endif %}
+
+    {% if this.theme.lan_choose %}
+        <li class="dropdown language"><a href="JavaScript:void(0);">{{'language'|_}}</a>
+            <ul>
+                {% for code, name in locales %}
+                <li class="{{ code == activeLocale ? 'current' : '' }}"><a href="#" data-request="onSwitchLocale" data-request-data="locale: '{{ code }}'">{{ name }}</a></li>
+                {% endfor %}
+
+            </ul>
+        </li>
+    {% endif %}
+
+        </ul>
+    </div>
+</nav>

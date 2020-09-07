@@ -1,0 +1,10 @@
+[viewBag]
+==
+<div class="mall-property__clear-filter font-3 position-absolute top-0 bg-white right-0 pl-5">
+    <a class="js-mall-clear-filter text-muted hover:text-primary transition-20"
+       href="javascript:;"
+       data-filter="{{ id }}"
+       style="{% if not filter[id] %}display: none{% endif %}">
+        {{ 'offline.mall::frontend.reset.filter' | trans }}
+    </a>
+</div>

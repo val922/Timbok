@@ -1,0 +1,42 @@
+description = "Cart Button"
+
+[viewBag]
+
+[cart]
+showDiscountApplier = 1
+showTaxes = 1
+showShipping = 1
+showProceedToCheckoutButton = 0
+==
+{% set count = cart.cart.products.count %}
+<li class="nav-item position-relative text-center">
+	<a class="nav-link opacity-70 hover:opacity-100 text-dark my-sm-4 my-3 py-0 px-2 w-12 w-md-18" href="{{ 'cart' | page }}">
+		<i class="mall-cart-icon d-block mx-auto w-5 h-5 mb-1 {{ count > 0 ? 'text-danger' : '' }}" data-feather="shopping-cart"></i>
+		<span class="d-block text-uppercase font-1">{{ 'offline.mall::frontend.cart' | trans }}</span>
+	</a>
+	<span class="mall-cart-count d-flex justify-content-center align-items-center font-1 font-weight-medium text-white bg-primary rounded-circle w-4 w-md-5 h-4 h-md-5 border border-primary position-absolute right-2 top-2 z-10 {{ count < 1 ? 'invisible' : '' }}">{{ count }}</span>
+</li>
+
+{% put scripts %}
+    <script>
+        $(function () {
+            $.subscribe('mall.cart.productAdded', function () {
+                $('.mall-cart-icon').css('color', 'hsl(1.7, 76.3%, 53.7%)')
+            });
+        });
+    </script>
+    <script>
+        $(function () {
+            var baseCount = '{{ count }}';
+            var $count = $('.mall-cart-count');
+            $.subscribe('mall.cart.productAdded', function () {
+                $count.removeClass('invisible').text(++ baseCount).show();
+            });
+            $.subscribe('mall.cart.productRemoved', function () {
+                baseCount --;
+                if (baseCount < 0) baseCount = 0;
+                $count.text(baseCount);
+            });
+        });
+    </script>
+{% endput %}

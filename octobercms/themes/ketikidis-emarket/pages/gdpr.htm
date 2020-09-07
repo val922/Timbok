@@ -1,0 +1,54 @@
+title = "GDPR"
+url = "/gdpr"
+layout = "default"
+is_hidden = 0
+
+[session]
+security = "user"
+redirect = "gdpr-guest"
+
+[ordersList]
+
+[wishlists]
+
+[cookieManager]
+include_css = 1
+include_js = 1
+
+[imageUploader]
+placeholderText = "Click or drag images to upload"
+maxSize = 1
+fileTypes = ".jpg,.jpeg,.png"
+imageWidth = 280
+imageHeight = 280
+imageMode = "crop"
+==
+<?php
+/*function onInit()
+{
+    $user = Auth::getUser();
+    if($user){
+        $component = $this->addComponent(
+            'Responsiv\Uploader\Components\ImageUploader',
+            'imageUploader',
+            ['modelClass'=>'OFFLINE\Mall\Models\User','modelKeyColumn'=>'avatar', 'deferredBinding' => false]
+        );
+
+        $component->bindModel('avatar', $user);
+    }
+}*/
+
+function onInit()
+{
+    $user = Auth::getUser();
+    if($user){
+        $this->imageUploader->bindModel('avatar', $user);
+    }
+}
+?>
+==
+{% partial 'pageHeader/page' %}
+
+<div class="container pt-lg-3 pb-5 mb-sm-3">
+    {% component 'cookieManager' %}
+</div>

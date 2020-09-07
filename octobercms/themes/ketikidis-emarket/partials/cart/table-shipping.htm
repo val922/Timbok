@@ -1,0 +1,11 @@
+[viewBag]
+==
+{% if __SELF__.showShipping %}
+<div class="mall-cart__shipping d-flex justify-content-between mb-2">
+    <span>{{ shipping.method.name }}:</span><span>{{ shipping.totalPostTaxes | money }}</span>
+</div>
+{% else %}
+<div class="mall-cart__shipping d-flex justify-content-between mb-2">
+    {% partial __SELF__ ~ '::shippingexcluded' %}
+</div>
+{% endif %}

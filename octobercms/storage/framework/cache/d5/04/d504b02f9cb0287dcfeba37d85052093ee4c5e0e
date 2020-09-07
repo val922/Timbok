@@ -1,0 +1,71 @@
+1599340749a:1:{s:21:"product/addtocart.htm";a:6:{s:8:"fileName";s:21:"product/addtocart.htm";s:7:"content";s:1507:"[viewBag]
+==
+{% if not item.allow_out_of_stock_purchases %}
+<div class="mall-product__property-stock font-5 opacity-70 pb-2 text-{{ stock > 0 ? 'success' : 'danger' }}">
+    {% if stock > 10 %}
+        {{ 'offline.mall::frontend.stock.many_available' | trans }}
+    {% elseif stock > 0 %}
+        {{ 'offline.mall::frontend.stock.available' | transchoice(stock, {stock: stock}) }}
+    {% else %}
+        {{ 'offline.mall::frontend.stock.unavailable' | trans }}
+    {% endif %}
+</div>
+{% endif %}
+<div class="d-flex align-items-center pt-2 pb-4">
+    {% if stock > 0 or item.allow_out_of_stock_purchases %}
+    <div class="mall-product__add-to-cart-form">
+        <!--<label for="quantity">{{ 'offline.mall::frontend.quantity' | trans }}</label>-->
+        <input type="number"
+               id="quantity"
+               class="form-control hover:border-primary px-3 mr-2 w-16"
+               min="{{ item.quantity_min }}" max="{{ item.quantity_max }}"
+               name="quantity" value="{{ item.quantity_default | default(1) }}">
+        <div data-validate-for="quantity"></div>
+    </div>
+    <button type="submit" class="btn btn-primary btn-block" data-attach-loading>
+        <i class="mr-2" data-feather="shopping-cart"></i>{{ 'offline.mall::frontend.cart.add' | trans }}
+    </button>
+    {% endif %}
+</div>
+{% partial __SELF__ ~ '::belowcartbutton' %}
+
+<script>
+    // Feather Icons
+    $( document ).ready(function() {
+        feather.replace()
+    });
+</script>";s:5:"mtime";i:1592589916;s:6:"markup";s:1494:"{% if not item.allow_out_of_stock_purchases %}
+<div class="mall-product__property-stock font-5 opacity-70 pb-2 text-{{ stock > 0 ? 'success' : 'danger' }}">
+    {% if stock > 10 %}
+        {{ 'offline.mall::frontend.stock.many_available' | trans }}
+    {% elseif stock > 0 %}
+        {{ 'offline.mall::frontend.stock.available' | transchoice(stock, {stock: stock}) }}
+    {% else %}
+        {{ 'offline.mall::frontend.stock.unavailable' | trans }}
+    {% endif %}
+</div>
+{% endif %}
+<div class="d-flex align-items-center pt-2 pb-4">
+    {% if stock > 0 or item.allow_out_of_stock_purchases %}
+    <div class="mall-product__add-to-cart-form">
+        <!--<label for="quantity">{{ 'offline.mall::frontend.quantity' | trans }}</label>-->
+        <input type="number"
+               id="quantity"
+               class="form-control hover:border-primary px-3 mr-2 w-16"
+               min="{{ item.quantity_min }}" max="{{ item.quantity_max }}"
+               name="quantity" value="{{ item.quantity_default | default(1) }}">
+        <div data-validate-for="quantity"></div>
+    </div>
+    <button type="submit" class="btn btn-primary btn-block" data-attach-loading>
+        <i class="mr-2" data-feather="shopping-cart"></i>{{ 'offline.mall::frontend.cart.add' | trans }}
+    </button>
+    {% endif %}
+</div>
+{% partial __SELF__ ~ '::belowcartbutton' %}
+
+<script>
+    // Feather Icons
+    $( document ).ready(function() {
+        feather.replace()
+    });
+</script>";s:4:"code";N;s:7:"viewBag";a:0:{}}}

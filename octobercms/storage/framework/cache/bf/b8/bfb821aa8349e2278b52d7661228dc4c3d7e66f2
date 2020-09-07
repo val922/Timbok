@@ -1,0 +1,9 @@
+1599460972a:1:{s:16:"footer/brand.htm";a:7:{s:8:"fileName";s:16:"footer/brand.htm";s:7:"content";s:254:"description = "Footer Brand"
+
+[viewBag]
+==
+<a class="navbar-brand transition-20" href="{{ 'index'|page }}">
+    <img class="w-auto h-8 h-sm-auto" src="{{ this.theme.site_logo_footer.getThumb(false, 60, 'auto') }}" alt="{{ this.theme.site_name }}">
+</a>";s:5:"mtime";i:1599068742;s:6:"markup";s:211:"<a class="navbar-brand transition-20" href="{{ 'index'|page }}">
+    <img class="w-auto h-8 h-sm-auto" src="{{ this.theme.site_logo_footer.getThumb(false, 60, 'auto') }}" alt="{{ this.theme.site_name }}">
+</a>";s:4:"code";N;s:11:"description";s:12:"Footer Brand";s:7:"viewBag";a:0:{}}}

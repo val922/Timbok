@@ -1,0 +1,55 @@
+description = "Blog Section"
+
+[viewBag]
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 3
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "blog/blog-category"
+postPage = "blog/blog-post"
+==
+<section class="container pt-sm-4 pb-6 pb-md-14">
+    <h2 class="h3 pb-6 decorated max-w-md mx-auto"><span>{{ 'Blog'|_ }}</span></h2>
+    <div class="row">
+        {% set sal = ['flip-left', 'flip-up', 'flip-right'] %}
+        {% set posts = blogPosts.posts %}
+        {% for post in posts %}
+        <div class="col-sm-4 mb-4" data-sal="{{ sal[ loop.index0 % 3 ] }}" data-sal-duration="1200">
+            {% if post.featured_images.count %}
+            <a class="d-block mb-4" href="{{ post.url }}">
+                <img src="{{ post.featured_images.first.getThumb(450, 300, 'crop') }}" width="450" height="300" loading="lazy" alt="{{ post.title }}" class="img-fluid w-100">
+            </a>
+            {% endif %}
+            <div class="font-5 text-muted pb-2 d-flex align-items-center">
+                {% if post.user.avatar %}
+                <img class="rounded-circle border p-1" src="{{ post.user.avatar.getThumb(28, 28, 'crop') }}" alt="{{ post.user.avatar.file_name }}">
+                {% endif %}
+                <div class="ml-2">
+                    by&nbsp;
+                    <span class="text-muted">{{ post.user.first_name}}</span>
+                    <i class="w-4 h-4" data-feather="more-vertical"></i>
+                    <span>{{ post.published_at|date('M d, Y') }}</span>
+                </div>
+            </div>
+            <h4 class="h6">
+                <a class="text-link" href="{{ post.url }}">{{ post.title }}</a>
+            </h4>
+            <p class="font-5">{{ html_limit(post.summary, 100)|raw ~ '...' }}</p>
+            <div class="font-5 text-muted">
+                <div>
+                    {% if post.categories.count %}
+                    in&nbsp;
+                    {% for category in post.categories %}
+                        <a href="{{ category.url }}" class="text-muted hover:text-primary">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
+                    {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <div class="col-md-4 col-sm-6">{{ noPostsMessage }}</div>
+        {% endfor %}
+    </div>
+</section>

@@ -1,0 +1,35 @@
+1599460953a:1:{s:24:"productsfilter/price.htm";a:6:{s:8:"fileName";s:24:"productsfilter/price.htm";s:7:"content";s:747:"[viewBag]
+==
+{% if not __SELF__.priceRange == false %}
+    <div class="mall-property-group mb-6 pb-4">
+        <div class="mall-property-group__name mall-property-group__name--price position-relative pb-3 mb-5">
+            <h3 class="position-relative font-6 font-weight-semibold mb-0 decorated-right">
+				<span>{{ 'offline.mall::frontend.price' | trans }}</span>
+			</h3>
+            {% partial __SELF__ ~ '::clearfilter' id='price' %}
+        </div>
+        <div class="mall-property pt-3">
+            {% partial __SELF__ ~ '::range'
+                id  = 'price'
+                slug  = 'price'
+                min = __SELF__.priceRange[0]
+                max = __SELF__.priceRange[1] %}
+        </div>
+    </div>
+{% endif %}";s:5:"mtime";i:1592589912;s:6:"markup";s:734:"{% if not __SELF__.priceRange == false %}
+    <div class="mall-property-group mb-6 pb-4">
+        <div class="mall-property-group__name mall-property-group__name--price position-relative pb-3 mb-5">
+            <h3 class="position-relative font-6 font-weight-semibold mb-0 decorated-right">
+				<span>{{ 'offline.mall::frontend.price' | trans }}</span>
+			</h3>
+            {% partial __SELF__ ~ '::clearfilter' id='price' %}
+        </div>
+        <div class="mall-property pt-3">
+            {% partial __SELF__ ~ '::range'
+                id  = 'price'
+                slug  = 'price'
+                min = __SELF__.priceRange[0]
+                max = __SELF__.priceRange[1] %}
+        </div>
+    </div>
+{% endif %}";s:4:"code";N;s:7:"viewBag";a:0:{}}}

@@ -1,0 +1,23 @@
+[viewBag]
+==
+<div class="d-flex justify-content-between flex-column min-h-xs font-4">
+    <div class="mall-cart-summary__method-logo mb-3">
+        {% if not __SELF__.cart.is_virtual %}
+            {% if __SELF__.cart.shipping_method.logo %}
+                <img src="{{ __SELF__.cart.shipping_method.logo.thumb(100, 100, 'crop') }}" width="100" height="100" alt="" class="img-fluid"/>
+            {% else %}
+                {{ __SELF__.cart.shipping_method.name }}
+            {% endif %}
+        {% else %}
+            <p class="mb-3">{{ 'offline.mall::lang.shipping_method.not_required_name' | trans }}</p>
+        {% endif %}
+    </div>
+    
+    {% if not __SELF__.cart.is_virtual %}
+        <p class="mall-cart-summary__action mb-0">
+            <a href="{{ __SELF__.stepUrl('shipping') }}" class="text-link">
+                {{ 'offline.mall::frontend.change' | trans }}
+            </a>
+        </p>
+    {% endif %}
+</div>

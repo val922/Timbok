@@ -1,0 +1,187 @@
+[viewBag]
+snippetCode = "service2"
+snippetName = "service2"
+==
+
+{% if serviceEnable %}
+
+<section class="service-style-two bg-color-3">
+    <div class="auto-container">
+        {% if serviceTitle %}
+        <div class="sec-title centred">
+            {% if serviceTop %}<p>{{serviceTop}}</p>{% endif %}
+            <h2>{{serviceTitle}}</h2>
+            {% if serviceInfo %}<span>{{serviceInfo}}</span>{% endif %}
+            <div class="dotted-box">
+                <span class="dotted"></span>
+                <span class="dotted"></span>
+                <span class="dotted"></span>
+            </div>
+        </div>
+        {% endif %}
+        {% if services %}
+        <div class="three-item-carousel owl-carousel owl-theme owl-nav-none">
+
+            {% for item in services %}
+            <div class="service-block-two">
+                <div class="inner-box">
+                    <figure class="image-box"><a href="{{item.btnUrl}}" target="_blank"><img src="{{item.image|media}}" alt=""></a></figure>
+                    <div class="lower-content">
+                        <div class="box">
+                            <div class="icon-box"><i class="{{item.icon}}"></i></div>
+                            <h3><a href="{{item.btnUrl}}" target="_blank">{{item.title}}</a></h3>
+                            {% if item.info %}
+                            <p>{{item.info}}</p>
+                            {% endif %}
+                        </div>
+                        <div class="link">
+                            <a href="{{item.btnUrl}}" target="_blank">{{item.btnText}}<i class="flaticon-send"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+        {% endif %}
+
+
+    </div>
+</section>
+
+
+{% else %}
+<section class="service-style-two bg-color-3">
+    <div class="auto-container">
+        <div class="sec-title centred">
+            <p>countries we offer support</p>
+            <h2>Immigration & Visa Services</h2>
+            <span>Sponsoring and managing work visas parts now becoming results the experience <br>aute irure dolor in reprehenderit cepteur sint ocaecat cupidatate</span>
+            <div class="dotted-box">
+                <span class="dotted"></span>
+                <span class="dotted"></span>
+                <span class="dotted"></span>
+            </div>
+        </div>
+        <div class="three-item-carousel owl-carousel owl-theme owl-nav-none">
+            <div class="service-block-two">
+                <div class="inner-box">
+                    <figure class="image-box"><a href="service-details.html"><img src="{{'assets/images/service/service-1.jpg'|theme}}" alt=""></a></figure>
+                    <div class="lower-content">
+                        <div class="box">
+                            <div class="icon-box"><i class="flaticon-manager"></i></div>
+                            <h3><a href="service-details.html">Working Visas</a></h3>
+                            <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed perspiciatis unde omnis iste.</p>
+                        </div>
+                        <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="service-block-two">
+                <div class="inner-box">
+                    <figure class="image-box"><a href="service-details.html"><img src="{{'assets/images/service/service-2.jpg'|theme}}" alt=""></a></figure>
+                    <div class="lower-content">
+                        <div class="box">
+                            <div class="icon-box"><i class="flaticon-flight"></i></div>
+                            <h3><a href="service-details.html">Studing Visas</a></h3>
+                            <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed perspiciatis unde omnis iste.</p>
+                        </div>
+                        <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="service-block-two">
+                <div class="inner-box">
+                    <figure class="image-box"><a href="service-details.html"><img src="{{'assets/images/service/service-3.jpg'|theme}}" alt=""></a></figure>
+                    <div class="lower-content">
+                        <div class="box">
+                            <div class="icon-box"><i class="flaticon-air-freight"></i></div>
+                            <h3><a href="service-details.html">Visiting Visa</a></h3>
+                            <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed perspiciatis unde omnis iste.</p>
+                        </div>
+                        <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="service-block-two">
+                <div class="inner-box">
+                    <figure class="image-box"><a href="service-details.html"><img src="{{'assets/images/service/service-1.jpg'|theme}}" alt=""></a></figure>
+                    <div class="lower-content">
+                        <div class="box">
+                            <div class="icon-box"><i class="flaticon-manager"></i></div>
+                            <h3><a href="service-details.html">Working Visas</a></h3>
+                            <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed perspiciatis unde omnis iste.</p>
+                        </div>
+                        <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="service-block-two">
+                <div class="inner-box">
+                    <figure class="image-box"><a href="service-details.html"><img src="{{'assets/images/service/service-2.jpg'|theme}}" alt=""></a></figure>
+                    <div class="lower-content">
+                        <div class="box">
+                            <div class="icon-box"><i class="flaticon-flight"></i></div>
+                            <h3><a href="service-details.html">Studing Visas</a></h3>
+                            <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed perspiciatis unde omnis iste.</p>
+                        </div>
+                        <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="service-block-two">
+                <div class="inner-box">
+                    <figure class="image-box"><a href="service-details.html"><img src="{{'assets/images/service/service-3.jpg'|theme}}" alt=""></a></figure>
+                    <div class="lower-content">
+                        <div class="box">
+                            <div class="icon-box"><i class="flaticon-air-freight"></i></div>
+                            <h3><a href="service-details.html">Visiting Visa</a></h3>
+                            <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed perspiciatis unde omnis iste.</p>
+                        </div>
+                        <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="service-block-two">
+                <div class="inner-box">
+                    <figure class="image-box"><a href="service-details.html"><img src="{{'assets/images/service/service-1.jpg'|theme}}" alt=""></a></figure>
+                    <div class="lower-content">
+                        <div class="box">
+                            <div class="icon-box"><i class="flaticon-manager"></i></div>
+                            <h3><a href="service-details.html">Working Visas</a></h3>
+                            <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed perspiciatis unde omnis iste.</p>
+                        </div>
+                        <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="service-block-two">
+                <div class="inner-box">
+                    <figure class="image-box"><a href="service-details.html"><img src="{{'assets/images/service/service-2.jpg'|theme}}" alt=""></a></figure>
+                    <div class="lower-content">
+                        <div class="box">
+                            <div class="icon-box"><i class="flaticon-flight"></i></div>
+                            <h3><a href="service-details.html">Studing Visas</a></h3>
+                            <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed perspiciatis unde omnis iste.</p>
+                        </div>
+                        <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="service-block-two">
+                <div class="inner-box">
+                    <figure class="image-box"><a href="service-details.html"><img src="{{'assets/images/service/service-3.jpg'|theme}}" alt=""></a></figure>
+                    <div class="lower-content">
+                        <div class="box">
+                            <div class="icon-box"><i class="flaticon-air-freight"></i></div>
+                            <h3><a href="service-details.html">Visiting Visa</a></h3>
+                            <p>Datat non proident sunt culpa qui officia deserunt mollit anim id est laborum. Sed perspiciatis unde omnis iste.</p>
+                        </div>
+                        <div class="link"><a href="service-details.html">Read More<i class="flaticon-send"></i></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}

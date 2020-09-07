@@ -1,0 +1,9 @@
+{% if error %}
+	<div class="alert alert-danger text-center" role="alert">
+		Sorry there was an error: {{ error }}
+	</div>
+{% else %}
+	<div class="alert alert-success text-center" role="alert">
+		Great success! Now we can keep in touch, see you soon!
+	</div>
+{% endif %}

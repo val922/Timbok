@@ -1,0 +1,16 @@
+description = "Header Navbar"
+
+[viewBag]
+
+[staticMenu mainMenu]
+code = "main-menu"
+==
+<div class="header-navbar navbar navbar-expand-md bg-white border-top border-bottom p-0">
+	<div class="container px-md-4">
+		<div class="collapse navbar-collapse position-relative" id="headerMenu">
+			<div class="hover-dropdown mr-auto">
+			{% partial 'mainMenu/default' staticMenu=mainMenu %}
+			</div>
+		</div>
+	</div>
+</div>

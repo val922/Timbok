@@ -1,0 +1,17 @@
+1599340749a:1:{s:24:"wishlistbutton/popup.htm";a:6:{s:8:"fileName";s:24:"wishlistbutton/popup.htm";s:7:"content";s:485:"[viewBag]
+==
+<div class="mall-wishlist-button__popup position-relative pointer-events-none opacity-0 transition-20">
+    <div class="mall-wishlist-button__popup-inner shadow position-absolute left-0 bottom-0 w-100 overflow-hidden bg-white">
+        <div class="mall-wishlists mall-wishlists--height-limited w-100 overflow-auto max-h-sm">
+            {% partial __SELF__ ~ '::list' items=__SELF__.items %}
+        </div>
+        {% partial __SELF__ ~ '::add' %}
+    </div>
+</div>";s:5:"mtime";i:1592589916;s:6:"markup";s:472:"<div class="mall-wishlist-button__popup position-relative pointer-events-none opacity-0 transition-20">
+    <div class="mall-wishlist-button__popup-inner shadow position-absolute left-0 bottom-0 w-100 overflow-hidden bg-white">
+        <div class="mall-wishlists mall-wishlists--height-limited w-100 overflow-auto max-h-sm">
+            {% partial __SELF__ ~ '::list' items=__SELF__.items %}
+        </div>
+        {% partial __SELF__ ~ '::add' %}
+    </div>
+</div>";s:4:"code";N;s:7:"viewBag";a:0:{}}}

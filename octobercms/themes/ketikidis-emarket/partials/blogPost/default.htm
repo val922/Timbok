@@ -1,0 +1,79 @@
+[viewBag]
+==
+<?php
+function onStart()
+{
+    $this->addCss('assets/vendor/swipebox/css/swipebox.min.css');
+    $this->addJs('assets/vendor/swipebox/js/jquery.swipebox.min.js');
+}
+?>
+==
+<!-- Post Info-->
+<div class="font-5 text-muted d-flex flex-wrap justify-content-between align-items-center pb-4">
+    <div class="mr-2">
+        {% if post.user.avatar %}
+        <img class="rounded-circle border p-1 mr-2" src="{{ post.user.avatar.getThumb(40, 40, 'crop') }}" width="40" height="40" loading="lazy" alt="{{ post.user.avatar.file_name }}">
+        {% endif %}
+        by&nbsp;
+        <span class="text-muted">{{ post.user.first_name}}</span>
+        <i class="w-4 h-4" data-feather="more-vertical"></i>
+        {% if post.categories.count %}
+        in&nbsp;
+            {% for category in post.categories %}
+                <a href="{{ category.url }}" class="text-muted hover:text-primary">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
+            {% endfor %}
+        {% endif %}
+        <i class="w-4 h-4" data-feather="more-vertical"></i>
+        <span class="text-muted">{{ post.published_at|date('M d, Y') }}</span>
+    </div>
+    {% if this.theme.blog_comments %}
+    <div>
+        <i class="w-4 h-4 mr-1" data-feather="message-circle"></i>
+        <a class="text-muted hover:text-primary" href="{{ ''| page }}#disqus_thread"></a>
+    </div>
+    {% endif %}
+</div>
+<!-- Post Images-->
+{% if post.featured_images.count %}
+<div class="d-flex flex-row">
+    <a href="{{ post.featured_images[0].path }}" caption="{{ image.title }}" class="d-block position-relative pb-4 pr-4 overflow-hidden swipebox">
+        <img src="{{ post.featured_images[0].getThumb(650, 450, 'crop') }}" width="650" height="450" loading="lazy" alt="{{ image.title }}" class="d-block img-fluid w-100 h-100">
+    </a>
+    <div class="d-flex flex-column">
+        <a href="{{ post.featured_images[1].path }}" caption="{{ image.title }}" class="d-block position-relative overflow-hidden pb-4 swipebox">
+            <img src="{{ post.featured_images[1].getThumb(400, 275, 'crop') }}" width="315" height="275" loading="lazy" alt="{{ image.title }}" class="d-block img-fluid">
+        </a>
+        <a href="{{ post.featured_images[2].path }}" caption="{{ image.title }}" class="d-block position-relative overflow-hidden pb-4 swipebox">
+            <img src="{{ post.featured_images[2].getThumb(400, 275, 'crop') }}" width="315" height="275" loading="lazy" alt="{{ image.title }}" class="d-block img-fluid">
+        </a>
+    </div>
+</div>
+<div class="d-flex flex-row">
+    <a href="{{ post.featured_images[3].path }}" caption="{{ image.title }}" class="d-block position-relative overflow-hidden pb-4 pr-4 swipebox">
+        <img src="{{ post.featured_images[3].getThumb(400, 270, 'crop') }}" width="305" height="275" loading="lazy" alt="{{ image.title }}" class="d-block img-fluid">
+    </a>
+    <a href="{{ post.featured_images[4].path }}" caption="{{ image.title }}" class="d-block position-relative overflow-hidden pb-4 swipebox">
+        <img src="{{ post.featured_images[4].getThumb(650, 205, 'crop') }}" width="650" height="205" loading="lazy" alt="{{ image.title }}" class="d-block img-fluid">
+    </a>
+</div>
+{% endif %}
+<!-- Post Content-->
+{{ post.content_html|raw }}
+<!-- Post Info & Social-->
+<div class="d-flex flex-wrap justify-content-between flex-align-center pt-2 pb-6 mb-1">
+    {% partial 'blogPostTagList/default' tagList=postTagList%}
+    {% component 'ShareButtons' %}
+</div>
+
+{% put scripts %}
+<script>
+;( function( $ ) {
+    $( '.swipebox' ).swipebox( {
+		hideCloseButtonOnMobile : true, // true will hide the close button on mobile devices
+		removeBarsOnMobile : true, // false will show top bar on mobile devices
+		hideBarsDelay : 5000, // delay before hiding bars on desktop
+		videoMaxWidth : 1600 // videos max width
+    } );
+} )( jQuery );
+</script>
+{% endput %}

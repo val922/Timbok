@@ -1,0 +1,129 @@
+1599340788a:1:{s:28:"homepage/category-banner.htm";a:7:{s:8:"fileName";s:28:"homepage/category-banner.htm";s:7:"content";s:3388:"description = "Category Banner Section"
+
+[viewBag]
+==
+<?php
+function onStart()
+{
+    // Category Banner Parallax
+    $indexCategoryBanner = $this->theme->index_category_banner;
+    
+    $this['indexCategoryBanner'] = \OFFLINE\Mall\Models\Category::find($indexCategoryBanner);
+    
+    // Product Countdown
+    $this->addJs('assets/vendor/countdown/jquery.countdown.min.js');
+}
+?>
+==
+{% set category = indexCategoryBanner %}
+<section class="container-fluid px-0 mb-12 mt-6 position-relative">
+    <div class="bg-size-cover bg-position-center py-12" style="background:url('{{ category.image.thumb(1000, 750, 'crop') }}');">
+        <div class="position-absolute inset-0 w-100 h-100" style="background: linear-gradient(to right, rgba(247, 247, 247) 0, rgba(247, 247, 247) 40%, rgba(247, 247, 247, 0) 100%);"></div>
+        <div class="row no-gutters py-lg-6">
+            <div class="col-lg-5 col-md-8 offset-xl-2 offset-lg-1">
+                <div class="px-4 px-lg-0" data-sal="slide-right" data-sal-duration="1200">
+                    <div class="d-flex align-items-center flex-wrap">
+                        <h3 class="font-weight-light max-w-md">{{ 'Countdown Sales'|_ }}</h3>
+                        <span class="d-flex justify-content-center align-items-center rounded-circle w-20 h-20 bg-danger text-white font-11 font-weight-semibold ml-4">{{ '10%'|_ }}</span>
+                    </div>
+                    <h2 class="h1 mb-4">{{ category.name }}</h2>
+                    <div class="h4 mb-4 font-weight-light">{{ category.description|raw }}</div>
+                    <div class="max-w-sm bg-white pt-6 p-4 mb-6">
+                        <div id="count" class="d-flex h3 mb-0">
+                            <div class="d-flex m-3">
+                                <div class="font-weight-semibold days"></div>
+                                <div class="text-muted font-3 ml-1">d</div>
+                            </div>
+                            <div class="d-flex m-3">
+                                <div class="font-weight-semibold hours"></div>
+                                <div class="text-muted font-3 ml-1">h</div>
+                            </div>
+                            <div class="d-flex m-3">
+                                <div class="font-weight-semibold minutes"></div>
+                                <div class="text-muted font-3 ml-1">m</div>
+                            </div>
+                            <div class="d-flex m-3">
+                                <div class="font-weight-semibold seconds"></div>
+                                <div class="text-muted font-3 ml-1">s</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="btn btn-primary px-6" href="/category/{{ category.nested_slug }}">
+                        Shop now<i class="ml-2" data-feather="shopping-cart"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% put scripts %}
+<script>
+$("#count").countdown("{{ this.theme.index_category_banner_countdown }}", function(event) {
+    $('.days').html(event.strftime('%-D'));
+    $('.hours').html(event.strftime('%H'));
+    $('.minutes').html(event.strftime('%M'));
+    $('.seconds').html(event.strftime('%S'));
+});
+</script>
+{% endput %}";s:5:"mtime";i:1598459272;s:6:"markup";s:2996:"{% set category = indexCategoryBanner %}
+<section class="container-fluid px-0 mb-12 mt-6 position-relative">
+    <div class="bg-size-cover bg-position-center py-12" style="background:url('{{ category.image.thumb(1000, 750, 'crop') }}');">
+        <div class="position-absolute inset-0 w-100 h-100" style="background: linear-gradient(to right, rgba(247, 247, 247) 0, rgba(247, 247, 247) 40%, rgba(247, 247, 247, 0) 100%);"></div>
+        <div class="row no-gutters py-lg-6">
+            <div class="col-lg-5 col-md-8 offset-xl-2 offset-lg-1">
+                <div class="px-4 px-lg-0" data-sal="slide-right" data-sal-duration="1200">
+                    <div class="d-flex align-items-center flex-wrap">
+                        <h3 class="font-weight-light max-w-md">{{ 'Countdown Sales'|_ }}</h3>
+                        <span class="d-flex justify-content-center align-items-center rounded-circle w-20 h-20 bg-danger text-white font-11 font-weight-semibold ml-4">{{ '10%'|_ }}</span>
+                    </div>
+                    <h2 class="h1 mb-4">{{ category.name }}</h2>
+                    <div class="h4 mb-4 font-weight-light">{{ category.description|raw }}</div>
+                    <div class="max-w-sm bg-white pt-6 p-4 mb-6">
+                        <div id="count" class="d-flex h3 mb-0">
+                            <div class="d-flex m-3">
+                                <div class="font-weight-semibold days"></div>
+                                <div class="text-muted font-3 ml-1">d</div>
+                            </div>
+                            <div class="d-flex m-3">
+                                <div class="font-weight-semibold hours"></div>
+                                <div class="text-muted font-3 ml-1">h</div>
+                            </div>
+                            <div class="d-flex m-3">
+                                <div class="font-weight-semibold minutes"></div>
+                                <div class="text-muted font-3 ml-1">m</div>
+                            </div>
+                            <div class="d-flex m-3">
+                                <div class="font-weight-semibold seconds"></div>
+                                <div class="text-muted font-3 ml-1">s</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="btn btn-primary px-6" href="/category/{{ category.nested_slug }}">
+                        Shop now<i class="ml-2" data-feather="shopping-cart"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% put scripts %}
+<script>
+$("#count").countdown("{{ this.theme.index_category_banner_countdown }}", function(event) {
+    $('.days').html(event.strftime('%-D'));
+    $('.hours').html(event.strftime('%H'));
+    $('.minutes').html(event.strftime('%M'));
+    $('.seconds').html(event.strftime('%S'));
+});
+</script>
+{% endput %}";s:4:"code";s:325:"function onStart()
+{
+    // Category Banner Parallax
+    $indexCategoryBanner = $this->theme->index_category_banner;
+    
+    $this['indexCategoryBanner'] = \OFFLINE\Mall\Models\Category::find($indexCategoryBanner);
+    
+    // Product Countdown
+    $this->addJs('assets/vendor/countdown/jquery.countdown.min.js');
+}";s:11:"description";s:23:"Category Banner Section";s:7:"viewBag";a:0:{}}}

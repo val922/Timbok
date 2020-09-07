@@ -1,0 +1,111 @@
+1599460975a:1:{s:16:"site/scripts.htm";a:7:{s:8:"fileName";s:16:"site/scripts.htm";s:7:"content";s:1245:"description = "Scripts"
+
+[viewBag]
+==
+<!-- Vendor JS -->
+<script src="{{ [
+    'assets/vendor/popper/popper.min.js',
+    'assets/vendor/bootstrap/js/bootstrap.min.js',
+    'assets/vendor/slick/js/slick.min.js',
+    'assets/vendor/sal/js/sal.js',
+    'assets/vendor/feather/feather.min.js'
+    ]|theme }}"></script>
+
+<!-- Addons -->
+<script>
+// Sal
+sal({
+    once: true,
+});
+
+// Feather Icons
+feather.replace()
+
+// Tooltip
+$('[data-toggle="tooltip"]').tooltip();
+
+// Popover
+$('[data-toggle="popover"]').each(function() {
+    var popoverClass = '';
+    if($(this).data('color')) {
+        popoverClass = 'popover-'+$(this).data('color');
+    }
+    $(this).popover({
+        trigger: 'focus',
+        template: '<div class="popover '+ popoverClass +'" role="tooltip"><div class="arrow"></div><h3 class="popover-header"></h3><div class="popover-body"></div></div>'
+    })
+});
+</script>
+
+<!-- Flash -->
+{% flash %}
+<script>
+$(function() {
+    $.oc.flashMsg({type: '{{ type }}', text: '{{ message }}'})
+})
+</script>
+{% endflash %}
+
+<!-- Core JS -->
+{% framework extras %}
+{% scripts %}
+
+<!-- Custom JS -->
+{% if this.theme.custom_js %}
+<script>
+{{ this.theme.custom_js|raw }}
+</script>
+{% endif %}";s:5:"mtime";i:1592589916;s:6:"markup";s:1207:"<!-- Vendor JS -->
+<script src="{{ [
+    'assets/vendor/popper/popper.min.js',
+    'assets/vendor/bootstrap/js/bootstrap.min.js',
+    'assets/vendor/slick/js/slick.min.js',
+    'assets/vendor/sal/js/sal.js',
+    'assets/vendor/feather/feather.min.js'
+    ]|theme }}"></script>
+
+<!-- Addons -->
+<script>
+// Sal
+sal({
+    once: true,
+});
+
+// Feather Icons
+feather.replace()
+
+// Tooltip
+$('[data-toggle="tooltip"]').tooltip();
+
+// Popover
+$('[data-toggle="popover"]').each(function() {
+    var popoverClass = '';
+    if($(this).data('color')) {
+        popoverClass = 'popover-'+$(this).data('color');
+    }
+    $(this).popover({
+        trigger: 'focus',
+        template: '<div class="popover '+ popoverClass +'" role="tooltip"><div class="arrow"></div><h3 class="popover-header"></h3><div class="popover-body"></div></div>'
+    })
+});
+</script>
+
+<!-- Flash -->
+{% flash %}
+<script>
+$(function() {
+    $.oc.flashMsg({type: '{{ type }}', text: '{{ message }}'})
+})
+</script>
+{% endflash %}
+
+<!-- Core JS -->
+{% framework extras %}
+{% scripts %}
+
+<!-- Custom JS -->
+{% if this.theme.custom_js %}
+<script>
+{{ this.theme.custom_js|raw }}
+</script>
+{% endif %}";s:4:"code";N;s:11:"description";s:7:"Scripts";s:7:"viewBag";a:0:{}}}

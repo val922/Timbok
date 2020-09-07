@@ -1,0 +1,12 @@
+[viewBag]
+==
+<div class="mall-cart__wrapper">
+    <div class="">
+        {% partial __SELF__ ~ '::table-header' %}
+    </div>
+    <div>
+        {% for product in cart.products %}
+            {% partial __SELF__ ~ '::table-entry' product=product %}
+        {% endfor %}
+    </div>
+</div>

@@ -1,0 +1,10 @@
+[viewBag]
+==
+<div class="mall-wishlist-button__popup position-relative pointer-events-none opacity-0 transition-20">
+    <div class="mall-wishlist-button__popup-inner shadow position-absolute left-0 bottom-0 w-100 overflow-hidden bg-white">
+        <div class="mall-wishlists mall-wishlists--height-limited w-100 overflow-auto max-h-sm">
+            {% partial __SELF__ ~ '::list' items=__SELF__.items %}
+        </div>
+        {% partial __SELF__ ~ '::add' %}
+    </div>
+</div>

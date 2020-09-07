@@ -1,0 +1,14 @@
+[viewBag]
+==
+<div id="{{ mailSignup.id}}" class="{{ id == 'Footer' ? 'bg-black-25 text-white' : 'border border-primary text-dark' }} p-6 mb-6">
+    <i class="w-22 h-22 opacity-50" data-feather="mail" stroke-width="1"></i>
+    <p class="opacity-70">{{ 'Subscribe'|_ }}</p>
+    <form
+        data-request="{{ mailSignup }}::onSignup"
+        data-request-update="'{{ mailSignup }}::result': '#{{ mailSignup.id ~ value }}'">
+        <div class="mb-5">
+            <input name="email" type="text" class="bg-transparent rounded-0 border-top-0 border-left-0 border-right-0 border-bottom {{ id == 'Footer' ? 'border-white-25 hover:border-white' : 'border-primary' }} form-control transition-20 p-0" placeholder="thabo.semithe@email.com"/>
+        </div>
+        <button class="btn btn-danger btn-rounded" type="submit">Subscribe</button>
+    </form>
+</div>

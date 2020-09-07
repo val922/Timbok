@@ -1,0 +1,27 @@
+1599460968a:1:{s:28:"mainMenu/mega-childitems.htm";a:6:{s:8:"fileName";s:28:"mainMenu/mega-childitems.htm";s:7:"content";s:767:"[viewBag]
+==
+{% for item in items if not item.viewBag.isHidden %}
+<li class="{{ item.items ? 'py-1' : 'pb-1' }}">
+	{% if item.url %}<a href="{{ item.url }}" class="d-block text-muted hover:text-primary {{ item.isActive or item.isChildActive ? 'active' }}">{% endif %}
+		<i class="w-4 h-4 text-muted" data-feather="chevron-right"></i>
+		<span class="{{ muted==true ? 'text-muted' : 'text-dark' }} {{ item.items ? '' : '' }} {{ item.url ? 'hover:text-primary' }}">{{ item.title }}<span>
+	{% if item.url %}</a>{% endif %}
+	{% if item.items %}
+	<ul class="list-unstyled {{ item.items.items ? 'font-5' : 'pl-2 ml-2 border-left font-3 text-muted' }}">
+		{% partial 'mainMenu/mega-childitems' items=item.items muted=true %}
+	</ul>
+	{% endif %}
+</li>
+{% endfor %}";s:5:"mtime";i:1592589912;s:6:"markup";s:754:"{% for item in items if not item.viewBag.isHidden %}
+<li class="{{ item.items ? 'py-1' : 'pb-1' }}">
+	{% if item.url %}<a href="{{ item.url }}" class="d-block text-muted hover:text-primary {{ item.isActive or item.isChildActive ? 'active' }}">{% endif %}
+		<i class="w-4 h-4 text-muted" data-feather="chevron-right"></i>
+		<span class="{{ muted==true ? 'text-muted' : 'text-dark' }} {{ item.items ? '' : '' }} {{ item.url ? 'hover:text-primary' }}">{{ item.title }}<span>
+	{% if item.url %}</a>{% endif %}
+	{% if item.items %}
+	<ul class="list-unstyled {{ item.items.items ? 'font-5' : 'pl-2 ml-2 border-left font-3 text-muted' }}">
+		{% partial 'mainMenu/mega-childitems' items=item.items muted=true %}
+	</ul>
+	{% endif %}
+</li>
+{% endfor %}";s:4:"code";N;s:7:"viewBag";a:0:{}}}

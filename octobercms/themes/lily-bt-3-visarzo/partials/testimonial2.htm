@@ -1,0 +1,215 @@
+[viewBag]
+snippetCode = "testimonial2"
+snippetName = "testimonial2"
+==
+
+{% if testimonialEnable %}
+
+<section class="testimonial-style-two bg-color-3">
+    <div class="pattern-layer" style="background-image: url({{'assets/images/shape/pattern-6.png'|theme}});"></div>
+    <div class="auto-container">
+        {% if testimonialTitle %}
+        <div class="sec-title centred">
+            {% if testimonialTop %}<p>{{testimonialTop}}</p>{% endif %}
+            <h2>{{testimonialTitle}}</h2>
+            <div class="dotted-box">
+                <span class="dotted"></span>
+                <span class="dotted"></span>
+                <span class="dotted"></span>
+            </div>
+        </div>
+        {% endif %}
+        <div class="two-column-carousel owl-carousel owl-theme owl-nav-none">
+            {% for item in testimonials %}
+            <div class="testimonial-block-one">
+                <div class="inner-box">
+                    <div class="author-inner">
+                        <figure class="image-box"><img src="{{itme.image|media }}" alt=""></figure>
+                        <h5>{{item.name}}</h5>
+                        <span class="designation">{{item.introduction}}</span>
+                    </div>
+                    <div class="content-inner">
+                        <div class="rating-box">
+                            <ul class="rating">
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                            </ul>
+                        </div>
+                        <div class="text">
+                            <p>{{item.comment}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor%}
+        </div>
+    </div>
+</section>
+
+{% else %}
+
+<section class="testimonial-style-two bg-color-3">
+    <div class="pattern-layer" style="background-image: url({{'assets/images/shape/pattern-6.png'|theme}});"></div>
+    <div class="auto-container">
+        <div class="sec-title centred">
+            <p>clients testimonials</p>
+            <h2>What Customers <br>Saying About Visarzo</h2>
+            <div class="dotted-box">
+                <span class="dotted"></span>
+                <span class="dotted"></span>
+                <span class="dotted"></span>
+            </div>
+        </div>
+        <div class="two-column-carousel owl-carousel owl-theme owl-nav-none">
+            <div class="testimonial-block-one">
+                <div class="inner-box">
+                    <div class="author-inner">
+                        <figure class="image-box"><img src="{{'assets/images/resource/testimonial-1.png'|theme}}" alt=""></figure>
+                        <h5>James Thomas</h5>
+                        <span class="designation">California, USA</span>
+                    </div>
+                    <div class="content-inner">
+                        <div class="rating-box">
+                            <h6>Green Card Approved</h6>
+                            <ul class="rating">
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                            </ul>
+                        </div>
+                        <div class="text">
+                            <p>Dolor sitam consectetur sed adipisicing eiusmod tempor cididunt laboret dolors magn aliquat enim sed minim veniam eu nostrud lorem ipsum dolor.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-block-one">
+                <div class="inner-box">
+                    <div class="author-inner">
+                        <figure class="image-box"><img src="{{'assets/images/resource/testimonial-2.png'|theme}}" alt=""></figure>
+                        <h5>Tanya Benson</h5>
+                        <span class="designation">California, USA</span>
+                    </div>
+                    <div class="content-inner">
+                        <div class="rating-box">
+                            <h6>Canada Immigration</h6>
+                            <ul class="rating">
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                            </ul>
+                        </div>
+                        <div class="text">
+                            <p>Dolor sitam consectetur sed adipisicing eiusmod tempor cididunt laboret dolors magn aliquat enim sed minim veniam eu nostrud lorem ipsum dolor.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-block-one">
+                <div class="inner-box">
+                    <div class="author-inner">
+                        <figure class="image-box"><img src="{{'assets/images/resource/testimonial-1.png'|theme}}" alt=""></figure>
+                        <h5>James Thomas</h5>
+                        <span class="designation">California, USA</span>
+                    </div>
+                    <div class="content-inner">
+                        <div class="rating-box">
+                            <h6>Green Card Approved</h6>
+                            <ul class="rating">
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                            </ul>
+                        </div>
+                        <div class="text">
+                            <p>Dolor sitam consectetur sed adipisicing eiusmod tempor cididunt laboret dolors magn aliquat enim sed minim veniam eu nostrud lorem ipsum dolor.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-block-one">
+                <div class="inner-box">
+                    <div class="author-inner">
+                        <figure class="image-box"><img src="{{'assets/images/resource/testimonial-2.png'|theme}}" alt=""></figure>
+                        <h5>Tanya Benson</h5>
+                        <span class="designation">California, USA</span>
+                    </div>
+                    <div class="content-inner">
+                        <div class="rating-box">
+                            <h6>Canada Immigration</h6>
+                            <ul class="rating">
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                            </ul>
+                        </div>
+                        <div class="text">
+                            <p>Dolor sitam consectetur sed adipisicing eiusmod tempor cididunt laboret dolors magn aliquat enim sed minim veniam eu nostrud lorem ipsum dolor.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-block-one">
+                <div class="inner-box">
+                    <div class="author-inner">
+                        <figure class="image-box"><img src="{{'assets/images/resource/testimonial-1.png'|theme}}" alt=""></figure>
+                        <h5>James Thomas</h5>
+                        <span class="designation">California, USA</span>
+                    </div>
+                    <div class="content-inner">
+                        <div class="rating-box">
+                            <h6>Green Card Approved</h6>
+                            <ul class="rating">
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                            </ul>
+                        </div>
+                        <div class="text">
+                            <p>Dolor sitam consectetur sed adipisicing eiusmod tempor cididunt laboret dolors magn aliquat enim sed minim veniam eu nostrud lorem ipsum dolor.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-block-one">
+                <div class="inner-box">
+                    <div class="author-inner">
+                        <figure class="image-box"><img src="{{'assets/images/resource/testimonial-2.png'|theme}}" alt=""></figure>
+                        <h5>Tanya Benson</h5>
+                        <span class="designation">California, USA</span>
+                    </div>
+                    <div class="content-inner">
+                        <div class="rating-box">
+                            <h6>Canada Immigration</h6>
+                            <ul class="rating">
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                                <li><i class="fas fa-star"></i></li>
+                            </ul>
+                        </div>
+                        <div class="text">
+                            <p>Dolor sitam consectetur sed adipisicing eiusmod tempor cididunt laboret dolors magn aliquat enim sed minim veniam eu nostrud lorem ipsum dolor.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endif %}

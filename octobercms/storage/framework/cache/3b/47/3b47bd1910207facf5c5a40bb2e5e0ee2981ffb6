@@ -1,0 +1,25 @@
+1599304295a:1:{s:22:"cookiebanner/optin.htm";a:6:{s:8:"fileName";s:22:"cookiebanner/optin.htm";s:7:"content";s:544:"[viewBag]
+==
+<div class="gdpr-banner__opt-in">
+    <button role="button" 
+            tabindex="0" 
+            aria-pressed="false"
+            class="btn btn-sm btn-primary font-2 font-sm-5 ml-3 gdpr-banner__button gdpr-banner__button--opt-in"
+            data-request="onAccept"
+            data-request-success="$('.gdpr-banner').remove()"
+            data-request-update="'{{ __SELF__.updatePartial }}' : '{{ __SELF__.updateSelector }}'"
+    >
+        {{ 'offline.gdpr::lang.cookie_banner.accept' | trans }}
+    </button>
+</div>";s:5:"mtime";i:1592589910;s:6:"markup";s:531:"<div class="gdpr-banner__opt-in">
+    <button role="button" 
+            tabindex="0" 
+            aria-pressed="false"
+            class="btn btn-sm btn-primary font-2 font-sm-5 ml-3 gdpr-banner__button gdpr-banner__button--opt-in"
+            data-request="onAccept"
+            data-request-success="$('.gdpr-banner').remove()"
+            data-request-update="'{{ __SELF__.updatePartial }}' : '{{ __SELF__.updateSelector }}'"
+    >
+        {{ 'offline.gdpr::lang.cookie_banner.accept' | trans }}
+    </button>
+</div>";s:4:"code";N;s:7:"viewBag";a:0:{}}}

@@ -1,0 +1,13 @@
+description = "Meta Data"
+
+[viewBag]
+==
+{% if this.page.id == 'product' %}
+    {% partial 'metaData/product' %}
+{% elseif this.page.id == 'category' %}
+    {% partial 'metaData/products' %}
+{% elseif this.page.id == 'brand' %}
+    {% partial 'metaData/brand' %}
+{% else %}
+    {% partial 'metaData/page' %}
+{% endif %}

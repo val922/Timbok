@@ -1,0 +1,17 @@
+1599460954a:1:{s:30:"productsfilter/clearfilter.htm";a:6:{s:8:"fileName";s:30:"productsfilter/clearfilter.htm";s:7:"content";s:391:"[viewBag]
+==
+<div class="mall-property__clear-filter font-3 position-absolute top-0 bg-white right-0 pl-5">
+    <a class="js-mall-clear-filter text-muted hover:text-primary transition-20"
+       href="javascript:;"
+       data-filter="{{ id }}"
+       style="{% if not filter[id] %}display: none{% endif %}">
+        {{ 'offline.mall::frontend.reset.filter' | trans }}
+    </a>
+</div>";s:5:"mtime";i:1592589912;s:6:"markup";s:378:"<div class="mall-property__clear-filter font-3 position-absolute top-0 bg-white right-0 pl-5">
+    <a class="js-mall-clear-filter text-muted hover:text-primary transition-20"
+       href="javascript:;"
+       data-filter="{{ id }}"
+       style="{% if not filter[id] %}display: none{% endif %}">
+        {{ 'offline.mall::frontend.reset.filter' | trans }}
+    </a>
+</div>";s:4:"code";N;s:7:"viewBag";a:0:{}}}

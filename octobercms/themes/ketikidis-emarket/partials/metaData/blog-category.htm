@@ -1,0 +1,22 @@
+description = "Blog Category Meta Data"
+
+[viewBag]
+==
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" >
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="{{ html_strip(html_limit(category.description, 140))|raw }}">
+<meta name="keywords" content="{{ this.theme.site_keywords }}">
+<meta name="title" content="{{ category.name }} - {{ this.theme.site_name }}">
+<meta name="author" content="{{ this.theme.site_author }}">
+<meta name="robots" content="index, follow">
+<meta name="generator" content="{{ this.theme.site_name }}" />
+<title>{{ category.name }} - {{ this.theme.site_name }}</title>
+<link rel="canonical" href="{{ ''| page }}"/>
+<link rel="icon" type="image/png" href="{{ this.theme.site_favicon.getThumb(32, 32, 'auto') }}" />
+<meta property="og:title" content="{{ category.name }} - {{ this.theme.site_name }}" />
+<meta property="og:url" content="{{ ''| page }}" />
+<meta property="og:image" content="{{ this.theme.settings_brand_logo.getThumb(false, 60, 'auto') }}" />
+<meta property="og:site_name" content="{{ this.theme.site_name }}" />
+<meta property="og:description" content="{{ html_strip(html_limit(category.description, 140))|raw }}" />
+<meta property="fb:app_id" content="" />

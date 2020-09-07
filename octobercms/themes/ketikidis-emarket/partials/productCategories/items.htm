@@ -1,0 +1,22 @@
+[viewBag]
+==
+{% for item in items if not item.viewBag.isHidden %}
+    <div class="d-flex align-items-center">
+        <a href="{{ item.items ? '#' ~ item.title|slug : item.url }}" class="{{ item.isActive or item.isChildActive ? 'active' : '' }} {{ item.items ? 'collapsed' : '' }}" {% if item.items %}data-toggle="collapse" aria-expanded="false"{% endif %}>
+            <i class="w-4 mr-2 {{ item.items ? 'text-danger' : 'text-primary' }}" data-feather="{{ item.items ? 'plus' : 'arrow-right' }}"></i>
+        </a>
+        <a href="{{ item.url }}" class="list-group-item d-flex flex-grow-1 align-items-center font-5 border-0 rounded-0 text-link py-2 px-0 bg-transparent {{ item.isActive or item.isChildActive ? 'active' : '' }}">
+            <span>{{ item.title }}</span>
+            {% if postCount %}
+            <span class="ml-auto d-flex justify-content-center align-items-center font-1 font-weight-medium text-white bg-primary rounded-circle w-4 h-4">
+                {{ postCount }}
+            </span>
+            {% endif %}
+        </a>
+    </div>
+    {% if item.items %}
+    <div class="list-subgroup collapse pl-3 ml-2 border-left" id="{{ item.title|slug }}" data-parent="#{% if value %}{{ item.title|slug }}{% else %}category-nav{% endif %}">
+        {% partial 'productCategories/items' items=item.items value=true %}
+    </div>
+    {% endif %}
+{% endfor %}

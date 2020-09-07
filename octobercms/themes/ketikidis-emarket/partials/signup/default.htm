@@ -1,0 +1,20 @@
+[viewBag]
+==
+<div class="mall-signup row">
+    <div class="col-lg-6 pt-sm-3">
+        <div class="card mb-3">
+            <div class="card-body mall-signup__signin">
+                {% partial __SELF__ ~ '::signin' %}
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 pt-12 pt-sm-3">
+        <div class="card">
+            <div class="card-body mall-signup__signup mall-signup-form">
+                {% partial __SELF__ ~ '::signup' %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% partial __SELF__ ~ '::scripts' %}

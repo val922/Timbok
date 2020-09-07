@@ -1,0 +1,79 @@
+1599340747a:1:{s:27:"relatedProducts/default.htm";a:6:{s:8:"fileName";s:27:"relatedProducts/default.htm";s:7:"content";s:825:"[viewBag]
+==
+<div class="mall-products container pb-12">
+    <h2 class="h3 font-weight-semibold pb-6">Related Products</h2>
+    {% partial 'relatedProducts/entries' %}
+</div>
+
+{% put scripts %}
+<script>
+$('.related-slider').slick({
+    slidesToShow: 5,
+    slidesToScroll: 5,
+    autoplay: true,
+    autoplaySpeed: 6000,
+    dots: true,
+    arrows: false,
+    lazyLoad: 'ondemand',
+    accessibility: false,
+    responsive: [
+        {
+          breakpoint: 992,
+          settings: {
+            slidesToShow: 4
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 3
+          }
+        },
+        {
+          breakpoint: 576,
+          settings: {
+            slidesToShow: 1
+          }
+        }
+    ]
+});
+</script>
+{% endput %}";s:5:"mtime";i:1598459749;s:6:"markup";s:812:"<div class="mall-products container pb-12">
+    <h2 class="h3 font-weight-semibold pb-6">Related Products</h2>
+    {% partial 'relatedProducts/entries' %}
+</div>
+
+{% put scripts %}
+<script>
+$('.related-slider').slick({
+    slidesToShow: 5,
+    slidesToScroll: 5,
+    autoplay: true,
+    autoplaySpeed: 6000,
+    dots: true,
+    arrows: false,
+    lazyLoad: 'ondemand',
+    accessibility: false,
+    responsive: [
+        {
+          breakpoint: 992,
+          settings: {
+            slidesToShow: 4
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 3
+          }
+        },
+        {
+          breakpoint: 576,
+          settings: {
+            slidesToShow: 1
+          }
+        }
+    ]
+});
+</script>
+{% endput %}";s:4:"code";N;s:7:"viewBag";a:0:{}}}

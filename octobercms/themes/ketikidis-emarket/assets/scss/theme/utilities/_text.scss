@@ -1,0 +1,52 @@
+//
+// Text
+//
+
+// Weight and italics
+//
+
+.font-weight-hairline  { font-weight: $font-weight-hairline !important; }
+.font-weight-thin      { font-weight: $font-weight-thin !important; }
+.font-weight-medium    { font-weight: $font-weight-medium !important; }
+.font-weight-semibold  { font-weight: $font-weight-semibold !important; }
+.font-weight-extrabold { font-weight: $font-weight-extrabold !important; }
+.font-weight-black     { font-weight: $font-weight-black !important; }
+
+
+// Text gradients
+//
+
+//@each $color, $value in $theme-colors {
+//  @include text-gradient-variant(".text-gradient-#{$color}", $value, true);
+//}
+
+//@each $color, $value in $colors {
+//  @include text-gradient-variant(".text-gradient-#{$color}", $value, true);
+//}
+
+
+// Text Link
+//
+
+.text-link {
+  color: $gray-800 !important;
+  transition: $transition-base;
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    color: $primary !important;
+  }
+}
+
+
+// Text color hover
+//
+
+@each $color, $value in $theme-colors {
+  @include text-emphasis-variant(".hover\:text-#{$color}:hover", $value, true);
+}
+
+@each $color, $value in $theme-colors {
+  @include text-emphasis-variant(".group:hover .group-hover\:text-#{$color}", $value, true);
+}

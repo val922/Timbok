@@ -1,0 +1,187 @@
+title = "Bangoe"
+url = "/"
+layout = "default"
+meta_title = "Bangoe"
+is_hidden = 0
+
+[viewBag]
+localeUrl[en] = "/"
+
+[products featuredProducts]
+filterComponent = "productsFilter"
+filter = "on_sale=✓&sort=bestseller"
+setPageTitle = 0
+includeVariants = 1
+includeChildren = 0
+perPage = 8
+paginate = 0
+sort = "latest"
+
+[products sliderProducts]
+filterComponent = "productsFilter"
+setPageTitle = 0
+includeVariants = 1
+includeChildren = 0
+perPage = 3
+paginate = 0
+sort = "bestseller"
+
+[products widgetBestsellerProducts]
+filterComponent = "productsFilter"
+setPageTitle = 0
+includeVariants = 0
+includeChildren = 0
+perPage = 5
+paginate = 0
+sort = "bestseller"
+
+[products widgetLatestProducts]
+filterComponent = "productsFilter"
+setPageTitle = 0
+includeVariants = 0
+includeChildren = 0
+perPage = 5
+paginate = 0
+sort = "latest"
+
+[products widgeTopProducts]
+filterComponent = "productsFilter"
+setPageTitle = 0
+includeVariants = 0
+includeChildren = 0
+perPage = 5
+paginate = 0
+sort = "ratings"
+
+[products widgetFeaturedProducts]
+filterComponent = "productsFilter"
+filter = "on_sale=✓&sort=bestseller"
+setPageTitle = 0
+includeVariants = 1
+includeChildren = 0
+perPage = 5
+paginate = 0
+
+[products latestProducts]
+filterComponent = "productsFilter"
+setPageTitle = 0
+includeVariants = 0
+includeChildren = 0
+perPage = 8
+paginate = 0
+sort = "latest"
+==
+<?php
+function onInit()
+{
+    // Category Slider
+    $category = $this->theme->index_slider_category;
+    $this->page->components['sliderProducts']->setProperty('category', $category);
+    $includeVariants = $this->theme->index_slider_category_variants;
+    $this->page->components['sliderProducts']->setProperty('includeVariants', $includeVariants);
+    $includeChildren = $this->theme->index_slider_category_children;
+    $this->page->components['sliderProducts']->setProperty('includeChildren', $includeChildren);
+    $perPage = $this->theme->index_slider_category_count;
+    
+    if (empty($perPage)) {
+        $this->page->components['sliderProducts']->setProperty('perPage', 1);
+    } else {
+        $this->page->components['sliderProducts']->setProperty('perPage', $perPage);
+    }
+    
+    $sort = $this->theme->index_slider_category_sort;
+    $this->page->components['sliderProducts']->setProperty('sort', $sort);
+    
+    
+    // Featured Products
+    $perPageFeatured = $this->theme->index_featured_products;
+    
+    if (empty($perPageFeatured)) {
+        $this->page->components['featuredProducts']->setProperty('perPage', 1);
+    } else {
+        $this->page->components['featuredProducts']->setProperty('perPage', $perPageFeatured);
+    }
+    
+    
+    // Latest Products
+    $perPageLatest = $this->theme->index_latest_products;
+    
+    if (empty($perPageLatest)) {
+        $this->page->components['latestProducts']->setProperty('perPage', 1);
+    } else {
+        $this->page->components['latestProducts']->setProperty('perPage', $perPageLatest);
+    }
+}
+?>
+==
+{% if this.theme.index_slider_section %}
+<!-- Slider -->
+{% if this.theme.index_slider_type == 'products' %}
+{% partial 'homepage/product-slider' %}
+{% elseif this.theme.index_slider_type == 'variants' %}
+{% partial 'homepage/variant-slider' %}
+{% elseif this.theme.index_slider_type == 'category' %}
+{% partial 'productsSlider/default' products=sliderProducts %}
+{% elseif this.theme.index_slider_type == 'categories' %}
+{% partial 'homepage/categories-slider' %}
+{% endif %}
+{% endif %}
+
+{% if this.theme.index_category_banners_section %}
+<!-- Category Banners -->
+{% partial 'homepage/category-banners' %}
+{% endif %}
+
+{% if this.theme.index_categories_section %}
+<!-- Categories -->
+{% partial 'homepage/categories' %}
+{% endif %}
+
+{% if this.theme.index_category_banner_parallax_section %}
+<!-- Category Banner Parallax -->
+{% partial 'homepage/category-banner-parallax' %}
+{% endif %}
+
+{% if this.theme.index_latestbest_section %}
+<!-- Latest - Bestseller Products -->
+{% partial 'homepage/latest-bestseller-products' %}
+{% endif %}
+
+{% if this.theme.index_brands_section %}
+<!-- Brands -->
+{% partial 'homepage/brands' %}
+{% endif %}
+
+{% if this.theme.index_category_banner_section %}
+<!-- Category Banner -->
+{% partial 'homepage/category-banner' %}
+{% endif %}
+
+{% if this.theme.index_featured_section %}
+<!-- Featured Products -->
+{% partial 'featuredProducts/default' products=featuredProducts %}
+{% endif %}
+
+{% if this.theme.index_product_banner_section %}
+<!-- Product Banner -->
+{% if this.theme.index_product_banner_type == 'product' %}
+{% partial 'homepage/product-banner' %}
+{% elseif this.theme.index_product_banner_type == 'variant' %}
+{% partial 'homepage/variant-banner' %}
+{% endif %}
+{% endif %}
+
+{% if this.theme.index_latest_section %}
+<!-- Latest Products -->
+{% partial 'latestProducts/default' products=latestProducts %}
+{% endif %}
+
+{% if this.theme.index_topfeatured_section %}
+<!-- Top Rated - Featured Products -->
+{% partial 'homepage/toprated-featured-products' %}
+{% endif %}
+
+{%if this.theme.index_blog_section %}
+<!--  Blog -->
+{% partial 'homepage/blog-posts' %}
+{% endif %}

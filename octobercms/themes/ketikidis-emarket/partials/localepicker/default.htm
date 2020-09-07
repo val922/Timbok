@@ -1,0 +1,9 @@
+[viewBag]
+==
+<div class="d-flex flex-wrap">
+    {% for code, name in locales %}
+	<a class="{{ code == activeLocale ? 'active' }} {{ not loop.last ? 'mr-1' }}" href="#" data-request="onSwitchLocale" data-request-data="locale: '{{ code }}'">
+		<i class="flag-icon flag-icon-{{ code|lower }}"></i>
+	</a>
+    {% endfor %}
+</div>

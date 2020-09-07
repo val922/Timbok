@@ -1,0 +1,167 @@
+1599340787a:1:{s:23:"homepage/categories.htm";a:7:{s:8:"fileName";s:23:"homepage/categories.htm";s:7:"content";s:2957:"description = "Categories Section"
+
+[viewBag]
+==
+<?php
+function onStart()
+{
+    // Categories
+    $indexCategories = $this->theme->index_categories;
+    
+    if (empty($indexCategories) || !is_array($indexCategories)) {
+        $indexCategories = [];
+    } else {
+        $indexCategories = array_column($indexCategories, 'index_category');
+    }
+    
+    $this['indexCategories'] = $indexCategories;
+    
+    $categories = $indexCategories;
+    $categories = \OFFLINE\Mall\Models\Category::whereIn('id', $categories)->get();
+    $sortedCategories = $categories
+        ->sortBy(function ($item) use ($indexCategories) {
+            return array_search($item->id, $indexCategories);
+        });
+    
+    $this['sortedCategories'] = $sortedCategories;
+}
+?>
+==
+<section class="container pb-12 mt-4">
+    <h2 class="h3 pb-4 decorated max-w-md mx-auto"><span>{{ 'Our Stock'|_ }}</span></h2>
+    <div class="categories-slider">
+        {% for category in sortedCategories %}
+        <div class="card border-0 mx-4">
+            <a class="d-flex" href="/category/{{ category.nested_slug }}">
+                <div class="mr-3">
+                    <img src="{{ category.products[0].image.thumb(350, 345, 'crop') }}" width="350" height="345" alt="{{ product.name }}" loading="lazy" class="d-block img-fluid"/>
+                </div>
+                <div class="">
+                    <img src="{{ category.products[1].image.thumb(175, 162, 'crop') }}" width="175" height="162" alt="{{ product.name }}" loading="lazy" class="d-block img-fluid mb-3"/>
+                    <img src="{{ category.products[2].image.thumb(175, 162, 'crop') }}" width="175" height="162" alt="{{ product.name }}" loading="lazy" class="d-block img-fluid"/>
+                </div>
+            </a>
+            <div class="card-body border border-top-0 mt-n1 py-6 text-center">
+                <h2 class="h5 mb-1">{{ category.name }}</h2>
+                <div class="font-size-xs font-4 text-muted font-weight-light mb-4">{{ category.description|raw }}</div>
+                <a class="btn btn-sm btn-outline-primary px-3" href="/category/{{ category.nested_slug }}">Shop&nbsp;{{ category.name }}</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+{% put scripts %}
+<script>
+$('.categories-slider').slick({
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: false,
+    autoplaySpeed: 6000,
+    dots: false,
+    arrows: false,
+    lazyLoad: 'ondemand',
+    accessibility: false,
+    responsive: [
+        {
+          breakpoint: 992,
+          settings: {
+            slidesToShow: 3
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 2
+          }
+        },
+        {
+          breakpoint: 576,
+          settings: {
+            slidesToShow: 1
+          }
+        }
+    ]
+});
+</script>
+{% endput %}";s:5:"mtime";i:1598464739;s:6:"markup";s:2177:"<section class="container pb-12 mt-4">
+    <h2 class="h3 pb-4 decorated max-w-md mx-auto"><span>{{ 'Our Stock'|_ }}</span></h2>
+    <div class="categories-slider">
+        {% for category in sortedCategories %}
+        <div class="card border-0 mx-4">
+            <a class="d-flex" href="/category/{{ category.nested_slug }}">
+                <div class="mr-3">
+                    <img src="{{ category.products[0].image.thumb(350, 345, 'crop') }}" width="350" height="345" alt="{{ product.name }}" loading="lazy" class="d-block img-fluid"/>
+                </div>
+                <div class="">
+                    <img src="{{ category.products[1].image.thumb(175, 162, 'crop') }}" width="175" height="162" alt="{{ product.name }}" loading="lazy" class="d-block img-fluid mb-3"/>
+                    <img src="{{ category.products[2].image.thumb(175, 162, 'crop') }}" width="175" height="162" alt="{{ product.name }}" loading="lazy" class="d-block img-fluid"/>
+                </div>
+            </a>
+            <div class="card-body border border-top-0 mt-n1 py-6 text-center">
+                <h2 class="h5 mb-1">{{ category.name }}</h2>
+                <div class="font-size-xs font-4 text-muted font-weight-light mb-4">{{ category.description|raw }}</div>
+                <a class="btn btn-sm btn-outline-primary px-3" href="/category/{{ category.nested_slug }}">Shop&nbsp;{{ category.name }}</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+{% put scripts %}
+<script>
+$('.categories-slider').slick({
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: false,
+    autoplaySpeed: 6000,
+    dots: false,
+    arrows: false,
+    lazyLoad: 'ondemand',
+    accessibility: false,
+    responsive: [
+        {
+          breakpoint: 992,
+          settings: {
+            slidesToShow: 3
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 2
+          }
+        },
+        {
+          breakpoint: 576,
+          settings: {
+            slidesToShow: 1
+          }
+        }
+    ]
+});
+</script>
+{% endput %}";s:4:"code";s:718:"function onStart()
+{
+    // Categories
+    $indexCategories = $this->theme->index_categories;
+    
+    if (empty($indexCategories) || !is_array($indexCategories)) {
+        $indexCategories = [];
+    } else {
+        $indexCategories = array_column($indexCategories, 'index_category');
+    }
+    
+    $this['indexCategories'] = $indexCategories;
+    
+    $categories = $indexCategories;
+    $categories = \OFFLINE\Mall\Models\Category::whereIn('id', $categories)->get();
+    $sortedCategories = $categories
+        ->sortBy(function ($item) use ($indexCategories) {
+            return array_search($item->id, $indexCategories);
+        });
+    
+    $this['sortedCategories'] = $sortedCategories;
+}";s:11:"description";s:18:"Categories Section";s:7:"viewBag";a:0:{}}}

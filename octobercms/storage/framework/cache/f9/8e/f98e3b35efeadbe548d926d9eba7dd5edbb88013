@@ -1,0 +1,289 @@
+1599460965a:1:{s:14:"main-menu.yaml";a:7:{s:8:"fileName";s:14:"main-menu.yaml";s:7:"content";s:9152:"name: 'Main menu'
+items:
+    -
+        title: Categories
+        nesting: ''
+        type: all-mall-categories
+        url: ''
+        code: megamenu
+        reference: ''
+        cmsPage: ''
+        replace: '0'
+        viewBag:
+            isHidden: '0'
+            cssClass: col-lg-3
+            isExternal: '0'
+    -
+        title: Contact
+        nesting: ''
+        type: cms-page
+        url: ''
+        code: ''
+        reference: contact
+        cmsPage: ''
+        replace: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Return Policy'
+        type: cms-page
+        code: ''
+        reference: about-us
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Home
+        nesting: null
+        type: cms-page
+        url: null
+        code: ''
+        reference: index
+        cmsPage: null
+        replace: null
+        viewBag:
+            isHidden: '1'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Stores
+        nesting: null
+        type: header
+        url: null
+        code: megamenu
+        reference: null
+        cmsPage: null
+        replace: null
+        viewBag:
+            isHidden: '1'
+            cssClass: fadeInUp
+            isExternal: '0'
+        items:
+            -
+                title: Banner-1
+                nesting: null
+                type: header
+                url: null
+                code: banner-1
+                reference: null
+                cmsPage: null
+                replace: null
+                viewBag:
+                    isHidden: '0'
+                    cssClass: 'col-lg-4 col-md-6'
+                    isExternal: '0'
+            -
+                title: 'Shop Pages'
+                nesting: ''
+                type: header
+                url: ''
+                code: ''
+                reference: ''
+                cmsPage: ''
+                replace: ''
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+                items:
+                    -
+                        title: 'Shop Categories'
+                        nesting: ''
+                        type: cms-page
+                        url: ''
+                        code: ''
+                        reference: categories
+                        cmsPage: ''
+                        replace: ''
+                        viewBag:
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
+                    -
+                        title: 'Shop Brands'
+                        nesting: ''
+                        type: cms-page
+                        url: ''
+                        code: ''
+                        reference: brands
+                        cmsPage: ''
+                        replace: ''
+                        viewBag:
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
+                    -
+                        title: 'Shop Cart'
+                        nesting: ''
+                        type: cms-page
+                        url: ''
+                        code: ''
+                        reference: cart
+                        cmsPage: ''
+                        replace: ''
+                        viewBag:
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
+                    -
+                        title: 'Checkout - Shipping'
+                        nesting: ''
+                        type: url
+                        url: /checkout/shipping
+                        code: ''
+                        reference: ''
+                        cmsPage: ''
+                        replace: ''
+                        viewBag:
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
+                    -
+                        title: 'Checkout - Payment'
+                        nesting: ''
+                        type: url
+                        url: /checkout/payment
+                        code: ''
+                        reference: ''
+                        cmsPage: ''
+                        replace: ''
+                        viewBag:
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
+                    -
+                        title: 'Checkout - Confirm'
+                        nesting: ''
+                        type: url
+                        url: /checkout/confirm
+                        code: ''
+                        reference: ''
+                        cmsPage: ''
+                        replace: ''
+                        viewBag:
+                            isHidden: '0'
+                            cssClass: ''
+                            isExternal: '0'
+    -
+        title: Pages
+        nesting: null
+        type: header
+        url: null
+        code: ''
+        reference: null
+        cmsPage: null
+        replace: null
+        viewBag:
+            isHidden: '1'
+            cssClass: ''
+            isExternal: '0'
+        items:
+            -
+                title: Account
+                nesting: null
+                type: cms-page
+                url: null
+                code: divider
+                reference: myaccount
+                cmsPage: null
+                replace: null
+                viewBag:
+                    isHidden: '1'
+                    cssClass: ''
+                    isExternal: '0'
+                items:
+                    -
+                        title: Orders
+                        nesting: null
+                        type: url
+                        url: /account/orders
+                        code: ''
+                        reference: null
+                        cmsPage: null
+                        replace: null
+                        viewBag:
+                            isHidden: '1'
+                            cssClass: ''
+                            isExternal: '0'
+                    -
+                        title: 'Profile Settings'
+                        nesting: null
+                        type: url
+                        url: /account/profile
+                        code: ''
+                        reference: null
+                        cmsPage: null
+                        replace: null
+                        viewBag:
+                            isHidden: '1'
+                            cssClass: ''
+                            isExternal: '0'
+                    -
+                        title: 'Account Addresses'
+                        nesting: null
+                        type: url
+                        url: /account/addresses
+                        code: ''
+                        reference: null
+                        cmsPage: null
+                        replace: null
+                        viewBag:
+                            isHidden: '1'
+                            cssClass: ''
+                            isExternal: '0'
+                    -
+                        title: Wishlists
+                        nesting: null
+                        type: cms-page
+                        url: null
+                        code: ''
+                        reference: wishlists
+                        cmsPage: null
+                        replace: null
+                        viewBag:
+                            isHidden: '1'
+                            cssClass: ''
+                            isExternal: '0'
+                    -
+                        title: 'Sign In / Sign Up Page'
+                        nesting: null
+                        type: cms-page
+                        url: null
+                        code: ''
+                        reference: login
+                        cmsPage: null
+                        replace: null
+                        viewBag:
+                            isHidden: '1'
+                            cssClass: ''
+                            isExternal: '0'
+                    -
+                        title: 'Password Recovery'
+                        nesting: null
+                        type: cms-page
+                        url: null
+                        code: ''
+                        reference: reset_password
+                        cmsPage: null
+                        replace: null
+                        viewBag:
+                            isHidden: '1'
+                            cssClass: ''
+                            isExternal: '0'
+            -
+                title: 'Page Not Found (404)'
+                nesting: null
+                type: cms-page
+                url: null
+                code: ''
+                reference: page-not-found-404
+                cmsPage: null
+                replace: null
+                viewBag:
+                    isHidden: '1'
+                    cssClass: ''
+                    isExternal: '0'
+";s:5:"mtime";i:1599132944;s:6:"markup";N;s:4:"code";N;s:4:"name";N;s:5:"items";a:0:{}}}

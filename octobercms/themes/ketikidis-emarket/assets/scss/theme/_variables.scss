@@ -1,0 +1,435 @@
+//
+// Variables
+//
+
+// Color system
+
+$white:    #fff !default;
+$gray-100: $color_g100 !default;
+$gray-200: $color_g200 !default;
+$gray-300: $color_g300 !default;
+$gray-400: $color_g400 !default;
+$gray-500: $color_g500 !default;
+$gray-600: $color_g600 !default;
+$gray-700: $color_g700 !default;
+$gray-800: $color_g800 !default;
+$gray-900: $color_g900 !default;
+$black:    #000 !default;
+
+$grays: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$grays: map-merge(
+  (
+    "100": $gray-100,
+    "200": $gray-200,
+    "300": $gray-300,
+    "400": $gray-400,
+    "500": $gray-500,
+    "600": $gray-600,
+    "700": $gray-700,
+    "800": $gray-800,
+    "900": $gray-900
+  ),
+  $grays
+);
+
+$blue:       $color_blue !default;
+$indigo:     $color_indigo !default;
+$purple:     $color_purple !default;
+$pink:       $color_pink !default;
+$red:        $color_red !default;
+$orange:     $color_orange !default;
+$yellow:     $color_yellow !default;
+$green:      $color_green !default;
+$teal:       $color_teal !default;
+$cyan:       $color_cyan !default;
+
+$colors: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$colors: map-merge(
+  (
+    "blue":       $blue,
+    "indigo":     $indigo,
+    "purple":     $purple,
+    "pink":       $pink,
+    "red":        $red,
+    "orange":     $orange,
+    "yellow":     $yellow,
+    "green":      $green,
+    "teal":       $teal,
+    "cyan":       $cyan,
+    "white":      $white,
+    "gray":       $gray-600,
+    "light":      $gray-400,
+    "lighter":    $gray-100,
+    "gray-dark":  $gray-800
+  ),
+  $colors
+);
+
+$primary:       $color_primary !default;
+$secondary:     $color_secondary !default;
+$success:       $color_success !default;
+$info:          $color_info !default;
+$warning:       $color_warning !default;
+$danger:        $color_danger !default;
+$light:         $color_light !default;
+$lighter:       lighten($gray-400, 15%) !default;
+$dark:          $color_dark !default;
+$darker:        darken($gray-900, 15%) !default;
+$white-25:      rgba($white, .25) !default;
+$white-50:      rgba($white, .5) !default;
+$white-75:      rgba($white, .75) !default;
+$black-25:      rgba($black, .25) !default;
+$black-50:      rgba($black, .5) !default;
+$black-75:      rgba($black, .75) !default;
+
+$theme-colors: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$theme-colors: map-merge(
+  (
+    "primary":      $primary,
+    "secondary":    $secondary,
+    "success":      $success,
+    "info":         $info,
+    "warning":      $warning,
+    "danger":       $danger,
+    "white":        $white,
+    "dark":         $dark,
+    "darker":       $darker,
+	"lighter":      $lighter,
+	"white-25":     $white-25,
+	"white-50":     $white-50,
+	"white-75":     $white-75,
+	"black-25":     $black-25,
+	"black-50":     $black-50,
+	"black-75":     $black-75,
+  ),
+  $theme-colors
+);
+
+// Set a specific jump point for requesting color jumps
+$theme-color-interval:      8% !default;
+
+// The yiq lightness value that determines when the lightness of color changes from "dark" to "light". Acceptable values are between 0 and 255.
+$yiq-contrasted-threshold:  150 !default;
+
+// Customize the light and dark text colors for use in our YIQ color contrast function.
+$yiq-text-dark:             $gray-900 !default;
+$yiq-text-light:            $white !default;
+
+
+// Options
+//
+
+$enable-caret:                                false !default;
+$enable-rounded:                              true !default;
+$enable-shadows:                              true !default;
+$enable-gradients:                            false !default;
+$enable-transitions:                          true !default;
+$enable-prefers-reduced-motion-media-query:   true !default;
+$enable-grid-classes:                         true !default;
+$enable-pointer-cursor-for-buttons:           true !default;
+$enable-print-styles:                         true !default;
+$enable-responsive-font-sizes:                true !default;
+$enable-validation-icons:                     true !default;
+$enable-deprecation-messages:                 true !default;
+
+
+// Spacing
+//
+
+$spacer: 1rem !default;
+$spacers: () !default;
+$spacers: map-merge(
+  (
+    0: ($spacer * 0),
+    1: ($spacer * .25),
+    2: ($spacer * .5),
+    3: ($spacer * .75),
+    4: ($spacer * 1),
+    5: ($spacer * 1.25),
+    6: ($spacer * 1.5),
+    7: ($spacer * 1.75),
+    8: ($spacer * 2),
+    9: ($spacer * 2.25),
+    10: ($spacer * 2.5),
+    11: ($spacer * 2.75),
+    12: ($spacer * 3),
+	14: ($spacer * 3.5)
+  ),
+  $spacers
+);
+
+
+// Utilities breakpoints
+//
+
+$sizes-breakpoints:                           true !default;
+$min-max-sizes-breakpoints:                   false !default;
+$position-breakpoints:                        true !default;
+$font-size-breakpoints:                       true !default;
+$inset-breakpoints:                           false !default;
+$opacity-breakpoints:                         false !default;
+$z-index-breakpoints:                         false !default;
+$border-breakpoints:                          false !default;
+$overflow-breakpoints:                        true !default;
+
+
+// Body
+//
+
+$body-color:                $color-text !default;
+
+
+// Links
+//
+// Style anchor elements.
+
+$link-color:                              theme-color("primary") !default;
+$link-decoration:                         none !default;
+$link-hover-color:                        darken($link-color, 15%) !default;
+$link-hover-decoration:                   none !default;
+
+$emphasized-link-hover-darken-percentage: 15% !default;
+
+
+// Paragraphs
+//
+
+$paragraph-margin-bottom:   1rem !default;
+
+
+// Grid breakpoints
+//
+
+$grid-breakpoints: (
+  xs: $break_xs,
+  sm: $break_sm,
+  md: $break_md,
+  lg: $break_lg,
+  xl: $break_xl
+) !default;
+
+@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
+@include _assert-starts-at-zero($grid-breakpoints, "$grid-breakpoints");
+
+
+// Grid containers
+//
+
+$container-max-widths: (
+  sm: $container_sm,
+  md: $container_md,
+  lg: $container_lg,
+  xl: $container_xl
+) !default;
+
+@include _assert-ascending($container-max-widths, "$container-max-widths");
+
+
+// Grid columns
+//
+
+$grid-columns:                $grid-columns !default;
+$grid-gutter-width:           $grid-gutter-width !default;
+$grid-row-columns:            6 !default;
+
+
+// Components
+//
+
+$border-color:                $gray-300 !default;
+$border-width:                1px !default;
+
+$box-shadow-sm:               0 0 1rem rgba($gray-600, .15) !default;
+$box-shadow:                  0 0 1.5rem rgba($gray-600, .2) !default;
+$box-shadow-lg:               0 0.75rem 1.25rem 0.075rem rgba($gray-600, .2) !default;
+$box-shadow-btn:              0 .125rem .3125rem rgba($black, .15) !default;
+
+$component-active-color:      $white !default;
+$component-active-bg:         theme-color("primary") !default;
+
+$transition-base:             all .2s ease !default;
+$transition-fade:             opacity .15s linear !default;
+$transition-collapse:         height .35s ease !default;
+
+
+// Typography
+//
+
+$font-family-base:            $font_text !default;
+$font-weight-base:            $font_text_weight !default;
+$line-height-base:            $font_text_height !default;
+
+$font-size-base:              $font_text_size !default;
+$font-size-xl:                $font-size-base * 1.5 !default;
+$font-size-lg:                $font-size-base * 1.25 !default;
+$font-size-sm:                $font-size-base * .875 !default;
+
+$font-weight-lighter:         lighter !default;
+$font-weight-hairline:        100 !default;
+$font-weight-thin:            200 !default;
+$font-weight-light:           300 !default;
+$font-weight-normal:          400 !default;
+$font-weight-medium:          500 !default;
+$font-weight-semibold:        600 !default;
+$font-weight-bold:            700 !default;
+$font-weight-extrabold:       800 !default;
+$font-weight-black:           900 !default;
+$font-weight-bolder:          bolder !default;
+
+$h1-font-size:                $font-size-base * 2.5 !default;
+$h2-font-size:                $font-size-base * 2 !default;
+$h3-font-size:                $font-size-base * 1.75 !default;
+$h4-font-size:                $font-size-base * 1.5 !default;
+$h5-font-size:                $font-size-base * 1.25 !default;
+$h6-font-size:                $font-size-base !default;
+
+$headings-font-family:        $font_head !default;
+$headings-font-weight:        $font_head_weight !default;
+$headings-line-height:        $font_head_height !default;
+$headings-color:              $color_head !default;
+
+$text-muted:                  $color_muted !default;
+
+$blockquote-font-size:        $font-size-xl * 1 !default;
+
+$hr-border-color:             $gray-300 !default;
+
+
+// Buttons + Forms
+
+$input-btn-padding-y:         .5rem !default;
+$input-btn-padding-x:         1rem !default;
+
+$input-btn-focus-width:       0 !default;
+$input-btn-focus-color:       rgba($component-active-bg, 1);
+$input-btn-focus-box-shadow:  none !default;
+
+$input-btn-padding-y-sm:      .25rem !default;
+$input-btn-padding-x-sm:      .5rem !default;
+
+$input-btn-padding-y-lg:      .875rem !default;
+$input-btn-padding-x-lg:      1rem !default;
+
+$input-btn-border-width:      $border-width !default;
+
+$input-btn-font-size-sm:      .875rem !default;
+$input-btn-font-size:         1rem !default;
+$input-btn-font-size-lg:      1.2rem !default;
+
+
+// Buttons
+
+$btn-padding-y:               $input-btn-padding-y !default;
+$btn-padding-x:               $input-btn-padding-x + .125 !default;
+
+$btn-padding-y-sm:            $input-btn-padding-y-sm !default;
+$btn-padding-x-sm:            $input-btn-padding-x-sm !default;
+
+$btn-padding-y-lg:            $input-btn-padding-y-lg !default;
+$btn-padding-x-lg:            $input-btn-padding-x-lg !default;
+
+$btn-border-width:            $input-btn-border-width !default;
+
+$btn-font-weight:             400 !default;
+$btn-text-transform:          none !default;
+$btn-letter-spacing:          .025em !default;
+
+$btn-box-shadow:              0 .125rem .3125rem rgba($black, .15) !default;
+$btn-hover-box-shadow:        0 .25rem .5rem rgba($black, .15) !default;
+$btn-focus-box-shadow:        $btn-hover-box-shadow !default;
+$btn-focus-width:             $input-btn-focus-width !default;
+
+$btn-active-box-shadow:       none !default;
+
+
+// Forms
+
+$input-padding-y:                       $input-btn-padding-y !default;
+$input-padding-x:                       $input-btn-padding-x !default;
+
+$input-padding-y-sm:                    $input-btn-padding-y-sm !default;
+$input-padding-x-sm:                    $input-btn-padding-x-sm !default;
+
+$input-padding-y-lg:                    $input-btn-padding-y-lg !default;
+$input-padding-x-lg:                    $input-btn-padding-x-lg !default;
+
+$input-bg:                              $white !default;
+$input-disabled-bg:                     $gray-200 !default;
+
+$input-muted-bg:                        #EDF0F5 !default;
+
+$input-alternative-box-shadow:          0 1px 3px rgba(50,50,93,.15), 0 1px 0 rgba(0,0,0,.02);
+$input-focus-alternative-box-shadow:    0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08);
+
+$input-color:                           $gray-700 !default;
+$input-border-color:                    $gray-300 !default;
+$input-border-width:                    $input-btn-border-width !default;
+$input-box-shadow:                      none !default; // 0 1px 3px 0 $gray-400 !default;
+
+$input-focus-bg:                        $white !default;
+$input-focus-border-color:              rgba(50,151,211,.25);
+$input-focus-color:                     $input-color !default;
+$input-focus-width:                     0 !default;
+$input-focus-box-shadow:                none !default; //0 1px 3px 0 $gray-500 !default;
+
+$input-placeholder-color:               $gray-500 !default;
+$input-focus-placeholder-color:         $gray-300 !default;
+
+$input-height-border:                   $input-border-width * 2 !default;
+
+$input-transition:                      all .2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+
+// Custom forms
+
+$custom-forms-transition:               background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
+
+$custom-control-gutter:                 .75rem !default;
+$custom-control-spacer-x:               1rem !default;
+$custom-control-cursor:                 pointer !default;
+
+$custom-control-indicator-size:         1.2rem !default;
+
+$custom-toggle-slider-bg:   #ddd !default;
+$custom-toggle-checked-bg:  theme-color("primary") !default;
+
+
+// Input groups
+
+$input-group-addon-color:               $input-placeholder-color !default;
+$input-group-addon-bg:                  $input-bg !default;
+$input-group-addon-border-color:        $input-border-color !default;
+
+$input-group-addon-focus-color:               $input-focus-color !default;
+$input-group-addon-focus-bg:                  $input-focus-bg !default;
+$input-group-addon-focus-border-color:        $input-focus-border-color !default;
+
+
+// Navs
+
+$navbar-transition:                 all .2s linear !default;
+
+
+// Dropdowns
+//
+// Dropdown menu container and contents.
+
+$dropdown-divider-bg:               $gray-200 !default;
+$dropdown-box-shadow:               0 0 1.5rem rgba($gray-600, .1) !default;
+
+$dropdown-link-color:               $gray-600 !default;
+$dropdown-link-hover-color:         darken($gray-600, 5%) !default;
+$dropdown-link-hover-bg:            $gray-100 !default;
+
+
+// Cards
+
+$card-border-color:                 $gray-300 !default;
+
+$card-columns-count-sm:                2 !default;
+$card-columns-count-md:                2 !default;
+$card-columns-count-lg:                3 !default;
+$card-columns-count-xl:                4 !default;

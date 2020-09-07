@@ -1,0 +1,68 @@
+1599460933a:1:{s:12:"category.htm";a:13:{s:8:"fileName";s:12:"category.htm";s:7:"content";s:1336:"title = "Category"
+url = "/category/:slug*"
+layout = "default"
+is_hidden = 0
+
+[viewBag]
+localeUrl[en] = "/category/:slug*"
+
+[products]
+category = ":slug"
+filterComponent = "productsFilter"
+setPageTitle = 1
+includeVariants = 1
+includeChildren = 1
+perPage = 12
+paginate = 1
+sort = "latest"
+
+[productsFilter]
+category = ":slug"
+includeChildren = 1
+includeVariants = 1
+showPriceFilter = 1
+showBrandFilter = 1
+showOnSaleFilter = 1
+includeSliderAssets = 1
+
+[wishlistButton wishlistButtons]
+==
+{% partial 'pageHeader/products' %}
+
+<div class="container pb-12">
+    <div class="row">
+        <div class="col-lg-9 mb-6 {{ this.theme.shop_layout == 'order-lg-1' ? 'order-lg-2' : 'order-lg-1' }}">
+            {% component 'products' %}
+        </div>
+        <div class="col-lg-3 mb-6 {{ this.theme.shop_layout }}">
+            {% partial 'productCategories/default' %}
+            {% component 'productsFilter' %}
+            {% if this.theme.shop_product_banner_section %}
+            {% if this.theme.shop_product_banner_type == 'product' %}
+            {% partial 'widgetBanners/product-banner-bottom' %}
+            {% elseif this.theme.shop_product_banner_type == 'variant' %}
+            {% partial 'widgetBanners/variant-banner-bottom' %}
+            {% endif %}
+            {% endif %}
+        </div>
+    </div>
+</div>";s:5:"mtime";i:1592589910;s:6:"markup";s:849:"{% partial 'pageHeader/products' %}
+
+<div class="container pb-12">
+    <div class="row">
+        <div class="col-lg-9 mb-6 {{ this.theme.shop_layout == 'order-lg-1' ? 'order-lg-2' : 'order-lg-1' }}">
+            {% component 'products' %}
+        </div>
+        <div class="col-lg-3 mb-6 {{ this.theme.shop_layout }}">
+            {% partial 'productCategories/default' %}
+            {% component 'productsFilter' %}
+            {% if this.theme.shop_product_banner_section %}
+            {% if this.theme.shop_product_banner_type == 'product' %}
+            {% partial 'widgetBanners/product-banner-bottom' %}
+            {% elseif this.theme.shop_product_banner_type == 'variant' %}
+            {% partial 'widgetBanners/variant-banner-bottom' %}
+            {% endif %}
+            {% endif %}
+        </div>
+    </div>
+</div>";s:4:"code";N;s:5:"title";s:8:"Category";s:3:"url";s:16:"/category/:slug*";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:7:"viewBag";a:1:{s:9:"localeUrl";a:1:{s:2:"en";s:16:"/category/:slug*";}}s:8:"products";a:8:{s:8:"category";s:5:":slug";s:15:"filterComponent";s:14:"productsFilter";s:12:"setPageTitle";s:1:"1";s:15:"includeVariants";s:1:"1";s:15:"includeChildren";s:1:"1";s:7:"perPage";s:2:"12";s:8:"paginate";s:1:"1";s:4:"sort";s:6:"latest";}s:14:"productsFilter";a:7:{s:8:"category";s:5:":slug";s:15:"includeChildren";s:1:"1";s:15:"includeVariants";s:1:"1";s:15:"showPriceFilter";s:1:"1";s:15:"showBrandFilter";s:1:"1";s:16:"showOnSaleFilter";s:1:"1";s:19:"includeSliderAssets";s:1:"1";}s:30:"wishlistButton wishlistButtons";a:0:{}}}

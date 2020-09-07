@@ -1,0 +1,149 @@
+1599340743a:1:{s:18:"product/images.htm";a:6:{s:8:"fileName";s:18:"product/images.htm";s:7:"content";s:2502:"[viewBag]
+==
+<?php
+function onStart()
+{
+    $this->addCss('assets/vendor/swipebox/css/swipebox.min.css');
+    //$this->addCss('assets/vendor/photoswipe/css/photoswipe.css');
+    $this->addJs('assets/vendor/swipebox/js/jquery.swipebox.min.js');
+    //$this->addJs('assets/vendor/photoswipe/js/photoswipe.min.js');
+    //$this->addJs('assets/vendor/photoswipe/js/photoswipe-ui-primary.min.js');
+    //$this->addJs('assets/vendor/photoswipe/js/main.js');
+}
+?>
+==
+{% if images %}
+<div class="col-2 pr-2 pr-md-5">
+    <div class="slider-nav" itemscope itemtype="https://schema.org/ImageGallery">
+        {% for image in images %}
+        <a href="javascript:;" class="mb-2 mb-md-5 opacity-30">
+            <img src="{{ image.thumb(120, 150, 'crop') }}" itemprop="thumbnail" alt="{{ image.title }}" loading="lazy" class="w-100"/>
+        </a>
+        {% endfor %}
+    </div>
+</div><!-- slider-nav.// -->
+<div class="col-10">
+    <div id="gallery" class="slider-for" itemscope itemtype="https://schema.org/ImageGallery">
+        {% for image in images %}
+        <figure itemprop="associatedMedia" itemscope itemtype="https://schema.org/ImageObject">
+            <a href="{{ image.path }}" caption="{{ image.title }}" class="swipebox">
+                <img src="{{ image.thumb(850, 1000, 'crop') }}" itemprop="thumbnail" alt="{{ image.title }}" loading="lazy" class="img-fluid"/>
+            </a>
+        </figure>
+        {% endfor %}
+    </div>
+</div><!-- slider-nav.// -->
+{% endif %}
+
+{% put scripts %}
+<script>
+$('.slider-for').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    dots: false,
+    arrows: false,
+    fade: true,
+    asNavFor: '.slider-nav',
+    lazyLoad: 'ondemand',
+    draggable: false,
+    accessibility: false
+});
+$('.slider-nav').slick({
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    asNavFor: '.slider-for',
+    dots: false,
+    arrows: false,
+    centerMode: false,
+    focusOnSelect: true,
+    lazyLoad: 'ondemand',
+    vertical: true,
+    draggable: false,
+    accessibility: false
+});
+</script>
+{% endput %}
+
+{% put scripts %}
+<script>
+;( function( $ ) {
+    $( '.swipebox' ).swipebox( {
+		hideCloseButtonOnMobile : true, // true will hide the close button on mobile devices
+		removeBarsOnMobile : true, // false will show top bar on mobile devices
+		hideBarsDelay : 5000, // delay before hiding bars on desktop
+		videoMaxWidth : 1600 // videos max width
+    } );
+} )( jQuery );
+</script>
+{% endput %}";s:5:"mtime";i:1592589916;s:6:"markup";s:2034:"{% if images %}
+<div class="col-2 pr-2 pr-md-5">
+    <div class="slider-nav" itemscope itemtype="https://schema.org/ImageGallery">
+        {% for image in images %}
+        <a href="javascript:;" class="mb-2 mb-md-5 opacity-30">
+            <img src="{{ image.thumb(120, 150, 'crop') }}" itemprop="thumbnail" alt="{{ image.title }}" loading="lazy" class="w-100"/>
+        </a>
+        {% endfor %}
+    </div>
+</div><!-- slider-nav.// -->
+<div class="col-10">
+    <div id="gallery" class="slider-for" itemscope itemtype="https://schema.org/ImageGallery">
+        {% for image in images %}
+        <figure itemprop="associatedMedia" itemscope itemtype="https://schema.org/ImageObject">
+            <a href="{{ image.path }}" caption="{{ image.title }}" class="swipebox">
+                <img src="{{ image.thumb(850, 1000, 'crop') }}" itemprop="thumbnail" alt="{{ image.title }}" loading="lazy" class="img-fluid"/>
+            </a>
+        </figure>
+        {% endfor %}
+    </div>
+</div><!-- slider-nav.// -->
+{% endif %}
+
+{% put scripts %}
+<script>
+$('.slider-for').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    dots: false,
+    arrows: false,
+    fade: true,
+    asNavFor: '.slider-nav',
+    lazyLoad: 'ondemand',
+    draggable: false,
+    accessibility: false
+});
+$('.slider-nav').slick({
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    asNavFor: '.slider-for',
+    dots: false,
+    arrows: false,
+    centerMode: false,
+    focusOnSelect: true,
+    lazyLoad: 'ondemand',
+    vertical: true,
+    draggable: false,
+    accessibility: false
+});
+</script>
+{% endput %}
+
+{% put scripts %}
+<script>
+;( function( $ ) {
+    $( '.swipebox' ).swipebox( {
+		hideCloseButtonOnMobile : true, // true will hide the close button on mobile devices
+		removeBarsOnMobile : true, // false will show top bar on mobile devices
+		hideBarsDelay : 5000, // delay before hiding bars on desktop
+		videoMaxWidth : 1600 // videos max width
+    } );
+} )( jQuery );
+</script>
+{% endput %}";s:4:"code";s:442:"function onStart()
+{
+    $this->addCss('assets/vendor/swipebox/css/swipebox.min.css');
+    //$this->addCss('assets/vendor/photoswipe/css/photoswipe.css');
+    $this->addJs('assets/vendor/swipebox/js/jquery.swipebox.min.js');
+    //$this->addJs('assets/vendor/photoswipe/js/photoswipe.min.js');
+    //$this->addJs('assets/vendor/photoswipe/js/photoswipe-ui-primary.min.js');
+    //$this->addJs('assets/vendor/photoswipe/js/main.js');
+}";s:7:"viewBag";a:0:{}}}

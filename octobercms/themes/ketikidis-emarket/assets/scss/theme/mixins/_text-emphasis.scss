@@ -1,0 +1,35 @@
+//
+// Text
+//
+
+// Typography
+//
+
+@mixin text-emphasis-variant($parent, $color, $ignore-warning: false) {
+  #{$parent} {
+    color: $color !important;
+  }
+  @if $emphasized-link-hover-darken-percentage != 0 {
+    a#{$parent} {
+      @include hover-focus() {
+        color: darken($color, $emphasized-link-hover-darken-percentage);
+      }
+    }
+  }
+  @include deprecate("`text-emphasis-variant()`", "v4.4.0", "v5", $ignore-warning);
+}
+
+
+// Gradient text
+//
+
+//@mixin text-gradient-variant($parent, $color, $ignore-warning: false) {
+//  #{$parent} {
+//    background: $color;
+//    background: linear-gradient(to right, $color 0, adjust-hue($color, 25%) 50%, adjust-hue($color, 40%) 100%);
+//	-webkit-background-clip: text;
+//	background-clip: text;
+//	-webkit-text-fill-color: transparent;
+//    text-fill-color: transparent; 
+//  }
+//}

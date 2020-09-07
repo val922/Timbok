@@ -1,0 +1,71 @@
+1599340787a:1:{s:37:"homepage/category-banner-parallax.htm";a:7:{s:8:"fileName";s:37:"homepage/category-banner-parallax.htm";s:7:"content";s:2695:"description = "Category Banner Parallax Section"
+
+[viewBag]
+==
+<?php
+function onStart()
+{
+    // Category Banner Parallax
+    $indexCategoryBannerParallax = $this->theme->index_category_banner_parallax;
+    
+    $this['indexCategoryBannerParallax'] = \OFFLINE\Mall\Models\Category::find($indexCategoryBannerParallax);
+}
+?>
+==
+{% set category = indexCategoryBannerParallax %}
+<section class="container-fluid px-0 mb-12 mt-6 position-relative">
+    <div class="bg-size-cover bg-position-center py-14" style="background:url('{{ category.image.thumb(1000, 750, 'crop') }}') 50% 50% / cover no-repeat fixed;">
+        <div class="position-absolute inset-0 w-100 h-100" style="background: linear-gradient(to right, rgba(247, 247, 247) 0, rgba(247, 247, 247) 30%, rgba(247, 247, 247, 0.8) 60%, rgba(39, 177, 228, 0.2) 100%);"></div>
+        <div class="row py-lg-6 justify-content-center">
+            <div class="col-lg-5">
+                <div class="px-4 px-lg-0 text-center" data-sal="zoom-in" data-sal-duration="1200">
+                    <div class="d-flex align-items-center flex-wrap justify-content-center">
+                        <h3 class="font-weight-light max-w-md">{{ 'Top Sales'|_ }}</h3>
+                        <span class="d-flex justify-content-center align-items-center rounded-circle w-20 h-20 bg-danger text-white font-11 font-weight-semibold ml-4">{{ '15%'|_ }}</span>
+                    </div>
+                    <h2 class="h1 mb-4">{{ category.name }}</h2>
+                    <div class="h4 mb-4 font-weight-light">{{ category.description|raw }}</div>
+                    <div class="d-flex justify-content-center mb-6">
+                        <img src="{{ category.products[1].image.thumb(175, 162, 'crop') }}" width="175" height="162" alt="{{ product.name }}" loading="lazy" class="w-20 w-lg-100 img-fluid transition-20 opacity-80 hover:opacity-100 mr-4"/>
+                        <img src="{{ category.products[2].image.thumb(175, 162, 'crop') }}" width="175" height="162" alt="{{ product.name }}" loading="lazy" class="w-20 w-lg-100 img-fluid transition-20 opacity-80 hover:opacity-100 mr-4"/>
+                        <img src="{{ category.products[3].image.thumb(175, 162, 'crop') }}" width="175" height="162" alt="{{ product.name }}" loading="lazy" class="w-20 w-lg-100 img-fluid transition-20 opacity-80 hover:opacity-100"/>
+                    </div>
+                    <a class="btn btn-primary px-6" href="/category/{{ category.nested_slug }}">
+                        Shop now<i class="ml-2" data-feather="shopping-cart"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>";s:5:"mtime";i:1598457106;s:6:"markup";s:2363:"{% set category = indexCategoryBannerParallax %}
+<section class="container-fluid px-0 mb-12 mt-6 position-relative">
+    <div class="bg-size-cover bg-position-center py-14" style="background:url('{{ category.image.thumb(1000, 750, 'crop') }}') 50% 50% / cover no-repeat fixed;">
+        <div class="position-absolute inset-0 w-100 h-100" style="background: linear-gradient(to right, rgba(247, 247, 247) 0, rgba(247, 247, 247) 30%, rgba(247, 247, 247, 0.8) 60%, rgba(39, 177, 228, 0.2) 100%);"></div>
+        <div class="row py-lg-6 justify-content-center">
+            <div class="col-lg-5">
+                <div class="px-4 px-lg-0 text-center" data-sal="zoom-in" data-sal-duration="1200">
+                    <div class="d-flex align-items-center flex-wrap justify-content-center">
+                        <h3 class="font-weight-light max-w-md">{{ 'Top Sales'|_ }}</h3>
+                        <span class="d-flex justify-content-center align-items-center rounded-circle w-20 h-20 bg-danger text-white font-11 font-weight-semibold ml-4">{{ '15%'|_ }}</span>
+                    </div>
+                    <h2 class="h1 mb-4">{{ category.name }}</h2>
+                    <div class="h4 mb-4 font-weight-light">{{ category.description|raw }}</div>
+                    <div class="d-flex justify-content-center mb-6">
+                        <img src="{{ category.products[1].image.thumb(175, 162, 'crop') }}" width="175" height="162" alt="{{ product.name }}" loading="lazy" class="w-20 w-lg-100 img-fluid transition-20 opacity-80 hover:opacity-100 mr-4"/>
+                        <img src="{{ category.products[2].image.thumb(175, 162, 'crop') }}" width="175" height="162" alt="{{ product.name }}" loading="lazy" class="w-20 w-lg-100 img-fluid transition-20 opacity-80 hover:opacity-100 mr-4"/>
+                        <img src="{{ category.products[3].image.thumb(175, 162, 'crop') }}" width="175" height="162" alt="{{ product.name }}" loading="lazy" class="w-20 w-lg-100 img-fluid transition-20 opacity-80 hover:opacity-100"/>
+                    </div>
+                    <a class="btn btn-primary px-6" href="/category/{{ category.nested_slug }}">
+                        Shop now<i class="ml-2" data-feather="shopping-cart"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>";s:4:"code";s:256:"function onStart()
+{
+    // Category Banner Parallax
+    $indexCategoryBannerParallax = $this->theme->index_category_banner_parallax;
+    
+    $this['indexCategoryBannerParallax'] = \OFFLINE\Mall\Models\Category::find($indexCategoryBannerParallax);
+}";s:11:"description";s:32:"Category Banner Parallax Section";s:7:"viewBag";a:0:{}}}

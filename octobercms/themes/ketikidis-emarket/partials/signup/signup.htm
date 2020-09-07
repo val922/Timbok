@@ -1,0 +1,89 @@
+[viewBag]
+==
+<form data-request="onSignup" data-request-validate data-request-flash>
+    <h2 class="mall-signup__heading h4 mb-3">{{ 'offline.mall::frontend.signup.signup' | trans }}</h2>
+    <p class="text-muted mb-6">Registration gives you full control over your orders.
+</p>
+
+    <div class="form-group">
+        <label for="signup_email">{{ 'offline.mall::frontend.form.email' | trans }}</label>
+        <input id="signup_email" type="email" placeholder="email@email.com" name="email" class="form-control hover:border-primary">
+        <div data-validate-for="email" class="text-danger font-4 mt-2 ml-1"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="firstname">{{ 'offline.mall::frontend.form.firstname' | trans }}</label>
+                <input id="firstname" type="text" name="firstname" class="form-control hover:border-primary">
+                <div data-validate-for="firstname" class="text-danger font-4 mt-2 ml-1"></div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="lastname">{{ 'offline.mall::frontend.form.lastname' | trans }}</label>
+                <input id="lastname" type="text" name="lastname" class="form-control hover:border-primary">
+                <div data-validate-for="lastname" class="text-danger font-4 mt-2 ml-1"></div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <div class="mall-signup__guest-option custom-control custom-checkbox">
+            <input class="js-mall-toggle-guest-signup custom-control-input"
+                   type="checkbox" name="as_guest"
+                   value="1" id="mall-signup-guest">
+            <label class="mall-checkbox custom-control-label" for="mall-signup-guest">
+                {{ 'offline.mall::frontend.signup.as_guest' | trans }}
+            </label>
+        </div>
+    </div>
+
+    <div class="row mall-signup__password-inputs">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="signup_password">{{ 'offline.mall::frontend.form.password' | trans }}</label>
+                <input id="signup_password" type="password" name="password" class="form-control hover:border-primary">
+                <div data-validate-for="password" class="text-danger font-4 mt-2 ml-1"></div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="password_repeat">{{ 'offline.mall::frontend.form.password_repeat' | trans }}</label>
+                <input id="password_repeat" type="password" name="password_repeat" class="form-control hover:border-primary">
+                <div data-validate-for="password_repeat" class="text-danger font-4 mt-2 ml-1"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mall-signup__billing-address">
+        <h2 class="mall-signup__subheading h4 mb-3 mt-6">{{ 'offline.mall::frontend.address' | trans }}</h2>
+
+        {% partial __SELF__ ~ '::addressform' type='billing' %}
+
+        <div class="form-group">
+            <div class="mall-signup__shipping-address-option custom-control custom-checkbox">
+                <input class="js-mall-toggle-shipping-address custom-control-input"
+                       type="checkbox"
+                       name="use_different_shipping"
+                       value="1"
+                       id="mall-signup-shipping-address">
+                <label class="mall-checkbox custom-control-label" for="mall-signup-shipping-address">
+                    {{ 'offline.mall::frontend.signup.different_address' | trans }}
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="mall-shipping-address" style="display: none">
+        <h2 class="mall-signup__subheading h4 mb-3 mt-6">{{ 'offline.mall::frontend.shipping_address' | trans }}</h2>
+        {% partial __SELF__ ~ '::addressform' type='shipping' %}
+    </div>
+
+    {% partial __SELF__ ~ '::terms' %}
+
+    <div class="mall-form-actions text-right">
+        <button class="mall-btn mall-btn-signup mall-btn--primary mall-btn--full btn btn-primary btn-icon-right" type="submit">
+            <span>{{ 'offline.mall::frontend.proceed_to_checkout' | trans }} <i data-feather="chevron-right"></i></span>
+        </button>
+    </div>
+</form>

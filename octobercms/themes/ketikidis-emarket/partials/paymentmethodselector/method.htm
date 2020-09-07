@@ -1,0 +1,67 @@
+[viewBag]
+==
+{% set isActiveMethod = __SELF__.activeMethod.id == method.id %}
+<div class="d-sm-flex align-items-center justify-content-between p-6 border-bottom mall-payment-method__entry js-mall-select-payment-method
+     {{ isActiveMethod ? 'mall-payment-method__entry--active border border-primary' : '' }}"
+     data-id="{{ method.id }}">
+    <div class="media d-block d-md-flex align-items-start text-center text-sm-left">
+        <div class="mall-payment-method__logo mx-auto mr-sm-5">
+            {% if method.logo %}
+                <img class="mall-payment-method__logo img-fluid" src="{{ method.logo.thumb(100, 100, 'crop') }}" alt=""/>
+            {% endif %}
+        </div>
+        <div class="mall-payment-method__text media-body pt-2 max-w-md mx-auto">
+            <div>
+                <div class="mall-payment-method__heading">
+                    <div class="mall-payment-method__name mb-2 font-weight-semibold text-dark font-6">{{ method.name }}</div>
+                </div>
+                {% if method.description %}
+                    <div class="mall-payment-method__description font-5">
+                        {{ method.description | raw }}
+                    </div>
+                {% endif %}
+                {% if isActiveMethod %}
+                    <div class="mall-payment-method__instructions font-5">
+                        {{ method.renderInstructions(__SELF__.order, __SELF__.cart) | raw }}
+                    </div>
+                    <div class="mall-payment-method__toggle mt-7"
+                         style="{% if not isActiveMethod %}display: none{% endif %}">
+                        <div class="mall-payment-method__data">
+                            {% if method.payment_provider %}
+                                {% set path = __SELF__ ~ '::gateways-' ~ (method.payment_provider) %}
+                                {% if partial(path) %}
+                                    {% partial path %}
+                                {% endif %}
+                            {% endif %}
+                        </div>
+                        {% set customerMethods = __SELF__.customerMethods[method.id] %}
+                        {% if customerMethods %}
+                            <div class="mall-payment-method__customer-methods font-5">
+                                {% partial __SELF__ ~ '::customermethods' methods=customerMethods %}
+                            </div>
+                        {% endif %}
+                        <div class="mall-payment-method__submit">
+                            {% set label = __SELF__.order
+                                ? 'offline.mall::frontend.payment_method.pay_now'
+                                : 'offline.mall::frontend.payment_method.proceed' %}
+                            <button class="mall-btn mall-btn--primary btn btn-sm px-7 btn-primary btn-icon-right" type="submit" data-attach-loading>
+                                <span>{{ label | trans }} <i data-feather="chevron-right"></i></span>
+                            </button>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="mall-payment-method__selector pl-sm-4 mx-auto mx-sm-0 text-center text-sm-left">
+        {% if not isActiveMethod %}
+            <button class="mall-payment-method__select-button btn btn-sm px-7 btn-outline-primary btn-icon-right"
+                    data-attach-loading
+                    data-request="{{ __SELF__ }}::onChangeMethod"
+                    data-request-success="$.publish('mall.cart.paymentMethodChanged', data)"
+                    data-request-data="id: '{{ method.id }}'">
+                <span>{{ 'offline.mall::frontend.payment_method.button_label' | trans }} <i data-feather="chevron-right"></i></span>
+            </button>
+        {% endif %}
+    </div>
+</div>

@@ -1,0 +1,15 @@
+[viewBag]
+==
+<div class="form-group">
+    <label for="field-{{ field.hashId }}" class="font-6 text-dark">{{ field.name }}</label>
+    <select class="form-control hover:border-primary" id="field-{{ field.hashId }}"
+            name="fields[{{ field.hashId }}]"
+            data-id="{{ item.property.hashId }}"
+            data-mall-custom-field>
+        <option value="">{{ 'offline.mall::frontend.select' | trans }}</option>
+        {% for option in field.custom_field_options %}
+            <option value="{{ option.hashId }}">{{ option.name }}</option>
+        {% endfor %}
+    </select>
+    <div data-validate-for="{{ field.hashId }}" class="text-danger font-5 mt-2 ml-1"></div>
+</div>

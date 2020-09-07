@@ -1,0 +1,20 @@
+1.0.1:
+  - Add resource files
+1.0.2:
+  - Basic framework construction
+  - Create the main module
+1.0.3:
+  - Blog module completed
+  - Add theme styles
+  - Add more layouts
+1.0.4:
+  - Fix translation bug
+  - Remove the lang.yaml
+1.0.5:
+  - Optimize the configuration of icons
+  - Perfect footer module
+  - Add theme configuration
+  - Adjust menu translation
+1.0.6:
+  - Add two list blocks
+  - SEO optimization

@@ -1,0 +1,23 @@
+1599340747a:1:{s:20:"product/tax-info.htm";a:6:{s:8:"fileName";s:20:"product/tax-info.htm";s:7:"content";s:410:"[viewBag]
+==
+{% if item.filteredTaxes.count > 0 %}
+    {% if item.price_includes_tax %}
+        {{ 'offline.mall::frontend.tax.inclusive' | trans }}
+    {% else %}
+        {{ 'offline.mall::frontend.tax.exclusive' | trans }}
+    {% endif %}
+    {% for tax in item.filteredTaxes %}
+        {{ tax.name }}
+        ({{ tax.percentage }} %){% if not loop.last %}, {% endif %}
+    {% endfor %}
+{% endif %}";s:5:"mtime";i:1592589916;s:6:"markup";s:397:"{% if item.filteredTaxes.count > 0 %}
+    {% if item.price_includes_tax %}
+        {{ 'offline.mall::frontend.tax.inclusive' | trans }}
+    {% else %}
+        {{ 'offline.mall::frontend.tax.exclusive' | trans }}
+    {% endif %}
+    {% for tax in item.filteredTaxes %}
+        {{ tax.name }}
+        ({{ tax.percentage }} %){% if not loop.last %}, {% endif %}
+    {% endfor %}
+{% endif %}";s:4:"code";N;s:7:"viewBag";a:0:{}}}

@@ -1,0 +1,9 @@
+[viewBag]
+==
+{% if not __SELF__.hide %}
+    <div class="bg-dark position-fixed bottom-0 w-100 z-100 py-4 gdpr-banner">
+        <div class="container gdpr-banner__wrapper">
+            {% partial __SELF__ ~ '::inner' %}
+        </div>
+    </div>
+{% endif %}

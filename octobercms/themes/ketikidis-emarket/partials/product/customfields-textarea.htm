@@ -1,0 +1,10 @@
+[viewBag]
+==
+<div class="form-group">
+    <label for="field-{{ field.hashId }}" class="font-6 text-dark">{{ field.name }}</label>
+    <textarea rows="6" class="form-control hover:border-primary" name="fields[{{ field.hashId }}]"
+              id="field-{{ field.hashId }}"
+              data-id="{{ item.property.hashId }}"
+              data-mall-custom-field></textarea>
+    <div data-validate-for="{{ field.hashId }}" class="text-danger font-5 mt-2 ml-1"></div>
+</div>

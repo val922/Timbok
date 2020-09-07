@@ -1,0 +1,11 @@
+[viewBag]
+==
+<div class="form-group custom-control custom-checkbox">
+    <input type="checkbox" class="custom-control-input" id="field-{{ field.hashId }}"
+               name="fields[{{ field.hashId }}]"
+               data-mall-custom-field
+               data-id="{{ field.hashId }}">
+    <label for="field-{{ field.hashId }}" class="custom-control-label font-6 text-dark">{{ field.name }}</label>
+        
+    <div data-validate-for="{{ field.hashId }}" class="text-danger font-5 mt-2 ml-1"></div>
+</div>

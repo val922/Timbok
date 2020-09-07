@@ -1,0 +1,44 @@
+title = "Blog1"
+url = "/blog/category/:slug/:page?"
+layout = "default"
+is_hidden = 0
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+categoryFilter = "{{ :slug }}"
+postsPerPage = 6
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "blog/category"
+postPage = "blog/item"
+==
+<?php
+use RainLab\Blog\Models\Category;
+
+function onStart()
+{
+	$slug=$this->param('slug');
+	$item=Category::where('slug', $slug)->first();
+	$this['cat_title'] = $item->name;
+	$this->page->title = $item->name;
+}
+?>
+==
+{% set posts = blogPosts.posts %}
+{% partial 'pageTitle' par_enable=true par_title=cat_title %}
+<section class="news-section blog-grid sec-pad-2">
+    <div class="auto-container">
+        <div class="row clearfix">
+    {% for post in posts %}
+        {% partial 'html/blog-list-item' post=post %}
+    {% endfor %}
+        </div>
+        <div class="pagination-wrapper centred">
+        
+            {% if posts.lastPage > 1 %}
+                {% partial 'html/pagination' posts=posts%}
+            {% endif %}
+            
+        </div>
+    </div>
+</section>

@@ -1,0 +1,39 @@
+1599301099a:1:{s:28:"searchinput/autocomplete.htm";a:6:{s:8:"fileName";s:28:"searchinput/autocomplete.htm";s:7:"content";s:753:"[viewBag]
+==
+{% if results.count %}
+<div class="w-100 bg-white px-8 py-4 border border-top-0">
+    {% for result in results | slice(0, __SELF__.autoCompleteResultCount) %}
+        {# Display results #}
+        {% partial __SELF__ ~ '::searchresult.htm' result = result %}
+    {% endfor %}
+
+    {% if __SELF__.searchPage %}
+        <p class="ss-show-all-results">
+            <a href="{{ __SELF__.searchPage | page }}?q={{ query | url_encode(true) }}">
+                Show all results &raquo;
+            </a>
+        </p>
+    {% endif %}
+</div>
+{% else %}
+    {# No results found #}
+    <p data-control="flash-message" data-interval="5" class="warning">Your search for <strong>{{ query }}</strong> returned no results.</p>
+{% endif %}";s:5:"mtime";i:1592589914;s:6:"markup";s:740:"{% if results.count %}
+<div class="w-100 bg-white px-8 py-4 border border-top-0">
+    {% for result in results | slice(0, __SELF__.autoCompleteResultCount) %}
+        {# Display results #}
+        {% partial __SELF__ ~ '::searchresult.htm' result = result %}
+    {% endfor %}
+
+    {% if __SELF__.searchPage %}
+        <p class="ss-show-all-results">
+            <a href="{{ __SELF__.searchPage | page }}?q={{ query | url_encode(true) }}">
+                Show all results &raquo;
+            </a>
+        </p>
+    {% endif %}
+</div>
+{% else %}
+    {# No results found #}
+    <p data-control="flash-message" data-interval="5" class="warning">Your search for <strong>{{ query }}</strong> returned no results.</p>
+{% endif %}";s:4:"code";N;s:7:"viewBag";a:0:{}}}

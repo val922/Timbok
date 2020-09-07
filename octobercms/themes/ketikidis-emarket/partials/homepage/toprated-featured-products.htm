@@ -1,0 +1,29 @@
+description = "Top Rated - Featured Products Section"
+
+[viewBag]
+==
+<?php
+function onStart()
+{
+    // Latest - Bestseller Category Banner
+    $indexTopfeaturedBanner = $this->theme->index_topfeatured_banner;
+    
+    $this['indexTopfeaturedBanner'] = \OFFLINE\Mall\Models\Category::find($indexTopfeaturedBanner);
+}
+?>
+==
+<section class="container pt-sm-4 pb-6 pb-md-12">
+    <div class="row">
+        <div class="col-md-4 col-sm-6 mb-2 py-4">
+            <h3 class="d-block position-relative font-7 pb-2 mb-4 decorated-right"><span>{{ 'Top Rated'|_ }}</span></h3>
+            {% partial 'widgetProducts/default' products=widgeTopProducts ratings=true %}
+        </div>
+        <div class="col-md-4 col-sm-6 mb-2 py-4">
+            <h3 class="d-block position-relative font-7 pb-2 mb-4 decorated-right"><span>{{ 'Featured'|_ }}</span></h3>
+            {% partial 'widgetProducts/default' products=widgetFeaturedProducts ratings=false %}
+        </div>
+        <div class="col-md-4 col-sm-6 d-block d-sm-none d-md-block mb-4 pl-lg-8" data-sal="flip-left" data-sal-duration="1200">
+            {% partial 'widgetBanners/category-banner-bottom' category=indexTopfeaturedBanner %}
+        </div>
+    </div>
+</section>

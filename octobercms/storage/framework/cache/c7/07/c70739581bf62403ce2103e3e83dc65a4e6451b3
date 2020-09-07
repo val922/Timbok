@@ -1,0 +1,21 @@
+1599340747a:1:{s:29:"productreviews/userreview.htm";a:6:{s:8:"fileName";s:29:"productreviews/userreview.htm";s:7:"content";s:515:"[viewBag]
+==
+<h5 class="mall-product-reviews__info-name font-weight-semibold font-6 text-center mb-4">{{ 'offline.mall::frontend.reviews.your_rating' | trans }}</h5>
+<div class="mall-product-reviews__info-content">
+    {% if __SELF__.canReview %}
+        {% partial __SELF__ ~ '::form' review=__SELF__.customerReview %}
+    {% else %}
+        <a href="{{ __SELF__.accountPage | page }}" class="mall-product-reviews__login-required">
+            Login to create a review.
+        </a>
+    {% endif %}
+</div>";s:5:"mtime";i:1592589914;s:6:"markup";s:502:"<h5 class="mall-product-reviews__info-name font-weight-semibold font-6 text-center mb-4">{{ 'offline.mall::frontend.reviews.your_rating' | trans }}</h5>
+<div class="mall-product-reviews__info-content">
+    {% if __SELF__.canReview %}
+        {% partial __SELF__ ~ '::form' review=__SELF__.customerReview %}
+    {% else %}
+        <a href="{{ __SELF__.accountPage | page }}" class="mall-product-reviews__login-required">
+            Login to create a review.
+        </a>
+    {% endif %}
+</div>";s:4:"code";N;s:7:"viewBag";a:0:{}}}

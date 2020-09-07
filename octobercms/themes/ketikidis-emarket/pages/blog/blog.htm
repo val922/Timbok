@@ -1,0 +1,95 @@
+title = "Blog"
+url = "/blog/:page?"
+layout = "default"
+is_hidden = 0
+
+[viewBag]
+localeUrl[gr] = "/blog"
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+categoryFilter = "{{ :slug }}"
+postsPerPage = 6
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "blog/blog-category"
+postPage = "blog/blog-post"
+
+[blogCategories]
+slug = "{{ :slug }}"
+displayEmpty = 0
+categoryPage = "blog/blog-category"
+
+[blogPosts latestPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 4
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "blog/blog-category"
+postPage = "blog/blog-post"
+
+[topPosts]
+period = 5
+category = 0
+postPerPage = 4
+postPage = "blog/blog-post"
+slug = "{{ :slug }}"
+
+[mailSignup]
+
+[products bannerProducts]
+filterComponent = "productsFilter"
+setPageTitle = 0
+includeVariants = 0
+includeChildren = 0
+perPage = 1
+paginate = 0
+==
+<?php
+function onLoadMore() {
+    // get the page number
+    $pageNumber = Input::get('page') + 1;
+    // access the Posts component with alias blogPosts:
+    // set the page number and prepare the data
+    $this->components['blogPosts']->setProperty('pageNumber', $pageNumber);
+    $this->components['blogPosts']->onRun();
+    if ($pageNumber < $this->components['blogPosts']->posts->lastPage()) {
+        // for simplicity, we generate html, but in principle you can make a separate parcel for the button
+        $more_link = '<a data-request="onLoadMore" data-request-data="page: ' . $pageNumber . '" href="#" class="btn btn-lg btn-outline-primary btn-rounded m-auto">Load More</a>';
+    } else {
+        // if we reached the last page, the button is no longer needed
+        $more_link = '';
+    }
+    return [
+        // if the @ is in front of the selector, the new content will be added to the end, rather than replacing the old
+        '@#all-posts' => $this->components['blogPosts']->renderPartial('blog/posts'),
+        '#load-more' => $more_link,
+    ];
+}
+?>
+==
+{% partial 'pageHeader/page' %}
+
+<div class="container pb-12">
+    <div class="row justify-content-center">
+        <div class="col-lg-9 mb-6 {{ this.theme.blog_category_layout == 'order-lg-1' ? 'order-lg-2' : 'order-lg-1' }}">
+            {% partial 'blogPosts/default' posts=blogPosts.posts %}
+        </div>
+        {% if this.theme.blog_category_layout is not empty %}
+        <div class="col-lg-3 mb-6 {{ this.theme.blog_category_layout }}">
+            {% partial 'blogCategories/default' %}
+            {% partial 'blogTopPosts/default' %}
+            {% partial 'blogTagList/default' %}
+            {% partial 'blogLatestPosts/default' blogPosts=latestPosts %}
+            {% partial 'mailSignup/default' mailSignup=mailSignup id=Blog bg='bg-primary' %}
+            {% if this.theme.shop_product_banner_section %}
+            {% if this.theme.shop_product_banner_type == 'product' %}
+            {% partial 'widgetBanners/product-banner-bottom' %}
+            {% elseif this.theme.shop_product_banner_type == 'variant' %}
+            {% partial 'widgetBanners/variant-banner-bottom' %}
+            {% endif %}
+            {% endif %}
+        </div>
+        {% endif %}
+    </div>
+</div>

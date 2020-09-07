@@ -1,0 +1,26 @@
+[viewBag]
+==
+<div class="mall-cart-summary bg-secondary p-5 pb-2">
+    <div class="row mall-cart-summary__info">
+        <div class="col-sm-3">
+            <h4 class="mall-cart-summary__heading font-weight-semibold font-6 mb-3">{{ 'offline.mall::frontend.billing_address' | trans }}:</h4>
+            {% component 'billingAddressSelector' %}
+        </div>
+        <div class="col-sm-3">
+            <h4 class="mall-cart-summary__heading font-weight-semibold font-6 mb-3">{{ 'offline.mall::frontend.shipping_address' | trans }}:</h4>
+            {% component 'shippingAddressSelector' %}
+        </div>
+        <div class="col-sm-3">
+            <h4 class="mall-cart-summary__payment-method mall-cart-summary__heading font-weight-semibold font-6 mb-3">{{ 'offline.mall::frontend.payment_method' | trans }}:</h4>
+            <div>
+                {% partial __SELF__ ~ '::paymentmethod' %}
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <h4 class="mall-cart-summary__shipping-method mall-cart-summary__heading font-weight-semibold font-6 mb-3">{{ 'offline.mall::frontend.shipping_method' | trans }}:</h4>
+            <div>
+                {% partial __SELF__ ~ '::shippingmethod' %}
+            </div>
+        </div>
+    </div>
+</div>

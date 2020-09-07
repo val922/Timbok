@@ -1,0 +1,9 @@
+[viewBag]
+==
+{% if __SELF__.showShipping %}
+{# if the showShipping property is set to false, the grandtotal row will equal this row #}
+{# this is why we only need to display this row if the showShipping property is set to true #}
+<div class="mall-cart__total d-flex justify-content-between mb-2">
+    <span>{{ 'offline.mall::frontend.total' | trans }}:</span><span>{{ totals.productPostTaxes | money }}</span>
+</div>
+{% endif %}

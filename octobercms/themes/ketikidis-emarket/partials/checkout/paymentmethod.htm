@@ -1,0 +1,17 @@
+[viewBag]
+==
+<div class="d-flex justify-content-between flex-column min-h-xs font-4">
+    <div class="mall-cart-summary__method-logo mb-3">
+        {% if __SELF__.cart.payment_method.logo %}
+            <img src="{{ __SELF__.cart.payment_method.logo.thumb(100, 100, 'crop') }}" class="img-fluid" alt=""/>
+        {% else %}
+            {{ __SELF__.cart.payment_method.name }}
+        {% endif %}
+    </div>
+    
+    <p class="mall-cart-summary__action mb-0">
+        <a href="{{ __SELF__.stepUrl('payment', {via: 'confirm'}) }}" class="text-link">
+            {{ 'offline.mall::frontend.change' | trans }}
+        </a>
+    </p>
+</div>

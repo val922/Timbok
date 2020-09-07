@@ -1,0 +1,134 @@
+[staticPage]
+useContent = 1
+default = 0
+==
+{variable tab="banner" name="bannerEnable" label="Enable" type="switch"}{/variable}
+{repeater tab="banner" name="banners" prompt="Add banner"}
+{variable name="image" label="Image (1920x750)" type="mediafinder" mode="image"}{/variable}
+{variable name="title" label="Title" type="text"}{/variable}
+{variable name="info" label="Info" type="text"}{/variable}
+{variable name="btnText" label="Btn text" type="text"}{/variable}
+{variable name="btnURL" label="Btn url" type="text"}{/variable}
+{/repeater}
+
+{variable tab="feature" name="featureEnable" label="Enable" type="switch"}{/variable}
+{repeater tab="feature" name="features" prompt="Add feature"}
+{variable name="image" label="Image(360x240)" type="mediafinder" mode="image"}{/variable}
+{variable name="icon" label="Icon: /themes/visarzo/assets/css/font-awesome-all.css | https://fontawesome.com" type="text"}{/variable}
+{variable name="title" label="Title" type="text"}{/variable}
+{variable name="info" label="Info" type="text"}{/variable}
+{variable name="btnText" label="Btn text" type="text"}{/variable}
+{variable name="btnUrl" label="Btn url" type="text"}{/variable}
+{/repeater}
+
+{variable tab="about" name="aboutEnable" label="Enable" type="switch"}{/variable}
+{variable tab="about" name="aboutImage" label="Image (488x530)" type="mediafinder" mode="image"}{/variable}
+{variable tab="about" name="aboutTop" label="Top text" type="text"}{/variable}
+{variable tab="about" name="aboutTitle" label="Title" type="text"}{/variable}
+{variable tab="about" name="aboutTextBold" label="Bold text" type="text"}{/variable}
+{variable tab="about" name="aboutText" label="Text" type="text"}{/variable}
+{variable tab="about" name="aboutBtnText" label="Btn text" type="text"}{/variable}
+{variable tab="about" name="aboutBtnUrl" label="Btn url" type="text"}{/variable}
+
+{variable tab="service" name="serviceEnable" label="Enable" type="switch"}{/variable}
+{variable tab="service" name="serviceTop" label="Top text" type="text"}{/variable}
+{variable tab="service" name="serviceTitle" label="Title" type="text"}{/variable}
+{variable tab="service" name="serviceInfo" label="Info" type="text"}{/variable}
+{repeater tab="service" name="services" prompt="Add service"}
+{variable name="image" label="Image(360x240)" type="mediafinder" mode="image"}{/variable}
+{variable name="icon" label="Icon: /themes/visarzo/assets/css/font-awesome-all.css | https://fontawesome.com" type="text"}{/variable}
+{variable name="title" label="Title" type="text"}{/variable}
+{variable name="info" label="Info" type="text"}{/variable}
+{variable name="btnText" label="Btn text" type="text"}{/variable}
+{variable name="btnUrl" label="Btn url" type="text"}{/variable}
+{/repeater}
+
+{variable tab="apply" name="applyEnable" label="Enable" type="switch"}{/variable}
+{variable tab="apply" name="applyTop" label="Top text" type="text"}{/variable}
+{variable tab="apply" name="applyTitle" label="Title" type="text"}{/variable}
+{variable tab="apply" name="applyInfo" label="Info" type="text"}{/variable}
+{repeater tab="apply" name="applies" prompt="Add apply"}
+{variable name="icon" label="Icon: /themes/visarzo/assets/css/font-awesome-all.css | https://fontawesome.com" type="text"}{/variable}
+{variable name="title" label="Title" type="text"}{/variable}
+{variable name="url" label="Url" type="text"}{/variable}
+{/repeater}
+
+{variable tab="immigration" name="immigrationEnable" label="Enable" type="switch"}{/variable}
+{variable tab="immigration" name="immigrationTop" label="Top text" type="text"}{/variable}
+{variable tab="immigration" name="immigrationTitle" label="Title" type="text"}{/variable}
+{repeater tab="immigration" name="immigrations" prompt="Add immigration"}
+{variable name="image" label="Image(640x500)" type="mediafinder" mode="image"}{/variable}
+{variable name="title" label="Title" type="text"}{/variable}
+{variable name="url" label="Url" type="text"}{/variable}
+{/repeater}
+
+{variable tab="offer" name="offerEnable" label="Enable" type="switch"}{/variable}
+{variable tab="offer" name="offerTop" label="Top text" type="text"}{/variable}
+{variable tab="offer" name="offerTitle" label="Title" type="text"}{/variable}
+{repeater tab="offer" name="offers" prompt="Add offer"}
+{variable name="image" label="Image(500x500)" type="mediafinder" mode="image"}{/variable}
+{variable name="title" label="Title" type="text"}{/variable}
+{variable name="url" label="Url" type="text"}{/variable}
+{/repeater}
+
+{variable tab="team" name="teamEnable" label="Enable" type="switch"}{/variable}
+{variable tab="team" name="teamTop" label="Top text" type="text"}{/variable}
+{variable tab="team" name="teamTitle" label="Title" type="text"}{/variable}
+{variable tab="team" name="teamInfo" label="Info" type="text"}{/variable}
+{repeater tab="team" name="teams" prompt="Add team"}
+{variable name="image" label="Image(500x500)" type="mediafinder" mode="image"}{/variable}
+{variable name="name" label="Name" type="text"}{/variable}
+{variable name="role" label="Role" type="text"}{/variable}
+{variable name="icon" label="Icon: /themes/visarzo/assets/css/font-awesome-all.css | https://fontawesome.com" type="text"}{/variable}
+{variable name="text" label="Text" type="text"}{/variable}
+{variable name="url" label="Url" type="text"}{/variable}
+{/repeater}
+
+{variable tab="funfact" name="funfactEnable" label="Enable" type="switch"}{/variable}
+{repeater tab="funfact" name="funfacts" prompt="Add funfact"}
+{variable name="icon" label="Icon: /themes/visarzo/assets/css/font-awesome-all.css | https://fontawesome.com" type="text"}{/variable}
+{variable name="num" label="Number" type="text"}{/variable}
+{variable name="unit" label="Unit" type="text"}{/variable}
+{variable name="info" label="Info" type="text"}{/variable}
+{/repeater}
+
+{variable tab="testimonial" name="testimonialEnable" label="Enable" type="switch"}{/variable}
+{variable tab="testimonial" name="testimonialTop" label="Top text" type="text"}{/variable}
+{variable tab="testimonial" name="testimonialTitle" label="Title" type="text"}{/variable}
+{repeater tab="testimonial" name="testimonials" prompt="Add testimonial"}
+{variable name="image" label="Image(65x65)" type="mediafinder" mode="image"}{/variable}
+{variable name="name" label="Name" type="text"}{/variable}
+{variable name="introduction" label="Introduction" type="text"}{/variable}
+{variable name="comment" label="Comment" type="textarea"}{/variable}
+{/repeater}
+
+{variable tab="news" name="newsEnable" label="Enable" type="switch"}{/variable}
+{variable tab="news" name="newsTop" label="Top text" type="text"}{/variable}
+{variable tab="news" name="newsTitle" label="Title" type="text"}{/variable}
+{variable tab="news" name="newsInfo" label="Info" type="text"}{/variable}
+
+{variable tab="client" name="clientEnable" label="Enable" type="switch"}{/variable}
+{repeater tab="client" name="clients" prompt="Add client"}
+{variable name="image" label="Image(215x100)" type="mediafinder" mode="image"}{/variable}
+{variable name="info" label="Url" type="text"}{/variable}
+{/repeater}
+
+<!DOCTYPE html>
+<html>
+{% partial 'html/head' %}
+<body>
+<div class="boxed_wrapper">
+    {% partial 'html/loader-wrap' %}
+    {% partial 'html/switcher' %}
+    {% partial 'html/search' %}
+    {% partial 'html/header' %}
+    {% partial 'html/mobile-menu' %}
+
+    {% page %}
+
+    {% partial 'html/footer' %}
+    {% partial 'html/scroll-top' %}
+</div>
+{% partial 'html/script' %}
+</body>
+</html>

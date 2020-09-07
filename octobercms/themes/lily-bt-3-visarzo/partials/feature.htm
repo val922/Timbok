@@ -1,0 +1,74 @@
+[viewBag]
+snippetCode = "feature"
+snippetName = "feature"
+==
+{% if featureEnable %}
+    {% if features %}
+        <section class="feature-section">
+            <div class="auto-container">
+                <div class="inner-container">
+                    <div class="row clearfix">
+                        {% for item in features %}
+                            <div class="col-lg-4 col-md-6 col-sm-12 feature-block mt-5">
+                                <div class="feature-block-one wow fadeInUp animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                                    <div class="inner-box">
+                                        {% if item.image %}
+                                        <figure class="image-box">
+                                            <img src="{{item.image|media}}" alt="">
+                                        </figure>
+                                        {% endif %}
+                                        <div class="text">
+                                            <h3><a href="">{{item.title}}</a></h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </section>
+    {% else %}
+    <div class="text-center">
+        <h2>{{'Feature'|_}}</h2>
+        <h4>{{'Please set it in the backend'|_}}</h4>
+    </div>
+    {% endif %}
+{% else %}
+<section class="feature-section">
+    <div class="auto-container">
+        <div class="row clearfix">
+            <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
+                <div class="feature-block-one wow fadeInUp animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image-box"><img src="{{'assets/images/resource/feature-1.jpg'|theme}}" alt=""></figure>
+                        <div class="text">
+                            <h3><a href="">Features</a></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
+                <div class="feature-block-one wow fadeInUp animated animated" data-wow-delay="300ms" data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image-box"><img src="{{'assets/images/resource/feature-2.jpg'|theme}}" alt=""></figure>
+                        <div class="text">
+                            <h3><a href="">Scalability</a></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 feature-block">
+                <div class="feature-block-one wow fadeInUp animated animated" data-wow-delay="600ms" data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image-box"><img src="{{'assets/images/resource/feature-3.jpg'|theme}}" alt=""></figure>
+                        <div class="text">
+                            <h3><a href="">Professional Services</a></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}

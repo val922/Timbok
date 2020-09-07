@@ -1,0 +1,39 @@
+[viewBag]
+==
+<?php
+function onStart()
+{
+    // Categories
+    $menuCategoryBanners = $this->theme->menu_category_banners;
+    
+    if (empty($menuCategoryBanners) || !is_array($menuCategoryBanners)) {
+        $menuCategoryBanners = [];
+    } else {
+        $menuCategoryBanners = array_column($menuCategoryBanners, 'menu_category_banner');
+    }
+    
+    $this['menuCategoryBanners'] = $menuCategoryBanners;
+    
+    $menuBanners = $menuCategoryBanners;
+    $menuBanners = \OFFLINE\Mall\Models\Category::whereIn('id', $menuBanners)->get();
+    $sortedmenuBanners = $menuBanners
+        ->sortBy(function ($item) use ($menuCategoryBanners) {
+            return array_search($item->id, $menuCategoryBanners);
+        });
+    
+    $this['sortedmenuBanners'] = $sortedmenuBanners;
+}
+?>
+==
+{% for category in sortedmenuBanners %}
+{% if (loop.index0 == 0 and (item.code == 'banner-1')) or (loop.index0 == 1 and (item.code == 'banner-2')) or (loop.index0 == 2 and (item.code == 'banner-3')) or (loop.index0 == 3 and (item.code == 'banner-4')) or (loop.index0 == 4 and (item.code == 'banner-5')) or (loop.index0 == 5 and (item.code == 'banner-6')) %}
+<div class="{{ item.viewBag.cssClass ? item.viewBag.cssClass : 'col-lg-2 col-md-6' }} p-0 my-n7 ml-n7 d-none d-lg-block">
+	<div class="h-100 p-7 bg-cover" style="background-image:url({{ category.image.thumb(600, 600, 'crop') }})">
+		<div class="position-absolute overflow-hidden inset-0 w-100 h-100 bg-dark opacity-50"></div>
+		<div class="position-relative h-100">
+			<h3 class="font-weight-light text-white">{{ category.name }}</h3>
+		</div>
+	</div>
+</div>
+{% endif %}
+{% endfor %}

@@ -1,0 +1,73 @@
+[staticPage]
+useContent = 1
+default = 0
+==
+{variable tab="pageTitle" name="pageTitleEnable" label="Enable" type="switch"}{/variable}
+{variable tab="pageTitle" name="pageImage" label="Image(1920x500)" type="mediafinder" mode="image"}{/variable}
+{variable tab="pageTitle" name="pageTitleTitle" label="Title" type="text"}{/variable}
+{repeater tab="pageTitle" name="pageBreads" prompt="Add client"}
+{variable name="title" label="Title" type="text"}{/variable}
+{variable name="url" label="Url" type="text"}{/variable}
+{/repeater}
+
+{variable tab="service" name="serviceEnable" label="Enable" type="switch"}{/variable}
+{variable tab="service" name="serviceTop" label="Top text" type="text"}{/variable}
+{variable tab="service" name="serviceTitle" label="Title" type="text"}{/variable}
+{variable tab="service" name="serviceInfo" label="Info" type="text"}{/variable}
+{repeater tab="service" name="services" prompt="Add service"}
+{variable name="image" label="Image(360x240)" type="mediafinder" mode="image"}{/variable}
+{variable name="icon" label="Icon: /themes/visarzo/assets/css/font-awesome-all.css | https://fontawesome.com" type="text"}{/variable}
+{variable name="title" label="Title" type="text"}{/variable}
+{variable name="info" label="Info" type="text"}{/variable}
+{variable name="btnText" label="Btn text" type="text"}{/variable}
+{variable name="btnUrl" label="Btn url" type="text"}{/variable}
+{/repeater}
+
+{variable tab="flag" name="flagEnable" label="Enable" type="switch"}{/variable}
+{variable tab="flag" name="flagImage" label="Image(400x350)" type="mediafinder" mode="image"}{/variable}
+{variable tab="flag" name="flagText" label="text" type="text"}{/variable}
+{variable tab="flag" name="flagTitle" label="Title" type="text"}{/variable}
+{variable tab="flag" name="flagBtnText" label="Btn text" type="text"}{/variable}
+{variable tab="flag" name="flagBtnUrl" label="Btn url" type="text"}{/variable}
+
+{variable tab="funfact" name="funfactEnable" label="Enable" type="switch"}{/variable}
+{repeater tab="funfact" name="funfacts" prompt="Add funfact"}
+{variable name="icon" label="Icon: /themes/visarzo/assets/css/font-awesome-all.css | https://fontawesome.com" type="text"}{/variable}
+{variable name="num" label="Number" type="text"}{/variable}
+{variable name="unit" label="Unit" type="text"}{/variable}
+{variable name="info" label="Info" type="text"}{/variable}
+{/repeater}
+
+{variable tab="inquiry" name="inquiryEnable" label="Enable" type="switch"}{/variable}
+{variable tab="inquiry" name="inquiryTop" label="Top text" type="text"}{/variable}
+{variable tab="inquiry" name="inquiryTitle" label="Title" type="text"}{/variable}
+
+{variable tab="testimonial" name="testimonialEnable" label="Enable" type="switch"}{/variable}
+{variable tab="testimonial" name="testimonialTop" label="Top text" type="text"}{/variable}
+{variable tab="testimonial" name="testimonialTitle" label="Title" type="text"}{/variable}
+{repeater tab="testimonial" name="testimonials" prompt="Add testimonial"}
+{variable name="image" label="Image(65x65)" type="mediafinder" mode="image"}{/variable}
+{variable name="name" label="Name" type="text"}{/variable}
+{variable name="introduction" label="Introduction" type="text"}{/variable}
+{variable name="comment" label="Comment" type="textarea"}{/variable}
+{/repeater}
+
+<!DOCTYPE html>
+<html>
+{% partial 'html/head' %}
+<body>
+<div class="boxed_wrapper">
+    {% partial 'html/loader-wrap' %}
+    {% partial 'html/switcher' %}
+    {% partial 'html/search' %}
+    {% partial 'html/header' %}
+    {% partial 'html/mobile-menu' %}
+
+    {% page %}
+
+    {% partial 'html/footer' %}
+    {% partial 'html/scroll-top' %}
+</div>
+{% partial 'html/script' %}
+</body>
+</html>

@@ -1,0 +1,7 @@
+[viewBag]
+==
+{% if products.items.count %}
+    {% partial 'relatedProducts/items' items=products.items %}
+{% else %}
+    {% partial 'relatedProducts/empty' %}
+{% endif %}

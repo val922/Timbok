@@ -1,0 +1,50 @@
+//
+// Font Size Utilities
+//
+
+$font-size:  $font-size-base !default;
+$font-sizes: () !default;
+$font-sizes: map-merge(
+  (
+	1: ($font-size * 0.625),
+	2: ($font-size * 0.6875),
+	3: ($font-size * 0.75),
+	4: ($font-size * 0.8125),
+	5: ($font-size * 0.875),
+	6: ($font-size * 1),
+	7: ($font-size * 1.125),
+	8: ($font-size * 1.25),
+	9: ($font-size * 1.375),
+	10: ($font-size * 1.5),
+	11: ($font-size * 1.625),
+	12: ($font-size * 1.75),
+	13: ($font-size * 1.875),
+	14: ($font-size * 2),
+	15: ($font-size * 2.125),
+	16: ($font-size * 2.25),
+	17: ($font-size * 2.375),
+	18: ($font-size * 2.5)
+  ),
+  $font-sizes
+);
+
+@if $font-size-breakpoints {
+  @each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+      $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+  
+      @each $prop, $abbrev in (font-size: font) {
+        @each $size, $length in $font-sizes {
+          .#{$abbrev}#{$infix}-#{$size} { #{$prop}: $length !important; }
+  	  }
+      }
+    }
+  }
+}
+@else {
+  @each $prop, $abbrev in (font-size: font) {
+    @each $size, $length in $font-sizes {
+	  .#{$abbrev}-#{$size} { #{$prop}: $length !important; }
+    }
+  }
+}

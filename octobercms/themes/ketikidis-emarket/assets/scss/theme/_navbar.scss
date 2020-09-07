@@ -1,0 +1,124 @@
+// Navbar
+
+// Navbar nav
+//
+
+.navbar-nav {
+    .nav-link {
+        @include transition($navbar-transition);
+		svg {
+			width: 1em;
+		}
+    }
+	
+	.mega-dropdown {
+		.dropdown-menu {
+			width: 100%;
+			margin-top: 0rem;
+			overflow: hidden;
+			.dropdown-item {
+				svg {
+					width: 1.1em;
+				}
+			}
+		}
+	}
+	
+	.dropdown-menu {
+		.dropdown-item {
+			svg {
+				width: 1em;
+			}
+		}
+	}
+	
+	.dropdown-submenu {
+		position: relative;
+		.dropdown-item {
+			& > .ml-auto {
+				position: absolute;
+				right: 1rem;
+				top: 0.5rem;
+			}
+			svg {
+				width: 1em;
+			}
+		}
+		& > .dropdown-menu {
+			top: 0;
+			left: 100%;
+			margin-left: 0rem;
+			display: none;
+			&.menu-right {
+				left: auto;
+				right: 100%;
+			}
+			&.show {
+				display: block;
+			}
+		}
+	}
+}
+
+
+// Responsive navbar
+//
+
+.navbar-collapse {
+  overflow-y: auto;
+  max-height: 30rem;
+}
+
+.navbar-expand {
+  @each $breakpoint in map-keys($grid-breakpoints) {
+    $next: breakpoint-next($breakpoint, $grid-breakpoints);
+    $infix: breakpoint-infix($next, $grid-breakpoints);
+
+    &#{$infix} {
+
+      @include media-breakpoint-up($next) {
+
+		.hover-dropdown {
+			.navbar-nav {
+				& > .dropdown {
+					&:hover {
+						& > .dropdown-menu {
+							display: block;
+							margin-top: 0rem;
+						}
+					}
+				}
+			}
+		}
+		.navbar-nav {
+			& > .dropdown {
+				.dropdown-menu {
+					min-width: 13.125rem;
+					margin-top: 0rem;
+				}
+			}
+			.dropdown-submenu {
+				&:hover {
+					& > .dropdown-menu {
+						display: block;
+					}
+				}
+			}
+			.dropdown-childmenu {
+				&:hover {
+					& > .dropdown-menu {
+						display: block;
+					}
+				}
+			}
+		}
+
+        .navbar-collapse {
+		  overflow: visible;
+		  max-width: 100%;
+        }
+
+      }
+    }
+  }
+}

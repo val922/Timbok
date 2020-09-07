@@ -1,0 +1,140 @@
+[viewBag]
+
+[staticMenu]
+code = "top"
+==
+{% if this.theme.show_top==1 %}
+<header class="main-header style-two">
+    {% if this.theme.show_top %}
+    <div class="header-top">
+        <div class="auto-container">
+            <div class="top-inner clearfix">
+                <div class="top-left pull-left">
+                    <ul class="info clearfix">
+                        <li><i class="flaticon-call"></i><a href="tel:+2673116181">311 61 81</a></li>
+                        <li><i class="flaticon-open-email-message"></i><a href="mailto:inquiry@timbok.com">inquiry@timbok.com</a></li>
+                    </ul>
+                </div>
+                <div class="top-right pull-right">
+                    <!--<div class="search-box-outer">
+                        <div class="search-btn">
+                            <button type="button" class="search-toggler"><i class="flaticon-search-1"></i></button>
+                        </div>
+                    </div>-->
+                    <ul class="social-links clearfix">
+                        {% partial 'html/social' %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    <div class="header-upper">
+        <div class="auto-container">
+            <div class="outer-box clearfix">
+                <div class="logo-box pull-left">
+                    <figure class="logo"><a href="/"><img src="{% if this.theme.logo_dark %}{{this.theme.logo_dark|media}}{% else %}{{'assets/images/logo-2x.png'|theme}}{% endif %}" alt=""></a></figure>
+                </div>
+                <div class="menu-area pull-right">
+                    <!--Mobile Navigation Toggler-->
+                    <div class="mobile-nav-toggler">
+                        <i class="icon-bar"></i>
+                        <i class="icon-bar"></i>
+                        <i class="icon-bar"></i>
+                    </div>
+
+                    {% partial 'html/nav' items=staticMenu.menuItems %}
+
+                    <!-- <div class="menu-right-content clearfix pull-left">
+                        <div class="btn-box">
+                            <a href="" class="theme-btn-two">Appointment<i class="flaticon-send"></i></a>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--sticky Header-->
+    <div class="sticky-header">
+        <div class="auto-container">
+            <div class="outer-box clearfix">
+                <div class="logo-box pull-left">
+                    <figure class="logo"><a href="/"><img src="{% if this.theme.logo_small %}{{this.theme.logo_small|media}}{% else %}{{'assets/images/logo-2x.png'|theme}}{% endif %}" alt=""></a></figure>
+                </div>
+                <div class="menu-area pull-right">
+                    <nav class="main-menu clearfix">
+                        <!--Keep This Empty / Menu will come through Javascript-->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+{% else %}
+<header class="main-header style-one">
+    {% if this.theme.show_top %}
+    <div class="header-top">
+        <div class="top-inner clearfix">
+            <div class="top-left pull-left">
+                <ul class="info clearfix">
+                    <li><i class="flaticon-call"></i><a href="tel:{{this.theme.phone}}">{{this.theme.phone}}</a></li>
+                    <li><i class="flaticon-open-email-message"></i><a href="mailto:{{this.theme.mail}}">{{this.theme.mail}}</a></li>
+                </ul>
+            </div>
+            <div class="top-right pull-right">
+                {% partial 'html/social' %}
+            </div>
+        </div>
+    </div>
+    {%endif%}
+    <div class="header-upper">
+        <div class="outer-container">
+            <div class="outer-box clearfix">
+                <div class="upper-left pull-left">
+                    <figure class="logo"><a href="/"><img src="{% if this.theme.logo_light %}{{this.theme.logo_light|media}}{% else %}{{'assets/images/logo-2x.png'|theme}}{% endif %}" alt=""></a></figure>
+                </div>
+                <div class="menu-area pull-right">
+                    <!--Mobile Navigation Toggler-->
+                    <div class="mobile-nav-toggler">
+                        <i class="icon-bar"></i>
+                        <i class="icon-bar"></i>
+                        <i class="icon-bar"></i>
+                    </div>
+
+                    {% partial 'html/nav' items=staticMenu.menuItems %}
+
+                    <div class="menu-right-content clearfix pull-left">
+                        <!--<div class="search-box-outer">
+                            <div class="search-btn">
+                                <button type="button" class="search-toggler"><i class="flaticon-search-1"></i></button>
+                            </div>
+                        </div>-->
+                        <div class="support-box">
+                            <i class="fas fa-phone-volume"></i>
+                            <p>Any Questions? Call us</p>
+                            <h3><a href="tel:12463330079">+267 311 61 81</a></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--sticky Header-->
+    <div class="sticky-header">
+        <div class="auto-container">
+            <div class="outer-box clearfix">
+                <div class="logo-box pull-left">
+                    <figure class="logo"><a href="/"><img src="{% if this.theme.logo_small %}{{this.theme.logo_small|media}}{% else %}{{'assets/images/small-logo.png'|theme}}{% endif %}" alt=""></a></figure>
+                </div>
+                <div class="menu-area pull-right">
+                    <nav class="main-menu clearfix">
+                        <!--Keep This Empty / Menu will come through Javascript-->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+{% endif %}

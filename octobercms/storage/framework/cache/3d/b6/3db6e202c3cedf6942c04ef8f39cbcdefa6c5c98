@@ -1,0 +1,11 @@
+1599340747a:1:{s:27:"relatedProducts/entries.htm";a:6:{s:8:"fileName";s:27:"relatedProducts/entries.htm";s:7:"content";s:174:"[viewBag]
+==
+{% if products.items.count %}
+    {% partial 'relatedProducts/items' items=products.items %}
+{% else %}
+    {% partial 'relatedProducts/empty' %}
+{% endif %}";s:5:"mtime";i:1592589916;s:6:"markup";s:161:"{% if products.items.count %}
+    {% partial 'relatedProducts/items' items=products.items %}
+{% else %}
+    {% partial 'relatedProducts/empty' %}
+{% endif %}";s:4:"code";N;s:7:"viewBag";a:0:{}}}

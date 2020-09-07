@@ -1,0 +1,17 @@
+[viewBag]
+==
+<select name="props[{{ item.property.hashId }}]"
+        id="{{ item.property.hashId }}"
+        data-id="{{ item.property.hashId }}"
+        class="js-mall-property-selector form-control hover:border-primary"
+        data-mall-property>
+    {% for value in item.values %}
+        <option value="{{ value.hashId }}"
+                {% if propertyValue.value == value.value %}
+                    selected
+                {% endif %}
+        >
+            {{ value.display_value | raw }} {{ item.property.unit }}
+        </option>
+    {% endfor %}
+</select>

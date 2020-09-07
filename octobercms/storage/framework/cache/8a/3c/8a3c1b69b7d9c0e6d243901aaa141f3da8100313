@@ -1,0 +1,21 @@
+1599327549a:1:{s:31:"cart/table-quantitydropdown.htm";a:6:{s:8:"fileName";s:31:"cart/table-quantitydropdown.htm";s:7:"content";s:672:"[viewBag]
+==
+<div class="form-group mb-2">
+    <label for="{{ product.hashId }}">{{ 'offline.mall::frontend.quantity' | trans }}</label>
+    <select class="mall-selectbox-sm js-mall-quantity form-control form-control-sm pl-2 hover:border-primary" data-id="{{ product.hashId }}" name="quantity">
+        {% set min = product.data.quantity_min | default(__SELF__.defaultMinQuantity) %}
+        {% set max = product.data.quantity_max | default(__SELF__.defaultMaxQuantity) %}
+        {% for i in range(min, max) %}
+            <option value="{{ i }}" {{ i == product.quantity ? 'selected="selected"' : '' }}>{{ i }}</option>
+        {% endfor %}
+    </select>
+</div>";s:5:"mtime";i:1592589912;s:6:"markup";s:659:"<div class="form-group mb-2">
+    <label for="{{ product.hashId }}">{{ 'offline.mall::frontend.quantity' | trans }}</label>
+    <select class="mall-selectbox-sm js-mall-quantity form-control form-control-sm pl-2 hover:border-primary" data-id="{{ product.hashId }}" name="quantity">
+        {% set min = product.data.quantity_min | default(__SELF__.defaultMinQuantity) %}
+        {% set max = product.data.quantity_max | default(__SELF__.defaultMaxQuantity) %}
+        {% for i in range(min, max) %}
+            <option value="{{ i }}" {{ i == product.quantity ? 'selected="selected"' : '' }}>{{ i }}</option>
+        {% endfor %}
+    </select>
+</div>";s:4:"code";N;s:7:"viewBag";a:0:{}}}

@@ -1,0 +1,121 @@
+1599340787a:1:{s:29:"homepage/category-banners.htm";a:7:{s:8:"fileName";s:29:"homepage/category-banners.htm";s:7:"content";s:2418:"description = "Category Banners Section"
+
+[viewBag]
+==
+<?php
+function onStart()
+{
+    // Category Banners
+    $indexCategoryBanners = $this->theme->index_category_banners;
+    
+    if (empty($indexCategoryBanners) || !is_array($indexCategoryBanners)) {
+        $indexCategoryBanners = [];
+    } else {
+        $indexCategoryBanners = array_column($indexCategoryBanners, 'index_category_banner');
+    }
+    
+    $this['indexCategoryBanners'] = $indexCategoryBanners;
+    
+    // Sorted Category Banners
+    $categoryBanners = $indexCategoryBanners;
+    $categoryBanners = \OFFLINE\Mall\Models\Category::whereIn('id', $categoryBanners)->get();
+    $sortedCategoryBanners = $categoryBanners
+        ->sortBy(function ($item) use ($indexCategoryBanners) {
+            return array_search($item->id, $indexCategoryBanners);
+        });
+    
+    $this['sortedCategoryBanners'] = $sortedCategoryBanners;
+}
+?>
+==
+<section class="container py-12 mt-4 d-sm-none d-none d-md-block">
+    <div class="row">
+        {% for banner in sortedCategoryBanners %}
+        {% if loop.index0 == 0 %}
+        <div class="col-lg-4 col-md-6" data-sal="slide-right" data-sal-duration="1200">
+            {% partial 'widgetBanners/category-banner-bottom' category=banner %}
+        </div>
+        {% endif %}
+        {% if loop.index0 == 1 %}
+        <div class="col-lg-4 col-md-6" data-sal="slide-down" data-sal-duration="1200">
+            {% partial 'widgetBanners/category-banner-top' category=banner %}
+        </div>
+        {% endif %}
+        {% if loop.index0 == 2 %}
+        <div class="col-lg-4 d-block d-lg-block d-md-none">
+            <div data-sal="slide-left" data-sal-duration="1200">
+                {% partial 'widgetBanners/category-banner-left' category=banner %}
+            </div>
+            {% endif %}
+            {% if loop.index0 == 3 %}
+            <div data-sal="slide-right" data-sal-duration="1200">
+                {% partial 'widgetBanners/category-banner-left' category=banner %}
+            </div>
+            {% endif %}
+            {% if loop.index0 == 4 %}
+            <div data-sal="slide-up" data-sal-duration="1200">
+                {% partial 'widgetBanners/category-banner-left' category=banner %}
+            </div>
+            {% endif %}
+        {% if loop.last %}
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+</section>";s:5:"mtime";i:1592589914;s:6:"markup";s:1491:"<section class="container py-12 mt-4 d-sm-none d-none d-md-block">
+    <div class="row">
+        {% for banner in sortedCategoryBanners %}
+        {% if loop.index0 == 0 %}
+        <div class="col-lg-4 col-md-6" data-sal="slide-right" data-sal-duration="1200">
+            {% partial 'widgetBanners/category-banner-bottom' category=banner %}
+        </div>
+        {% endif %}
+        {% if loop.index0 == 1 %}
+        <div class="col-lg-4 col-md-6" data-sal="slide-down" data-sal-duration="1200">
+            {% partial 'widgetBanners/category-banner-top' category=banner %}
+        </div>
+        {% endif %}
+        {% if loop.index0 == 2 %}
+        <div class="col-lg-4 d-block d-lg-block d-md-none">
+            <div data-sal="slide-left" data-sal-duration="1200">
+                {% partial 'widgetBanners/category-banner-left' category=banner %}
+            </div>
+            {% endif %}
+            {% if loop.index0 == 3 %}
+            <div data-sal="slide-right" data-sal-duration="1200">
+                {% partial 'widgetBanners/category-banner-left' category=banner %}
+            </div>
+            {% endif %}
+            {% if loop.index0 == 4 %}
+            <div data-sal="slide-up" data-sal-duration="1200">
+                {% partial 'widgetBanners/category-banner-left' category=banner %}
+            </div>
+            {% endif %}
+        {% if loop.last %}
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+</section>";s:4:"code";s:859:"function onStart()
+{
+    // Category Banners
+    $indexCategoryBanners = $this->theme->index_category_banners;
+    
+    if (empty($indexCategoryBanners) || !is_array($indexCategoryBanners)) {
+        $indexCategoryBanners = [];
+    } else {
+        $indexCategoryBanners = array_column($indexCategoryBanners, 'index_category_banner');
+    }
+    
+    $this['indexCategoryBanners'] = $indexCategoryBanners;
+    
+    // Sorted Category Banners
+    $categoryBanners = $indexCategoryBanners;
+    $categoryBanners = \OFFLINE\Mall\Models\Category::whereIn('id', $categoryBanners)->get();
+    $sortedCategoryBanners = $categoryBanners
+        ->sortBy(function ($item) use ($indexCategoryBanners) {
+            return array_search($item->id, $indexCategoryBanners);
+        });
+    
+    $this['sortedCategoryBanners'] = $sortedCategoryBanners;
+}";s:11:"description";s:24:"Category Banners Section";s:7:"viewBag";a:0:{}}}

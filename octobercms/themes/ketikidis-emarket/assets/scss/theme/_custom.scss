@@ -1,0 +1,286 @@
+//
+// Custom
+//
+
+
+// Pointer events
+//
+
+.pointer-events-none { pointer-events: none; }
+
+.pointer-events-auto { pointer-events: auto; }
+
+
+// Headlines with lines
+//
+
+.decorated {
+	overflow: hidden;
+	text-align: center;
+
+	> span {
+		position: relative;
+		display: inline-block;
+
+		&:before, &:after {
+			content: '';
+			position: absolute;
+			top: 50%;
+			border-bottom: $border-width solid $border-color;
+			width: 36.9375rem;
+			margin: 0 1.25rem;
+		}
+
+		&:before {
+			right: 100%;
+		}
+
+		&:after {
+			left: 100%;
+		}
+	}
+}
+
+.decorated-right {
+	overflow: hidden;
+	text-align: left;
+
+	> span {
+		position: relative;
+		display: inline-block;
+
+		&:after {
+			content: '';
+			position: absolute;
+			top: 50%;
+			border-bottom: $border-width solid $border-color;
+			width: 73.875rem;
+			margin: 0 1.25rem;
+		}
+
+		&:after {
+			left: 100%;
+		}
+	}
+}
+
+.decorated-left {
+	overflow: hidden;
+	text-align: right;
+
+	> span {
+		position: relative;
+		display: inline-block;
+
+		&:before {
+			content: '';
+			position: absolute;
+			top: 50%;
+			border-bottom: $border-width solid $border-color;
+			width: 73.875rem;
+			margin: 0 1.25rem;
+		}
+
+		&:before {
+			left: 100%;
+		}
+	}
+}
+
+
+// Pagination
+//
+
+.mall-pagination {
+	.pagination {
+		display: flex;
+		justify-content: center;
+		margin-bottom: 0;
+	}
+
+	li {
+		margin-right: 0.5rem;
+	}
+
+	a, span {
+		padding: 0rem;
+		height: 2.5rem;
+		width: 2.5rem;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		white-space: nowrap;
+		box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.15);
+		color: #fff;
+		background-color: $primary;
+		border-color: $primary;
+		font-weight: 400;
+		text-align: center;
+		vertical-align: middle;
+		user-select: none;
+		border: 1px solid transparent;
+		font-size: 1rem;
+		line-height: 1.5;
+		transition: all 0.2s ease;
+	}
+
+	.active > {
+		a, span {
+			color: #fff;
+			background-color: #1893c0;
+			border-color: #178ab5;
+		}
+	}
+
+	a:hover, span:hover {
+		color: #fff;
+		background-color: #1893c0;
+		border-color: #178ab5;
+	}
+}
+
+
+// Range Slider
+//
+
+html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
+	right: -.375rem;
+	left: auto;
+}
+
+.noUi-horizontal {
+	height: .1875rem;
+
+	&.noUi-target {
+		border: 0;
+		border-radius: 0;
+		background-color: #e7e7e7;
+		-webkit-box-shadow: none;
+		box-shadow: none;
+	}
+
+	.noUi-connect {
+		background-color: $primary;
+	}
+
+	.noUi-handle {
+		top: -.1875rem;
+		left: -.375rem;
+		width: .625rem;
+		height: .625rem;
+		cursor: pointer;
+		border: 0;
+		border-radius: 50%;
+		-webkit-box-shadow: none;
+		box-shadow: none;
+
+		&.noUi-handle-lower, &.noUi-handle-upper {
+			background-color: $primary;
+		}
+
+		&::after {
+			top: -.3125rem;
+			left: -.3125rem;
+			width: 1.25rem;
+			height: 1.25rem;
+			border: 1px solid transparent;
+			border-radius: 50%;
+			background: rgba(39, 177, 228, 0.15);
+		}
+
+		&::before {
+			display: none;
+		}
+	}
+
+	.noUi-pips.noUi-pips-horizontal {
+		display: none;
+	}
+
+	.noUi-handle:focus {
+		outline: none;
+	}
+}
+
+
+// Review & Rating Stars
+//
+
+.mall-star__bg {
+	fill: transparent;
+}
+
+.mall-star__border {
+	fill: $gray-500;
+}
+
+.mall-star--hover {
+	.mall-star__bg, .mall-star__border {
+		fill: $gray-500;
+	}
+}
+
+.mall-star--active {
+	.mall-star__bg {
+		fill: transparent;
+	}
+
+	.mall-star__border {
+		fill: $warning;
+	}
+}
+
+.mall-review__details .mall-star.mall-star--active {
+	color: $gray-500;
+
+	.mall-star__bg, .mall-star__border {
+		fill: currentColor;
+	}
+}
+
+.mall-category-review__rating--clickable .mall-star {
+	cursor: pointer;
+}
+
+
+// Slick
+//
+
+.slick-slider {
+	.slick-slide.slick-current.slick-active {
+		opacity: 1 !important;
+	}
+
+	.slick-dots {
+		bottom: -2.5rem;
+
+		li {
+			width: .75rem;
+			height: .75rem;
+
+		button {
+			width: .75rem;
+			height: .75rem;
+
+			&:before {
+				content: "";
+				width: .4rem;
+				height: .4rem;
+				border-radius: 50%;
+				border: 1px solid #27b1e4;
+				opacity: .75;
+				-webkit-transition: all .25s;
+				transition: all .25s;
+			}
+		}
+
+			&.slick-active button:before {
+				-webkit-transform: scale(2);
+				transform: scale(2);
+				background: $primary;
+				opacity: 1;
+			}
+		}
+	}
+}

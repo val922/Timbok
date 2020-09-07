@@ -1,0 +1,35 @@
+[viewBag]
+==
+<div class="mall-filter mall-filter--set d-flex flex-wrap">
+    {% set selected = filter[property.slug].values %}
+    {% for value in values %}
+        {% set isSelected = value.index_value in selected %}
+        {% if property.type == 'color' %}
+        <div class="js-mall-filter mall-filter__option d-flex justify-content-center align-items-center btn rounded-circle p-0 w-8 h-8 mb-2 {% if not loop.last %}mr-1{% endif %} {{ isSelected ? 'mall-filter__option--selected btn-primary' : 'btn-outline-primary' }}"> 
+            <div class="rounded-circle w-5 h-5" style="background: {{ value.value.hex }};"></div>
+            <input type="checkbox"
+                   aria-hidden="true"
+                   style="display: none"
+                   name="filter[{{ property.slug }}][]"
+                   value="{{ value.index_value }}"
+                    {% if isSelected %}
+                        checked
+                    {% endif %}
+            >
+        </div>
+        {% else %}
+        <div class="js-mall-filter mall-filter__option font-3 px-2 py-1 mb-2 {% if not loop.last %}mr-1{% endif %} btn {{ isSelected ? 'mall-filter__option--selected btn-primary' : 'btn-outline-primary' }}">
+            <input type="checkbox"
+                   aria-hidden="true"
+                   style="display: none"
+                   name="filter[{{ property.slug }}][]"
+                   value="{{ value.index_value }}"
+                    {% if isSelected %}
+                        checked
+                    {% endif %}
+            >
+            {{ value.display_value | raw }} {{ property.unit }}
+        </div>
+        {% endif %}
+    {% endfor %}
+</div>

@@ -1,0 +1,55 @@
+[viewBag]
+==
+<section class="container-fluid bg-secondary px-0">
+    <div class="row no-gutters align-items-center">
+        <div class="col-md-6">
+            <div class="mx-auto bg-white my-sm-4 max-w-lg">
+                <div class="products-slider-nav">
+                    {% for item in items %}
+                        {% partial 'productsSlider/item' item=item %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="products-slider-for">
+                {% for item in items %}
+                <img src="{{ item.image.thumb(1000, 750, 'crop') }}" width="1000" height="750" alt="{{ item.name }}" loading="lazy" class="img-fluid"/>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+{% put scripts %}
+<script>
+$('.products-slider-for').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 6000,
+    dots: false,
+    arrows: false,
+    fade: true,
+    cssEase: 'linear',
+    asNavFor: '.products-slider-nav',
+    lazyLoad: 'ondemand',
+    accessibility: false,
+    pauseOnHover:false
+});
+
+$('.products-slider-nav').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    asNavFor: '.products-slider-for',
+    dots: false,
+    arrows: false,
+    centerMode: false,
+    focusOnSelect: true,
+    lazyLoad: 'ondemand',
+    vertical: false,
+    accessibility: false,
+    pauseOnHover:false
+});
+</script>
+{% endput %}

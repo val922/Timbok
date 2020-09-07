@@ -1,0 +1,162 @@
+name: Timbok
+description: 'Timbok Information Page'
+author: VTM
+homepage: www.timbok.co.za
+code: bt-3-visarzo
+require:
+    - RainLab.Blog
+    - RainLab.Pages
+    - RainLab.Translate
+form:
+    tabs:
+        fields:
+            name:
+                tab: Config
+                label: 'website name'
+                type: text
+                span: left
+            contact1:
+                tab: Config
+                label: 'website contact1'
+                type: text
+                span: right
+            contact1_icon:
+                tab: Config
+                label: 'website contact1 icon - https://fontawesome.com'
+                type: text
+                span: right
+            contact1_link:
+                tab: Config
+                label: 'website contact1 link'
+                type: text
+                span: right
+            lan_choose:
+                tab: Config
+                label: 'top menu add language choose'
+                type: switch
+                'on': show
+                'off': hide
+                default: 0
+                span: left
+            contact2:
+                tab: Config
+                label: 'website contact2'
+                type: text
+                span: right
+            contact2_icon:
+                tab: Config
+                label: 'website contact2 icon - https://fontawesome.com'
+                type: text
+                span: right
+            contact2_link:
+                tab: Config
+                label: 'website contact2 link'
+                type: text
+                span: right
+            copyright:
+                tab: Config
+                label: 'website copyright'
+                type: codeeditor
+                span: right
+            logo_light:
+                tab: Config
+                label: 'website logo light (180x54)'
+                type: mediafinder
+                mode: image
+                span: left
+            logo_dark:
+                tab: Config
+                label: 'website logo dark (180x54)'
+                type: mediafinder
+                mode: image
+                span: left
+            logo_small:
+                tab: Config
+                label: 'website logo small (100x45)'
+                type: mediafinder
+                mode: image
+                span: left
+            logo_footer:
+                tab: Config
+                label: 'website logo footer (180x54)'
+                type: mediafinder
+                mode: image
+                span: left
+            menu_style:
+                tab: Theme
+                label: 'menu style'
+                type: radio
+                options:
+                    1: Transparent
+                    2: 'White background'
+                default: 1
+            color:
+                tab: Theme
+                label: 'theme color'
+                type: radio
+                options:
+                    default: default
+                    red: red
+                    pink: pink
+                    violet: violet
+                    crimson: crimson
+                    orange: orange
+                default: default
+            show_top:
+                tab: Theme
+                label: 'show top bar'
+                type: switch
+                'on': show
+                'off': hide
+                default: 0
+            show_footer:
+                tab: Theme
+                label: 'show footer bar'
+                type: switch
+                'on': show
+                'off': hide
+                default: 0
+            twitter:
+                tab: Social
+                label: 'twitter url'
+                type: text
+                span: left
+            qq:
+                tab: Social
+                label: 'qq url'
+                type: text
+                span: right
+            facebook:
+                tab: Social
+                label: 'facebook url'
+                type: text
+                span: left
+            wx:
+                tab: Social
+                label: 'wechat url'
+                type: text
+                span: right
+            instagram:
+                tab: Social
+                label: 'instagram url'
+                type: text
+                span: left
+            wb:
+                tab: Social
+                label: 'weibo url'
+                type: text
+                span: right
+            linkedin:
+                tab: Social
+                label: 'linkedin url'
+                type: text
+                span: left
+            google:
+                tab: Social
+                label: 'google+ url'
+                type: text
+                span: left
+            analytics:
+                tab: Analytics
+                label: 'Analytics code , no <script> </script>'
+                type: codeeditor

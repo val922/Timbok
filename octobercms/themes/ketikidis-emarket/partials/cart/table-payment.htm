@@ -1,0 +1,7 @@
+[viewBag]
+==
+{% if cart.payment_method_id != null and payment.totalPostTaxes > 0 %}
+<div class="mall-cart__payment d-flex justify-content-between mb-2">
+    <span>{{ cart.payment_method.fee_label | default(cart.payment_method.name) }}:</span><span>{{ payment.totalPostTaxes | money }}</span>
+</div>
+{% endif %}

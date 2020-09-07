@@ -1,0 +1,13 @@
+title = "Login"
+url = "/login"
+layout = "default"
+is_hidden = 0
+
+[signUp]
+redirect = "/account"
+==
+{% partial 'pageHeader/page' %}
+
+<div class="container pb-12 mb-sm-6">
+    {% component 'signUp' %}
+</div>

@@ -1,0 +1,13 @@
+description = "Brand Page Header"
+
+[viewBag]
+==
+<div class="py-10">
+	<div class="container">
+		<h1 class="font-weight-semibold">{{ items[0].brand.name }}</h1>
+		<span class="lead font-weight-semibold text-muted font-6">
+			{{ items[0].brand.description|raw }}
+		</span>
+        <hr class="mt-6">
+    </div>
+</div>

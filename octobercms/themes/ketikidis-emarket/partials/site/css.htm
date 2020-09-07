@@ -1,0 +1,32 @@
+description = "Css"
+
+[viewBag]
+==
+<!-- Core CSS -->
+{% styles %}
+
+<!-- Vendor CSS -->
+<link href="{{ [
+    'assets/vendor/animate/animate.min.css',
+    'assets/vendor/slick/css/slick.css',
+    'assets/vendor/slick/css/slick-theme.css',
+    'assets/vendor/sal/css/sal.css'
+    ]|theme }}" rel="stylesheet">
+
+<!-- Theme CSS -->
+<link href="{{ ['assets/scss/main.scss']|theme }}" rel="stylesheet">
+
+<!-- Fonts -->
+{% if this.theme.font_gfonts %}
+<link href="https://fonts.googleapis.com/css2?family={{ this.theme.font_gfonts }}&display=swap" rel="stylesheet">
+{% endif %}
+
+<!-- Flag Icon -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.6/css/flag-icon.min.css" rel="stylesheet">
+
+<!-- Custom CSS -->
+{% if this.theme.custom_css %}
+<style>
+{{ this.theme.custom_css|raw }}
+</style>
+{% endif %}

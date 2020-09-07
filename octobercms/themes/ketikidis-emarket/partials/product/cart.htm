@@ -1,0 +1,148 @@
+[viewBag]
+==
+<div class="pb-6">
+    {% set rating=productReviews.product.reviews_rating %}
+    <a href="#product-reviews" class="scroll mall-category-review text-dark d-flex align-items-center {{ variant ? ('mall-category-review--' ~ 'big') : '' }}">
+        <div class="mall-category-review__rating mr-2 {{ clickable ? 'mall-category-review__rating--clickable' }}">
+            {% set rating = rating|round %}
+            {% for i in range(1, 5) %}
+                {% partial 'productreviews/star' active=rating >= i value=i %}
+            {% endfor %}
+        </div>
+        <div class="font-5">
+        {{ productReviews.allReviews.count ~ ' ' ~ ('offline.mall::frontend.reviews.ratings' | transchoice(count | default(0))) }}
+        </div>
+    </a>
+    <form data-request="onAddToCart"
+          data-request-success="data.added && $.publish('mall.cart.productAdded', data)"
+          data-request-validate
+          data-request-flash
+          id="mall-add-to-cart">
+          
+        <div class="mb-2 pb-2">
+            <div class="mall-product__price">
+                {% partial __SELF__ ~ '::price' item=item %}
+            </div>
+            <div class="font-3 opacity-70">
+                {% partial __SELF__ ~ '::tax-info' item=item %}
+            </div>
+        </div>
+        
+        {% if variants.count > 0 %}
+        <div class="form-group">
+            <label class="font-6 text-dark" for="1dPgR4B8">{{ 'offline.mall::frontend.variants' | trans }}</label>
+            <div class="mall-product__variants d-flex">
+                {% for value, variant in variants %}
+                {% set variant = variant.first() %}
+                <div class="mall-product__variant mr-2">
+                    <a href="{{ this.page.fileName|page({slug: this.param.slug, variant: variant.hashId}) }}"
+                       title="{{ variant.name }}" class="d-block border hover:border-primary transition-20" data-toggle="tooltip" data-title="{{ variant.name }}">
+                        <img src="{{ variant.main_image.thumb(70, 70, 'crop') }}" class="img-fluid" alt="{{ variant.name }}"/>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+    
+        {% if props.count > 0 and item.inventory_management_method == 'variant' %}
+        <div class="mall-product__variant-properties mb-4">
+            {% partial __SELF__ ~ '::properties' props=props %}
+        </div>
+        {% endif %}
+    
+        {% if item.custom_fields.count > 0 %}
+        <div class="mall-product__custom-fields mb-6">
+            {% partial __SELF__ ~ '::customfields' fields=item.custom_fields %}
+        </div>
+        {% endif %}
+    
+        <div class="mall-product__add-to-cart">
+            {% if item.allow_out_of_stock_purchases %}
+                {% partial __SELF__ ~ '::addtocart.htm' item=item %}
+            {% else %}
+                <div class="mall-product__property-stock mall-product__property-stock--checking">
+                    {{ 'offline.mall::frontend.stock.checking' | trans }}
+                </div>
+            {% endif %}
+        </div>
+
+    </form>
+</div>
+
+<div id="product-accordion" class="">
+    {% if item.description_short %}
+    <div class="card border-bottom-0 rounded-0 overflow-hidden">
+        <div class="card-header bg-transparent px-5 py-3 mb-n1" id="headingOne">
+            <h3 class="font-6 mb-0">
+                <a href="#collapseOne" role="button" data-toggle="collapse" aria-expanded="true" aria-controls="collapseOne" class="d-flex align-items-center text-dark">
+                    <span class="pr-2 border-right mr-2">
+                        <i data-feather="info"></i>
+                    </span>
+                    <span>Short Description</span>
+                    <span class="ml-auto d-flex justify-content-center align-items-center font-3 text-dark text-muted border rounded-circle w-8 h-8">
+                        <i class="w-4 h-4" data-feather="chevron-down"></i>
+                    </span>
+                </a>
+            </h3>
+        </div>
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#product-accordion">
+            <div class="card-body">
+                <p class="">{{ item.description_short|nl2br }}</p>
+                <a class="scroll font-weight-semibold" href="#product-details">Read more</a>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    {% if item.brand %}
+    <div class="card border-bottom-0 rounded-0 overflow-hidden">
+        <div class="card-header bg-transparent px-5 py-3 mb-n1" id="headingTwo">
+            <h3 class="font-6 mb-0">
+                <a href="#collapseTwo" role="button" data-toggle="collapse" aria-expanded="true" aria-controls="collapseTwo" class="d-flex align-items-center text-dark">
+                    <span class="pr-2 border-right mr-2">
+                        <i data-feather="award"></i>
+                    </span>
+                    <span>Brand</span>
+                    <span class="ml-auto d-flex justify-content-center align-items-center font-3 text-dark text-muted border rounded-circle w-8 h-8">
+                        <i class="w-4 h-4" data-feather="chevron-down"></i>
+                    </span>
+                </a>
+            </h3>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingOne" data-parent="#product-accordion">
+            <div class="card-body">
+                <a class="d-inline-block border p-2" href="/brand/{{ item.brand.slug }}?brand={{ item.brand.slug }}&sort=latest">
+                    <img src="{{ item.brand.logo.thumb(130, 70, 'crop') }}" width="130" height="70" alt="{{ item.brand.name }}" class="w-24 w-md-100 img-fluid"/>
+                </a>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    {% if item.categories %}
+    <div class="card rounded-0 overflow-hidden">
+        <div class="card-header bg-transparent px-5 py-3 mb-n1" id="headingThree">
+            <h3 class="font-6 mb-0">
+                <a href="#collapseThree" role="button" data-toggle="collapse" aria-expanded="true" aria-controls="collapseThree" class="d-flex align-items-center text-dark">
+                    <span class="pr-2 border-right mr-2">
+                        <i data-feather="tag"></i>
+                    </span>
+                    <span>Category</span>
+                    <span class="ml-auto d-flex justify-content-center align-items-center font-3 text-dark text-muted border rounded-circle w-8 h-8">
+                        <i class="w-4 h-4" data-feather="chevron-down"></i>
+                    </span>
+                </a>
+            </h3>
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingOne" data-parent="#product-accordion">
+            <div class="card-body">
+                {% for category in item.categories %}
+                <a class="btn btn-sm btn-outline-light text-dark font-3 {% if not loop.last %}mr-2{% endif %} mb-2" href="/category/{{ category.nested_slug}}">{{ category.name }}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+<div class="py-6">
+{% component 'ShareButtons' %}
+</div>

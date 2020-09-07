@@ -1,0 +1,49 @@
+[viewBag]
+==
+<head>
+    <meta charset="UTF-8" />
+    <title>
+        {% if this.page.id == 'index' %}
+        {{ this.theme.name }}
+        {% elseif this.page.meta_title %}
+        {{ this.theme.name }} - {{this.page.meta_title}}
+        {% else %}
+        {{ this.theme.name }} - {{this.page.title}}
+        {% endif %}
+    </title>
+    {% if this.page.meta_description %}
+    <meta name="keywords" content="{{this.page.meta_description}}" />
+    {% endif %}
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+   
+<link href="{{ 'assets/css/font-awesome-all.css'|theme }}" rel="stylesheet">
+<link href="{{ 'assets/css/flaticon.css'|theme }}" rel="stylesheet">
+<link href="{{ 'assets/css/owl.css'|theme }}" rel="stylesheet">
+<link href="{{ 'assets/css/bootstrap.css'|theme }}" rel="stylesheet">
+<link href="{{ 'assets/css/jquery.fancybox.min.css'|theme }}" rel="stylesheet">
+<link href="{{ 'assets/css/animate.css'|theme }}" rel="stylesheet">
+<link href="{{ 'assets/css/nice-select.css'|theme }}" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    {% if this.theme.color=='red' %}
+    <link href="{{ 'assets/css/color/red.css'|theme}}" rel="stylesheet">
+    {% elseif this.theme.color=='pink' %}
+    <link href="{{ 'assets/css/color/pink.css'|theme}}" rel="stylesheet">
+    {% elseif this.theme.color=='crimson' %}
+    <link href="{{ 'assets/css/color/crimson.css'|theme}}" rel="stylesheet">
+    {% elseif this.theme.color=='orange' %}
+    <link href="{{ 'assets/css/color/orange.css'|theme}}" rel="stylesheet">
+    {% elseif this.theme.color=='violet' %}
+    <link href="{{ 'assets/css/color/violet.css'|theme}}" rel="stylesheet">
+    {% else %}
+    <link href="{{ 'assets/css/color/theme-color.css'|theme}}" rel="stylesheet">
+    {% endif %}
+
+<link href="{{ 'assets/css/switcher-style.css'|theme }}" rel="stylesheet">
+<link href="{{ 'assets/css/style.css'|theme }}" rel="stylesheet">
+<link href="{{ 'assets/css/responsive.css'|theme }}" rel="stylesheet">
+<link rel="shortcut icon" type="image/jpg" href="{{ 'assets/images/icons/favicon.ico'|theme}}"/>
+    
+    {% styles %}
+</head>

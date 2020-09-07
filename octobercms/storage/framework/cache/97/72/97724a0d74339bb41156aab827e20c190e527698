@@ -1,0 +1,67 @@
+1599460931a:1:{s:9:"brand.htm";a:10:{s:8:"fileName";s:9:"brand.htm";s:7:"content";s:1500:"title = "Brand"
+url = "/brand/:slug"
+layout = "default"
+is_hidden = 0
+
+[products]
+filterComponent = "productsFilter"
+setPageTitle = 1
+includeVariants = 1
+includeChildren = 1
+perPage = 12
+paginate = 1
+sort = "latest"
+==
+<?php
+function onStart()
+{
+    $this['brands'] = \OFFLINE\Mall\Models\Brand::with('products')->get();
+}
+?>
+==
+{% partial 'pageHeader/brand' %}
+
+<div class="container pb-12">
+    <div class="row">
+        <div class="col-lg-9 mb-6 {{ this.theme.shop_layout == 'order-lg-1' ? 'order-lg-2' : 'order-lg-1' }} order-2">
+            {% component 'products' %}
+        </div>
+        <div class="col-lg-3 mb-6 {{ this.theme.shop_layout }} order-1">
+            <div class="card card-body">
+                <a class="d-block mb-6" href="/brand/{{ items[0].brand.slug }}?brand={{ items[0].brand.slug }}&sort=latest">
+                    <img src="{{ items[0].brand.logo.thumb(300, 160, 'crop') }}" width="300" height="160" alt="{{ items[0].brand.name }}" class="w-100 img-fluid"/>
+                </a>
+                <h3 class="font-weight-semibold font-8">{{ items[0].brand.name }}</h3>
+                <div class="text-muted font-5">{{ items[0].brand.description|raw }}</div>
+                <a href="{{ items[0].brand.website }}" class="text-muted hover:text-primary">
+                    <i class="text-muted mr-2" data-feather="link"></i>
+                    {{ items[0].brand.website }}
+                </a>
+            </div>
+        </div>
+    </div>
+</div>";s:5:"mtime";i:1592589910;s:6:"markup";s:1168:"{% partial 'pageHeader/brand' %}
+
+<div class="container pb-12">
+    <div class="row">
+        <div class="col-lg-9 mb-6 {{ this.theme.shop_layout == 'order-lg-1' ? 'order-lg-2' : 'order-lg-1' }} order-2">
+            {% component 'products' %}
+        </div>
+        <div class="col-lg-3 mb-6 {{ this.theme.shop_layout }} order-1">
+            <div class="card card-body">
+                <a class="d-block mb-6" href="/brand/{{ items[0].brand.slug }}?brand={{ items[0].brand.slug }}&sort=latest">
+                    <img src="{{ items[0].brand.logo.thumb(300, 160, 'crop') }}" width="300" height="160" alt="{{ items[0].brand.name }}" class="w-100 img-fluid"/>
+                </a>
+                <h3 class="font-weight-semibold font-8">{{ items[0].brand.name }}</h3>
+                <div class="text-muted font-5">{{ items[0].brand.description|raw }}</div>
+                <a href="{{ items[0].brand.website }}" class="text-muted hover:text-primary">
+                    <i class="text-muted mr-2" data-feather="link"></i>
+                    {{ items[0].brand.website }}
+                </a>
+            </div>
+        </div>
+    </div>
+</div>";s:4:"code";s:100:"function onStart()
+{
+    $this['brands'] = \OFFLINE\Mall\Models\Brand::with('products')->get();
+}";s:5:"title";s:5:"Brand";s:3:"url";s:12:"/brand/:slug";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:8:"products";a:7:{s:15:"filterComponent";s:14:"productsFilter";s:12:"setPageTitle";s:1:"1";s:15:"includeVariants";s:1:"1";s:15:"includeChildren";s:1:"1";s:7:"perPage";s:2:"12";s:8:"paginate";s:1:"1";s:4:"sort";s:6:"latest";}}}

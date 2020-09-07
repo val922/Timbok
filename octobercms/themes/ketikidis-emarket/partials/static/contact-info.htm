@@ -1,0 +1,29 @@
+description = "Contact Information"
+
+[viewBag]
+==
+<div class="{{ contact_container }} pb-6 mb-4">
+    <div class="row justify-content-center">
+        <div class="{{ contact_size }}">
+            <div class="row justify-content-center">
+                {% for col in contact_column %}
+                <div class="{{ col.contact_size }} col-sm-6 mb-7">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="text-center">
+                                <div class="d-flex mx-auto justify-content-center align-items-center font-weight-medium text-muted border rounded-circle w-16 h-16 mb-6">
+                                    <i class="text-primary w-6 h-6" data-feather="{{ col.contact_icon }}"></i>
+                                </div>
+                                <h3 class="font-6 font-weight-semibold mb-2">
+                                    <span>{{ col.contact_title }}</span>
+                                </h3>
+                                <div class="pb-2 font-5">{{ col.contact_text|raw }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

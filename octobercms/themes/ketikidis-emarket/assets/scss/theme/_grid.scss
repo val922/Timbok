@@ -1,0 +1,12 @@
+// Container widths
+//
+
+@include media-breakpoint-up(lg) {
+  .container:not(.navbar-inner),
+  .container-fluid:not(.navbar-inner) {
+    padding: {
+      right: $grid-gutter-width;
+      left: $grid-gutter-width;
+    }
+  }
+}

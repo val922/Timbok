@@ -1,0 +1,7 @@
+1599340787a:1:{s:24:"widgetProducts/image.htm";a:6:{s:8:"fileName";s:24:"widgetProducts/image.htm";s:7:"content";s:331:"[viewBag]
+==
+<a class="d-block position-relative w-16 mr-3" href="{{ productPage|page({slug: item.slug, variant: item.variantHashId}) }}" data-mall-item-id="{{ item.prefixedId }}">
+    <img src="{{ item.image.thumb(128, 128, 'crop') }}" width="128" height="128" alt="{{ image.title }}" loading="lazy" class="img-fluid w-16">
+</a>";s:5:"mtime";i:1592589910;s:6:"markup";s:318:"<a class="d-block position-relative w-16 mr-3" href="{{ productPage|page({slug: item.slug, variant: item.variantHashId}) }}" data-mall-item-id="{{ item.prefixedId }}">
+    <img src="{{ item.image.thumb(128, 128, 'crop') }}" width="128" height="128" alt="{{ image.title }}" loading="lazy" class="img-fluid w-16">
+</a>";s:4:"code";N;s:7:"viewBag";a:0:{}}}

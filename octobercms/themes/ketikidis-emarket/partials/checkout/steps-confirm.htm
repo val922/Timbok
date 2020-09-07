@@ -1,0 +1,19 @@
+[viewBag]
+==
+{% component 'cart' %}
+
+<div class="row">
+    <div class="col-xl-9 col-md-8">
+        {% partial __SELF__ ~ '::summary' %}
+    </div>
+    <div class="col-xl-3 col-md-4 pt-6 pt-md-0">
+        {% partial __SELF__ ~ '::actions' %}
+    </div>
+</div>
+
+{% partial __SELF__ ~ '::confirminfo' %}
+
+
+{% if __SELF__.dataLayer %}
+    {% partial __SELF__ ~ '::datalayer' %}
+{% endif %}

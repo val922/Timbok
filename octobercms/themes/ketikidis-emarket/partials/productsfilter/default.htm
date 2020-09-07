@@ -1,0 +1,9 @@
+[viewBag]
+==
+<div class="">
+    <form class="mall-products-filter">
+        {% partial __SELF__ ~ '::sorter' %}
+        {% partial __SELF__ ~ '::propertygroups' groups=__SELF__.propertyGroups %}
+    </form>
+</div>
+{% partial __SELF__ ~ '::scripts' %}

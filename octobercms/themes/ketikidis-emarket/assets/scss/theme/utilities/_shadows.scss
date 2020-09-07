@@ -1,0 +1,30 @@
+//
+// Shadows
+//
+
+// Shadows hover
+//
+
+.hover\:shadow-sm:hover {
+	box-shadow: $box-shadow-sm !important;
+}
+
+.hover\:shadow:hover {
+	box-shadow: $box-shadow !important;
+}
+
+.hover\:shadow-lg:hover {
+	box-shadow: $box-shadow-lg !important;
+}
+
+.group:hover .group-hover\:shadow-sm {
+	box-shadow: $box-shadow-sm !important;
+}
+
+.group:hover .group-hover\:shadow {
+	box-shadow: $box-shadow !important;
+}
+
+.group:hover .group-hover\:shadow-lg {
+	box-shadow: $box-shadow-lg !important;
+}

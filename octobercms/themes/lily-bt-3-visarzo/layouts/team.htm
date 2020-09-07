@@ -1,0 +1,45 @@
+[staticPage]
+useContent = 1
+default = 0
+==
+{variable tab="pageTitle" name="pageTitleEnable" label="Enable" type="switch"}{/variable}
+{variable tab="pageTitle" name="pageImage" label="Image(1920x500)" type="mediafinder" mode="image"}{/variable}
+{variable tab="pageTitle" name="pageTitleTitle" label="Title" type="text"}{/variable}
+{repeater tab="pageTitle" name="pageBreads" prompt="Add client"}
+{variable name="title" label="Title" type="text"}{/variable}
+{variable name="url" label="Url" type="text"}{/variable}
+{/repeater}
+
+{variable tab="team" name="teamEnable" label="Enable" type="switch"}{/variable}
+{variable tab="team" name="teamTop" label="Top text" type="text"}{/variable}
+{variable tab="team" name="teamTitle" label="Title" type="text"}{/variable}
+{variable tab="team" name="teamInfo" label="Info" type="text"}{/variable}
+{repeater tab="team" name="teams" prompt="Add team"}
+{variable name="image" label="Image (500x500)" type="mediafinder" mode="image"}{/variable}
+{variable name="name" label="Name" type="text"}{/variable}
+{variable name="role" label="Role" type="text"}{/variable}
+{variable name="icon" label="Icon: /themes/visarzo/assets/css/font-awesome-all.css | https://fontawesome.com" type="text"}{/variable}
+{variable name="text" label="Text" type="text"}{/variable}
+{variable name="url" label="Url" type="text"}{/variable}
+{/repeater}
+
+
+<!DOCTYPE html>
+<html>
+{% partial 'html/head' %}
+<body>
+<div class="boxed_wrapper">
+    {% partial 'html/loader-wrap' %}
+    {% partial 'html/switcher' %}
+    {% partial 'html/search' %}
+    {% partial 'html/header' %}
+    {% partial 'html/mobile-menu' %}
+
+    {% page %}
+
+    {% partial 'html/footer' %}
+    {% partial 'html/scroll-top' %}
+</div>
+{% partial 'html/script' %}
+</body>
+</html>

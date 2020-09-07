@@ -1,0 +1,55 @@
+[viewBag]
+
+[blogCategories]
+slug = "{{ :slug }}"
+displayEmpty = 1
+categoryPage = "blog/category"
+==
+<div class="sidebar blog-sidebar">
+    <!--<div class="sidebar-widget sidebar-search">
+        <form action="blog-2.html" method="post" class="search-form">
+            <div class="form-group">
+                <input type="search" name="search-field" placeholder="Search Blog" required="">
+                <button type="submit"><i class="flaticon-search-1"></i></button>
+            </div>
+        </form>
+    </div>-->
+    <div class="sidebar-widget sidebar-categories-2">
+        <div class="widget-title">
+            <h3>{{'Category'|_}}</h3>
+            <div class="dotted-box">
+                <span class="dotted"></span>
+                <span class="dotted"></span>
+                <span class="dotted"></span>
+            </div>
+        </div>
+        <div class="widget-content">
+            {% if blogCategories.categories|length > 0 %}
+                <ul class="categories-list clearfix">
+                    {% partial blogCategories ~ "::items"
+                        categories = blogCategories.categories
+                        currentCategorySlug = blogCategories.currentCategorySlug
+                    %}
+                </ul>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="sidebar-widget sidebar-support">
+        <div class="widget-content">
+            <ul class="content-box clearfix">
+                <li>
+                    <i class="{{this.theme.contact1_icon}}"></i>
+                    <p class="pt-2"></p>
+                    <h3 class="h3"><a href="{{this.theme.contact1_link??'javascript:void(0);'}}">{{this.theme.contact1}}</a></h3>
+                </li>
+                <li>
+                    <i class="{{this.theme.contact2_icon}}"></i>
+                    <p class="pt-2"></p>
+                    <h3 class="h3"><a href="{{this.theme.contact2_link??'javascript:void(0);'}}">{{this.theme.contact2}}</a></h3>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>

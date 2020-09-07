@@ -1,0 +1,1532 @@
+tabs:
+    stretch: true
+    defaultTab: General
+    lazy:
+        - Index
+    icons:
+        General: icon-cog
+        Social: icon-comments-o
+        Fonts: icon-font
+        Colors: icon-paint-brush
+        Grid: icon-th
+        Index: icon-home
+        Menu: icon-bars
+        Shop: icon-shopping-bag
+        Blog: icon-commenting-o
+        Advanced: icon-wrench
+    fields:
+    
+        ####################################################
+        # Tab: General
+        ####################################################
+        
+        site_section_01:
+            tab: General
+            type: section
+            comment: <h4 class="m-y-0"><i class="icon-cogs text-info m-r"></i><span class="text-info initialism">General Settings</span></h4>
+            commentHtml: true
+    
+        site_name:
+            tab: General
+            label: Website Name
+            type: text
+            default: "Bangoe"
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+        site_url:
+            tab: General
+            label: Website Url
+            type: text
+            default: "bangoe.com"
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+        site_author:
+            tab: General
+            label: Website Author
+            type: text
+            default: "Thato Menyatso"
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+        site_copyright:
+            tab: General
+            label: Copyright
+            type: text
+            default: "All rights reserved. Designed & Developed by "
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+        site_keywords:
+            tab: General
+            label: Website Keywords
+            type: taglist
+            separator: comma
+            default: eMarket,skymart,Ecommerce,Eshop,Blog,bangoe.com,amazon.com,amazon,skymartbw.com,ebay,paypal,fnb,game,hifi,spar
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+            options:
+                - eMarket
+                - Octobercms
+                - E-commerce
+                - E-shop
+                - Blog
+                - bangoe.com
+        site_description:
+            tab: General
+            label: Website Description
+            type: textarea
+            size: small
+            default: "Bangoe - Botswana's biggest Sky' Mall."
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+            
+        site_section_02:
+            tab: General
+            type: section
+            comment: <h4 class="m-y-0"><i class="icon-id-card-o text-info m-r"></i><span class="text-info initialism">Logo - Favicon</span></h4>
+            commentHtml: true
+            
+        site_logo:
+            tab: General
+            label: Logo Image
+            type: fileupload
+            comment: Please use transparent image
+            mode: image
+            imageHeight: 100
+            imageWidth: 250
+            span: storm
+            cssClass: "col-md-4 p-l-0"
+        site_logo_footer:
+            tab: General
+            label: Logo Image (Footer)
+            type: fileupload
+            comment: Please use transparent image
+            mode: image
+            imageHeight: 100
+            imageWidth: 250
+            span: storm
+            cssClass: "col-md-4 p-l-0"
+        site_favicon:
+            tab: General
+            label: Favicon Image
+            type: fileupload
+            comment: Please use transparent image
+            mode: image
+            imageHeight: 100
+            imageWidth: 100
+            span: storm
+            cssClass: "col-md-4 p-l-0"
+            
+        ####################################################
+        # Tab: Social
+        ####################################################
+            
+        site_section_03:
+            tab: Social
+            type: section
+            comment: <h4 class="m-y-0"><i class="icon-comments-o text-info m-r"></i><span class="text-info initialism">Social Media</span></h4>
+            commentHtml: true
+            
+        social_media:
+            tab: Social
+            label: Social Media
+            type: repeater
+            prompt: Add social media
+            maxItems: 6
+            form:
+                fields:
+                    social_media_icon:
+                        label: Social name
+                        placeholder: "e.g. Facebook"
+                        span: storm
+                        cssClass: "col-md-6 p-l-0"
+                    social_media_url:
+                        label: Social media url
+                        placeholder: https://facebook.com/vango
+                        span: storm
+                        cssClass: "col-md-6 p-l-0"
+                        
+        ####################################################
+        # Tab: Fonts
+        ####################################################
+        
+        font_section_01:
+            tab: Fonts
+            type: section
+            comment: <h4 class="m-y-0"><i class="icon-font text-info m-r"></i><span class="text-info initialism">Text Font</span></h4>
+            commentHtml: true
+        
+        font_text:
+            label: Text Font Family
+            tab: Fonts
+            type: text
+            default: "'Poppins', sans-serif"
+            placeholder: "Specify font family e.g: 'Poppins', sans-serif"
+            assetVar: "font_text"
+            span: storm
+            cssClass: "col-md-3 p-l-0"
+        font_text_size:
+            label: Text Font Size
+            tab: Fonts
+            type: text
+            default: "1rem"
+            placeholder: "Specify text size e.g: 1rem"
+            assetVar: "font_text_size"
+            span: storm
+            cssClass: "col-md-3 p-l-0"
+        font_text_weight:
+            label: Text Font Weight
+            tab: Fonts
+            type: text
+            default: "400"
+            assetVar: 'font_text_weight'
+            span: storm
+            cssClass: "col-md-3 p-l-0"
+        font_text_height:
+            label: Text Line Height
+            tab: Fonts
+            type: text
+            default: "1.5"
+            assetVar: "font_text_height"
+            span: storm
+            cssClass: "col-md-3 p-l-0"
+            
+        font_section_02:
+            tab: Fonts
+            type: section
+            comment: <h4 class="m-y-0"><i class="icon-header text-info m-r"></i><span class="text-info initialism">Headings Font</span></h4>
+            commentHtml: true
+
+        font_head:
+            label: Headings Font Family
+            tab: Fonts
+            type: text
+            default: "'Poppins', sans-serif"
+            placeholder: "Specify font family e.g: 'Poppins', sans-serif"
+            assetVar: "font_head"
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+        font_head_weight:
+            label: Headings Font Weight
+            tab: Fonts
+            type: text
+            default: "500"
+            assetVar: "font_head_weight"
+            span: storm
+            cssClass: "col-md-3 p-l-0"
+        font_head_height:
+            label: Headings Line Height
+            tab: Fonts
+            type: text
+            default: "1.2"
+            assetVar: "font_head_height"
+            span: storm
+            cssClass: "col-md-3 p-l-0"
+            
+        font_section_03:
+            tab: Fonts
+            type: section
+            comment: <h4 class="m-y-0"><i class="icon-google text-info m-r"></i><span class="text-info initialism">Google Fonts</span></h4>
+            commentHtml: true
+            
+        font_gfonts:
+            tab: Fonts
+            label: Google fonts
+            type: text
+            default: "Poppins:wght@300;400;500;600;700;800;900"
+            comment: "Separate each font with '&family='  (e.g. Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500)"
+            placeholder: "e.g: Poppins:wght@300;400;500;600;700;800;900"
+            comment: "If you want to use google fonts specify font family"
+            span: storm
+            cssClass: "col-md-12 p-l-0"
+              
+        ####################################################
+        # Tab: Colors
+        ####################################################
+        
+        color_section_01:
+            tab: Colors
+            type: section
+            comment: <h4 class="m-y-0"><i class="icon-paint-brush text-info m-r"></i><span class="text-info initialism">Special Colors</span></h4>
+            commentHtml: true
+
+        color_primary:
+            tab: Colors
+            label: Primary Color
+            type: colorpicker
+            availableColors: ['#1abc9c', '#16a085', '#2ecc71', '#27ae60', '#3498db', '#2980b9', '#9b59b6', '#8e44ad', '#f1c40f', '#f39c12', '#e67e22', '#d35400', '#e74c3c', '#c0392b']
+            comment: "<span>Default:</span><br><strong>#27b1e4</strong>"
+            commentHtml: true
+            default: "#27b1e4"
+            assetVar: "color_primary"
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+        color_secondary:
+            tab: Colors
+            label: Secondary Color
+            type: colorpicker
+            availableColors: ['#1abc9c', '#16a085', '#2ecc71', '#27ae60', '#3498db', '#2980b9', '#9b59b6', '#8e44ad', '#f1c40f', '#f39c12', '#e67e22', '#d35400', '#e74c3c', '#c0392b']
+            comment: "<span>Default:</span><br><strong>#f7f7f7</strong>"
+            commentHtml: true
+            default: "#f7f7f7"
+            assetVar: "color_secondary"
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+        color_info:
+            tab: Colors
+            label: Info Color
+            type: colorpicker
+            availableColors: ['#1abc9c', '#16a085', '#2ecc71', '#27ae60', '#3498db', '#2980b9', '#9b59b6', '#8e44ad', '#f1c40f', '#f39c12', '#e67e22', '#d35400', '#e74c3c', '#c0392b']
+            comment: "<span>Default:</span><br><strong>#11cdef</strong>"
+            commentHtml: true
+            default: "#11cdef"
+            assetVar: "color_info"
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+        color_success:
+            tab: Colors
+            label: Success Color
+            type: colorpicker
+            availableColors: ['#1abc9c', '#16a085', '#2ecc71', '#27ae60', '#3498db', '#2980b9', '#9b59b6', '#8e44ad', '#f1c40f', '#f39c12', '#e67e22', '#d35400', '#e74c3c', '#c0392b']
+            comment: "<span>Default:</span><br><strong>#2dce89</strong>"
+            commentHtml: true
+            default: "#2dce89"
+            assetVar: "color_success"
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+        color_danger:
+            tab: Colors
+            label: Danger Color
+            type: colorpicker
+            availableColors: ['#1abc9c', '#16a085', '#2ecc71', '#27ae60', '#3498db', '#2980b9', '#9b59b6', '#8e44ad', '#f1c40f', '#f39c12', '#e67e22', '#d35400', '#e74c3c', '#c0392b']
+            comment: "<span>Default:</span><br><strong>#f5365c</strong>"
+            commentHtml: true
+            default: "#f5365c"
+            assetVar: "color_danger"
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+        color_warning:
+            tab: Colors
+            label: Warning Color
+            type: colorpicker
+            availableColors: ['#1abc9c', '#16a085', '#2ecc71', '#27ae60', '#3498db', '#2980b9', '#9b59b6', '#8e44ad', '#f1c40f', '#f39c12', '#e67e22', '#d35400', '#e74c3c', '#c0392b']
+            comment: "<span>Default:</span><br><strong>#fb6340</strong>"
+            commentHtml: true
+            default: "#fb6340"
+            assetVar: "color_warning"
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+        color_light:
+            tab: Colors
+            label: Light Color
+            type: colorpicker
+            availableColors: ['#1abc9c', '#16a085', '#2ecc71', '#27ae60', '#3498db', '#2980b9', '#9b59b6', '#8e44ad', '#f1c40f', '#f39c12', '#e67e22', '#d35400', '#e74c3c', '#c0392b']
+            comment: "<span>Default:</span><br><strong>#ced4da</strong>"
+            commentHtml: true
+            default: "#ced4da"
+            assetVar: "color_light"
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+        color_dark:
+            tab: Colors
+            label: Dark Color
+            type: colorpicker
+            availableColors: ['#1abc9c', '#16a085', '#2ecc71', '#27ae60', '#3498db', '#2980b9', '#9b59b6', '#8e44ad', '#f1c40f', '#f39c12', '#e67e22', '#d35400', '#e74c3c', '#c0392b']
+            comment: "<span>Default:</span><br><strong>#2f353a</strong>"
+            commentHtml: true
+            default: "#2f353a"
+            assetVar: "color_dark"
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+            
+        color_section_02:
+            tab: Colors
+            type: section
+            comment: <h4 class="m-y-0"><i class="icon-paint-brush text-info m-r"></i><span class="text-info initialism">Basic Colors</span></h4>
+            commentHtml: true
+            
+        color_blue:
+            tab: Colors
+            label: Blue Color
+            type: colorpicker
+            availableColors: ['#1abc9c', '#16a085', '#2ecc71', '#27ae60', '#3498db', '#2980b9', '#9b59b6', '#8e44ad', '#f1c40f', '#f39c12', '#e67e22', '#d35400', '#e74c3c', '#c0392b']
+            comment: "<span>Default:</span><br><strong>#5e72e4</strong>"
+            commentHtml: true
+            default: "#5e72e4"
+            assetVar: "color_blue"
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+        color_indigo:
+            tab: Colors
+            label: Indigo Color
+            type: colorpicker
+            availableColors: ['#1abc9c', '#16a085', '#2ecc71', '#27ae60', '#3498db', '#2980b9', '#9b59b6', '#8e44ad', '#f1c40f', '#f39c12', '#e67e22', '#d35400', '#e74c3c', '#c0392b']
+            comment: "<span>Default:</span><br><strong>#5603ad</strong>"
+            commentHtml: true
+            default: "#5603ad"
+            assetVar: "color_indigo"
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+        color_purple:
+            tab: Colors
+            label: Purple Color
+            type: colorpicker
+            availableColors: ['#1abc9c', '#16a085', '#2ecc71', '#27ae60', '#3498db', '#2980b9', '#9b59b6', '#8e44ad', '#f1c40f', '#f39c12', '#e67e22', '#d35400', '#e74c3c', '#c0392b']
+            comment: "<span>Default:</span><br><strong>#fb6340</strong>"
+            commentHtml: true
+            default: "#fb6340"
+            assetVar: "color_purple"
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+        color_pink:
+            tab: Colors
+            label: Pink Color
+            type: colorpicker
+            availableColors: ['#1abc9c', '#16a085', '#2ecc71', '#27ae60', '#3498db', '#2980b9', '#9b59b6', '#8e44ad', '#f1c40f', '#f39c12', '#e67e22', '#d35400', '#e74c3c', '#c0392b']
+            comment: "<span>Default:</span><br><strong>#f3a4b5</strong>"
+            commentHtml: true
+            default: "#f3a4b5"
+            assetVar: "color_pink"
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+        color_red:
+            tab: Colors
+            label: Red Color
+            type: colorpicker
+            availableColors: ['#1abc9c', '#16a085', '#2ecc71', '#27ae60', '#3498db', '#2980b9', '#9b59b6', '#8e44ad', '#f1c40f', '#f39c12', '#e67e22', '#d35400', '#e74c3c', '#c0392b']
+            comment: "<span>Default:</span><br><strong>#f5365c</strong>"
+            commentHtml: true
+            default: "#f5365c"
+            assetVar: "color_red"
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+        color_orange:
+            tab: Colors
+            label: Orange Color
+            type: colorpicker
+            availableColors: ['#1abc9c', '#16a085', '#2ecc71', '#27ae60', '#3498db', '#2980b9', '#9b59b6', '#8e44ad', '#f1c40f', '#f39c12', '#e67e22', '#d35400', '#e74c3c', '#c0392b']
+            comment: "<span>Default:</span><br><strong>#fb6340</strong>"
+            commentHtml: true
+            default: "#fb6340"
+            assetVar: "color_orange"
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+        color_yellow:
+            tab: Colors
+            label: Yellow Color
+            type: colorpicker
+            availableColors: ['#1abc9c', '#16a085', '#2ecc71', '#27ae60', '#3498db', '#2980b9', '#9b59b6', '#8e44ad', '#f1c40f', '#f39c12', '#e67e22', '#d35400', '#e74c3c', '#c0392b']
+            comment: "<span>Default:</span><br><strong>#ffd600</strong>"
+            commentHtml: true
+            default: "#ffd600"
+            assetVar: "color_yellow"
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+        color_green:
+            tab: Colors
+            label: Green Color
+            type: colorpicker
+            availableColors: ['#1abc9c', '#16a085', '#2ecc71', '#27ae60', '#3498db', '#2980b9', '#9b59b6', '#8e44ad', '#f1c40f', '#f39c12', '#e67e22', '#d35400', '#e74c3c', '#c0392b']
+            comment: "<span>Default:</span><br><strong>#2dce89</strong>"
+            commentHtml: true
+            default: "#2dce89"
+            assetVar: "color_green"
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+        color_teal:
+            tab: Colors
+            label: Teal Color
+            type: colorpicker
+            availableColors: ['#1abc9c', '#16a085', '#2ecc71', '#27ae60', '#3498db', '#2980b9', '#9b59b6', '#8e44ad', '#f1c40f', '#f39c12', '#e67e22', '#d35400', '#e74c3c', '#c0392b']
+            comment: "<span>Default:</span><br><strong>#11cdef</strong>"
+            commentHtml: true
+            default: "#11cdef"
+            assetVar: "color_teal"
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+        color_cyan:
+            tab: Colors
+            label: Cyan Color
+            type: colorpicker
+            availableColors: ['#1abc9c', '#16a085', '#2ecc71', '#27ae60', '#3498db', '#2980b9', '#9b59b6', '#8e44ad', '#f1c40f', '#f39c12', '#e67e22', '#d35400', '#e74c3c', '#c0392b']
+            comment: "<span>Default:</span><br><strong>#2bffc6</strong>"
+            commentHtml: true
+            default: "#2bffc6"
+            assetVar: "color_cyan"
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+            
+        color_section_03:
+            tab: Colors
+            type: section
+            comment: <h4 class="m-y-0"><i class="icon-paint-brush text-info m-r"></i><span class="text-info initialism">Gray Colors</span></h4>
+            commentHtml: true
+            
+        color_g100:
+            tab: Colors
+            label: Gray Color 100
+            type: colorpicker
+            availableColors: ['#f8f7f7', '#e6e5e5', '#d4d3d3', '#c2c1c1', '#b1afaf', '#9f9d9d', '#8d8b8b', '#7b7a79', '#696867', '#575655', '#464443', '#343231', '#22201f', '#100e0d']
+            comment: "<span>Default:</span><br><strong>#f6f9fc</strong>"
+            commentHtml: true
+            default: "#f6f9fc"
+            assetVar: "color_g100"
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+        color_g200:
+            tab: Colors
+            label: Gray Color 200
+            type: colorpicker
+            availableColors: ['#f8f7f7', '#e6e5e5', '#d4d3d3', '#c2c1c1', '#b1afaf', '#9f9d9d', '#8d8b8b', '#7b7a79', '#696867', '#575655', '#464443', '#343231', '#22201f', '#100e0d']
+            comment: "<span>Default:</span><br><strong>#e9ecef</strong>"
+            commentHtml: true
+            default: "#e9ecef"
+            assetVar: "color_g200"
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+        color_g300:
+            tab: Colors
+            label: Gray Color 300
+            type: colorpicker
+            availableColors: ['#f8f7f7', '#e6e5e5', '#d4d3d3', '#c2c1c1', '#b1afaf', '#9f9d9d', '#8d8b8b', '#7b7a79', '#696867', '#575655', '#464443', '#343231', '#22201f', '#100e0d']
+            comment: "<span>Default:</span><br><strong>#dee2e6</strong>"
+            commentHtml: true
+            default: "#dee2e6"
+            assetVar: "color_g300"
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+        color_g400:
+            tab: Colors
+            label: Gray Color 400
+            type: colorpicker
+            availableColors: ['#f8f7f7', '#e6e5e5', '#d4d3d3', '#c2c1c1', '#b1afaf', '#9f9d9d', '#8d8b8b', '#7b7a79', '#696867', '#575655', '#464443', '#343231', '#22201f', '#100e0d']
+            comment: "<span>Default:</span><br><strong>#ced4da</strong>"
+            commentHtml: true
+            default: "#ced4da"
+            assetVar: "color_g400"
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+        color_g500:
+            tab: Colors
+            label: Gray Color 500
+            type: colorpicker
+            availableColors: ['#f8f7f7', '#e6e5e5', '#d4d3d3', '#c2c1c1', '#b1afaf', '#9f9d9d', '#8d8b8b', '#7b7a79', '#696867', '#575655', '#464443', '#343231', '#22201f', '#100e0d']
+            comment: "<span>Default:</span><br><strong>#adb5bd</strong>"
+            commentHtml: true
+            default: "#adb5bd"
+            assetVar: "color_g500"
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+        color_g600:
+            tab: Colors
+            label: Gray Color 600
+            type: colorpicker
+            availableColors: ['#f8f7f7', '#e6e5e5', '#d4d3d3', '#c2c1c1', '#b1afaf', '#9f9d9d', '#8d8b8b', '#7b7a79', '#696867', '#575655', '#464443', '#343231', '#22201f', '#100e0d']
+            comment: "<span>Default:</span><br><strong>#8898aa</strong>"
+            commentHtml: true
+            default: "#8898aa"
+            assetVar: "color_g600"
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+        color_g700:
+            tab: Colors
+            label: Gray Color 700
+            type: colorpicker
+            availableColors: ['#f8f7f7', '#e6e5e5', '#d4d3d3', '#c2c1c1', '#b1afaf', '#9f9d9d', '#8d8b8b', '#7b7a79', '#696867', '#575655', '#464443', '#343231', '#22201f', '#100e0d']
+            comment: "<span>Default:</span><br><strong>#525f7f</strong>"
+            commentHtml: true
+            default: "#525f7f"
+            assetVar: "color_g700"
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+        color_g800:
+            tab: Colors
+            label: Gray Color 800
+            type: colorpicker
+            availableColors: ['#f8f7f7', '#e6e5e5', '#d4d3d3', '#c2c1c1', '#b1afaf', '#9f9d9d', '#8d8b8b', '#7b7a79', '#696867', '#575655', '#464443', '#343231', '#22201f', '#100e0d']
+            comment: "<span>Default:</span><br><strong>#32325d</strong>"
+            commentHtml: true
+            default: "#32325d"
+            assetVar: "color_g800"
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+        color_g900:
+            tab: Colors
+            label: Gray Color 900
+            type: colorpicker
+            availableColors: ['#f8f7f7', '#e6e5e5', '#d4d3d3', '#c2c1c1', '#b1afaf', '#9f9d9d', '#8d8b8b', '#7b7a79', '#696867', '#575655', '#464443', '#343231', '#22201f', '#100e0d']
+            comment: "<span>Default:</span><br><strong>#212529</strong>"
+            commentHtml: true
+            default: "#212529"
+            assetVar: "color_g900"
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+            
+        color_section_04:
+            tab: Colors
+            type: section
+            comment: <h4 class="m-y-0"><i class="icon-font text-info m-r"></i><span class="text-info initialism">Font Colors</span></h4>
+            commentHtml: true
+            
+        color_text:
+            tab: Colors
+            label: Text Color
+            type: colorpicker
+            availableColors: ['#f8f7f7', '#e6e5e5', '#d4d3d3', '#c2c1c1', '#b1afaf', '#9f9d9d', '#8d8b8b', '#7b7a79', '#696867', '#575655', '#464443', '#343231', '#22201f', '#100e0d']
+            comment: "<span>Default:</span><br><strong>#525f7f</strong>"
+            commentHtml: true
+            default: "#525f7f"
+            assetVar: "color_text"
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+        color_head:
+            tab: Colors
+            label: Headings Color
+            type: colorpicker
+            availableColors: ['#f8f7f7', '#e6e5e5', '#d4d3d3', '#c2c1c1', '#b1afaf', '#9f9d9d', '#8d8b8b', '#7b7a79', '#696867', '#575655', '#464443', '#343231', '#22201f', '#100e0d']
+            comment: "<span>Default:</span><br><strong>#32325d</strong>"
+            commentHtml: true
+            default: "#32325d"
+            assetVar: "color_head"
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+            
+        color_section_05:
+            tab: Colors
+            type: section
+            comment: <h4 class="m-y-0"><i class="icon-paint-brush text-info m-r"></i><span class="text-info initialism">Other Colors</span></h4>
+            commentHtml: true
+            
+        color_muted:
+            tab: Colors
+            label: Muted Color
+            type: colorpicker
+            availableColors: ['#f8f7f7', '#e6e5e5', '#d4d3d3', '#c2c1c1', '#b1afaf', '#9f9d9d', '#8d8b8b', '#7b7a79', '#696867', '#575655', '#464443', '#343231', '#22201f', '#100e0d']
+            comment: "<span>Default:</span><br><strong>#8898aa</strong>"
+            commentHtml: true
+            default: "#8898aa"
+            assetVar: "color_muted"
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+            
+        ####################################################
+        # Tab: Grid
+        ####################################################
+        
+        grid_section_01:
+            tab: Grid
+            type: section
+            comment: <h4 class="m-y-0"><i class="icon-object-ungroup text-info m-r"></i><span class="text-info initialism">Grid Breakpoints</span></h4>
+            commentHtml: true
+            
+        break_xs:
+            label: Xs Breakpoint
+            type: text
+            tab: Grid
+            default: "0"
+            assetVar: "break-xs"
+            comment: "Default: 0"
+            span: storm
+            cssClass: "col-md-2 p-l-0"
+        break_sm:
+            label: Sm Breakpoint
+            type: text
+            tab: Grid
+            default: "576px"
+            comment: "Default: 576px"
+            assetVar: "break-sm"
+            span: storm
+            cssClass: "col-md-2 p-l-0"
+        break_md:
+            label: Md Breakpoint
+            type: text
+            tab: Grid
+            default: "768px"
+            comment: "Default: 768px"
+            assetVar: "break-md"
+            span: storm
+            cssClass: "col-md-2 p-l-0"
+        break_lg:
+            label: Lg Breakpoint
+            type: text
+            tab: Grid
+            default: "992px"
+            comment: "Default: 992px"
+            assetVar: "break-lg"
+            span: storm
+            cssClass: "col-md-2 p-l-0"
+        break_xl:
+            label: Xl Breakpoint
+            type: text
+            tab: Grid
+            default: "1280px"
+            comment: "Default: 1200px"
+            assetVar: "break-xl"
+            span: storm
+            cssClass: "col-md-2 p-l-0"
+            
+        grid_section_02:
+            tab: Grid
+            type: section
+            comment: <h4 class="m-y-0"><i class="icon-object-group text-info m-r"></i><span class="text-info initialism">Grid Containers</span></h4>
+            commentHtml: true
+            
+        container_sm:
+            label: Sm Container
+            type: text
+            tab: Grid
+            default: "100%"
+            comment: "Default: 540px"
+            assetVar: "container-sm"
+            span: storm
+            cssClass: "col-md-2 p-l-0"
+        container_md:
+            label: Md Container
+            type: text
+            tab: Grid
+            default: "100%"
+            comment: "Default: 720px"
+            assetVar: "container-md"
+            span: storm
+            cssClass: "col-md-2 p-l-0"
+        container_lg:
+            label: Lg Container
+            type: text
+            tab: Grid
+            default: "100%"
+            comment: "Default: 960px"
+            assetVar: "container-lg"
+            span: storm
+            cssClass: "col-md-2 p-l-0"
+        container_xl:
+            label: Xl Container
+            type: text
+            tab: Grid
+            default: "1260px"
+            comment: "Default: 1140px"
+            assetVar: "container-xl"
+            span: storm
+            cssClass: "col-md-2 p-l-0"
+            
+        grid_section_03:
+            tab: Grid
+            type: section
+            comment: <h4 class="m-y-0"><i class="icon-th-large text-info m-r"></i><span class="text-info initialism">Grid Columns</span></h4>
+            commentHtml: true
+            
+        grid_columns:
+            label: Grid Columns
+            type: text
+            tab: Grid
+            default: "12"
+            comment: "Default: 12"
+            assetVar: "grid-columns"
+            span: storm
+            cssClass: "col-md-2 p-l-0"
+        grid_gutter_width:
+            label: Column Gutter Width
+            type: text
+            tab: Grid
+            default: "30px"
+            comment: "Default: 30px"
+            assetVar: "grid-gutter-width"
+            span: storm
+            cssClass: "col-md-2 p-l-0"
+            
+        ####################################################
+        # Tab: Index
+        ####################################################
+        
+        index_section_01:
+            tab: Index
+            type: section
+            comment: <h4 class="m-y-0"><i class="icon-camera text-info m-r"></i><span class="text-info initialism">Slider</span></h4>
+            commentHtml: true
+            
+        index_slider_section:
+            tab: Index
+            label: Section
+            type: switch
+            default: true
+            required: 0
+            span: storm
+            cssClass: "col-md-12 p-l-0"
+        index_slider_type:
+            tab: Index
+            label: Slider Type 
+            type: dropdown
+            showSearch: false
+            comment: "Υou can choose the slider type, between Category Products, Categories, Products or Product Variants."
+            default: products
+            span: storm
+            cssClass: "col-md-8 p-l-0"
+            options:
+                category: Category Products
+                categories: Categories
+                products: Products
+                variants: Product Variants
+        index_slider_products:
+            tab: Index
+            label: Product Slider
+            type: repeater
+            required: 0
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+            trigger:
+                action: show
+                field: index_slider_type
+                condition: value[products]
+            form:
+                fields:
+                    extend_index_slider_product:
+                        type: partial
+                        path: ~/themes/ketikidis-emarket/config/_extend_field_product.htm
+                        span: storm
+                        cssClass: "col-md-6 p-l-0"
+                    index_slider_product:
+                        label: Product
+                        type: dropdown
+                        showSearch: true
+                        required: 1
+                        options: getProductOptions
+                        span: full
+        index_slider_variants:
+            tab: Index
+            label: Product Variant Slider
+            type: repeater
+            required: 0
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+            trigger:
+                action: show
+                field: index_slider_type
+                condition: value[variants]
+            form:
+                fields:
+                    extend_index_slider_variants:
+                        type: partial
+                        path: ~/themes/ketikidis-emarket/config/_extend_field_variant.htm
+                        span: storm
+                        cssClass: "col-md-6 p-l-0"
+                    index_slider_variant:
+                        label: Variant
+                        type: dropdown
+                        showSearch: true
+                        required: 1
+                        options: getVariantOptions
+                        span: full
+        index_slider_categories:
+            tab: Index
+            label: Category Slider
+            type: repeater
+            required: 0
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+            trigger:
+                action: show
+                field: index_slider_type
+                condition: value[categories]
+            form:
+                fields:
+                    extend_index_slider_categories:
+                        type: partial
+                        path: ~/themes/ketikidis-emarket/config/_extend_field_category.htm
+                        span: storm
+                        cssClass: "col-md-6 p-l-0"
+                    index_slider_category:
+                        label: Category
+                        type: dropdown
+                        showSearch: true
+                        required: 1
+                        options: getCategoryOptions
+                        span: full
+        extend_index_slider_category:
+            tab: Index
+            type: partial
+            path: ~/themes/ketikidis-emarket/config/_extend_field_category.htm
+            span: storm
+            cssClass: "col-md-4 p-l-0"
+            trigger:
+                action: show
+                field: index_slider_type
+                condition: value[category]
+        index_slider_category:
+            tab: Index
+            label: Category
+            type: dropdown
+            showSearch: true
+            default: 1
+            required: 1
+            options: getCategoryOptions
+            span: storm
+            cssClass: "col-md-4 p-l-0"
+            trigger:
+                action: show
+                field: index_slider_type
+                condition: value[category]
+        index_slider_category_count:
+            tab: Index
+            label: The amount of slider products
+            type: number
+            default: 4
+            required: 1
+            placeholder: The amount of slider products
+            span: storm
+            cssClass: "col-md-2 p-l-0"
+            trigger:
+                action: show
+                field: index_slider_type
+                condition: value[category]
+        extend_index_slider_category_sort:
+            tab: Index
+            type: partial
+            path: ~/themes/ketikidis-emarket/config/_extend_field_sort.htm
+            span: storm
+            cssClass: "col-md-2 p-l-0"
+            trigger:
+                action: show
+                field: index_slider_type
+                condition: value[category]
+        index_slider_category_sort:
+            tab: Index
+            label: Sort
+            type: dropdown
+            showSearch: true
+            default: 1
+            required: 1
+            options: getSortOptions
+            span: storm
+            cssClass: "col-md-2 p-l-0"
+            trigger:
+                action: show
+                field: index_slider_type
+                condition: value[category]
+        index_slider_category_variants:
+            tab: Index
+            label: Show article variants
+            type: switch
+            default: false
+            required: 0
+            placeholder: Show article variants
+            span: storm
+            cssClass: "col-md-2 p-l-0"
+            trigger:
+                action: show
+                field: index_slider_type
+                condition: value[category]
+        index_slider_category_children:
+            tab: Index
+            label: Include children
+            type: switch
+            default: false
+            required: 0
+            placeholder: Include children
+            span: storm
+            cssClass: "col-md-2 p-l-0"
+            trigger:
+                action: show
+                field: index_slider_type
+                condition: value[category]
+            
+        index_section_02:
+            tab: Index
+            type: section
+            comment: <h4 class="m-y-0"><i class="icon-bullhorn text-info m-r"></i><span class="text-info initialism">Category Banners</span></h4>
+            commentHtml: true
+            
+        index_category_banners_section:
+            tab: Index
+            label: Section
+            type: switch
+            default: true
+            required: 0
+            span: storm
+            cssClass: "col-md-12 p-l-0"
+        index_category_banners:
+            tab: Index
+            label: Category Banners
+            type: repeater
+            required: 0
+            maxItems: 5
+            comment: "You can add up to 5 Category Banners as well as change the viewing order."
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+            form:
+                fields:
+                    extend_index_category_banner:
+                        type: partial
+                        path: ~/themes/ketikidis-emarket/config/_extend_field_category.htm
+                        span: storm
+                        cssClass: "col-md-6 p-l-0"
+                    index_category_banner:
+                        label: Category
+                        type: dropdown
+                        showSearch: true
+                        required: 1
+                        options: getCategoryOptions
+                        span: full
+                        
+        index_section_03:
+            tab: Index
+            type: section
+            comment: <h4 class="m-y-0"><i class="icon-list text-info m-r"></i><span class="text-info initialism">Categories</span></h4>
+            commentHtml: true
+            
+        index_categories_section:
+            tab: Index
+            label: Section
+            type: switch
+            default: true
+            required: 0
+            span: storm
+            cssClass: "col-md-12 p-l-0"
+        index_categories:
+            tab: Index
+            label: Categories
+            type: repeater
+            comment: "You can add Product Categories that you want to be displayed."
+            required: 0
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+            form:
+                fields:
+                    extend_index_category:
+                        type: partial
+                        path: ~/themes/ketikidis-emarket/config/_extend_field_category.htm
+                        span: storm
+                        cssClass: "col-md-6 p-l-0"
+                    index_category:
+                        label: Category
+                        type: dropdown
+                        showSearch: true
+                        required: 1
+                        options: getCategoryOptions
+                        span: full
+                        
+        index_section_04:
+            tab: Index
+            type: section
+            comment: <h4 class="m-y-0"><i class="icon-picture-o text-info m-r"></i><span class="text-info initialism">Category Banner Parallax</span></h4>
+            commentHtml: true
+            
+        index_category_banner_parallax_section:
+            tab: Index
+            label: Section
+            type: switch
+            default: true
+            required: 0
+            span: storm
+            cssClass: "col-md-12 p-l-0"
+        extend_index_category_banner_parallax:
+            tab: Index
+            type: partial
+            path: ~/themes/ketikidis-emarket/config/_extend_field_category.htm
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+        index_category_banner_parallax:
+            tab: Index
+            label: Category Banner Parallax
+            type: dropdown
+            showSearch: true
+            comment: "You can add Category Banner that you want to be displayed."
+            required: 1
+            options: getCategoryOptions
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+            
+        index_section_05:
+            tab: Index
+            type: section
+            comment: <h4 class="m-y-0"><i class="icon-diamond text-info m-r"></i><span class="text-info initialism">Latest - Bestseller Products</span></h4>
+            commentHtml: true
+            
+        index_latestbest_section:
+            tab: Index
+            label: Section
+            type: switch
+            default: true
+            required: 0
+            span: storm
+            cssClass: "col-md-12 p-l-0"
+        extend_index_latestbest_banner:
+            tab: Index
+            type: partial
+            path: ~/themes/ketikidis-emarket/config/_extend_field_category.htm
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+        index_latestbest_banner:
+            tab: Index
+            label: Category Banner
+            type: dropdown
+            default: 1
+            showSearch: true
+            comment: "You can add Category Banner that you want to be displayed."
+            required: 1
+            options: getCategoryOptions
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+            
+        index_section_06:
+            tab: Index
+            type: section
+            comment: <h4 class="m-y-0"><i class="icon-copyright text-info m-r"></i><span class="text-info initialism">Brands</span></h4>
+            commentHtml: true
+            
+        index_brands_section:
+            tab: Index
+            label: Section
+            type: switch
+            default: true
+            required: 0
+            span: storm
+            cssClass: "col-md-12 p-l-0"
+
+        index_section_07:
+            tab: Index
+            type: section
+            comment: <h4 class="m-y-0"><i class="icon-bookmark-o text-info m-r"></i><span class="text-info initialism">Category Banner</span></h4>
+            commentHtml: true
+            
+        index_category_banner_section:
+            tab: Index
+            label: Section
+            type: switch
+            default: true
+            required: 0
+            span: storm
+            cssClass: "col-md-12 p-l-0"
+        extend_index_category_banner:
+            tab: Index
+            type: partial
+            path: ~/themes/ketikidis-emarket/config/_extend_field_category.htm
+            span: storm
+            cssClass: "col-md-8 p-l-0"
+        index_category_banner:
+            tab: Index
+            label: Category Banner
+            type: dropdown
+            default: 1
+            showSearch: true
+            comment: "You can add Category Banner that you want to be displayed."
+            required: 1
+            options: getCategoryOptions
+            span: storm
+            cssClass: "col-md-8 p-l-0"
+        index_category_banner_countdown:
+            tab: Index
+            label: Category Banner Countdown
+            type: datepicker
+            mode: date
+            format: Y-m-d
+            ignoreTimezone: true
+            default: "2020-12-01"
+            comment: "You can add contdown timer for the Category Banner."
+            span: storm
+            cssClass: "col-md-4 p-l-0"
+            
+        index_section_08:
+            tab: Index
+            type: section
+            comment: <h4 class="m-y-0"><i class="icon-bolt text-info m-r"></i><span class="text-info initialism">Featured Products</span></h4>
+            commentHtml: true
+            
+        index_featured_section:
+            tab: Index
+            label: Section
+            type: switch
+            default: true
+            required: 0
+            span: storm
+            cssClass: "col-md-12 p-l-0"
+        index_featured_products:
+            tab: Index
+            label: The amount of featured products
+            type: number
+            default: 8
+            required: 1
+            comment: "The amount of featured products"
+            placeholder: The amount of featured products
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+            
+        index_section_09:
+            tab: Index
+            type: section
+            comment: <h4 class="m-y-0"><i class="icon-bullseye text-info m-r"></i><span class="text-info initialism">Product Banner</span></h4>
+            commentHtml: true
+            
+        index_product_banner_section:
+            tab: Index
+            label: Section
+            type: switch
+            default: true
+            required: 0
+            span: storm
+            cssClass: "col-md-12 p-l-0"
+        index_product_banner_type:
+            tab: Index
+            label: Banner Type 
+            type: dropdown
+            showSearch: false
+            comment: "Υou can choose the banner type, between Product or Product Variant."
+            default: product
+            span: storm
+            cssClass: "col-md-2 p-l-0"
+            options:
+                product: Product
+                variant: Product Variant
+        extend_index_product_banner:
+            tab: Index
+            type: partial
+            path: ~/themes/ketikidis-emarket/config/_extend_field_product.htm
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+            trigger:
+                action: show
+                field: index_product_banner_type
+                condition: value[product]
+        index_product_banner:
+            tab: Index
+            label: Product Banner
+            type: dropdown
+            showSearch: true
+            required: 1
+            comment: "You can add Product Banner that you want to be displayed."
+            options: getProductOptions
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+            trigger:
+                action: show
+                field: index_product_banner_type
+                condition: value[product]
+        extend_index_variant_banner:
+            tab: Index
+            type: partial
+            path: ~/themes/ketikidis-emarket/config/_extend_field_variant.htm
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+            trigger:
+                action: show
+                field: index_product_banner_type
+                condition: value[variant]
+        index_variant_banner:
+            tab: Index
+            label: Variant Banner
+            type: dropdown
+            showSearch: true
+            required: 1
+            comment: "You can add Product Variant Banner that you want to be displayed."
+            options: getVariantOptions
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+            trigger:
+                action: show
+                field: index_product_banner_type
+                condition: value[variant]
+        index_product_banner_countdown:
+            tab: Index
+            label: Product Banner Countdown
+            type: datepicker
+            mode: date
+            format: Y-m-d
+            ignoreTimezone: true
+            default: "2020-12-01"
+            comment: "You can add contdown timer for the Product Banner."
+            span: storm
+            cssClass: "col-md-4 p-l-0"
+            
+        index_section_10:
+            tab: Index
+            type: section
+            comment: <h4 class="m-y-0"><i class="icon-sort-amount-desc text-info m-r"></i><span class="text-info initialism">Latest Products</span></h4>
+            commentHtml: true
+                        
+        index_latest_section:
+            tab: Index
+            label: Section
+            type: switch
+            default: true
+            required: 0
+            span: storm
+            cssClass: "col-md-12 p-l-0"
+        index_latest_products:
+            tab: Index
+            label: The amount of latest products
+            type: number
+            default: 8
+            required: 1
+            comment: "The amount of latest products"
+            placeholder: The amount of latest products
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+            
+        index_section_11:
+            tab: Index
+            type: section
+            comment: <h4 class="m-y-0"><i class="icon-star-o text-info m-r"></i><span class="text-info initialism">Toprated - Featured Products</span></h4>
+            commentHtml: true
+            
+        index_topfeatured_section:
+            tab: Index
+            label: Section
+            type: switch
+            default: true
+            required: 0
+            span: storm
+            cssClass: "col-md-12 p-l-0"
+        extend_index_topfeatured_banner:
+            tab: Index
+            type: partial
+            path: ~/themes/ketikidis-emarket/config/_extend_field_category.htm
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+        index_topfeatured_banner:
+            tab: Index
+            label: Category Banner
+            type: dropdown
+            default: 1
+            showSearch: true
+            required: 1
+            comment: "You can add Category Banner that you want to be displayed."
+            options: getCategoryOptions
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+            
+        index_section_12:
+            tab: Index
+            type: section
+            comment: <h4 class="m-y-0"><i class="icon-newspaper-o text-info m-r"></i><span class="text-info initialism">Blog</span></h4>
+            commentHtml: true
+            
+        index_blog_section:
+            tab: Index
+            label: Section
+            type: switch
+            default: true
+            required: 0
+            span: storm
+            cssClass: "col-md-12 p-l-0"
+            
+        ####################################################
+        # Tab: Menu
+        ####################################################
+        
+        menu_section_01:
+            tab: Menu
+            type: section
+            comment: <h4 class="m-y-0"><i class="icon-bookmark-o text-info m-r"></i><span class="text-info initialism">Menu Category Banners</span></h4>
+            commentHtml: true
+            
+        menu_category_banners:
+            tab: Menu
+            label: Menu Category Banners
+            type: repeater
+            required: 0
+            maxItems: 6
+            comment: "Υou can add up to 6 category banners. Then you can choose where each banner will appear in the menu by typing the banner name (banner-1, banner-2,... banner-6) in the menu item code field. For example: banner-1"
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+            form:
+                fields:
+                    extend_menu_category_banner:
+                        type: partial
+                        path: ~/themes/ketikidis-emarket/config/_extend_field_category.htm
+                        span: storm
+                        cssClass: "col-md-6 p-l-0"
+                    menu_category_banner:
+                        label: Category
+                        type: dropdown
+                        showSearch: true
+                        required: 1
+                        options: getCategoryOptions
+                        span: full
+
+        ####################################################
+        # Tab: Shop
+        ####################################################
+        
+        shop_section_01:
+            tab: Shop
+            type: section
+            comment: <h4 class="m-y-0"><i class="icon-shopping-basket text-info m-r"></i><span class="text-info initialism">Shop Layout</span></h4>
+            commentHtml: true
+            
+        shop_layout:
+            tab: Shop
+            label: Shop Layout
+            type: dropdown
+            showSearch: false
+            default: order-lg-2
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+            options:
+                order-lg-1: Left Sidebar
+                order-lg-2: Right Sidebar
+                
+        shop_section_02:
+            tab: Shop
+            type: section
+            comment: <h4 class="m-y-0"><i class="icon-bullseye text-info m-r"></i><span class="text-info initialism">Product Banner</span></h4>
+            commentHtml: true
+            
+        shop_product_banner_section:
+            tab: Shop
+            label: Section
+            type: switch
+            default: true
+            required: 0
+            span: storm
+            cssClass: "col-md-12 p-l-0"
+        shop_product_banner_type:
+            tab: Shop
+            label: Banner Type 
+            type: dropdown
+            showSearch: false
+            default: product
+            span: storm
+            cssClass: "col-md-4 p-l-0"
+            options:
+                product: Product
+                variant: Product Variant
+        extend_shop_product_banner:
+            tab: Shop
+            type: partial
+            path: ~/themes/ketikidis-emarket/config/_extend_field_product.htm
+            span: storm
+            cssClass: "col-md-8 p-l-0"
+            trigger:
+                action: show
+                field: shop_product_banner_type
+                condition: value[product]
+        shop_product_banner:
+            tab: Shop
+            label: Product Banner
+            type: dropdown
+            showSearch: true
+            required: 1
+            options: getProductOptions
+            span: storm
+            cssClass: "col-md-8 p-l-0"
+            trigger:
+                action: show
+                field: shop_product_banner_type
+                condition: value[product]
+        extend_shop_variant_banner:
+            tab: Shop
+            type: partial
+            path: ~/themes/ketikidis-emarket/config/_extend_field_variant.htm
+            span: storm
+            cssClass: "col-md-8 p-l-0"
+            trigger:
+                action: show
+                field: shop_product_banner_type
+                condition: value[variant]
+        shop_variant_banner:
+            tab: Shop
+            label: Variant Banner
+            type: dropdown
+            showSearch: true
+            required: 1
+            options: getVariantOptions
+            span: storm
+            cssClass: "col-md-8 p-l-0"
+            trigger:
+                action: show
+                field: shop_product_banner_type
+                condition: value[variant]
+                
+        ####################################################
+        # Tab: Blog
+        ####################################################
+        
+        blog_section_01:
+            tab: Blog
+            type: section
+            comment: <h4 class="m-y-0"><i class="icon-newspaper-o text-info m-r"></i><span class="text-info initialism">Blog Layout</span></h4>
+            commentHtml: true
+            
+        blog_category_layout:
+            tab: Blog
+            label: Blog Category Layout
+            type: dropdown
+            showSearch: false
+            emptyOption: -- No Sidebar --
+            default: order-lg-2
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+            options:
+                order-lg-1: Left Sidebar
+                order-lg-2: Right Sidebar
+        blog_post_layout:
+            tab: Blog
+            label: Blog Post Layout
+            type: dropdown
+            showSearch: false
+            emptyOption: -- No Sidebar --
+            default: order-lg-2
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+            options:
+                order-lg-1: Left Sidebar
+                order-lg-2: Right Sidebar
+                
+        blog_section_02:
+            tab: Blog
+            type: section
+            comment: <h4 class="m-y-0"><i class="icon-comments-o text-info m-r"></i><span class="text-info initialism">Blog Comments</span></h4>
+            commentHtml: true
+            
+        blog_comments:
+            tab: Blog
+            label: Blog Disqus Comments
+            type: text
+            comment: "Enter your website disqus shortname"
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+                        
+        ####################################################
+        # Tab: Advanced
+        ####################################################
+        
+        code_section_01:
+            tab: Advanced
+            type: section
+            comment: <h4 class="m-y-0"><i class="icon-code text-info m-r"></i><span class="text-info initialism">Code</span></h4>
+            commentHtml: true
+            
+        custom_css:
+            tab: Advanced
+            label: Custom CSS
+            type: codeeditor
+            size: huge
+            language: css
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+        custom_js:
+            tab: Advanced
+            label: Custom JS
+            type: codeeditor
+            size: huge
+            language: javascript
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+            
+        code_section_02:
+            tab: Advanced
+            type: section
+            comment: <h4 class="m-y-0"><i class="icon-google text-info m-r"></i><span class="text-info initialism">Google Analytics</span></h4>
+            commentHtml: true
+
+        google_analytics:
+            tab: Advanced
+            label: Google Analytics ID
+            type: codeeditor
+            size: huge
+            language: html
+            span: storm
+            cssClass: "col-md-6 p-l-0"
+
+
+
+
+##secondaryTabs:
+##    fields:
+            

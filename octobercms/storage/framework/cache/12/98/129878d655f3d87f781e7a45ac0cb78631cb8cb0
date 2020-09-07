@@ -1,0 +1,105 @@
+1599460934a:1:{s:18:"blog/blog-post.htm";a:18:{s:8:"fileName";s:18:"blog/blog-post.htm";s:7:"content";s:2160:"title = "Blog Post"
+url = "/blog/post/:slug"
+layout = "default"
+is_hidden = 0
+
+[viewBag]
+localeUrl[gr] = "/blog-post"
+
+[blogPost]
+slug = "{{ :slug }}"
+categoryPage = "blog/blog-category"
+
+[blogCategories]
+slug = "{{ :slug }}"
+displayEmpty = 0
+categoryPage = "blog/blog-category"
+
+[registerVisit]
+
+[blogPosts latestPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 4
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "blog/blog-category"
+postPage = "blog/blog-post"
+
+[topPosts]
+period = 5
+category = 0
+postPerPage = 4
+postPage = "blog/blog-post"
+slug = "{{ :slug }}"
+
+[mailSignup]
+
+[products bannerProducts]
+filterComponent = "productsFilter"
+setPageTitle = 0
+includeVariants = 0
+includeChildren = 0
+perPage = 1
+paginate = 0
+
+[ShareButtons]
+css = 0
+skin = "custom"
+fb = 1
+tw = 1
+==
+{% partial 'pageHeader/blog-post' %}
+
+<div class="container pb-12">
+    <div class="row justify-content-center">
+        <div class="col-lg-9 mb-6 {{ this.theme.blog_post_layout == 'order-lg-1' ? 'order-lg-2' : 'order-lg-1' }}">
+            {% partial 'blogPost/default' post=blogPost.post %}
+            {% partial 'blogRelatedPosts/default' %}
+            {% partial "blogComments/default" %}
+            {% partial "blogNavigation/default" %}
+        </div>
+        {% if this.theme.blog_post_layout is not empty %}
+        <div class="col-lg-3 mb-6 {{ this.theme.blog_post_layout }}">
+            {% partial 'blogCategories/default' %}
+            {% partial 'blogTopPosts/default' %}
+            {% partial 'blogTagList/default' %}
+            {% partial 'blogLatestPosts/default' blogPosts=latestPosts %}
+            {% partial 'mailSignup/default' mailSignup=mailSignup id='Blog' %}
+            {% if this.theme.shop_product_banner_section %}
+            {% if this.theme.shop_product_banner_type == 'product' %}
+            {% partial 'widgetBanners/product-banner-bottom' %}
+            {% elseif this.theme.shop_product_banner_type == 'variant' %}
+            {% partial 'widgetBanners/variant-banner-bottom' %}
+            {% endif %}
+            {% endif %}
+        </div>
+        {% endif %}
+    </div>
+</div>";s:5:"mtime";i:1598469740;s:6:"markup";s:1349:"{% partial 'pageHeader/blog-post' %}
+
+<div class="container pb-12">
+    <div class="row justify-content-center">
+        <div class="col-lg-9 mb-6 {{ this.theme.blog_post_layout == 'order-lg-1' ? 'order-lg-2' : 'order-lg-1' }}">
+            {% partial 'blogPost/default' post=blogPost.post %}
+            {% partial 'blogRelatedPosts/default' %}
+            {% partial "blogComments/default" %}
+            {% partial "blogNavigation/default" %}
+        </div>
+        {% if this.theme.blog_post_layout is not empty %}
+        <div class="col-lg-3 mb-6 {{ this.theme.blog_post_layout }}">
+            {% partial 'blogCategories/default' %}
+            {% partial 'blogTopPosts/default' %}
+            {% partial 'blogTagList/default' %}
+            {% partial 'blogLatestPosts/default' blogPosts=latestPosts %}
+            {% partial 'mailSignup/default' mailSignup=mailSignup id='Blog' %}
+            {% if this.theme.shop_product_banner_section %}
+            {% if this.theme.shop_product_banner_type == 'product' %}
+            {% partial 'widgetBanners/product-banner-bottom' %}
+            {% elseif this.theme.shop_product_banner_type == 'variant' %}
+            {% partial 'widgetBanners/variant-banner-bottom' %}
+            {% endif %}
+            {% endif %}
+        </div>
+        {% endif %}
+    </div>
+</div>";s:4:"code";N;s:5:"title";s:9:"Blog Post";s:3:"url";s:16:"/blog/post/:slug";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:7:"viewBag";a:1:{s:9:"localeUrl";a:1:{s:2:"gr";s:10:"/blog-post";}}s:8:"blogPost";a:2:{s:4:"slug";s:11:"{{ :slug }}";s:12:"categoryPage";s:18:"blog/blog-category";}s:14:"blogCategories";a:3:{s:4:"slug";s:11:"{{ :slug }}";s:12:"displayEmpty";s:1:"0";s:12:"categoryPage";s:18:"blog/blog-category";}s:13:"registerVisit";a:0:{}s:21:"blogPosts latestPosts";a:6:{s:10:"pageNumber";s:11:"{{ :page }}";s:12:"postsPerPage";s:1:"4";s:14:"noPostsMessage";s:14:"No posts found";s:9:"sortOrder";s:17:"published_at desc";s:12:"categoryPage";s:18:"blog/blog-category";s:8:"postPage";s:14:"blog/blog-post";}s:8:"topPosts";a:5:{s:6:"period";s:1:"5";s:8:"category";s:1:"0";s:11:"postPerPage";s:1:"4";s:8:"postPage";s:14:"blog/blog-post";s:4:"slug";s:11:"{{ :slug }}";}s:10:"mailSignup";a:0:{}s:23:"products bannerProducts";a:6:{s:15:"filterComponent";s:14:"productsFilter";s:12:"setPageTitle";s:1:"0";s:15:"includeVariants";s:1:"0";s:15:"includeChildren";s:1:"0";s:7:"perPage";s:1:"1";s:8:"paginate";s:1:"0";}s:12:"ShareButtons";a:4:{s:3:"css";s:1:"0";s:4:"skin";s:6:"custom";s:2:"fb";s:1:"1";s:2:"tw";s:1:"1";}}}

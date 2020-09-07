@@ -1,0 +1,14 @@
+[viewBag]
+==
+<a href="javascript:;"
+   class="position-absolute top-2 right-2 d-flex justify-content-center align-items-center text-muted bg-white btn p-0 rounded-circle opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-40 w-8 h-8 z-10"
+   data-request="onAdd"
+   data-request-flash
+   data-request-success="$.publish('mall.wishlist.productAdded', data);"
+   data-request-data="
+         wishlist_id: '{{ list_id }}',
+         product_id: '{{ item.productHashId }}',
+         variant_id: '{{ item.variantHashId }}'
+    ">
+    <i data-feather="heart"></i>
+</a>

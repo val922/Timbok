@@ -1,0 +1,78 @@
+1599460933a:1:{s:8:"gdpr.htm";a:14:{s:8:"fileName";s:8:"gdpr.htm";s:7:"content";s:1020:"title = "GDPR"
+url = "/gdpr"
+layout = "default"
+is_hidden = 0
+
+[session]
+security = "user"
+redirect = "gdpr-guest"
+
+[ordersList]
+
+[wishlists]
+
+[cookieManager]
+include_css = 1
+include_js = 1
+
+[imageUploader]
+placeholderText = "Click or drag images to upload"
+maxSize = 1
+fileTypes = ".jpg,.jpeg,.png"
+imageWidth = 280
+imageHeight = 280
+imageMode = "crop"
+==
+<?php
+/*function onInit()
+{
+    $user = Auth::getUser();
+    if($user){
+        $component = $this->addComponent(
+            'Responsiv\Uploader\Components\ImageUploader',
+            'imageUploader',
+            ['modelClass'=>'OFFLINE\Mall\Models\User','modelKeyColumn'=>'avatar', 'deferredBinding' => false]
+        );
+
+        $component->bindModel('avatar', $user);
+    }
+}*/
+
+function onInit()
+{
+    $user = Auth::getUser();
+    if($user){
+        $this->imageUploader->bindModel('avatar', $user);
+    }
+}
+?>
+==
+{% partial 'pageHeader/page' %}
+
+<div class="container pt-lg-3 pb-5 mb-sm-3">
+    {% component 'cookieManager' %}
+</div>";s:5:"mtime";i:1592589910;s:6:"markup";s:124:"{% partial 'pageHeader/page' %}
+
+<div class="container pt-lg-3 pb-5 mb-sm-3">
+    {% component 'cookieManager' %}
+</div>";s:4:"code";s:526:"/*function onInit()
+{
+    $user = Auth::getUser();
+    if($user){
+        $component = $this->addComponent(
+            'Responsiv\Uploader\Components\ImageUploader',
+            'imageUploader',
+            ['modelClass'=>'OFFLINE\Mall\Models\User','modelKeyColumn'=>'avatar', 'deferredBinding' => false]
+        );
+
+        $component->bindModel('avatar', $user);
+    }
+}*/
+
+function onInit()
+{
+    $user = Auth::getUser();
+    if($user){
+        $this->imageUploader->bindModel('avatar', $user);
+    }
+}";s:5:"title";s:4:"GDPR";s:3:"url";s:5:"/gdpr";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:7:"session";a:2:{s:8:"security";s:4:"user";s:8:"redirect";s:10:"gdpr-guest";}s:10:"ordersList";a:0:{}s:9:"wishlists";a:0:{}s:13:"cookieManager";a:2:{s:11:"include_css";s:1:"1";s:10:"include_js";s:1:"1";}s:13:"imageUploader";a:6:{s:15:"placeholderText";s:30:"Click or drag images to upload";s:7:"maxSize";s:1:"1";s:9:"fileTypes";s:15:".jpg,.jpeg,.png";s:10:"imageWidth";s:3:"280";s:11:"imageHeight";s:3:"280";s:9:"imageMode";s:4:"crop";}}}

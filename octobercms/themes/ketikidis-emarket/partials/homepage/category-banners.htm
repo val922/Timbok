@@ -1,0 +1,65 @@
+description = "Category Banners Section"
+
+[viewBag]
+==
+<?php
+function onStart()
+{
+    // Category Banners
+    $indexCategoryBanners = $this->theme->index_category_banners;
+    
+    if (empty($indexCategoryBanners) || !is_array($indexCategoryBanners)) {
+        $indexCategoryBanners = [];
+    } else {
+        $indexCategoryBanners = array_column($indexCategoryBanners, 'index_category_banner');
+    }
+    
+    $this['indexCategoryBanners'] = $indexCategoryBanners;
+    
+    // Sorted Category Banners
+    $categoryBanners = $indexCategoryBanners;
+    $categoryBanners = \OFFLINE\Mall\Models\Category::whereIn('id', $categoryBanners)->get();
+    $sortedCategoryBanners = $categoryBanners
+        ->sortBy(function ($item) use ($indexCategoryBanners) {
+            return array_search($item->id, $indexCategoryBanners);
+        });
+    
+    $this['sortedCategoryBanners'] = $sortedCategoryBanners;
+}
+?>
+==
+<section class="container py-12 mt-4 d-sm-none d-none d-md-block">
+    <div class="row">
+        {% for banner in sortedCategoryBanners %}
+        {% if loop.index0 == 0 %}
+        <div class="col-lg-4 col-md-6" data-sal="slide-right" data-sal-duration="1200">
+            {% partial 'widgetBanners/category-banner-bottom' category=banner %}
+        </div>
+        {% endif %}
+        {% if loop.index0 == 1 %}
+        <div class="col-lg-4 col-md-6" data-sal="slide-down" data-sal-duration="1200">
+            {% partial 'widgetBanners/category-banner-top' category=banner %}
+        </div>
+        {% endif %}
+        {% if loop.index0 == 2 %}
+        <div class="col-lg-4 d-block d-lg-block d-md-none">
+            <div data-sal="slide-left" data-sal-duration="1200">
+                {% partial 'widgetBanners/category-banner-left' category=banner %}
+            </div>
+            {% endif %}
+            {% if loop.index0 == 3 %}
+            <div data-sal="slide-right" data-sal-duration="1200">
+                {% partial 'widgetBanners/category-banner-left' category=banner %}
+            </div>
+            {% endif %}
+            {% if loop.index0 == 4 %}
+            <div data-sal="slide-up" data-sal-duration="1200">
+                {% partial 'widgetBanners/category-banner-left' category=banner %}
+            </div>
+            {% endif %}
+        {% if loop.last %}
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+</section>

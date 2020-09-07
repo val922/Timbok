@@ -1,0 +1,44 @@
+1599340743a:1:{s:22:"pageHeader/product.htm";a:8:{s:8:"fileName";s:22:"pageHeader/product.htm";s:7:"content";s:855:"description = "Product Page Header"
+
+[viewBag]
+
+[staticMenu]
+code = "product-categories"
+==
+<div class="py-10">
+    <div class="container">
+		<nav aria-label="breadcrumb">
+			<ol class="breadcrumb bg-white align-items-end p-0 font-5">
+				<li class="breadcrumb-item"><a class="text-link" href="{{ 'index'|page }}"><i class="w-4" data-feather="home"></i></a></li>
+				{% for breadcrumb in breadcrumbs %}
+				<li class="breadcrumb-item"><a class="text-link" href="{{ breadcrumb.link }}">{{ breadcrumb.text }}</a></li>
+				{% endfor %}
+			</ol>
+		</nav>
+		<h1 class="font-weight-semibold">{{ item.name }}</h1>
+		<span class="lead font-weight-semibold text-muted font-6">in
+			{% for category in item.categories %}
+			{{ category.name }}{% if not loop.last %},{% endif %}
+			{% endfor %}
+		</span>
+        <hr class="mt-6">
+    </div>
+</div>";s:5:"mtime";i:1592589914;s:6:"markup";s:763:"<div class="py-10">
+    <div class="container">
+		<nav aria-label="breadcrumb">
+			<ol class="breadcrumb bg-white align-items-end p-0 font-5">
+				<li class="breadcrumb-item"><a class="text-link" href="{{ 'index'|page }}"><i class="w-4" data-feather="home"></i></a></li>
+				{% for breadcrumb in breadcrumbs %}
+				<li class="breadcrumb-item"><a class="text-link" href="{{ breadcrumb.link }}">{{ breadcrumb.text }}</a></li>
+				{% endfor %}
+			</ol>
+		</nav>
+		<h1 class="font-weight-semibold">{{ item.name }}</h1>
+		<span class="lead font-weight-semibold text-muted font-6">in
+			{% for category in item.categories %}
+			{{ category.name }}{% if not loop.last %},{% endif %}
+			{% endfor %}
+		</span>
+        <hr class="mt-6">
+    </div>
+</div>";s:4:"code";N;s:11:"description";s:19:"Product Page Header";s:7:"viewBag";a:0:{}s:10:"staticMenu";a:1:{s:4:"code";s:18:"product-categories";}}}

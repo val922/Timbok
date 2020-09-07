@@ -1,0 +1,58 @@
+//
+// Z-index utilities
+//
+
+$z-index-breakpoints: false !default;
+
+$z-index: () !default;
+$z-index: map-merge(
+  (
+    0: 0,
+	10: 10,
+	20: 20,
+	30: 30,
+	40: 40,
+	50: 50,
+	100: 100,
+	auto: auto
+  ),
+  $z-index
+);
+
+@each $size, $length in $z-index {
+  .z-#{$size} {
+	z-index: $length !important;
+  }
+}
+
+// Negative z-index
+@each $size, $length in $z-index {
+  @if $size != 0 and auto {
+	.z-n#{$size} {
+	  z-index: -$length !important;
+	}
+  }
+}
+
+@if $z-index-breakpoints {
+  @each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+  	$infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+  
+  	  @each $size, $length in $z-index {
+  	    .z#{$infix}-#{$size} {
+  	  	z-index: $length !important;
+  	    }
+  	  }
+  	  
+  	  // Negative z-index
+  	  @each $size, $length in $z-index {
+  	    @if $size != 0 and auto {
+  	      .z#{$infix}-n#{$size} {
+  	  	  z-index: -$length !important;
+  	      }
+  	    }
+  	  }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+description = "Search Page Header"
+
+[viewBag]
+==
+<div class="py-10">
+    <div class="container">
+		<h1 class="font-weight-semibold">{{ 'offline.mall::frontend.search.heading' | trans({query: searchResults.query}) | escape }}</h1>
+        <hr class="mt-6">
+    </div>
+</div>

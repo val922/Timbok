@@ -1,0 +1,22 @@
+1599460934a:1:{s:14:"gdpr-guest.htm";a:12:{s:8:"fileName";s:14:"gdpr-guest.htm";s:7:"content";s:270:"title = "GDPR"
+url = "/gdpr-guest"
+layout = "default"
+is_hidden = 0
+
+[ordersList]
+
+[wishlists]
+
+[cookieManager]
+include_css = 1
+include_js = 1
+==
+{% partial 'pageHeader/page' %}
+
+<div class="container pt-lg-3 pb-5 mb-sm-3">
+    {% component 'cookieManager' %}
+</div>";s:5:"mtime";i:1592589910;s:6:"markup";s:124:"{% partial 'pageHeader/page' %}
+
+<div class="container pt-lg-3 pb-5 mb-sm-3">
+    {% component 'cookieManager' %}
+</div>";s:4:"code";N;s:5:"title";s:4:"GDPR";s:3:"url";s:11:"/gdpr-guest";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:10:"ordersList";a:0:{}s:9:"wishlists";a:0:{}s:13:"cookieManager";a:2:{s:11:"include_css";s:1:"1";s:10:"include_js";s:1:"1";}}}

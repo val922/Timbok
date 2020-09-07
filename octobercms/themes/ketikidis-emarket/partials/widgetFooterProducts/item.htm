@@ -1,0 +1,31 @@
+[viewBag]
+==
+<div class="d-flex align-items-start mb-4 pt-1">
+    {% partial 'widgetFooterProducts/image' image=item.image %}
+    <div class="d-flex flex-column">
+        <a class="d-block text-white opacity-50 hover:opacity-100" href="{{ productPage|page({slug: item.slug, variant: item.variantHashId}) }}" data-mall-item-id="{{ item.prefixedId }}">
+            {{ item.name }}
+        </a>
+        {% if ratings == true %}
+        {% set rating = item.reviews_rating %}
+        {% if rating > 0 %}
+            <div class="mall-products-item__stars">
+                {% partial 'widgetFooterProducts/stars' rating=rating %}
+            </div>
+        {% endif %}
+        {% endif %}
+        <p class="text-white mb-0">
+            <del class="opacity-30 mall-products-item__old-price mr-1">
+                {% set price = item.price() %}
+                {% if price.official %}
+                    {{ price.official.string | raw }}
+                {% else %}
+                    {{ item.oldPrice.count > 0 ? item.oldPrice().string | raw }}
+                {% endif %}
+            </del>
+            <span class="opacity-50 mall-products-item__price {{ item.oldPrice.count > 0 ? '' : '' }} {{ price.isCustomerSpecific ? 'mall-products-item__price--special' }}">
+                {{ price.string | raw }}
+            </span>
+        </p>
+    </div>
+</div>

@@ -1,0 +1,63 @@
+1599340743a:1:{s:19:"product/default.htm";a:6:{s:8:"fileName";s:19:"product/default.htm";s:7:"content";s:876:"[viewBag]
+==
+<div class="mall-product">
+    <div class="container pb-12 mb-sm-6">
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="row no-gutters">
+                    {% partial __SELF__ ~ '::images' images=item.all_images %}
+                </div>
+            </div>
+            <div class="col-lg-5 pt-6 pt-lg-0">
+                {% partial __SELF__ ~ '::cart' %}
+            </div>
+        </div>
+    </div>
+    {% partial __SELF__ ~ '::info' %}
+</div>
+
+{% put scripts %}
+<script>
+// Smooth Scroll On Archors
+$('a[href*="#"].scroll').on('click', function() {  
+	$('html, body').animate({scrollTop: $(this.hash).offset().top - 110}, 1000);
+	return false;
+});
+</script>
+{% endput %}
+
+{% partial __SELF__ ~ '::scripts' %}
+
+{% if __SELF__.dataLayer %}
+    {% partial __SELF__ ~ '::datalayer' %}
+{% endif %}";s:5:"mtime";i:1592589916;s:6:"markup";s:863:"<div class="mall-product">
+    <div class="container pb-12 mb-sm-6">
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="row no-gutters">
+                    {% partial __SELF__ ~ '::images' images=item.all_images %}
+                </div>
+            </div>
+            <div class="col-lg-5 pt-6 pt-lg-0">
+                {% partial __SELF__ ~ '::cart' %}
+            </div>
+        </div>
+    </div>
+    {% partial __SELF__ ~ '::info' %}
+</div>
+
+{% put scripts %}
+<script>
+// Smooth Scroll On Archors
+$('a[href*="#"].scroll').on('click', function() {  
+	$('html, body').animate({scrollTop: $(this.hash).offset().top - 110}, 1000);
+	return false;
+});
+</script>
+{% endput %}
+
+{% partial __SELF__ ~ '::scripts' %}
+
+{% if __SELF__.dataLayer %}
+    {% partial __SELF__ ~ '::datalayer' %}
+{% endif %}";s:4:"code";N;s:7:"viewBag";a:0:{}}}

@@ -1,0 +1,87 @@
+1599460971a:1:{s:17:"footer/topbar.htm";a:7:{s:8:"fileName";s:17:"footer/topbar.htm";s:7:"content";s:2403:"description = "Footer Topbar"
+
+[viewBag]
+==
+<div class="container f-topbar pb-5 border-bottom border-white-25" style="">
+    <div class="d-md-flex justify-content-between">
+        <div class="d-sm-flex align-items-center mb-5 mb-md-0">
+            {% partial "footer/brand" %}
+            <div class="text-white opacity-50 max-w-md mr-md-3 mt-sm-0 mt-2">{{ 'Botswana&#39;s biggest Sky&#39; mall.'|_ }}</div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-7">
+            <h6 class="font-weight-medium text-white">{{ 'Contact Us'|_ }}</h6>
+            <div class="d-flex mb-2 mt-5">
+                <div class="font-10 mr-5 align-self-top">
+                    <i class="text-white opacity-50" data-feather="map-pin"></i>
+                </div>
+                <span class="d-block text-white opacity-50 hover:opacity-100">{{ 'Unit 10, Plot 43173, Phakalane, Gaborone, Botswana'|_ }}</span>
+            </div>
+            <div class="d-flex mb-2 mt-5">
+                <div class="font-10 mr-5 align-self-top">
+                    <i class="text-white opacity-50" data-feather="clock"></i>
+                </div>
+                <span class="d-block text-white opacity-50 hover:opacity-100">{{ '24/7'|_ }}</span>
+            </div>
+            <div class="d-flex mb-2 mt-5">
+                <div class="font-10 mr-5 align-self-top">
+                    <i class="text-white opacity-50" data-feather="phone"></i>
+                </div>
+                <a class="d-block text-white opacity-50 hover:opacity-100" href="tel:{{ 'Phone'|_ }}">{{ '+267 3116181'|_ }}</a>
+            </div>
+            <div class="d-flex mb-2 mt-5">
+                <div class="font-10 mr-5 align-self-top">
+                    <i class="text-white opacity-50" data-feather="mail"></i>
+                </div>
+                <a class="d-block text-white opacity-50 hover:opacity-100" href="mailto:{{ 'Email'|_ }}">{{ 'info@bangoe.com'|_ }}</a>
+            </div>
+        </div>
+        <div class="d-flex">
+        {% for fields in this.theme.social_media %}
+            <a href="{{ fields.social_media_url }}" class="d-flex justify-content-center align-items-center rounded-circle btn w-10 h-10 p-0 mx-1 btn-outline-white">
+                <i class="w-4" data-feather="{{ fields.social_media_icon }}"></i>
+            </a>
+        {% endfor %}
+        </div>
+    </div>
+</div>";s:5:"mtime";i:1599125605;s:6:"markup";s:2359:"<div class="container f-topbar pb-5 border-bottom border-white-25" style="">
+    <div class="d-md-flex justify-content-between">
+        <div class="d-sm-flex align-items-center mb-5 mb-md-0">
+            {% partial "footer/brand" %}
+            <div class="text-white opacity-50 max-w-md mr-md-3 mt-sm-0 mt-2">{{ 'Botswana&#39;s biggest Sky&#39; mall.'|_ }}</div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-7">
+            <h6 class="font-weight-medium text-white">{{ 'Contact Us'|_ }}</h6>
+            <div class="d-flex mb-2 mt-5">
+                <div class="font-10 mr-5 align-self-top">
+                    <i class="text-white opacity-50" data-feather="map-pin"></i>
+                </div>
+                <span class="d-block text-white opacity-50 hover:opacity-100">{{ 'Unit 10, Plot 43173, Phakalane, Gaborone, Botswana'|_ }}</span>
+            </div>
+            <div class="d-flex mb-2 mt-5">
+                <div class="font-10 mr-5 align-self-top">
+                    <i class="text-white opacity-50" data-feather="clock"></i>
+                </div>
+                <span class="d-block text-white opacity-50 hover:opacity-100">{{ '24/7'|_ }}</span>
+            </div>
+            <div class="d-flex mb-2 mt-5">
+                <div class="font-10 mr-5 align-self-top">
+                    <i class="text-white opacity-50" data-feather="phone"></i>
+                </div>
+                <a class="d-block text-white opacity-50 hover:opacity-100" href="tel:{{ 'Phone'|_ }}">{{ '+267 3116181'|_ }}</a>
+            </div>
+            <div class="d-flex mb-2 mt-5">
+                <div class="font-10 mr-5 align-self-top">
+                    <i class="text-white opacity-50" data-feather="mail"></i>
+                </div>
+                <a class="d-block text-white opacity-50 hover:opacity-100" href="mailto:{{ 'Email'|_ }}">{{ 'info@bangoe.com'|_ }}</a>
+            </div>
+        </div>
+        <div class="d-flex">
+        {% for fields in this.theme.social_media %}
+            <a href="{{ fields.social_media_url }}" class="d-flex justify-content-center align-items-center rounded-circle btn w-10 h-10 p-0 mx-1 btn-outline-white">
+                <i class="w-4" data-feather="{{ fields.social_media_icon }}"></i>
+            </a>
+        {% endfor %}
+        </div>
+    </div>
+</div>";s:4:"code";N;s:11:"description";s:13:"Footer Topbar";s:7:"viewBag";a:0:{}}}

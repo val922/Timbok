@@ -1,0 +1,29 @@
+description = "Footer Bottombar"
+
+[viewBag]
+
+[staticMenu bottomMenu]
+code = "main-menu"
+==
+<div class="bg-black-25 py-5">
+    <div class="container">
+        <div class="d-md-flex justify-content-between">
+            <div class="navba navbar-expand order-md-2">
+                <ul class="navbar-nav justify-content-center mb-4 mb-md-0">
+    				{% if bottomMenu.menuItems %}
+    				{% set items = bottomMenu.menuItems %}
+    				{% for item in items %}
+                    <li class="nav-item">
+                        <a class="nav-link p-md-4 p-2 text-white opacity-50 hover:opacity-100" href="{{ item.url }}">{{ item.title }}</a>
+                    </li>
+                    {% endfor %}
+                    {% endif %}
+                </ul>
+            </div>
+            <div class="align-self-center text-center font-3 font-sm-5 text-md-left mb-5 mb-md-0 mr-md-5 text-white opacity-50 order-md-1">
+                <span>{{ this.theme.site_name }}</span> © {{ "now"|date("M Y") }}. {{ this.theme.site_copyright }}
+                <a class="text-white" href="http://{{ this.theme.site_url }}">{{ this.theme.site_url }}</a>
+            </div>
+        </div>
+    </div>
+</div>

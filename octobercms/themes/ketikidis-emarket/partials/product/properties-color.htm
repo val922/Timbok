@@ -1,0 +1,20 @@
+[viewBag]
+==
+<input name="props[{{ item.property.hashId }}]"
+       id="{{ item.property.hashId }}"
+       data-id="{{ item.property.hashId }}"
+       class="js-mall-property-selector"
+       type="hidden"
+       value="{{ propertyValue.hashId }}"
+       data-mall-property>
+
+<div class="mall-color-swatches d-flex flex-wrap">
+    {% for value in item.values %}
+        <a class="mall-option-selector mall-color-swatches__swatch d-flex justify-content-center align-items-center btn rounded-circle p-0 w-8 h-8 mb-2 {% if not loop.last %}mr-1{% endif %} {{ propertyValue.value == value.getValueAttribute() ? 'is-active btn-primary' : 'btn-outline-primary' }}"
+           data-target="#{{ item.property.hashId }}"
+           data-value="{{ value.hashId }}"
+           title="{{ value.getValueAttribute().name }}">
+           <div class="rounded-circle w-5 h-5" style="background-color: {{ value.getValueAttribute().hex }};"></div>
+        </a>
+    {% endfor %}
+</div>

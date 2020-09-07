@@ -1,0 +1,25 @@
+1599460935a:1:{s:22:"page-not-found-404.htm";a:10:{s:8:"fileName";s:22:"page-not-found-404.htm";s:7:"content";s:615:"title = "Page Not Found (404)"
+url = "/404"
+layout = "default"
+is_hidden = 0
+
+[viewBag]
+localeUrl[gr] = "/page-not-found-404"
+==
+<div class="container pb-12">
+    <div class="pt-12">
+        <img class="d-block my-4 mx-auto" src="{{ 'assets/images/404.png'|theme }}" alt="404 Page not found">
+    </div>
+        <div class="pt-4 pb-2 text-center">
+        <h1 class="h2">404, Page Not Found</h1>
+        <p class="text-muted">The page you are looking for doesn't exist or another error occurred.&nbsp;<a class="font-weight-semibold" href="{{ 'index'|page }}">Go back to Bangoe Home</a></p>
+    </div>
+</div>";s:5:"mtime";i:1599072131;s:6:"markup";s:486:"<div class="container pb-12">
+    <div class="pt-12">
+        <img class="d-block my-4 mx-auto" src="{{ 'assets/images/404.png'|theme }}" alt="404 Page not found">
+    </div>
+        <div class="pt-4 pb-2 text-center">
+        <h1 class="h2">404, Page Not Found</h1>
+        <p class="text-muted">The page you are looking for doesn't exist or another error occurred.&nbsp;<a class="font-weight-semibold" href="{{ 'index'|page }}">Go back to Bangoe Home</a></p>
+    </div>
+</div>";s:4:"code";N;s:5:"title";s:20:"Page Not Found (404)";s:3:"url";s:4:"/404";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:7:"viewBag";a:1:{s:9:"localeUrl";a:1:{s:2:"gr";s:19:"/page-not-found-404";}}}}

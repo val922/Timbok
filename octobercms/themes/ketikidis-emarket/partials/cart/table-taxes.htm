@@ -1,0 +1,15 @@
+[viewBag]
+==
+{% if __SELF__.showTaxes %}
+    {% for entry in totals.taxes %}
+    <div class="mall-cart__taxes mall-cart__taxes--{{ loop.index }} d-flex justify-content-between mb-2">
+        <span>{{ entry.tax.name }}: {{ entry.tax.percentage }} %</span><span>{{ entry.total | money }}</span>
+    </div>
+    {% endfor %}
+    
+    {% if totals.taxes.count > 1 %}
+    <div class="mall-cart__taxes-total d-flex justify-content-between mb-2">
+        <span>{{ 'offline.mall::frontend.total.taxes' | trans }}:</span><span>{{ totals.totalTaxes | money }}</span>
+    </div>
+    {% endif %}
+{% endif %}

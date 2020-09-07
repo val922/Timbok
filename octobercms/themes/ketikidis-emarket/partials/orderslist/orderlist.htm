@@ -1,0 +1,39 @@
+[viewBag]
+==
+<div class="mall-orders-list__table table-responsive font-5">
+    <table class="table table-hover mb-0">
+        <thead>
+            <tr>
+                <th class="align-middle">#</th>
+                <th class="align-middle">{{ 'offline.mall::frontend.created_at' | trans }}</th>
+                <th class="align-middle">{{ 'offline.mall::frontend.order.order_state' | trans }}</th>
+                <th class="align-middle">{{ 'offline.mall::frontend.order.payment_state' | trans }}</th>
+                <th class="align-middle text-right">{{ 'offline.mall::frontend.total' | trans }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in orders %}
+            <tr class="mall-orders-list__order">
+                <td class="align-middle">{{ order.order_number }}</td>
+                <td class="align-middle">{% partial __SELF__ ~ '::created_at' order=order %}</td>
+                <td class="align-middle">
+                    <span class="badge text-white m-0" style="background:{{order.order_state.color}};">{{ order.order_state_label }}</span>
+                </td>    
+                <td class="align-middle">
+                    {% if order.isPaid %}
+                        <span class="text-success">{{ order.payment_state_label }}</span>
+                    {% elseif order.payment_state == 'OFFLINE\\Mall\\Classes\\PaymentState\\RefundedState' %}
+                        <u><a class="text-warning" href="{{ __SELF__.paymentLink }}?order={{ order.hashId }}">{{ order.payment_state_label }}</a></u>
+                    {% elseif order.payment_state == 'OFFLINE\\Mall\\Classes\\PaymentState\\FailedState' %}
+                        <u><a class="text-danger" href="{{ __SELF__.paymentLink }}?order={{ order.hashId }}">{{ order.payment_state_label }}</a></u>
+                    {% else %}
+                        <u><a class="text-link" href="{{ __SELF__.paymentLink }}?order={{ order.hashId }}">{{ order.payment_state_label }}</a></u>
+                    {% endif %}
+                </td>
+                <td class="align-middle text-right">{{ order.totalPostTaxes() | raw }}</td>
+            </tr>
+            {% partial __SELF__ ~ '::details' order=order %}
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,45 @@
+1599460955a:1:{s:25:"productsfilter/onsale.htm";a:6:{s:8:"fileName";s:25:"productsfilter/onsale.htm";s:7:"content";s:947:"[viewBag]
+==
+<div class="mall-filter mall-filter--on-sale js-mall-filter custom-control custom-checkbox">
+    <input type="checkbox" class="mall-input-checkbox custom-control-input" id="mall-on-sale"
+           name="filter[on_sale]"
+           value="✓"
+           {{ filter.on_sale ? 'checked' }}
+    >
+    <label for="mall-on-sale" class="mall-label mall-label--checkbox custom-control-label font-5" for="mall-on-sale">
+        {{ 'offline.mall::frontend.onsale_label' | trans }}
+    </label>
+</div>
+
+<!--<div class="mall-filter mall-filter--on-sale">
+
+    <label for="mall-on-sale" class="mall-label mall-label--checkbox js-mall-filter">
+        <input type="checkbox" class="mall-input-checkbox" id="mall-on-sale"
+               name="filter[on_sale]"
+               value="✓"
+               {{ filter.on_sale ? 'checked' }}
+        >
+        {{ 'offline.mall::frontend.onsale_label' | trans }}
+    </label>
+</div>-->";s:5:"mtime";i:1592589912;s:6:"markup";s:934:"<div class="mall-filter mall-filter--on-sale js-mall-filter custom-control custom-checkbox">
+    <input type="checkbox" class="mall-input-checkbox custom-control-input" id="mall-on-sale"
+           name="filter[on_sale]"
+           value="✓"
+           {{ filter.on_sale ? 'checked' }}
+    >
+    <label for="mall-on-sale" class="mall-label mall-label--checkbox custom-control-label font-5" for="mall-on-sale">
+        {{ 'offline.mall::frontend.onsale_label' | trans }}
+    </label>
+</div>
+
+<!--<div class="mall-filter mall-filter--on-sale">
+
+    <label for="mall-on-sale" class="mall-label mall-label--checkbox js-mall-filter">
+        <input type="checkbox" class="mall-input-checkbox" id="mall-on-sale"
+               name="filter[on_sale]"
+               value="✓"
+               {{ filter.on_sale ? 'checked' }}
+        >
+        {{ 'offline.mall::frontend.onsale_label' | trans }}
+    </label>
+</div>-->";s:4:"code";N;s:7:"viewBag";a:0:{}}}

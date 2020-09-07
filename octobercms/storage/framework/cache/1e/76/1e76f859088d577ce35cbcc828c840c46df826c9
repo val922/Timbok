@@ -1,0 +1,25 @@
+1599340747a:1:{s:26:"product/propertyvalues.htm";a:6:{s:8:"fileName";s:26:"product/propertyvalues.htm";s:7:"content";s:677:"[viewBag]
+==
+<div class="mall-product__properties">
+    {% for entry in item.grouped_properties %}
+        <h3 class="mall-product__properties-heading h5 font-weight-semibold mb-4">{{ entry.group.display_name }}</h3>
+        <ul class="mall-three-columns list-unstyled mb-6 pb-2">
+            {% for value in entry.values %}
+                <li class="mall-column d-block {{ loop.first ? 'py-2' : 'py-2' }} {{ loop.length == 1 ? '' : 'border-bottom' }}">
+                    <strong>{{ value.property.name }}:</strong>&nbsp;{{ value.display_value | raw }} {{ value.property.unit }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+</div>";s:5:"mtime";i:1592589916;s:6:"markup";s:664:"<div class="mall-product__properties">
+    {% for entry in item.grouped_properties %}
+        <h3 class="mall-product__properties-heading h5 font-weight-semibold mb-4">{{ entry.group.display_name }}</h3>
+        <ul class="mall-three-columns list-unstyled mb-6 pb-2">
+            {% for value in entry.values %}
+                <li class="mall-column d-block {{ loop.first ? 'py-2' : 'py-2' }} {{ loop.length == 1 ? '' : 'border-bottom' }}">
+                    <strong>{{ value.property.name }}:</strong>&nbsp;{{ value.display_value | raw }} {{ value.property.unit }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+</div>";s:4:"code";N;s:7:"viewBag";a:0:{}}}

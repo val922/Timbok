@@ -1,0 +1,21 @@
+1599460932a:1:{s:19:"wishlists-guest.htm";a:12:{s:8:"fileName";s:19:"wishlists-guest.htm";s:7:"content";s:274:"title = "Wishlists"
+url = "/wishlists-guest"
+layout = "default"
+is_hidden = 0
+
+[viewBag]
+localeUrl[en] = "/wishlists-guest"
+
+[wishlists]
+
+[ordersList]
+==
+{% partial 'pageHeader/page' %}
+
+<div class="container pt-lg-3 pb-5 mb-sm-3">
+    {% component 'wishlists' %}
+</div>";s:5:"mtime";i:1592589910;s:6:"markup";s:120:"{% partial 'pageHeader/page' %}
+
+<div class="container pt-lg-3 pb-5 mb-sm-3">
+    {% component 'wishlists' %}
+</div>";s:4:"code";N;s:5:"title";s:9:"Wishlists";s:3:"url";s:16:"/wishlists-guest";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:7:"viewBag";a:1:{s:9:"localeUrl";a:1:{s:2:"en";s:16:"/wishlists-guest";}}s:9:"wishlists";a:0:{}s:10:"ordersList";a:0:{}}}

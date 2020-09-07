@@ -1,0 +1,103 @@
+1599460969a:1:{s:13:"site/info.htm";a:7:{s:8:"fileName";s:13:"site/info.htm";s:7:"content";s:2697:"description = "Info Section"
+
+[viewBag]
+==
+<section class="py-8 py-md-14 bg-secondary border-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-sm-6">
+                <div class="d-lg-flex align-items-center text-center text-lg-left mb-lg-0 mb-5">
+                    <div class="mr-lg-4 mb-lg-0 mb-3">
+                        <i class="w-8 h-8 text-dark" data-feather="truck"></i>
+                    </div>
+                    <div class="">
+                        <h4 class="font-4 font-weight-semibold text-uppercase mb-0">{{ 'Free Shipping'|_ }}</h4>
+                        <span class="font-4">{{ 'Free 2 Day Shipping Countrywide'|_ }}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="d-lg-flex align-items-center text-center text-lg-left mb-lg-0 mb-5">
+                    <div class="mr-lg-4 mb-lg-0 mb-3">
+                        <i class="w-8 h-8 text-dark" data-feather="headphones"></i>
+                    </div>
+                    <div class="">
+                        <h4 class="font-4 font-weight-semibold text-uppercase mb-0">{{ 'Online Support 24/7'|_ }}</h4>
+                        <span class="font-4">{{ 'Support Online 24 hours a day'|_ }}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="d-lg-flex align-items-center text-center text-lg-left mb-lg-0 mb-5">
+                    <div class="mr-lg-4 mb-lg-0 mb-3">
+                        <i class="w-8 h-8 text-dark" data-feather="dollar-sign"></i>
+                    </div>
+                    <div class="">
+                        <h4 class="font-4 font-weight-semibold text-uppercase mb-0">{{ 'Money Return'|_ }}</h4>
+                        <span class="font-4">{{ 'Back guarantee under 7 days'|_ }}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="d-lg-flex align-items-center text-center text-lg-left mb-lg-0 mb-5">
+                    <div class="mr-lg-4 mb-lg-0 mb-3">
+                        <i class="w-8 h-8 text-dark" data-feather="user"></i>
+                    </div>
+                    <div class="">
+                        <h4 class="font-4 font-weight-semibold text-uppercase mb-0">{{ 'Member Discount'|_ }}</h4>
+                        <span class="font-4">{{ 'On every order over P500.00'|_ }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>";s:5:"mtime";i:1598460003;s:6:"markup";s:2654:"<section class="py-8 py-md-14 bg-secondary border-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-sm-6">
+                <div class="d-lg-flex align-items-center text-center text-lg-left mb-lg-0 mb-5">
+                    <div class="mr-lg-4 mb-lg-0 mb-3">
+                        <i class="w-8 h-8 text-dark" data-feather="truck"></i>
+                    </div>
+                    <div class="">
+                        <h4 class="font-4 font-weight-semibold text-uppercase mb-0">{{ 'Free Shipping'|_ }}</h4>
+                        <span class="font-4">{{ 'Free 2 Day Shipping Countrywide'|_ }}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="d-lg-flex align-items-center text-center text-lg-left mb-lg-0 mb-5">
+                    <div class="mr-lg-4 mb-lg-0 mb-3">
+                        <i class="w-8 h-8 text-dark" data-feather="headphones"></i>
+                    </div>
+                    <div class="">
+                        <h4 class="font-4 font-weight-semibold text-uppercase mb-0">{{ 'Online Support 24/7'|_ }}</h4>
+                        <span class="font-4">{{ 'Support Online 24 hours a day'|_ }}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="d-lg-flex align-items-center text-center text-lg-left mb-lg-0 mb-5">
+                    <div class="mr-lg-4 mb-lg-0 mb-3">
+                        <i class="w-8 h-8 text-dark" data-feather="dollar-sign"></i>
+                    </div>
+                    <div class="">
+                        <h4 class="font-4 font-weight-semibold text-uppercase mb-0">{{ 'Money Return'|_ }}</h4>
+                        <span class="font-4">{{ 'Back guarantee under 7 days'|_ }}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="d-lg-flex align-items-center text-center text-lg-left mb-lg-0 mb-5">
+                    <div class="mr-lg-4 mb-lg-0 mb-3">
+                        <i class="w-8 h-8 text-dark" data-feather="user"></i>
+                    </div>
+                    <div class="">
+                        <h4 class="font-4 font-weight-semibold text-uppercase mb-0">{{ 'Member Discount'|_ }}</h4>
+                        <span class="font-4">{{ 'On every order over P500.00'|_ }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>";s:4:"code";N;s:11:"description";s:12:"Info Section";s:7:"viewBag";a:0:{}}}

@@ -1,0 +1,65 @@
+[viewBag]
+==
+<section class="container-fluid px-0 mb-12 mt-6 position-relative">
+    <div class="bg-size-cover bg-position-center py-12" style="background:url('{{ item.image.thumb(1000, 750, 'crop') }}');">
+        <div class="position-absolute inset-0 w-100 h-100" style="background: linear-gradient(to left, rgba(247, 247, 247) 0, rgba(247, 247, 247) 40%, rgba(247, 247, 247, 0) 100%);"></div>
+        <div class="row no-gutters py-lg-6">
+            <div class="col-lg-5 col-md-6 col-sm-7 ml-auto">
+                <div class="px-4 px-lg-0" data-sal="slide-left" data-sal-duration="1200">
+                    <div class="d-flex align-items-center flex-wrap">
+                        <h3 class="font-weight-light max-w-md">Today's Amazing Deal!</h3>
+                        <span class="d-flex justify-content-center align-items-center rounded-circle w-20 h-20 bg-danger text-white font-11 font-weight-semibold ml-4">40%</span>
+                    </div>
+                    <span class="mall-products-item__info-teritary">
+                        {% set rating = item.reviews_rating %}
+                        {% if rating > 0 %}
+                            <div class="mall-products-item__stars">
+                                {% partial 'productBanner/stars' rating=rating %}
+                            </div>
+                        {% endif %}
+                    </span>
+                    <h2 class="h1 mb-4">
+                        <a class="text-link" href="{{ productPage|page({slug: item.slug, variant: item.variantHashId}) }}" data-mall-item-id="{{ item.prefixedId }}">{{ indexVariantBanner.name }}</a>
+                    </h2>
+                    {% set price = item.price() %}
+                    <h2 class="font-18 font-weight-semibold">
+                        <span class="lead text-muted mr-2">
+                        {% if price.official %}
+                            <del>{{ price.official.string | raw }}</del>
+                        {% else %}
+                            <del>{{ item.oldPrice.count > 0 ? item.oldPrice().string | raw }}</del>
+                        {% endif %}
+                        </span>
+                        <span class="mall-products-item__price {{ item.oldPrice.count > 0 ? 'text-primary' : 'text-primary' }} {{ price.isCustomerSpecific ? 'mall-products-item__price--special' }}">
+                            {{ price.string | raw }}
+                        </span>
+                    </h2>  
+                    <div class="h4 mb-4 font-weight-light">{{ item.description_short|nl2br }}</div>
+                    <div class="max-w-sm bg-white pt-6 p-4 mb-6">
+                        <div id="count-p" class="d-flex h3 mb-0">
+                            <div class="d-flex flex-wrap m-3">
+                                <div class="font-weight-semibold days-p"></div>
+                                <div class="text-muted font-3 ml-1">d</div>
+                            </div>
+                            <div class="d-flex m-3">
+                                <div class="font-weight-semibold hours-p"></div>
+                                <div class="text-muted font-3 ml-1">h</div>
+                            </div>
+                            <div class="d-flex m-3">
+                                <div class="font-weight-semibold minutes-p"></div>
+                                <div class="text-muted font-3 ml-1">m</div>
+                            </div>
+                            <div class="d-flex m-3">
+                                <div class="font-weight-semibold seconds-p"></div>
+                                <div class="text-muted font-3 ml-1">s</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="btn btn-primary px-6" href="{{ productPage|page({slug: item.slug, variant: item.variantHashId}) }}" data-mall-item-id="{{ item.prefixedId }}">
+                        Shop now<i class="ml-2" data-feather="shopping-cart"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

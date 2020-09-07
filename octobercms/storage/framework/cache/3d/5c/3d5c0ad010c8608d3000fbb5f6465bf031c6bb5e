@@ -1,0 +1,11 @@
+1599340788a:1:{s:24:"latestProducts/items.htm";a:6:{s:8:"fileName";s:24:"latestProducts/items.htm";s:7:"content";s:175:"[viewBag]
+==
+<div class="mall-products__products related-slider">
+    {% for item in items %}
+        {% partial 'latestProducts/item' item=item %}
+    {% endfor %}
+</div>";s:5:"mtime";i:1592589916;s:6:"markup";s:162:"<div class="mall-products__products related-slider">
+    {% for item in items %}
+        {% partial 'latestProducts/item' item=item %}
+    {% endfor %}
+</div>";s:4:"code";N;s:7:"viewBag";a:0:{}}}

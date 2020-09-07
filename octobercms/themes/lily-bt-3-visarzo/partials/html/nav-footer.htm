@@ -1,0 +1,15 @@
+[viewBag]
+==
+
+<ul class="list clearfix">
+
+    {% if items %}
+    {% for item in items %}
+
+    <li><a href="{{ item.url }}">{{item.title|_}}</a></li>
+
+    {% endfor %}
+    {% endif %}
+
+
+</ul>

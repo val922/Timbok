@@ -1,0 +1,73 @@
+//
+// Inset Utilities
+//
+
+$inset: 1rem !default;
+$insets: () !default;
+$insets: map-merge(
+  (
+	0: ($inset * 0),
+	1: ($inset * .25),
+	2: ($inset * .5),
+	3: ($inset * .75),
+	4: ($inset * 1),
+	5: ($inset * 1.25),
+	6: ($inset * 1.5),
+	7: ($inset * 1.75),
+	8: ($inset * 2),
+	9: ($inset * 2.25),
+	10: ($inset * 2.5),
+	half: 50%,
+	full: 100%
+  ),
+  $insets
+);
+
+@if $inset-breakpoints {
+  @each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+      $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+	  
+      @each $prop in (top, right, bottom, left) {
+        @each $size, $length in $insets {
+      	  .#{$prop}#{$infix}-#{$size} { #{$prop}: $length !important; }
+        }
+        
+        // Negative Insets
+        @each $size, $length in $insets {
+      	  @if $size != 0 {
+      	    .#{$prop}#{$infix}-n#{$size} { #{$prop}: -$length !important; }
+      	  }
+        }
+      }
+	  
+	  .inset#{$infix}-0		{ top: 0 !important; right: 0 !important; bottom: 0 !important; left: 0 !important; }
+	  .inset#{$infix}-auto		{ top: auto !important; right: auto !important; bottom: auto !important; left: auto !important; }
+	  .inset#{$infix}-y-0		{ top: 0 !important; bottom: 0 !important; }
+	  .inset#{$infix}-x-0		{ right: 0 !important; left: 0 !important; }
+	  .inset#{$infix}-y-auto	{ top: auto !important; bottom: auto !important; }
+	  .inset#{$infix}-x-auto	{ right: auto !important; left: auto !important; }
+    }
+  }
+}
+@else {
+  @each $prop in (top, right, bottom, left) {
+    @each $size, $length in $insets {
+      .#{$prop}-#{$size} { #{$prop}: $length !important; }
+    }
+ 
+    // Negative Insets
+    @each $size, $length in $insets {
+      @if $size != 0 {
+        .#{$prop}-n#{$size} { #{$prop}: -$length !important; }
+      }
+    }
+  }
+	  
+  .inset-0		{ top: 0 !important; right: 0 !important; bottom: 0 !important; left: 0 !important; }
+  .inset-auto		{ top: auto !important; right: auto !important; bottom: auto !important; left: auto !important; }
+  .inset-y-0		{ top: 0 !important; bottom: 0 !important; }
+  .inset-x-0		{ right: 0 !important; left: 0 !important; }
+  .inset-y-auto	{ top: auto !important; bottom: auto !important; }
+  .inset-x-auto	{ right: auto !important; left: auto !important; }
+}

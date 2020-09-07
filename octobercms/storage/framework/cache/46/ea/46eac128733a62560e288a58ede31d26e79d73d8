@@ -1,0 +1,122 @@
+1599460935a:1:{s:11:"default.htm";a:16:{s:8:"fileName";s:11:"default.htm";s:7:"content";s:2049:"description = "Default Layout"
+
+[cart]
+showDiscountApplier = 1
+showTaxes = 1
+showShipping = 1
+showProceedToCheckoutButton = 0
+
+[mallDependencies]
+
+[session]
+security = "all"
+
+[currencyPicker]
+
+[localePicker]
+forceUrl = 0
+
+[enhancedEcommerceAnalytics]
+
+[staticPage]
+useContent = 1
+default = 1
+
+[searchInput]
+useAutoComplete = 1
+autoCompleteResultCount = 5
+showProviderBadge = 1
+searchPage = "search.htm"
+
+[searchInput searchInputMobile]
+useAutoComplete = 1
+autoCompleteResultCount = 5
+showProviderBadge = 1
+searchPage = "search.htm"
+
+[cookieBanner]
+include_css = 0
+update_selector = "#gdpr-reload"
+cookie_manager_page = "gdpr"
+==
+{% spaceless %}
+<!DOCTYPE html>
+<html lang="{{ activeLocale }}">
+    <head>
+        {% partial 'metaData/default' %}
+        {% partial 'site/css' %}
+        <!-- Jquery -->
+        <script src="{{ ['@jquery']|theme }}"></script>
+        <!--Ecommerce Analytics -->
+        {% component 'enhancedEcommerceAnalytics' %}
+        <!--Eshop Dependencies -->
+        {% component 'mallDependencies' %}
+    </head><!--/#head-->
+    <body class="page-{{ this.page.id }} layout-{{ this.page.layout }}">
+        <!--Google Analytics -->
+        {{ this.theme.google_analytics|raw }}
+        <!-- Loader -->
+        {% partial 'site/loader' %}
+        <!-- Main Wrapper -->
+        <div class="main-wrapper overflow-hidden">
+            <!-- Wrapper -->
+            <div class="page-wrapper">
+                <!-- Header -->
+                {% partial 'header/default' %}
+                <!-- Page -->
+                {% page %}
+                <!-- Info -->
+                {% partial 'site/info' %}
+                <!-- Footer -->
+                {% partial 'footer/default' %}
+                <!-- GDPR -->
+                {% component 'cookieBanner' %}
+                <!-- Scroll to top -->
+                {% partial 'site/scrolltop' %}
+            </div>
+        </div>
+        <!-- Scripts -->
+        {% partial 'site/scripts' %}
+    </body><!--/#body-->
+</html>
+{% endspaceless %}";s:5:"mtime";i:1592589918;s:6:"markup";s:1420:"{% spaceless %}
+<!DOCTYPE html>
+<html lang="{{ activeLocale }}">
+    <head>
+        {% partial 'metaData/default' %}
+        {% partial 'site/css' %}
+        <!-- Jquery -->
+        <script src="{{ ['@jquery']|theme }}"></script>
+        <!--Ecommerce Analytics -->
+        {% component 'enhancedEcommerceAnalytics' %}
+        <!--Eshop Dependencies -->
+        {% component 'mallDependencies' %}
+    </head><!--/#head-->
+    <body class="page-{{ this.page.id }} layout-{{ this.page.layout }}">
+        <!--Google Analytics -->
+        {{ this.theme.google_analytics|raw }}
+        <!-- Loader -->
+        {% partial 'site/loader' %}
+        <!-- Main Wrapper -->
+        <div class="main-wrapper overflow-hidden">
+            <!-- Wrapper -->
+            <div class="page-wrapper">
+                <!-- Header -->
+                {% partial 'header/default' %}
+                <!-- Page -->
+                {% page %}
+                <!-- Info -->
+                {% partial 'site/info' %}
+                <!-- Footer -->
+                {% partial 'footer/default' %}
+                <!-- GDPR -->
+                {% component 'cookieBanner' %}
+                <!-- Scroll to top -->
+                {% partial 'site/scrolltop' %}
+            </div>
+        </div>
+        <!-- Scripts -->
+        {% partial 'site/scripts' %}
+    </body><!--/#body-->
+</html>
+{% endspaceless %}";s:4:"code";N;s:11:"description";s:14:"Default Layout";s:4:"cart";a:4:{s:19:"showDiscountApplier";s:1:"1";s:9:"showTaxes";s:1:"1";s:12:"showShipping";s:1:"1";s:27:"showProceedToCheckoutButton";s:1:"0";}s:16:"mallDependencies";a:0:{}s:7:"session";a:1:{s:8:"security";s:3:"all";}s:14:"currencyPicker";a:0:{}s:12:"localePicker";a:1:{s:8:"forceUrl";s:1:"0";}s:26:"enhancedEcommerceAnalytics";a:0:{}s:10:"staticPage";a:2:{s:10:"useContent";s:1:"1";s:7:"default";s:1:"1";}s:11:"searchInput";a:4:{s:15:"useAutoComplete";s:1:"1";s:23:"autoCompleteResultCount";s:1:"5";s:17:"showProviderBadge";s:1:"1";s:10:"searchPage";s:10:"search.htm";}s:29:"searchInput searchInputMobile";a:4:{s:15:"useAutoComplete";s:1:"1";s:23:"autoCompleteResultCount";s:1:"5";s:17:"showProviderBadge";s:1:"1";s:10:"searchPage";s:10:"search.htm";}s:12:"cookieBanner";a:3:{s:11:"include_css";s:1:"0";s:15:"update_selector";s:12:"#gdpr-reload";s:19:"cookie_manager_page";s:4:"gdpr";}}}

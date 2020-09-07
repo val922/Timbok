@@ -1,0 +1,80 @@
+[viewBag]
+snippetCode = "about2"
+snippetName = "about2"
+==
+{% if aboutEnable %}
+<section class="about-style-two">
+    <div class="auto-container">
+        <div class="row clearfix">
+            <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+                <div id="content_block_3">
+                    <div class="content-box">
+                        <div class="sec-title">
+                            {% if aboutTop %}<p>{{aboutTop}}</p>{% endif %}
+                            <h2>{{aboutTitle??('This is a damo'|_)}}</h2>
+                            <div class="dotted-box">
+                                <span class="dotted"></span>
+                                <span class="dotted"></span>
+                                <span class="dotted"></span>
+                            </div>
+                        </div>
+                        <div class="bold-text">
+                            <p>{{aboutTextBold??('Please set it in the backend'|_)}}</p>
+                        </div>
+                        {% if aboutText %}
+                        <div class="text">
+                            <p>{{aboutText}}</p>
+                        </div>
+                        {% endif %}
+                        {% if aboutBtnText %}
+                        <div class="btn-box">
+                            <a href="{{aboutBtnUrl}}" target="_blank" class="theme-btn-two">{{aboutBtnText}}<i class="flaticon-send"></i></a>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+                <div id="image_block_2">
+                    <div class="image-box">
+                        <figure class="image-1"><img src="{{aboutImage|media}}" alt=""></figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% else %}
+<section class="about-style-two">
+    <div class="auto-container">
+        <div class="row clearfix">
+            <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+                <div id="content_block_3">
+                    <div class="content-box">
+                        <div class="sec-title">
+                            <p>who are visarzo</p>
+                            <h2>The Leading Visa & Immigration Expert Lawyers Since 2000</h2>
+                            <div class="dotted-box">
+                                <span class="dotted"></span>
+                                <span class="dotted"></span>
+                                <span class="dotted"></span>
+                            </div>
+                        </div>
+                        <div class="text">
+                            <p>Perspiciatis unde omnis iste natus error sit voluptatem accusantium dolore mque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore vsr tatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur magnid.</p>
+                        </div>
+                        <div class="btn-box"><a href="" class="theme-btn-two">Learn More<i class="flaticon-send"></i></a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+                <div id="image_block_2">
+                    <div class="image-box">
+                        <figure class="image-1"><img src="{{'assets/images/resource/about-2.jpg'|theme}}" alt=""></figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}

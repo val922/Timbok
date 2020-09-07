@@ -1,0 +1,47 @@
+title = "Categories"
+url = "/categories"
+layout = "default"
+is_hidden = 0
+
+[products]
+filterComponent = "productsFilter"
+setPageTitle = 0
+includeVariants = 1
+includeChildren = 0
+perPage = 3
+paginate = 0
+sort = "latest"
+==
+<?php
+function onStart()
+{
+    $this['categories'] = \OFFLINE\Mall\Models\Category::with('products')->get();
+}
+?>
+==
+{% partial 'pageHeader/page' %}
+
+<div class="container pb-12 mt-4">
+    <div class="row">
+        {% for category in categories %}
+        <div class="col-md-4 col-sm-6">
+            <div class="card border-0 mb-7">
+                <a class="d-flex" href="/category/{{ category.nested_slug }}">
+                    <div class="mr-3">
+                        <img src="{{ category.products[0].image.thumb(350, 345, 'crop') }}" width="350" height="345" alt="{{ product.name }}" loading="lazy" class="d-block img-fluid"/>
+                    </div>
+                    <div class="">
+                        <img src="{{ category.products[1].image.thumb(175, 162, 'crop') }}" width="175" height="162" alt="{{ product.name }}" loading="lazy" class="d-block img-fluid mb-3"/>
+                        <img src="{{ category.products[2].image.thumb(175, 162, 'crop') }}" width="175" height="162" alt="{{ product.name }}" loading="lazy" class="d-block img-fluid"/>
+                    </div>
+                </a>
+                <div class="card-body border border-top-0 mt-n1 py-6 text-center">
+                    <h2 class="h5 mb-1">{{ category.name }}</h2>
+                    <div class="font-size-xs font-4 text-muted font-weight-light mb-4">{{ category.description|raw }}</div>
+                    <a class="btn btn-sm btn-outline-primary px-3" href="/category/{{ category.nested_slug }}">Shop&nbsp;{{ category.name }}</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>

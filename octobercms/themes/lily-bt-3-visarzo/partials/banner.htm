@@ -1,0 +1,108 @@
+[viewBag]
+snippetCode = "banner"
+snippetName = "banner"
+==
+{% if bannerEnable %}
+<section class="banner-section style-one">
+    <div class="banner-carousel owl-theme owl-carousel owl-dots-none">
+{% if banners %}
+    {% for item in banners %}
+        <div class="slide-item">
+            <div class="image-layer" style="background-image:url({{item.image|media}})"></div>
+            <div class="auto-container">
+                <div class="row clearfix">
+                    <div class="col-xl-8 col-lg-12 col-md-12 offset-xl-2 content-column">
+                        <div class="content-box centred">
+                            <div class="title-text">
+                                <h1>{{item.title}}</h1>
+                            </div>
+                            {% if item.info %}<p>{{item.info}}</p>{% endif %}
+                            {% if item.btnText %}
+                            <div class="btn-box">
+                                <a href="{{item.btnURL}}" target="_blank" class="theme-btn-one"><i class="flaticon-send"></i>{{item.btnText}}</a>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    {% endfor %}
+     
+
+{% else %}
+
+        <div class="slide-item">
+            <div class="image-layer" style="background-image:url({{'assets/images/banner/banner-4.jpg'|theme}})"></div>
+            <div class="auto-container">
+                <div class="row clearfix">
+                    <div class="col-xl-8 col-lg-12 col-md-12 offset-xl-2 content-column">
+                        <div class="content-box centred">
+                            <div class="title-text">
+                                <h1>{{'This is a damo'|_}}</h1>
+                                <p>{{'Please set it in the backend'|_}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+
+{% endif %}
+
+    </div>
+</section>
+{% else %}
+<section class="banner-section style-one">
+    <div class="banner-carousel owl-theme owl-carousel owl-dots-none">
+        <div class="slide-item">
+            <div class="image-layer" style="background-image:url({{'assets/images/banner/banner-5.jpg'|theme}})"></div>
+            <div class="auto-container">
+                <div class="row clearfix">
+                    <div class="col-xl-7 col-lg-12 col-md-12 content-column">
+                        <div class="content-box">
+                            <div class="title-text">
+                                <h1>Multiple-OS Event & Performance Monitoring.</h1>
+                            </div>
+                            <p>Cross-Platform, Modularity & Flexibility capabilities allows integration into any computing environment.</p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-item">
+            <div class="image-layer" style="background-image:url({{'assets/images/banner/banner-2.jpg'|theme}})"></div>
+            <div class="auto-container">
+                <div class="row clearfix">
+                    <div class="col-xl-6 col-lg-12 col-md-12 content-column">
+                        <div class="content-box">
+                            <span class="top-text">Data Gathering</span>
+                            <div class="title-text">
+                                <h1>Timbok's scales to very large environments.</h1>
+                            </div>
+                            <p>With Timbok Agents & agent-less options: SNMPv{1-3}, IPMI, WMI, trappers, SSH, Telnet & Web-Checks.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slide-item">
+            <div class="image-layer" style="background-image:url({{'assets/images/banner/banner-3.jpg'|theme}})"></div>
+            <div class="auto-container">
+                <div class="row clearfix">
+                    <div class="col-xl-7 col-lg-12 col-md-12 content-column">
+                        <div class="content-box">
+                            <span class="top-text">Able to process more that 50, 000 check per second</span>
+                            <div class="title-text">
+                                <h1>Scaling to Large & Complex Architectures</h1>
+                            </div>
+                            <p>Scales up to hundreds of thousands of monitored devices, Virtual & Baremetal.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}

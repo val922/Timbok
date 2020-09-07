@@ -1,0 +1,11 @@
+name: footer_1
+items:
+    -
+        title: 'New menu item'
+        type: url
+        url: /
+        code: ''
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'

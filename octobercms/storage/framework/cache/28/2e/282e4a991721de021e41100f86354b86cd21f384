@@ -1,0 +1,23 @@
+1599340788a:1:{s:26:"featuredProducts/stars.htm";a:6:{s:8:"fileName";s:26:"featuredProducts/stars.htm";s:7:"content";s:514:"[viewBag]
+==
+<div class="mall-category-review visible {{ variant ? ('mall-category-review--' ~ variant) : '' }}">
+    <div class="mall-category-review__rating {{ clickable ? 'mall-category-review__rating--clickable' }}">
+        {% set rating = rating|round %}
+        {% for i in range(1, 5) %}
+            {% partial 'featuredProducts/star' active=rating >= i value=i %}
+        {% endfor %}
+    </div>
+    <div class="mall-category-review__name text-dark font-5">
+        {{ label }}
+    </div>
+</div>";s:5:"mtime";i:1592589912;s:6:"markup";s:501:"<div class="mall-category-review visible {{ variant ? ('mall-category-review--' ~ variant) : '' }}">
+    <div class="mall-category-review__rating {{ clickable ? 'mall-category-review__rating--clickable' }}">
+        {% set rating = rating|round %}
+        {% for i in range(1, 5) %}
+            {% partial 'featuredProducts/star' active=rating >= i value=i %}
+        {% endfor %}
+    </div>
+    <div class="mall-category-review__name text-dark font-5">
+        {{ label }}
+    </div>
+</div>";s:4:"code";N;s:7:"viewBag";a:0:{}}}

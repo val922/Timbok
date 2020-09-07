@@ -1,0 +1,25 @@
+1599460949a:1:{s:24:"wishlistButtons/item.htm";a:6:{s:8:"fileName";s:24:"wishlistButtons/item.htm";s:7:"content";s:595:"[viewBag]
+==
+<a href="javascript:;"
+   class="position-absolute top-2 right-2 d-flex justify-content-center align-items-center text-muted bg-white btn p-0 rounded-circle opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-40 w-8 h-8 z-10"
+   data-request="onAdd"
+   data-request-flash
+   data-request-success="$.publish('mall.wishlist.productAdded', data);"
+   data-request-data="
+         wishlist_id: '{{ list_id }}',
+         product_id: '{{ item.productHashId }}',
+         variant_id: '{{ item.variantHashId }}'
+    ">
+    <i data-feather="heart"></i>
+</a>";s:5:"mtime";i:1592589914;s:6:"markup";s:582:"<a href="javascript:;"
+   class="position-absolute top-2 right-2 d-flex justify-content-center align-items-center text-muted bg-white btn p-0 rounded-circle opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-40 w-8 h-8 z-10"
+   data-request="onAdd"
+   data-request-flash
+   data-request-success="$.publish('mall.wishlist.productAdded', data);"
+   data-request-data="
+         wishlist_id: '{{ list_id }}',
+         product_id: '{{ item.productHashId }}',
+         variant_id: '{{ item.variantHashId }}'
+    ">
+    <i data-feather="heart"></i>
+</a>";s:4:"code";N;s:7:"viewBag";a:0:{}}}

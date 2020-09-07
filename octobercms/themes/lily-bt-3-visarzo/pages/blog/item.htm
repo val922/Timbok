@@ -1,0 +1,61 @@
+title = "博客信息"
+url = "/blog/item/:slug"
+layout = "default"
+is_hidden = 0
+
+[blogPost]
+slug = "{{ :slug }}"
+categoryPage = "blog/category"
+==
+<?php
+use RainLab\Blog\Models\Post;
+
+function onStart()
+{
+    $this->addCss('assets/css/markdown.css');
+    
+	$slug=$this->param('slug');
+	$item=Post::where('slug', $slug)->first();
+	
+	$this->page->title = $item->title;
+}
+?>
+==
+{% set post = blogPost.post  %}
+
+{% partial 'pageTitle' par_enable=true par_title=post.title par_image=post.featured_images[0].path %}
+
+<div class="sidebar-page-container blog-details">
+            <div class="auto-container">
+                <div class="row clearfix">
+                    <div class="col-lg-8 col-md-12 col-sm-12 content-side">
+                        <div class="blog-details-content">
+                            <div class="news-block-one">
+                                <div class="inner-box">
+                                    {% if post.featured_images.count %}
+                                    <figure class="image-box"><img src="{{post.featured_images[0].path}}" alt=""></figure>
+                                    {% endif %}
+                                    <div class="lower-content">
+                                        <div class="post-date"><h5>{{ post.published_at|date('DateFormat'|_) }}</h5></div>
+                                        <h2>{{post.title}}</h2>
+                                        <ul class="post-info clearfix">
+                                                {% for category in post.categories %}
+                                                <li><a href="{{ category.url }}">{{ category.name }}</a></li>
+                                                {% if not loop.last %}, {% endif %}
+                                                {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="two-column markdown">
+                                {{ post.content_html|raw }}
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12 sidebar-side">
+                        {% partial 'html/sidebar' %}
+                    </div>
+                </div>
+            </div>
+        </div>

@@ -1,0 +1,15 @@
+description = "Blog Post Page Header"
+
+[viewBag]
+==
+<div class="py-10">
+    <div class="container">
+		<h1 class="font-weight-semibold">{{ post.title }}</h1>
+		<span class="lead font-weight-semibold text-muted font-6">in
+			{% for category in post.categories %}
+			{{ category.name }}{% if not loop.last %},{% endif %}
+			{% endfor %}
+		</span>
+        <hr class="mt-6">
+    </div>
+</div>

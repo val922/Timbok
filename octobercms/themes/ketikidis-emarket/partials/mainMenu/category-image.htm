@@ -1,0 +1,19 @@
+[viewBag]
+==
+<?php
+function onStart()
+{
+    $this['categories'] = \OFFLINE\Mall\Models\Category::orderBy('created_at', 'DESC')->get();
+}
+?>
+==
+{% for category in categories if item.title|slug == category.slug %}
+<a href="/category/{{ category.nested_slug }}" class="block">
+	<div class="bg-cover position-relative px-4 py-6 mb-4" style="background-image:url({{ category.image.thumb(400, 180, 'crop') }})">
+		<div class="position-absolute overflow-hidden inset-0 w-100 h-100 bg-dark opacity-50"></div>
+		<div class="position-relative d-flex aligns-items-center justify-content-center h-100">
+            <h3 class="font-7 font-weight-semibold text-white my-4">{{ category.name }}</h3>
+		</div>
+	</div>
+</a>
+{% endfor %}

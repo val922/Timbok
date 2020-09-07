@@ -1,0 +1,10 @@
+[viewBag]
+==
+<div class="mr-2">
+    <h6 class="ss-autocomplete-result__title mb-4">
+        <a href="{{ result.url }}" class="text-link">{{ result.title | raw }}</a>
+    </h6>
+    {% if searchinput.showProviderBadge %}
+    <span class="ss-autocomplete-result__badge font-5"><i class="text-muted mr-2" data-feather="search"></i>{{ result.provider }}</span>
+    {% endif %}
+</div>

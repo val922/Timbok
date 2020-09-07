@@ -1,0 +1,19 @@
+[viewBag]
+==
+<div class="mb-6 py-1">
+    <h3 class="position-relative font-6 font-weight-semibold pb-3 mb-5 decorated-right">
+		<span>Categories</span>
+	</h3>
+    <div id="category-nav">
+    {% if blogCategories.categories|length > 0 %}
+        <div class="list-group panel">
+            {% partial 'blogCategories/items'
+                categories = blogCategories.categories
+                currentCategorySlug = blogCategories.currentCategorySlug
+            %}
+        </div>
+    {% else %}
+        <p>No categories were found.</p>
+    {% endif %}
+    </div>
+</div>

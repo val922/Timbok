@@ -1,0 +1,31 @@
+title = "博客列表"
+url = "/blog/:page?"
+layout = "default"
+is_hidden = 0
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "blog/category"
+postPage = "blog/item"
+==
+{% set posts = blogPosts.posts %}
+{% partial 'pageTitle' par_enable=true par_title='Blog' %}
+<section class="news-section blog-grid sec-pad-2">
+    <div class="auto-container">
+        <div class="row clearfix">
+    {% for post in posts %}
+        {% partial 'html/blog-list-item' post=post %}
+    {% endfor %}
+        </div>
+        <div class="pagination-wrapper centred">
+        
+            {% if posts.lastPage > 1 %}
+                {% partial 'html/pagination' posts=posts%}
+            {% endif %}
+            
+        </div>
+    </div>
+</section>

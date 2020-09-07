@@ -1,0 +1,25 @@
+[viewBag]
+==
+{% set fieldId = 'field-' ~ field.hashId %}
+<div class="form-group">
+    <label for="{{ fieldId }}" class="font-6 text-dark">{{ field.name }}</label>
+    <div class="mall-field-color-selector d-flex flex-wrap">
+        {% if field.custom_field_options.count > 0 %}
+            <input type="hidden" id="{{ fieldId }}" name="fields[{{ field.hashId }}]"
+                   data-id="{{ item.property.hashId }}"
+                   data-mall-custom-field
+            >
+            {% for option in field.custom_field_options %}
+                <a class="mall-option-selector d-flex justify-content-center align-items-center btn rounded-circle p-0 w-8 h-8 mb-2 {% if not loop.last %}mr-1{% endif %} {{ isSelected ? 'btn-primary' : 'btn-outline-primary' }}" data-target="#{{ fieldId }}" data-value="{{ option.hashId }}">
+                    <div class="rounded-circle w-5 h-5" style="background: {{ option.option_value }};"></div>
+                </a>
+            {% endfor %}
+        {% else %}
+            <input type="color" id="{{ fieldId }}" name="fields[{{ field.hashId }}]"
+                   data-id="{{ item.property.hashId }}"
+                   data-mall-custom-field
+            >
+        {% endif %}
+    </div>
+    <div data-validate-for="{{ field.hashId }}" class="text-danger font-4 mt-2 ml-1"></div>
+</div>

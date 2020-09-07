@@ -1,0 +1,24 @@
+[viewBag]
+==
+{% if __SELF__.showProviderBadge %}
+<div class="font-5 text-muted d-flex pb-4">
+    <div class="mr-2">
+        <span class="ss-result__badge">
+            {{ result.provider }}
+        </span>
+    </div>
+</div>
+{% endif %}
+<h3 class="h4 mb-4">
+    <a class="text-link font-weight-semibold ss-result__title" href="{{ result.url | app }}">{{ result.title | raw }}</a>
+</h3>
+<p class="font-5">{{ result.excerpt | raw }}</p>
+<div class="font-5 text-muted">
+    <div>
+        <p class="ss-result__url">
+            <a href="{{ result.url | app }}" class="ss-result__link btn btn-sm btn-outline-primary px-3">
+                {{ __SELF__.visitPageMessage }}<i class="ml-1" data-feather="arrow-right"></i>
+            </a>
+        </p>
+    </div>
+</div>

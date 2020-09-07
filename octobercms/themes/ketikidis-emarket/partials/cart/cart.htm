@@ -1,0 +1,58 @@
+[viewBag]
+==
+<div class="col-xl-9 col-md-8">
+    {% if cart.products.count < 1 %}
+        {% partial __SELF__ ~ '::empty' %}
+    {% else %}
+        {% partial __SELF__ ~ '::table-base' %}
+    {% endif %}
+</div>
+{% if not cart.products.count < 1 %}
+<div class="col-xl-3 col-md-4 pt-6 pt-md-0">
+    <h2 class="font-weight-semibold font-6 px-6 py-4 bg-secondary text-center">Order summary</h2>
+    <div class="font-5 border-bottom pt-3 pb-4">
+        {% partial __SELF__ ~ '::table-total'      totals=cart.totals %}
+        {% partial __SELF__ ~ '::table-discounts'  discounts=cart.totals.appliedDiscounts %}
+        {% partial __SELF__ ~ '::table-shipping'   shipping=cart.totals.shippingTotal %}
+        {% partial __SELF__ ~ '::table-payment'    payment=cart.totals.paymentTotal %}
+        {% partial __SELF__ ~ '::table-taxes'      totals=cart.totals %}
+    </div>
+    {% partial __SELF__ ~ '::table-grandtotal' totals=cart.totals %}
+    
+    {% if __SELF__.showDiscountApplier %}
+    <div id="cart-accordion" class="py-6">
+        <div class="card rounded-0 overflow-hidden">
+            <div class="card-header bg-transparent border-bottom px-5 mb-n1" id="headingOne">
+                <h5 class="font-weight-semibold mb-0">
+                    <a href="#collapseOne" role="button" data-toggle="collapse" aria-expanded="true" aria-controls="collapseOne" class="d-flex align-items-center">
+                        <span class="font-6 text-link">Discount Code</span>
+                        <span class="ml-auto d-flex justify-content-center align-items-center font-3 font-weight-medium text-muted border rounded-circle w-8 h-8">
+                            <i class="w-4 h-4" data-feather="tag"></i>
+                        </span>
+                    </a>
+                </h5>
+            </div>
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#cart-accordion">
+                <div class="card-body">
+				{% if not cart.products.count < 1 %}
+					{% if __SELF__.showDiscountApplier %}
+						{% partial __SELF__ ~ '::discountapplier' %}
+					{% endif %}
+				{% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+	{% if __SELF__.showProceedToCheckoutButton and cart.products.count > 0 %}
+		{% partial __SELF__ ~ '::proceedtocheckout' %}
+	{% endif %}
+</div>
+{% endif %}
+
+<script>
+    // Feather Icons
+    $( document ).ready(function() {
+        feather.replace()
+    });
+</script>

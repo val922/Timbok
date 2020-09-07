@@ -1,0 +1,18 @@
+[viewBag]
+==
+<div class="mall-checkout-result mall-checkout-result--successful text-center">
+    <div class="card p-10 border-0 shadow alert alert-success"  role="alert">
+        {% if __SELF__.order.is_paid %}
+            <h3 class="font-weight-semibold text-success mall-checkout-result__heading mb-5">{{ 'offline.mall::frontend.checkout.payment.successful.heading' | trans }}</h3>
+            <p>{{ 'offline.mall::frontend.checkout.payment.successful.line_1' | trans }}</p>
+        {% else %}
+            <h3 class="font-weight-semibold text-success mall-checkout-result__heading mb-5">{{ 'offline.mall::frontend.checkout.order.successful.heading' | trans }}</h3>
+            <p>{{ 'offline.mall::frontend.checkout.order.successful.line_1' | trans }}</p>
+        {% endif %}
+        {% partial __SELF__ ~ '::resultactions' %}
+    </div>
+</div>
+
+{% if __SELF__.dataLayer %}
+        {% partial __SELF__ ~ '::datalayer' %}
+{% endif %}

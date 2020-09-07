@@ -1,0 +1,20 @@
+//
+// Transition
+//
+
+$transition: () !default;
+$transition: map-merge(
+  (
+    20: all .2s ease-in-out,
+    40: all .4s ease-in-out,
+	60: all .6s ease-in-out,
+    80: all .8s ease-in-out
+  ),
+  $transition
+);
+
+@each $prop, $abbrev in (transition: transition ) {
+  @each $size, $length in $transition {
+	.#{$abbrev}-#{$size} { #{$prop}: $length !important; }
+  }
+}

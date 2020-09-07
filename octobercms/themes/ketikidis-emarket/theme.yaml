@@ -1,0 +1,23 @@
+name: Bangoe
+description: 'Bangoe Afrika''s Mall'
+author: 'Thato Menyatso'
+homepage: 'https://www.bangoe.com'
+code: bangoe
+form: config/fields.yaml
+require:
+    - Rainlab.User
+    - Rainlab.Blog
+    - Rainlab.Pages
+    - Rainlab.Location
+    - Rainlab.Translate
+    - Rainlab.Mailchimp
+    - OFFLINE.Mall
+    - OFFLINE.SiteSearch
+    - OFFLINE.Gdpr
+    - Responsiv.Uploader
+    - GinoPane.BlogTaxonomy
+    - PolloZen.MostVisited
+    - PolloZen.NextPrevPost
+    - VojtaSvoboda.TwigExtensions
+    - Martin.Forms
+    - Webvpf.Share

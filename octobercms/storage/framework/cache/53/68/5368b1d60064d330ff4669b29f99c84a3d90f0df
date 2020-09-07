@@ -1,0 +1,24 @@
+1599460964a:1:{s:17:"header/navbar.htm";a:8:{s:8:"fileName";s:17:"header/navbar.htm";s:7:"content";s:421:"description = "Header Navbar"
+
+[viewBag]
+
+[staticMenu mainMenu]
+code = "main-menu"
+==
+<div class="header-navbar navbar navbar-expand-md bg-white border-top border-bottom p-0">
+	<div class="container px-md-4">
+		<div class="collapse navbar-collapse position-relative" id="headerMenu">
+			<div class="hover-dropdown mr-auto">
+			{% partial 'mainMenu/default' staticMenu=mainMenu %}
+			</div>
+		</div>
+	</div>
+</div>";s:5:"mtime";i:1592589916;s:6:"markup";s:335:"<div class="header-navbar navbar navbar-expand-md bg-white border-top border-bottom p-0">
+	<div class="container px-md-4">
+		<div class="collapse navbar-collapse position-relative" id="headerMenu">
+			<div class="hover-dropdown mr-auto">
+			{% partial 'mainMenu/default' staticMenu=mainMenu %}
+			</div>
+		</div>
+	</div>
+</div>";s:4:"code";N;s:11:"description";s:13:"Header Navbar";s:7:"viewBag";a:0:{}s:19:"staticMenu mainMenu";a:1:{s:4:"code";s:9:"main-menu";}}}

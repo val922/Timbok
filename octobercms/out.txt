@@ -1,0 +1,517 @@
+    1  history 
+    2  sudo systemctl set-default multi-user.target
+    3  reboot
+    4  ping google.com
+    5  apt update -y && apt -y upgrade
+    6  apt install curl apt-transport-https lsb-release -y 
+    7  curl -s "https://packages.wazuh.com/key/GPG-KEY-WAZUH" | apt-key add -
+    8  echo "deb https://packages.wazuh.com/3.x/apt/ stable main" | tee -a /etc/apt/sources.list.d/wazuh.list
+    9  apt update -y
+   10  apt install -y auditd
+   11  apt install wazuh-manager=3.2.0-1
+   12  openssl req -x509 -batch -nodes -days 365 -newkey rsa:2048 -keyout /var/ossec/etc/sslmanager.key -out /var/ossec/etc/sslmanager.cert 
+   13  /var/ossec/bin/ossec-authd 
+   14  /var/ossec/bin/./ossec-authd 
+   15  curl -sL "https://deb.nodesource.com/setup_6.x" | bash -
+   16  curl -sL "https://deb.nodesource.com/setup_12.x" | bash -
+   17  apt update -y && apt upgrade -y
+   18  apt install nodejs
+   19  apt install -y wazuh-api=3.2.0-1
+   20  add-apt-repository ppa:webupd8team/java
+   21  apt update
+   22  apt install -y oracle-java8-installer
+   23  apt install -y default-jre
+   24  apt install -y openjdk-8-jre-headless
+   25  curl -s "https://artifacts.elastic.co/GPG-KEY-elasticsearch" | apt-key add -
+   26  echo "deb https://artifacts.elastic.co/packages/6.x/apt stable main" | tee /etc/apt/sources.list.d/elastic-6.x.list
+   27  apt update -y
+   28  apt install elasticsearch=6.2.0
+   29  apt install kibana=6.2.0
+   30  systemctl enable elasticsearch.service
+   31  nano /etc/elasticsearch/elasticsearch.yml 
+   32  clear
+   33  nano /etc/kibana/kibana.yml 
+   34  system enable elasticsearch.service
+   35  systemctl enable elasticsearch.service
+   36  systemctl restart elasticsearch.service
+   37  systemctl enable kibana.service
+   38  systemctl restart kibana.service
+   39  apt update -y && apt upgrade -y && while true; do echo "Thato Valdusch Menyatso makes diamonds with his hands"; done
+   40  systemctl restart elasticsearch.service
+   41  systemctl restart kibana.service
+   42  ip a
+   43  curl http://0.0.0.0:9200
+   44  curl http://192.168.178.103:9200
+   45  nano /etc/elasticsearch/elasticsearch.yml 
+   46  nano /etc/kibana/kibana.yml
+   47  Y
+   48  clear
+   49  systemctl status kibana.service
+   50  systemctl status elasticsearch.service
+   51  clear
+   52  apt install elasticsearch=6.2.0 -y
+   53  apt autoremove
+   54  apt install -y openjdk-8-jdk
+   55  wget -qO - "https://artifacts.elastic.co/GPG-KEY-elasticsearch" | sudo apt-key add
+   56  echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-7.x.list
+   57  apt update
+   58  apt install elasticsearch
+   59  nano /etc/elasticsearch/elasticsearch.yml
+   60  nano /etc/kibana/kibana.yml
+   61  Y
+   62  curl http://0.0.0.0:9200
+   63  systemctl enable elasticsearch.service
+   64  systemctl restart elasticsearch.service
+   65  reboot
+   66  systemctl enable elasticsearch.service
+   67  systemctl restart elasticsearch.service
+   68  nano /root/.bashrc 
+   69  clear
+   70  source /root/.bashrc 
+   71  ls /bin/
+   72  ls /usr/share/elasticsearch/
+   73  ls /usr/share/elasticsearch/bin/
+   74  nano /root/.bashrc 
+   75  clear
+   76  source /root/.bashrc 
+   77  ls /usr/share/elasticsearch/bin/elasticsearch
+   78  ./usr/share/elasticsearch/bin/elasticsearch
+   79  /usr/share/elasticsearch/bin/.elasticsearch
+   80  /usr/share/elasticsearch/bin/./elasticsearch
+   81  nano /root/.bashrc 
+   82  /usr/share/elasticsearch/bin/./elasticsearch
+   83  clear
+   84  source /root/.bashrc 
+   85  clear
+   86  ip a
+   87  nano /etc/elasticsearch/elasticsearch.yml
+   88  Y
+   89  clear
+   90  nano /etc/kibana/kibana.yml
+   91  clear
+   92  sudo update-rc.d elasticsearch defaults 95 10
+   93  sudo -i service elasticsearch start
+   94  nano /var/log/elasticsearch/gc.log.28 
+   95  clear
+   96  nano /var/log/elasticsearch/elasticsearch.log 
+   97  clear
+   98  ls /var/lib/elasticsearch/
+   99  nano /var/lib/elasticsearch/nodes/0/_state/segments_5 
+  100  Y
+  101  clear
+  102  ls /root/.profile 
+  103  nano /root/.profile 
+  104  clear
+  105  apt install openssh-server
+  106  clear
+  107  ping google.com
+  108  ip a
+  109  ping 192.168.178.174
+  110  ping 192.168.178.22
+  111  clear
+  112  nmap
+  113  apt update
+  114  clear
+  115  nslookup google.com
+  116  nslookup bolux.bw
+  117  nslookup wikipedia.org
+  118  ls /etc/nsswitch.conf 
+  119  clear
+  120  nano /etc/nsswitch.conf 
+  121  clear
+  122  cp /etc/nsswitch.conf
+  123  nano /etc/nsswitch.conf
+  124  clear
+  125  nslookup google.com
+  126  ping google.com
+  127  restart
+  128  reboot'
+  129  reboot
+  130  clear
+  131  nano /root/.bashrc 
+  132  clear
+  133  exit
+  134  ls
+  135  pwd
+  136  apt update -y && apt upgrade -y
+  137  history 
+  138  nano /etc/elasticsearch/elasticsearch.yml
+  139  systemctl enable kibana.service
+  140  systemctl restart kibana.service
+  141  systemctl status kibana.service
+  142  systemctl stop kibana.service
+  143  systemctl stop elasticsearch.service
+  144  systemctl start elasticsearch.service
+  145  systemctl status elasticsearch.service
+  146  systemctl restart elasticsearch.service
+  147  systemctl enable elasticsearch.service
+  148  systemctl restart elasticsearch.service
+  149  ls /usr/share/elasticsearch/bin/
+  150  systemctl edit --full elasticsearch
+  151  /usr/share/elasticsearch/bin/./systemd-entrypoint -p ${PID_DIR}/elasticsearch.pid
+  152  exit
+  153  nano /etc/elasticsearch/jvm.options
+  154  source /etc/elasticsearch/jvm.options
+  155  start-stop-daemon
+  156  start
+  157  /usr/share/elasticsearch/bin/./systemd-entrypoint -p ${PID_DIR}/elasticsearch.pid
+  158  systemctl enable elasticsearch.service
+  159  systemctl restart elasticsearch.service
+  160  sudo less /etc/passwd 
+  161  sudo less /etc/passwd  | grep "elasticsearch"
+  162  sudo less /etc/group  | grep "elasticsearch"
+  163  sudo elasticsearch:elasticsearch -R /usr/share/elasticsearch
+  164  chown elasticsearch:elasticsearch -R /usr/share/elasticsearch
+  165  chown elasticsearch:elasticsearch -R /var/log/elasticsearch
+  166  chown elasticsearch:elasticsearch -R /var/lib/elasticsearch
+  167  chown elasticsearch:elasticsearch -R /etc/default/elasticsearch 
+  168  chown elasticsearch:elasticsearch -R /etc/elasticsearch
+  169  nano /etc/default/elasticsearch 
+  170  readlink -f {which java}
+  171  readlink -f 
+  172  readlink -f ${which java}
+  173  which java
+  174  which javac
+  175  which javacd
+  176  which javacdsd
+  177  /usr/bin/./java
+  178  /usr/bin/./java --version
+  179  nano /etc/default/elasticsearch 
+  180  systemctl enable elastisearch
+  181  systemctl enable elastisearch.service
+  182  exit
+  183  history 
+  184  exit
+  185  chown elasticsearch:elasticsearch -R /etc/init.d/elasticsearch 
+  186  exit
+  187  chown elasticsearch:acs-siem -R /etc/init.d/elasticsearch 
+  188  nano /etc/init.d/elasticsearch 
+  189  clear
+  190  nano /etc/init.d/elasticsearch 
+  191  clear
+  192  systemctl enable elasticseach.service
+  193  systemctl enable elasticsearch.service
+  194  systemctl start elasticsearch.service
+  195  journalctl -xe
+  196  nano /etc/default/elasticsearch 
+  197  clear
+  198  systemctl start elasticsearch.service
+  199  systemctl status elasticsearch.service
+  200  /usr/share/elasticsearch/bin/systemd-entrypoint 
+  201  clear
+  202  /usr/share/elasticsearch/bin/./systemd-entrypoint -p ${PID_DIR}/elasticsearch.pid
+  203  exit
+  204  nano /etc/elasticsearch/elasticsearch.keystore 
+  205  su - elasticsearch
+  206  exit
+  207  git clone https://github.com/OFFLINE-GmbH/oc-mall-plugin
+  208  ls
+  209  git clone https://github.com/OFFLINE-GmbH/OctoberTS
+  210  git clone https://github.com/OFFLINE-GmbH/oc-opening-hours-plugin
+  211  git clone https://github.com/OFFLINE-GmbH/oc-microcart-plugin
+  212  git clone https://github.com/OFFLINE-GmbH/oc-cashier-plugin
+  213  git clone https://github.com/OFFLINE-GmbH/oc-site-search-plugin
+  214  git clone https://github.com/OFFLINE-GmbH/oc-responsive-images-plugin
+  215  git clone https://github.com/OFFLINE-GmbH/oc-sentry-plugin
+  216  git clone https://github.com/OFFLINE-GmbH/oc-csp-plugin
+  217  git clone https://github.com/OFFLINE-GmbH/oc-mall-theme
+  218  git clone https://github.com/OFFLINE-GmbH/omnipay-stripe
+  219  git clone https://github.com/OFFLINE-GmbH/oc-bootstrapper
+  220  git clone https://github.com/OFFLINE-GmbH/october
+  221  git clone https://github.com/OFFLINE-GmbH/oc-snipcartshop-plugin
+  222  git clone https://github.com/OFFLINE-GmbH/oc-backup-plugin
+  223  git clone https://github.com/OFFLINE-GmbH/oc-cors-plugin
+  224  git clone https://github.com/OFFLINE-GmbH/oc-gdpr-plugin
+  225  git clone https://github.com/OFFLINE-GmbH/oc-speedy-plugin
+  226  git clone https://github.com/OFFLINE-GmbH/oc-random-images-plugin
+  227  ls
+  228  git clone https://github.com/OFFLINE-GmbH/oc-clockwork-plugin
+  229  git clone https://github.com/OFFLINE-GmbH/oc-tag-wrapper-plugin
+  230  git clone https://github.com/OFFLINE-GmbH/oc-backend-plus
+  231  git clone https://github.com/OFFLINE-GmbH/oc-brands-plugin
+  232  git clone https://github.com/OFFLINE-GmbH/oc-bugsnag-plugin
+  233  git clone https://github.com/OFFLINE-GmbH/october-mediathumb
+  234  git clone https://github.com/OFFLINE-GmbH/oc-errorlogger-plugin
+  235  apt install apache2
+  236  apt update -y && apt upgrade -y
+  237  ls
+  238  mkdir iRelo
+  239  mv * iRelo/
+  240  ls
+  241  mkdir CMS
+  242  cd CMS/
+  243  ls
+  244  git clone https://github.com/octobercms/october
+  245  apache2ctl configtest
+  246  nano /etc/apache2/apache2.conf 
+  247  ip a
+  248  apache2ctl configtest
+  249  systemctl restart apache2
+  250  ufw app list
+  251  ufw app info "Apache Full"
+  252  ufw allow in "Apache Full"
+  253  apt install curl
+  254  apt install mysql-server
+  255  mysql_secure_installation
+  256  apt install php libapache2-mod-php php-mcrypt php-mysql
+  257  php -v
+  258  php --v
+  259  apt install php libapache2-mod-php php-dev libmcrypt-dev gcc make autoconf libc-dev pkg-config 
+  260  pecl install mcrypt-1.0.1
+  261  echo "extension=mcrypt.so" | sudo tee -a /etc/php/7.2/apache2/conf.d/mcrypt.ini
+  262  service apache2 restart
+  263  apt install php libapache2-mod-php php-mcrypt php-mysql
+  264  apt install php libapache2-mod-php php-mysql
+  265  nano /etc/apache2/mods-enabled/dir.conf 
+  266  clear
+  267  service apache2 restart
+  268  systemctl restart apache2
+  269  systemctl status apache2
+  270  apt-cache search php- | less
+  271  apt-cache show php-cli
+  272  apt install php-cli
+  273  nano /var/www/html/info.php
+  274  ls /var/www/html/
+  275  rm -rf /var/www/html/info.php 
+  276  php artisan plugin:install rainlab.user
+  277  cd ../
+  278  ls
+  279  cd iRelo/
+  280  ls
+  281  cd oc-mall-plugin/
+  282  ls
+  283  mysql -v
+  284  composer
+  285  apt install php7.2-common php7.2-cli php7.2-gd php7.2-mysql php7.2-curl  php7.2-intl php7.2-mbstring php7.2-bcmath php7.2-imap php7.2-xml php7.2-zip
+  286  nano /etc/apache2/mods-enabled/dir.conf 
+  287  curl -sS https://getcomposer.org/installer | php
+  288  mv composer.phar /usr/local/bin/composer
+  289  chmod +x /usr/local/bin/composer 
+  290  composer -version
+  291  exit
+  292  reboot
+  293  sudo /etc/init.d/mysql stop
+  294  sudo /etc/init.d/mysql start
+  295  mysqld_safe --skip-grant-tables &
+  296  mysql -uroot
+  297  sudo /etc/init.d/mysql stop
+  298  sudo /etc/init.d/mysql start
+  299  mysql -u root -p
+  300  ls
+  301  cd Desktop/
+  302  ls
+  303  cd dev/
+  304  ls
+  305  cd iRelo/
+  306  ls
+  307  cd october
+  308  ls
+  309  php artisan october:install
+  310  mysql -u acs-siem -p M$c3d0n1$
+  311  mysql -u acs-siem -p
+  312  /etc/init.d/mysql  stop
+  313  mysqld_safe --skip-grant-tables &
+  314  mysql -uroot
+  315  reboot
+  316  mysql
+  317  mysqld_safe --skip-grant-tables &
+  318  mysql -uroot
+  319  /etc/init.d/mysql stop
+  320  /etc/init.d/mysql start
+  321  mysql -u root -p
+  322  ls
+  323  cd Desktop/
+  324  ks
+  325  ls
+  326  cd dev/
+  327  ls
+  328  cd iRelo/
+  329  ls
+  330  cd october
+  331  ls
+  332  php artisan october:install
+  333  mysql -u root -p
+  334  killall mysqld
+  335  /etc/init.d/mysql start
+  336  mysql
+  337  history 
+  338  mysql -u root -p
+  339  php artisan october:install
+  340  ls
+  341  nano config/database.php 
+  342  php artisan october:install
+  343  nano config/database.php 
+  344  nano config/view.php 
+  345  nano config/filesystems.php 
+  346  ls config/
+  347  mysql -u root -p
+  348  php artisan october:install
+  349  php artisan october:env;
+  350  php artisan october:env, update database settings and .env;
+  351  php artisan october:env update database settings and .env;
+  352  php artisan october:update;
+  353  ls
+  354  php artisan cache:clear;
+  355  php artisan october:install;
+  356  php artisan october:install
+  357  cd ../../../
+  358  cd ../
+  359  ls
+  360  cd iRelo/
+  361  ls
+  362  rm -rf 
+  363  rm -rf *
+  364  ls
+  365  composer create-project october/october irela
+  366  exit
+  367  systemctl start apache2
+  368  systemctl start mariadb
+  369  systemctl status mariadb
+  370  systemctl start mariadb
+  371  systemctl start mysql
+  372  systemctl status mysql
+  373  systemctl start mariadb
+  374  sudo apt remove mariadb-server
+  375  sudo apt install mariadb-server
+  376  systemctl start apache2
+  377  systemctl start mariadb
+  378  sudo apt install mysql
+  379  mysql --version
+  380  systemctl enable mariadb 
+  381  systemctl enable apache2
+  382  systemctl start apache2
+  383  systemctl start mariadb
+  384  ls
+  385  sudo apt remove mariadb-server
+  386  sudo apt remove mariadb-server *
+  387  ls
+  388  sudo apt install mariadb-server
+  389  sudo systemctl status mariadb
+  390  systemctl start mariadb
+  391  sudo apt remove mariadb-server
+  392  sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74CD1D8
+  393  sudo add-apt-repository 'deb [arch=amd64,arm64,ppc64e1] http://ftp.utexas.edu/mariadb/repo/10.3/ubuntu bionic main'
+  394  sudo apt update
+  395  sudo apt install mariadb-server
+  396  systemctl start apache2
+  397  systemctl start mariadb
+  398  systemctl status mariadb.service
+  399  journalctl -xe
+  400  sudo apt remove mariadb-server
+  401  sudo apt-get upgrade || update
+  402  sudo apt install mariadb-server*
+  403  history
+  404  exit
+  405  nano /etc/php/7.2/apache2/php.ini 
+  406  systemctl start apache2 
+  407  systemctl start mariadb
+  408  journalctl -xe
+  409  systemctl start mariadb
+  410  sudo mysql
+  411  sudo mysql --version
+  412  sudo service mysql status
+  413  mysqld --help --verbose | grep 'log-error' | tail -1
+  414  mysqld --print-defaults
+  415  sudo system ctl enable mariadb
+  416  system ctl enable mariadb
+  417  sudo system ctl enable mariadb
+  418  systemctl start mariadb
+  419  sudo systemctl enable mariadb
+  420  sudo systemctl start mariadb
+  421  sudo systemctl status mariadb
+  422  sudo /etc/init.d/mysql status
+  423  sudo service mysql status
+  424  sudo systemctl status mysql.service
+  425  cd ..
+  426  ls
+  427  cd oc-mall-plugin/
+  428  ls
+  429  sudo systemctl status mysql.service
+  430  sudo systemctl status mariadb.service
+  431  sudo apt-get install mysql_install_db
+  432  sudo apt-get install software-properties-common
+  433  sudo apt-get adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24CD1D8
+  434  sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24CD1D8
+  435  sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF165F24C74CD1D8
+  436  sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74CD1D8
+  437  sudo add-apt-repository 'deb [arch=amd64,arm64,ppc64e1] http://mariadb.mirrors.ovh.net/MariaDB/repo/10.3/ubuntu bionic main'
+  438  sudo apt update
+  439  sudo apt install mariadb-server
+  440  sudo systemctl start mariadb
+  441  sudo systemctl status mariadb
+  442  sudo service mysql status
+  443  systemctl enable apache2
+  444  systemctl enable mariadb
+  445  mysql_secure installation
+  446  mysql_secure_installation
+  447  systemctl stop mariadb
+  448  systemctl status mariadb
+  449  sudo apt-get remove mariadb-server
+  450  sudo apt install mariadb-server
+  451  systemctl start apache2
+  452  systemctl start mariadb
+  453  systemctl enable apache2
+  454  systemctl enable mariadb
+  455  mysql_secure_installation
+  456  sudo systemctl stop mariadb.service
+  457  mysql -u root -p
+  458  mysql -u root 
+  459  sudo mysql -u root 
+  460  systemctl start mariadb
+  461  sudo mysql_secure_installation
+  462  sudo service mysql stop
+  463  mysqld_safe --skip-grant-tables &
+  464  sudo service mysql start
+  465  sudo su
+  466  quit
+  467  exit
+  468  apt update -y
+  469  apt purge mariadb-server
+  470  systemctl stop mariadb
+  471  systemctl stop mariadb.service
+  472  service stop mariadb.service
+  473  service restart mariadb.service
+  474  service start mariadb.service
+  475  systemctl status mariadb.service
+  476  nano /etc/php/7.2/apache2/php.ini 
+  477  reboot
+  478  php artisan cache:clear
+  479  php artisan plugin:list
+  480  reboot
+  481  apt update -y && apt upgrade -y
+  482  systemctl status mariadb.service
+  483  systemctl status apache2.service
+  484  apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74CD1D8
+  485  add-apt-repository 'deb [arch=amd64,arm64,ppc64el] http://ftp.utexas.edu/mariadb/repo/10.3/ubuntu bionic main'
+  486  apt update -y
+  487  apt install mariadb-server
+  488  systemctl status mariadb-server
+  489  systemctl status mariadb
+  490  systemctl stop mariadb
+  491  systemctl status mariadb
+  492  systemctl restart mariadb
+  493  journalctl -xe
+  494  systemctl restart mariadb
+  495  ls
+  496  mkdir MariaDB_Backup
+  497  cp -r /var/lib/mysql MariaDB_Backup/
+  498  cp -r /etc/mysql/ MariaDB_Backup/
+  499  ls MariaDB_Backup/
+  500  ls MariaDB_Backup/mysql/
+  501  rm -rf MariaDB_Backup/mysql/
+  502  ls
+  503  cp -r /var/lib/mysql MariaDB_Backup/varlibmysql
+  504  cp -r /etc/mysql/ MariaDB_Backup/etcmysql
+  505  ls MariaDB_Backup/
+  506  ls MariaDB_Backup/etcmysql/
+  507  ls MariaDB_Backup/varlibmysql/
+  508  apt purge mariadb-*
+  509  apt autoremove
+  510  apt install mariadb-server
+  511  systemctl status mariadb
+  512  cd /var/www/html/octobercms/
+  513  ls
+  514  php artisan mall:check
+  515  php artisan mall:seed-demo
+  516  php artisan cache:clear
+  517  history >> out.txt

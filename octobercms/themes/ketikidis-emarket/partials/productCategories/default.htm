@@ -1,0 +1,17 @@
+[viewBag]
+
+[staticMenu]
+code = "product-categories"
+==
+<div class="mb-6 py-1">
+    <h3 class="position-relative font-6 font-weight-semibold pb-3 mb-5 decorated-right">
+		<span>Categories</span>
+	</h3>
+    <div id="category-nav">
+        {% if staticMenu.menuItems %}
+        <div class="list-group panel">
+            {% partial 'productCategories/items' items=staticMenu.menuItems %}
+        </div>
+        {% endif %}
+    </div>
+</div>

@@ -1,0 +1,9 @@
+[viewBag]
+==
+{% if cart.products.count > 0 %}
+    <div class="mall-cart-actions">
+        <button class="js-mall-checkout mall-btn-checkout mall-btn mall-btn--secondary btn btn-block btn-warning btn-icon-right">
+            <span>{{ 'offline.mall::frontend.checkout.checkout' | trans }} <i data-feather="chevron-right"></i></span>
+        </button>
+    </div>
+{% endif %}

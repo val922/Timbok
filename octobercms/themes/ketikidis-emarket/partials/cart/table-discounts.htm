@@ -1,0 +1,7 @@
+[viewBag]
+==
+{% for entry in discounts %}
+<div class="mall-cart__discount d-flex justify-content-between mb-2">
+    <span>{{ entry.discount.name }}, {% if entry.discount.code %}({{ entry.discount.code }}){% endif %}:</span><span>{{ entry.savings | money }}</span>
+</div>
+{% endfor %}

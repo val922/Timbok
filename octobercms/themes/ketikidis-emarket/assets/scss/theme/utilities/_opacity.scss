@@ -1,0 +1,58 @@
+//
+// Opacity utilities
+//
+
+$opacity: () !default;
+$opacity: map-merge(
+  (
+    0: 0,
+    10: .1,
+    20: .2,
+	30: .3,
+    40: .4,
+    50: .5,
+    60: .6,
+    70: .7,
+    80: .8,
+	90: .9,
+	100: 1
+  ),
+  $opacity
+);
+
+@if $opacity-breakpoints {
+  @each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+  	$infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+  
+      @each $prop, $abbrev in (opacity: opacity ) {
+        @each $size, $length in $opacity {
+      	.#{$abbrev}#{$infix}-#{$size} { #{$prop}: $length !important; }
+        }
+      }
+    }
+  }
+}
+@else {
+  @each $prop, $abbrev in (opacity: opacity ) {
+    @each $size, $length in $opacity {
+	  .#{$abbrev}-#{$size} { #{$prop}: $length !important; }
+    }
+  }
+}
+
+
+// Opacity hover
+//
+
+@each $prop, $abbrev in (opacity: opacity ) {
+  @each $size, $length in $opacity {
+	.hover\:#{$abbrev}-#{$size}:hover { #{$prop}: $length !important; }
+  }
+}
+
+@each $prop, $abbrev in (opacity: opacity ) {
+  @each $size, $length in $opacity {
+	.group:hover .group-hover\:#{$abbrev}-#{$size} { #{$prop}: $length !important; }
+  }
+}

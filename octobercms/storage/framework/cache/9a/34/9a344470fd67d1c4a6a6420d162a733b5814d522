@@ -1,0 +1,51 @@
+1599460933a:1:{s:11:"contact.htm";a:10:{s:8:"fileName";s:11:"contact.htm";s:7:"content";s:951:"title = "Contact"
+url = "/contact"
+layout = "default"
+is_hidden = 0
+
+[genericForm]
+rules[name] = "required"
+rules[email] = "required|email"
+messages_success = "Your form was successfully submitted"
+messages_errors = "There were errors with your submission"
+inline_errors = "disabled"
+allowed_fields[] = "name"
+allowed_fields[] = "email"
+allowed_fields[] = "phone"
+allowed_fields[] = "subject"
+allowed_fields[] = "comments"
+sanitize_data = "disabled"
+anonymize_ip = "disabled"
+recaptcha_theme = "light"
+recaptcha_type = "image"
+recaptcha_size = "normal"
+skip_database = 0
+emails_date_format = "Y-m-d"
+==
+{% partial 'pageHeader/page' %}
+
+{% partial 'contact/contact-info' %}
+<hr>
+<div class="container pb-12 pt-6 mt-4">
+    <div class="row">
+        <div class="col-lg-7">
+            {% partial 'contact/contact-form' %}
+        </div>
+        <div class="col-lg-5">
+            {% partial 'contact/map' %}
+        </div>
+    </div>
+</div>";s:5:"mtime";i:1598462846;s:6:"markup";s:348:"{% partial 'pageHeader/page' %}
+
+{% partial 'contact/contact-info' %}
+<hr>
+<div class="container pb-12 pt-6 mt-4">
+    <div class="row">
+        <div class="col-lg-7">
+            {% partial 'contact/contact-form' %}
+        </div>
+        <div class="col-lg-5">
+            {% partial 'contact/map' %}
+        </div>
+    </div>
+</div>";s:4:"code";N;s:5:"title";s:7:"Contact";s:3:"url";s:8:"/contact";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:11:"genericForm";a:12:{s:5:"rules";a:2:{s:4:"name";s:8:"required";s:5:"email";s:14:"required|email";}s:16:"messages_success";s:36:"Your form was successfully submitted";s:15:"messages_errors";s:38:"There were errors with your submission";s:13:"inline_errors";s:8:"disabled";s:14:"allowed_fields";a:5:{i:0;s:4:"name";i:1;s:5:"email";i:2;s:5:"phone";i:3;s:7:"subject";i:4;s:8:"comments";}s:13:"sanitize_data";s:8:"disabled";s:12:"anonymize_ip";s:8:"disabled";s:15:"recaptcha_theme";s:5:"light";s:14:"recaptcha_type";s:5:"image";s:14:"recaptcha_size";s:6:"normal";s:13:"skip_database";s:1:"0";s:18:"emails_date_format";s:5:"Y-m-d";}}}

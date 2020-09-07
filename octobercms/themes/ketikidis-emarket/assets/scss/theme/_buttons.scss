@@ -1,0 +1,107 @@
+// Base styles
+//
+
+.btn {
+    position: relative;
+    text-transform: $btn-text-transform;
+    transition: $transition-base;
+    will-change: transform;
+    letter-spacing: $btn-letter-spacing;
+    
+    &:hover {
+        @include box-shadow($btn-hover-box-shadow);
+        //transform: translateY(-1px);
+    }  
+
+    &:not(:last-child) {
+        margin-right: .5rem;
+    }
+	svg {
+		width: 1em;
+	}
+}
+
+.btn-group,
+.input-group {
+    .btn {
+        margin-right: 0;
+        transform: translateY(0);
+    }
+}
+
+
+// Gradient buttons
+//
+
+//@each $color, $value in $theme-colors {
+//  .btn-gradient-#{$color} {
+//    @include button-gradient-variant($value, $value);
+//  }
+//}
+
+//@each $color, $value in $colors {
+//  .btn-gradient-#{$color} {
+//    @include button-gradient-variant($value, $value);
+//  }
+//}
+
+
+// Button Utilities
+//
+
+.btn-rounded { border-radius: 50em !important; }
+
+
+// Animated Icon Buttons
+//
+
+.btn-icon-right,
+.btn-icon-left {
+  position: relative;
+  transition: background-color 300ms ease-out;
+  span {
+    display: inline-block;
+    position: relative;
+    transition: all 300ms ease-out;
+    will-change: transform;
+  }
+  svg {
+    position: absolute;
+    width: 1em;
+    opacity: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 300ms ease-out;
+    * {
+      //stroke-width: 5;
+      stroke-color: transparent;
+    }
+  }
+  &:hover svg {
+    opacity: 1;
+  }
+}
+.btn-icon-left {
+  &:hover span {
+    transform: translate3d(0.75rem, 0, 0);
+  }
+  svg {
+    left: 0rem;
+    will-change: left, opacity;
+  }
+  &:hover svg {
+    left: -1.5rem;
+  }
+}
+.btn-icon-right {
+  &:hover span {
+    transform: translate3d(-0.75rem, 0, 0);
+  }
+  svg {
+    right: 0rem;
+    will-change: right, opacity;
+  }
+  &:hover svg {
+    right: -1.5rem;
+  }
+}

@@ -1,0 +1,18 @@
+[viewBag]
+==
+<div class="mall-property-group mb-6 pb-1">
+    <h3 class="mall-property-group__name position-relative font-6 font-weight-semibold pb-3 mb-5 decorated-right" for="mall-sorter">
+        <span>{{ 'offline.mall::frontend.sort_order' | trans }}</span>
+    </h3>
+    <div class="mall-filter">
+        <div class="form-group">
+            <select name="sort" id="mall-sorter" class="js-mall-select-filter form-control hover:border-primary border-top-0 border-left-0 border-right-0 border-bottom rounded-0 border-white pl-0 transition-20">
+                {% for key, option in __SELF__.sortOptions %}
+                    <option value="{{ key }}" {{ key == __SELF__.sortOrder ? 'selected' }}>
+                        {{ option.label | default(option) }}
+                    </option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+</div>

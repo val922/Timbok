@@ -1,0 +1,36 @@
+[viewBag]
+==
+<div class="gdpr-cookie-manager__groups border-right mb-6 mr-4 pr-4">
+    <ul class="nav d-block gdpr-cookie-manager__group-list">
+        {% for group in groups %}
+        <li class="nav-item group">
+            <a href="javascript:;"
+               data-handle-group-id="{{ group.id }}"
+               class="nav-link text-link p-0 border-right-0 pb-4 mb-4 border-bottom {{ not loop.last ? '' }} {{ loop.index0 == 0 ? 'gdpr-cookie-manager__group-list-entry--active' : '' }}">
+                <div class="d-flex align-items-center mb-1">
+                    <i class="w-4 h-4 mr-2" data-feather="lock"></i>
+                    <h5 class="font-7 mb-0 font-weight-semibold transition-20 group-hover:text-primary">{{ group.name }}</h5>
+                </div>
+                <div class="gdpr-cookie-manager__group-list-description">
+                    {{ html_clean(group.description | raw) }}
+                </div>
+            </a>
+        </li>
+        {% endfor %}
+        <li class="mt-10">
+            <div class="form-group">
+                <select class="form-control hover:border-primary rounded-0 transition-20 gdpr-cookie-manager__consent_expiry" name="consent_expiry" id="gdpr">
+                    {% for i in [3, 6, 12, 24, 36] %}
+                        {% set selected = __SELF__.consentExpiry | default(12) %}
+                        <option value="{{ i }}" {{ selected == i ? 'selected' }}>
+                            {{ ('offline.gdpr::lang.cookie_manager.expiry.' ~ i) | trans }}
+                        </option>
+                    {% endfor %}
+                </select>
+            </div>
+        </li>
+        <li class="mt-4">
+            {% partial __SELF__ ~ '::submitbutton' %}
+        </li>
+    </ul>
+</div>

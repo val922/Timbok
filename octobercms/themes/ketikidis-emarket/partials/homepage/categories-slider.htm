@@ -1,0 +1,88 @@
+description = "Categories Slider Section"
+
+[viewBag]
+==
+<?php
+function onStart()
+{
+    // Category Banners
+    $indexSliderCategories = $this->theme->index_slider_categories;
+    
+    if (empty($indexSliderCategories) || !is_array($indexSliderCategories)) {
+        $indexSliderCategories = [];
+    } else {
+        $indexSliderCategories = array_column($indexSliderCategories, 'index_slider_category');
+    }
+    
+    $this['indexSliderCategories'] = $indexSliderCategories;
+    
+    $sliderCategories = $indexSliderCategories;
+    $sliderCategories = \OFFLINE\Mall\Models\Category::whereIn('id', $sliderCategories)->get();
+    $sortedSliderCategories = $sliderCategories
+        ->sortBy(function ($item) use ($indexSliderCategories) {
+            return array_search($item->id, $indexSliderCategories);
+        });
+    
+    $this['sortedSliderCategories'] = $sortedSliderCategories;
+}
+?>
+==
+<section class="container-fluid bg-secondary px-0">
+    <div class="row no-gutters align-items-center">
+        <div class="col-md-6">
+            <div class="mx-auto bg-white my-sm-4 max-w-lg">
+                <div class="categories-slider-nav">
+                    {% for category in sortedSliderCategories  %}
+                    <div class="py-12 px-4 px-sm-12">
+                        <h2 class="font-weight-semibold mb-2">{{ category.name }}</h2>
+                        <h4 class="font-weight-light opacity-70 pb-1">{{ category.description|raw }}</h4>
+                        <a class="btn btn-primary px-6" href="/category/{{ category.nested_slug }}">
+                            Shop now<i class="ml-2" data-feather="shopping-cart"></i>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="categories-slider-for">
+                {% for category in sortedSliderCategories %}
+                <img src="{{ category.image.thumb(1000, 750, 'crop') }}" width="1000" height="750" alt="{{ category.name }}" loading="lazy" class="img-fluid"/>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+{% put scripts %}
+<script>
+$('.categories-slider-for').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 6000,
+    dots: false,
+    arrows: false,
+    fade: true,
+    cssEase: 'linear',
+    asNavFor: '.categories-slider-nav',
+    lazyLoad: 'ondemand',
+    accessibility: false,
+    pauseOnHover:false
+});
+
+$('.categories-slider-nav').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    asNavFor: '.categories-slider-for',
+    dots: false,
+    arrows: false,
+    centerMode: false,
+    focusOnSelect: true,
+    lazyLoad: 'ondemand',
+    vertical: false,
+    accessibility: false,
+    pauseOnHover:false
+});
+</script>
+{% endput %}

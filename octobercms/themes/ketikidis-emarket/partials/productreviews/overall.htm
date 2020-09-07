@@ -1,0 +1,64 @@
+[viewBag]
+==
+<div class="mall-product-reviews__info-content card-body">
+    <h5 class="mall-product-reviews__info-name font-weight-semibold font-6 text-center">{{ 'offline.mall::frontend.reviews.overall_rating' | trans }}</h5>
+    <div class="mall-product-reviews__overall-ratings d-flex justify-content-center align-items-end pt-2 pb-4">
+        <div class="mall-product-reviews__summary display-4 mr-2">{{ __SELF__.product.reviews_rating }}</div>
+        <div class="mb-2">
+            {% set count = __SELF__.allReviews.count %}
+            {% set label = count ~ ' ' ~ ('offline.mall::frontend.reviews.ratings' | transchoice(count | default(0))) %}
+            <div class="text-muted font-size-xs font-3 mb-n1">based on {{ __SELF__.allReviews.count ~ ' ' ~ ('offline.mall::frontend.reviews.ratings' | transchoice(count | default(0))) }}</div>
+            {% partial __SELF__ ~ '::stars' rating=__SELF__.product.reviews_rating variant="big" %}
+        </div>
+    </div>
+    
+    {% set one = 0 %}
+    {% set two = 0 %}
+    {% set three = 0 %}
+    {% set four = 0 %}
+    {% set five = 0 %}
+    
+    {% for review in __SELF__.reviews %}
+        {% if review.rating == 1 %}{% set one = one + review.rating|length %}{% endif %}
+        {% if review.rating == 2 %}{% set two = two + review.rating|length %}{% endif %}
+        {% if review.rating == 3 %}{% set three = three + review.rating|length %}{% endif %}
+        {% if review.rating == 4 %}{% set four = four + review.rating|length %}{% endif %}
+        {% if review.rating == 5 %}{% set five = five + review.rating|length %}{% endif %}
+    {% endfor %}
+    
+    {% set totalRatings = __SELF__.allReviews.count %}
+    
+    {% set totalRatingsOne = (one * 100) / totalRatings %}
+    {% set totalRatingsTwo = (two * 100) / totalRatings %}
+    {% set totalRatingsThree = (three * 100) / totalRatings %}
+    {% set totalRatingsFour = (four * 100) / totalRatings %}
+    {% set totalRatingsFive = (five * 100) / totalRatings %}
+
+    <div class="font-5 font-weight-semibold mb-2">5 stars - <span class="text-muted">{{ five }}</span> <span class="text-muted">{{('offline.mall::frontend.reviews.ratings' | transchoice(five | default(0)))}}</span></div>
+    <div class="progress mb-4" style="height: 2px;">
+        <div class="progress-bar bg-warning" role="progressbar" style="width: {{totalRatingsFive}}%" aria-valuenow="{{totalRatingsFive}}" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <div class="font-5 font-weight-semibold mb-2">4 stars - <span class="text-muted">{{ four }}</span> <span class="text-muted">{{('offline.mall::frontend.reviews.ratings' | transchoice(four | default(0)))}}</span></div>
+    <div class="progress mb-4" style="height: 2px;">
+        <div class="progress-bar bg-warning" role="progressbar" style="width: {{totalRatingsFour}}%" aria-valuenow="{{totalRatingsFour}}" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <div class="font-5 font-weight-semibold mb-2">3 stars - <span class="text-muted">{{ three }}</span> <span class="text-muted">{{('offline.mall::frontend.reviews.ratings' | transchoice(three | default(0)))}}</span></div>
+    <div class="progress mb-4" style="height: 2px;">
+        <div class="progress-bar bg-warning" role="progressbar" style="width: {{totalRatingsThree}}%" aria-valuenow="{{totalRatingsThree}}" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <div class="font-5 font-weight-semibold mb-2">2 stars - <span class="text-muted">{{ two }}</span> <span class="text-muted">{{('offline.mall::frontend.reviews.ratings' | transchoice(two | default(0)))}}</span></div>
+    <div class="progress mb-4" style="height: 2px;">
+        <div class="progress-bar bg-warning" role="progressbar" style="width: {{totalRatingsTwo}}%" aria-valuenow="{{totalRatingsTwo}}" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <div class="font-5 font-weight-semibold mb-2">1 star - <span class="text-muted">{{ one }}</span> <span class="text-muted">{{('offline.mall::frontend.reviews.ratings' | transchoice(one | default(0)))}}</span></div>
+    <div class="progress mb-4" style="height: 2px;">
+        <div class="progress-bar bg-warning" role="progressbar" style="width: {{totalRatingsOne}}%" aria-valuenow="{{totalRatingsOne}}" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <div class="">
+    {% for category in __SELF__.reviewCategories %}
+        {% set rating = __SELF__.product.category_review_totals.where('review_category_id', category.id).first().rating %}
+        {% partial __SELF__ ~ '::stars' rating=rating label=category.name variant="big" %}
+    {% endfor %}
+    </div>
+    <!--<div class="py-2"><a class="btn btn-warning btn-block" href="#leaveReview" data-toggle="modal">Leave a review</a></div>-->
+</div>

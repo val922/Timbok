@@ -1,0 +1,41 @@
+[viewBag]
+==
+<h2 class="mall-signup__heading h4 mb-6">{{ 'offline.mall::frontend.signup.signin' | trans }}</h2>
+
+<form data-request="onSignin" data-request-validate data-request-flash>
+    <div class="form-group">
+        <label for="signin_email">{{ 'offline.mall::frontend.form.email' | trans }}</label>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">
+                    <i data-feather="mail"></i>
+                </span>
+            </div>
+            <input id="signin_email" type="text" placeholder="email@example.com"
+               name="login" class="form-control hover:border-primary">
+        </div>
+        <div data-validate-for="login" class="text-danger font-4 mt-2 ml-1"></div>
+    </div>
+    <div class="form-group">
+        <label for="signin_password">{{ 'offline.mall::frontend.form.password' | trans }}</label>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text">
+                    <i data-feather="lock"></i>
+                </span>
+            </div>
+            <input id="signin_password" type="password" placeholder="******************"
+               name="password" class="form-control hover:border-primary">
+        </div>
+        <div data-validate-for="password" class="text-danger font-4 mt-2 ml-1"></div>
+    </div>
+    <div class="d-flex flex-wrap justify-content-end">
+        {% partial __SELF__ ~ '::reset_password' %}
+    </div>
+    <hr class="mt-6">
+    <div class="mall-form-actions text-right pt-6">
+        <button class="mall-btn mall-btn--primary btn btn-primary btn-icon-right" type="submit">
+            <span>{{ 'offline.mall::frontend.form.signin' | trans }} <i data-feather="chevron-right"></i></span>
+        </button>
+    </div>
+</form>

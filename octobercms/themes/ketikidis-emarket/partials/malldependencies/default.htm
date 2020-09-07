@@ -1,0 +1,16 @@
+[viewBag]
+==
+{% put scripts %}
+    <script>
+        window.Mall = window.Mall || {}
+        $(function () {
+            window.Mall.Modal = $('<div class="mall-modal position-fixed inset-0 h-100 w-100 overflow-hidden bg-black-75 opacity-0 invisible z-100">')
+            window.Mall.Modal.on('click', function(e) {
+                if (e.target.classList.contains('mall-modal')) {
+                    window.Mall.Modal.removeClass('mall-modal--visible visible opacity-100')
+                }
+            })
+            window.Mall.Modal.prependTo(document.body)
+        })
+    </script>
+{% endput %}

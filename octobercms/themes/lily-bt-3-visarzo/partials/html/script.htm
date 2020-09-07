@@ -1,0 +1,23 @@
+[viewBag]
+==
+<script src="{{ 'assets/js/jquery.js'|theme }}"></script>
+<script src="{{ 'assets/js/popper.min.js'|theme }}"></script>
+<script src="{{ 'assets/js/bootstrap.min.js'|theme }}"></script>
+<script src="{{ 'assets/js/owl.js'|theme }}"></script>
+<script src="{{ 'assets/js/wow.js'|theme }}"></script>
+<script src="{{ 'assets/js/validation.js'|theme }}"></script>
+<script src="{{ 'assets/js/jquery.fancybox.js'|theme }}"></script>
+<script src="{{ 'assets/js/TweenMax.min.js'|theme }}"></script>
+<script src="{{ 'assets/js/appear.js'|theme }}"></script>
+<script src="{{ 'assets/js/scrollbar.js'|theme }}"></script>
+<script src="{{ 'assets/js/jquery.nice-select.min.js'|theme }}"></script>
+<script src="{{ 'assets/js/jQuery.style.switcher.min.js'|theme }}"></script>
+<script src="{{ 'assets/js/script.js'|theme }}"></script>
+{% framework extras %}
+{% scripts %}
+
+{% if this.theme.analytics %}
+<script>
+    {{this.theme.analytics|raw}}
+</script>
+{% endif%}

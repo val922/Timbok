@@ -1,0 +1,19 @@
+1599340788a:1:{s:28:"featuredProducts/entries.htm";a:6:{s:8:"fileName";s:28:"featuredProducts/entries.htm";s:7:"content";s:268:"[viewBag]
+==
+{% if products.items.count %}
+    {% partial 'featuredProducts/items' items=products.items %}
+{% else %}
+    {% partial 'featuredProducts/empty' %}
+{% endif %}
+
+{% if products.dataLayer %}
+    {% partial 'featuredProducts/datalayer' %}
+{% endif %}";s:5:"mtime";i:1592589912;s:6:"markup";s:255:"{% if products.items.count %}
+    {% partial 'featuredProducts/items' items=products.items %}
+{% else %}
+    {% partial 'featuredProducts/empty' %}
+{% endif %}
+
+{% if products.dataLayer %}
+    {% partial 'featuredProducts/datalayer' %}
+{% endif %}";s:4:"code";N;s:7:"viewBag";a:0:{}}}

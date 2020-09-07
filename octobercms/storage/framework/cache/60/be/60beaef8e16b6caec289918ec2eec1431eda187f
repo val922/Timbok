@@ -1,0 +1,33 @@
+1599340749a:1:{s:25:"wishlistbutton/button.htm";a:6:{s:8:"fileName";s:25:"wishlistbutton/button.htm";s:7:"content";s:641:"[viewBag]
+==
+<button class="mall-add-to-wishlist-button btn btn-white btn-block">
+    <i class="mr-2" data-feather="heart"></i>{{ 'offline.mall::frontend.wishlist.add' | trans }}
+</button>
+<script>
+    var btn = document.querySelector('.mall-add-to-wishlist-button')
+    if (btn) {
+        btn.addEventListener('click', function (e) {
+            e.preventDefault()
+            var popup = document.querySelector('.mall-wishlist-button__popup')
+            if (popup) {
+                popup.classList.toggle('opacity-100')
+                popup.classList.toggle('pointer-events-auto')
+            }
+        })
+    }
+</script>";s:5:"mtime";i:1592589916;s:6:"markup";s:628:"<button class="mall-add-to-wishlist-button btn btn-white btn-block">
+    <i class="mr-2" data-feather="heart"></i>{{ 'offline.mall::frontend.wishlist.add' | trans }}
+</button>
+<script>
+    var btn = document.querySelector('.mall-add-to-wishlist-button')
+    if (btn) {
+        btn.addEventListener('click', function (e) {
+            e.preventDefault()
+            var popup = document.querySelector('.mall-wishlist-button__popup')
+            if (popup) {
+                popup.classList.toggle('opacity-100')
+                popup.classList.toggle('pointer-events-auto')
+            }
+        })
+    }
+</script>";s:4:"code";N;s:7:"viewBag";a:0:{}}}

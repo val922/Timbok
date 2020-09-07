@@ -1,0 +1,73 @@
+[viewBag]
+snippetCode = "funfact2"
+snippetName = "funfact2"
+==
+{% if funfactEnable %}
+
+<section class="funfact-style-two">
+    <div class="auto-container">
+        <div class="inner-container wow fadeInLeft animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+            <div class="row clearfix">
+                {% for item in funfacts %}
+                <div class="col-lg-4 col-md-6 col-sm-12 counter-block">
+                    <div class="counter-block-two">
+                        <div class="inner-box">
+                            <div class="icon-box"><i class="{{item.icon}}"></i></div>
+                            <div class="count-outer count-box">
+                                <span class="count-text" data-speed="1500" data-stop="{{item.num}}">0</span><span>{{item.unit}}</span>
+                            </div>
+                            <h3>{{item.info}}</h3>
+                        </div>
+                    </div>
+                </div>
+                {% endfor%}
+            </div>
+        </div>
+    </div>
+</section>
+
+{% else %}
+
+<section class="funfact-style-two">
+    <div class="auto-container">
+        <div class="inner-container wow fadeInLeft animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+            <div class="row clearfix">
+                <div class="col-lg-4 col-md-6 col-sm-12 counter-block">
+                    <div class="counter-block-two">
+                        <div class="inner-box">
+                            <div class="icon-box"><i class="flaticon-group-of-users-silhouette"></i></div>
+                            <div class="count-outer count-box">
+                                <span class="count-text" data-speed="1500" data-stop="560">0</span>
+                            </div>
+                            <h4>We Have Worked With Clients</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 counter-block">
+                    <div class="counter-block-two">
+                        <div class="inner-box">
+                            <div class="icon-box"><i class="flaticon-visa"></i></div>
+                            <div class="count-outer count-box">
+                                <span class="count-text" data-speed="1500" data-stop="99">0</span><span>%</span>
+                            </div>
+                            <h4>Successfull Visa Process Rate</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 counter-block">
+                    <div class="counter-block-two">
+                        <div class="inner-box">
+                            <div class="icon-box"><i class="flaticon-geography"></i></div>
+                            <div class="count-outer count-box">
+                                <span class="count-text" data-speed="1500" data-stop="24">0</span><span>hrs</span>
+                            </div>
+                            <h4>Application Approval Time We Follow</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endif %}

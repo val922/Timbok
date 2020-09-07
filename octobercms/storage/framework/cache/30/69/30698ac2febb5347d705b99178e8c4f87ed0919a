@@ -1,0 +1,130 @@
+1599460932a:1:{s:11:"product.htm";a:14:{s:8:"fileName";s:11:"product.htm";s:7:"content";s:2145:"title = "Product"
+url = "/product/:slug/:variant?"
+layout = "default"
+is_hidden = 0
+
+[viewBag]
+localeUrl[en] = "/product/:slug/:variant?"
+
+[product]
+product = ":slug"
+variant = ":slug"
+redirectOnPropertyChange = 0
+currentVariantReviewsOnly = 0
+
+[wishlistButton]
+
+[products relatedProducts]
+filterComponent = "productsFilter"
+setPageTitle = 0
+includeVariants = 1
+includeChildren = 0
+perPage = 6
+paginate = 0
+sort = "random"
+
+[ShareButtons]
+css = 0
+skin = "custom"
+fb = 1
+tw = 1
+==
+<?php
+use OFFLINE\Mall\Models\Category;
+
+function onStart() {
+    // Breadcrumbs
+    $controller = new Cms\Classes\Controller;
+    $product    = $this['product']->product;
+    $variant    = $this['product']->variant;
+    $category   = $product->categories->first();
+
+    // Get all parent categories of this product.
+    $breadcrumbs = $category->getParentsAndSelf()->map(function($category) use ($controller) {
+        return ['link' => $controller->pageUrl('category', ['slug' => $category->nested_slug]), 'text' => $category->name];
+    });
+
+    // Add the product itself to the breadcrumbs.
+    $breadcrumbs[] = [
+        'link' => $controller->pageUrl('product', ['slug' => $product->slug, 'variant' => optional($variant)->hashId]),
+        'text' => $product->name
+    ];
+
+    $this['breadcrumbs'] = $breadcrumbs;
+
+
+
+    // Related Products
+    
+    // Fetch the category from the product component.
+    $productComponent = $this->findComponentByName('product');
+    $item = optional($productComponent)->item;
+    if (!$item) {
+        return;
+    }
+    $category = optional($item->categories)->first();
+    if (!$category) {
+        return;
+    }
+    // If a category is available, use it for the products component.
+    $this->findComponentByName('relatedProducts')->category = $category;
+    
+    //if ($category) {
+        // If a category is available, use it for the products component.
+    //    $this->page->components['relatedProducts']->category = $category;
+    //}
+}
+?>
+==
+{% partial 'pageHeader/product' %}
+
+{% component 'product' %}
+
+{% partial 'relatedProducts/default' products=relatedProducts %}";s:5:"mtime";i:1592589910;s:6:"markup";s:131:"{% partial 'pageHeader/product' %}
+
+{% component 'product' %}
+
+{% partial 'relatedProducts/default' products=relatedProducts %}";s:4:"code";s:1521:"use OFFLINE\Mall\Models\Category;
+
+function onStart() {
+    // Breadcrumbs
+    $controller = new Cms\Classes\Controller;
+    $product    = $this['product']->product;
+    $variant    = $this['product']->variant;
+    $category   = $product->categories->first();
+
+    // Get all parent categories of this product.
+    $breadcrumbs = $category->getParentsAndSelf()->map(function($category) use ($controller) {
+        return ['link' => $controller->pageUrl('category', ['slug' => $category->nested_slug]), 'text' => $category->name];
+    });
+
+    // Add the product itself to the breadcrumbs.
+    $breadcrumbs[] = [
+        'link' => $controller->pageUrl('product', ['slug' => $product->slug, 'variant' => optional($variant)->hashId]),
+        'text' => $product->name
+    ];
+
+    $this['breadcrumbs'] = $breadcrumbs;
+
+
+
+    // Related Products
+    
+    // Fetch the category from the product component.
+    $productComponent = $this->findComponentByName('product');
+    $item = optional($productComponent)->item;
+    if (!$item) {
+        return;
+    }
+    $category = optional($item->categories)->first();
+    if (!$category) {
+        return;
+    }
+    // If a category is available, use it for the products component.
+    $this->findComponentByName('relatedProducts')->category = $category;
+    
+    //if ($category) {
+        // If a category is available, use it for the products component.
+    //    $this->page->components['relatedProducts']->category = $category;
+    //}
+}";s:5:"title";s:7:"Product";s:3:"url";s:24:"/product/:slug/:variant?";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:7:"viewBag";a:1:{s:9:"localeUrl";a:1:{s:2:"en";s:24:"/product/:slug/:variant?";}}s:7:"product";a:4:{s:7:"product";s:5:":slug";s:7:"variant";s:5:":slug";s:24:"redirectOnPropertyChange";s:1:"0";s:25:"currentVariantReviewsOnly";s:1:"0";}s:14:"wishlistButton";a:0:{}s:24:"products relatedProducts";a:7:{s:15:"filterComponent";s:14:"productsFilter";s:12:"setPageTitle";s:1:"0";s:15:"includeVariants";s:1:"1";s:15:"includeChildren";s:1:"0";s:7:"perPage";s:1:"6";s:8:"paginate";s:1:"0";s:4:"sort";s:6:"random";}s:12:"ShareButtons";a:4:{s:3:"css";s:1:"0";s:4:"skin";s:6:"custom";s:2:"fb";s:1:"1";s:2:"tw";s:1:"1";}}}

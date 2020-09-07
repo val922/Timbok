@@ -1,0 +1,20 @@
+[viewBag]
+==
+{% if item.images.count > 1 %}
+<div class="featured-slider-for">
+    {% for image in item.images %}
+    <a class="" href="{{ productPage|page({slug: item.slug, variant: item.variantHashId}) }}" data-mall-item-id="{{ item.prefixedId }}">
+        <img src="{{ image.thumb(360, 450, 'crop') }}" width="360" height="450" alt="{{ image.title }}" loading="lazy" class="card-img-top w-100 img-fluid"/>
+    </a>
+    {% endfor %}
+</div><!-- slider-nav.// -->
+<div class="featured-slider-nav position-absolute left-0 right-0 bottom-n4 bottom-n3 opacity-0 invisible group-hover:opacity-100 group-hover:visible z-20 transition-40 mx-5">
+    {% for image in item.images %}
+    <a href="javascript:;" class="m-1">
+        <img src="{{ image.thumb(80, 100, 'crop') }}" width="80" height="100" alt="{{ image.title }}" loading="lazy" class="border border-light img-fluid"/>
+    </a>    
+    {% endfor %}
+</div><!-- slider-nav.// -->
+{% else %}
+<img src="{{ item.image.thumb(360, 450, 'crop') }}" width="360" height="450" alt="{{ item.name }}" loading="lazy" class="card-img-top w-100 img-fluid"/>
+{% endif %}

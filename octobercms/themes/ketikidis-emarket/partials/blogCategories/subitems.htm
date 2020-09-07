@@ -1,0 +1,26 @@
+[viewBag]
+==
+{% for category in categories %}
+    {% set postCount = category.post_count %}
+    <div class="d-flex align-items-center">
+        <a href="{{ item.items ? '#categoryMenu' ~ item.title|replace({' ':'-'}) : item.url }}" class="{{ category.slug == currentCategorySlug ? 'active' : '' }} {{ (category.children|length > 0) ? 'collapsed' : '' }}" {% if category.children|length > 0 %}data-toggle="collapse" aria-expanded="false"{% endif %}>
+            <i class="w-4 mr-2 {{ (category.children|length > 0) ? 'text-danger' : 'text-primary' }}" data-feather="{{ (category.children|length > 0) ? 'plus' : 'arrow-right' }}"></i>
+        </a>
+        <a href="{{ category.url }}" class="list-group-item d-flex flex-grow-1 align-items-center font-5 border-0 rounded-0 text-link py-2 px-0 bg-transparent {{ category.slug == currentCategorySlug ? 'active' : '' }}">
+            <span>{{ category.name }}</span>
+            {% if category.children|length > 0 %}
+            <span class="ml-auto d-flex justify-content-center align-items-center font-1 font-weight-medium text-white bg-primary rounded-circle w-4 h-4">
+                {{ postCount }}
+            </span>
+            {% endif %}
+        </a>
+    </div>
+    {% if category.children|length > 0 %}
+    <div class="list-subgroup collapse" id="{{ 'categoryMenu' ~ item.title|replace({' ':'-'}) }}" data-parent="#category-nav">
+        {% partial 'blogCategories/subitems'
+           categories=category.children
+           currentCategorySlug=currentCategorySlug
+        %}
+    </div>
+    {% endif %}
+{% endfor %}

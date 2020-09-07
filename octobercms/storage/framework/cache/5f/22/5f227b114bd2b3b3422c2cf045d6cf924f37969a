@@ -1,0 +1,111 @@
+1599327549a:1:{s:20:"cart/table-entry.htm";a:6:{s:8:"fileName";s:20:"cart/table-entry.htm";s:7:"content";s:2899:"[viewBag]
+==
+{% set url = (productPage | page({slug: product.data.slug, variant: product.variant.hashId})) %}
+{% set image = product.variant ? product.variant.image : product.data.image %}
+<div class="mall-cart__product d-sm-flex justify-content-between my-6 pb-6 {% if not loop.last %}border-bottom{% endif %}">
+    <div class="media d-block d-sm-flex text-center text-sm-left">
+        {% if image %}
+        <a class="mx-auto mr-sm-4 d-block max-w-sm mx-auto" href="{{ url }}">
+            <img class="img-fluid" src="{{ image.thumb(160, 160, 'crop') }}" width="160" height="160" alt="" loading="lazy"/>
+        </a>
+        {% endif %}
+        <div class="media-body pt-2 max-w-sm mx-auto text-center text-sm-left">
+            <h5 class="font-weight-medium font-6">
+                <a class="text-dark" href="{{ url }}">{{ product.variant.name ?: product.data.name }}</a>
+            </h5>
+            {% if product.variant %}
+                <span class="text-muted font-5">
+                    {{ product.variant.properties_description | raw }}
+                </span>
+            {% endif %}
+            {% if product.custom_field_values %}
+                <br/>
+                <span class="text-muted font-5">
+                    {{ product.custom_field_value_description | raw }}
+                </span>
+            {% endif %}
+            <div class="pt-2 max-w-sm mx-auto">
+            {% if product.service_options.count > 0 %}
+                {% for option in product.service_options %}
+                <div class="mall-cart__services font-3 {{ loop.last ? 'border-bottom pb-1 mb-1' }} text-muted d-flex justify-content-between {{ loop.first ? 'mall-cart__services--first' }} {{ loop.last ? 'mall-cart__services--last' }}">
+                    <span class="mr-2">{{ option.name }}</span>
+                    <span>+ {{ option.price().integer | money }}</span>
+                </div>
+                {% endfor %}
+                <!--<div class="font-2 text-muted pt-1">
+                    { product.price() | raw }}
+                    <div class="mall-cart__price-additions">
+                        + { product.servicePostTaxes | money }}
+                    </div>
+                </div>-->
+                {% endif %}
+                <div class="text-primary font-7">
+                    {{ product.totalPostTaxes | money }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pt-2 pt-sm-0 pl-sm-4 mx-auto mx-sm-0 text-center text-sm-left max-w-xs">
+        {% partial __SELF__ ~ '::table-quantitydropdown' product=product %}
+        <button href="javascript:;"
+           class="js-mall-remove-product btn btn-outline-danger btn-sm btn-block mb-2"
+           data-id="{{ product.hashId }}"
+        >
+            {{ 'offline.mall::frontend.remove' | trans }}
+        </button>
+    </div>
+</div>";s:5:"mtime";i:1592589912;s:6:"markup";s:2886:"{% set url = (productPage | page({slug: product.data.slug, variant: product.variant.hashId})) %}
+{% set image = product.variant ? product.variant.image : product.data.image %}
+<div class="mall-cart__product d-sm-flex justify-content-between my-6 pb-6 {% if not loop.last %}border-bottom{% endif %}">
+    <div class="media d-block d-sm-flex text-center text-sm-left">
+        {% if image %}
+        <a class="mx-auto mr-sm-4 d-block max-w-sm mx-auto" href="{{ url }}">
+            <img class="img-fluid" src="{{ image.thumb(160, 160, 'crop') }}" width="160" height="160" alt="" loading="lazy"/>
+        </a>
+        {% endif %}
+        <div class="media-body pt-2 max-w-sm mx-auto text-center text-sm-left">
+            <h5 class="font-weight-medium font-6">
+                <a class="text-dark" href="{{ url }}">{{ product.variant.name ?: product.data.name }}</a>
+            </h5>
+            {% if product.variant %}
+                <span class="text-muted font-5">
+                    {{ product.variant.properties_description | raw }}
+                </span>
+            {% endif %}
+            {% if product.custom_field_values %}
+                <br/>
+                <span class="text-muted font-5">
+                    {{ product.custom_field_value_description | raw }}
+                </span>
+            {% endif %}
+            <div class="pt-2 max-w-sm mx-auto">
+            {% if product.service_options.count > 0 %}
+                {% for option in product.service_options %}
+                <div class="mall-cart__services font-3 {{ loop.last ? 'border-bottom pb-1 mb-1' }} text-muted d-flex justify-content-between {{ loop.first ? 'mall-cart__services--first' }} {{ loop.last ? 'mall-cart__services--last' }}">
+                    <span class="mr-2">{{ option.name }}</span>
+                    <span>+ {{ option.price().integer | money }}</span>
+                </div>
+                {% endfor %}
+                <!--<div class="font-2 text-muted pt-1">
+                    { product.price() | raw }}
+                    <div class="mall-cart__price-additions">
+                        + { product.servicePostTaxes | money }}
+                    </div>
+                </div>-->
+                {% endif %}
+                <div class="text-primary font-7">
+                    {{ product.totalPostTaxes | money }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pt-2 pt-sm-0 pl-sm-4 mx-auto mx-sm-0 text-center text-sm-left max-w-xs">
+        {% partial __SELF__ ~ '::table-quantitydropdown' product=product %}
+        <button href="javascript:;"
+           class="js-mall-remove-product btn btn-outline-danger btn-sm btn-block mb-2"
+           data-id="{{ product.hashId }}"
+        >
+            {{ 'offline.mall::frontend.remove' | trans }}
+        </button>
+    </div>
+</div>";s:4:"code";N;s:7:"viewBag";a:0:{}}}

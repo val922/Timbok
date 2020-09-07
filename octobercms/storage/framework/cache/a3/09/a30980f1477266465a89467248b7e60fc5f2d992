@@ -1,0 +1,27 @@
+1599340749a:1:{s:23:"wishlistbutton/list.htm";a:5:{s:8:"fileName";s:23:"wishlistbutton/list.htm";s:7:"content";s:535:"{% for wishlist in items %}
+    {% partial __SELF__ ~ '::item'
+        name=wishlist.name
+        count=wishlist.items.count
+        total=wishlist.totals.totalPostTaxes
+        list_id=wishlist.hash_id
+        product_id=__SELF__.property('product')
+        variant_id=__SELF__.property('variant') %}
+{% else %}
+    {# always include the "default" list if no other lists are available #}
+    {% partial __SELF__ ~ '::item'
+        product_id=__SELF__.property('product')
+        variant_id=__SELF__.property('variant') %}
+{% endfor %}";s:5:"mtime";i:1592589916;s:6:"markup";s:535:"{% for wishlist in items %}
+    {% partial __SELF__ ~ '::item'
+        name=wishlist.name
+        count=wishlist.items.count
+        total=wishlist.totals.totalPostTaxes
+        list_id=wishlist.hash_id
+        product_id=__SELF__.property('product')
+        variant_id=__SELF__.property('variant') %}
+{% else %}
+    {# always include the "default" list if no other lists are available #}
+    {% partial __SELF__ ~ '::item'
+        product_id=__SELF__.property('product')
+        variant_id=__SELF__.property('variant') %}
+{% endfor %}";s:4:"code";N;}}

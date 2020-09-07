@@ -1,0 +1,133 @@
+1599460961a:1:{s:17:"header/topbar.htm";a:7:{s:8:"fileName";s:17:"header/topbar.htm";s:7:"content";s:3504:"description = "Header Topbar"
+
+[viewBag]
+==
+<div class="navbar navbar-expand-md bg-dark py-1 px-0">
+	<div class="container px-4">
+		<ul class="navbar-nav d-none d-md-flex font-5">
+			<li class="nav-item">
+				<a class="nav-link text-white opacity-70 hover:opacity-100 pl-0 pr-3 py-1" href="tel:{{ '+267 3116181'|_ }}">
+					<i class="mr-2" data-feather="phone"></i>{{ '+267 3116181'|_ }}
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link text-white opacity-70 hover:opacity-100 pl-0 pr-3 py-1" href="mailto:{{ 'support@bangoe.com'|_ }}">
+					<i class="mr-2" data-feather="mail"></i>{{ 'support@bangoe.com'|_ }}
+				</a>
+			</li>
+		</ul>
+		<ul class="navbar-nav d-block d-md-none">
+            <li class="nav-item dropdown">
+                <a class="nav-link text-white font-4 opacity-70 hover:opacity-100 py-1 dropdown-toggle" href="#" id="headerLinks" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    {{ 'Contact Us'|_ }}
+                    <i data-feather="chevron-down"></i>
+                </a>
+                <ul class="dropdown-menu shadow border-0 position-absolute animated faster fadeInUp" aria-labelledby="headerLinks">
+            		<li class="nav-item">
+            			<a class="dropdown-item py-2 px-4 font-4" href="tel:{{ '+267 3116181'|_ }}">
+            				<i class="mr-2" data-feather="phone"></i>{{ '+2673116181'|_ }}
+            			</a>
+            		</li>
+            		<li class="nav-item">
+            			<a class="dropdown-item py-2 px-4 font-4" href="mailto:{{ 'support@bangoe.com'|_ }}">
+            				<i class="mr-2" data-feather="mail"></i>{{ 'support@bangoe.com'|_ }}
+            			</a>
+            		</li>
+                </ul>
+            </li>
+        </ul>
+		<div class="">
+			<ul class="navbar-nav ml-auto flex-row justify-content-start">
+				{% for fields in this.theme.social_media %}
+				<li class="nav-item">
+					<a class="nav-link opacity-70 hover:opacity-100 pl-0 pr-2 pr-md-3 py-1 text-white" href="{{ fields.social_media_url }}">
+						<i class="w-3 w-sm-4 h-3 h-sm-4" data-feather="{{ fields.social_media_icon }}"></i>
+					</a>
+				</li>
+				{% endfor %}
+				<li class="nav-item dropdown d-block d-md-none position-static">
+					<a class="nav-link opacity-70 hover:opacity-100 pl-0 pr-2 pr-md-3 py-1 dropdown-toggle text-white" href="#" id="headerSearch" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+						<span class="border-left"><span>
+						<i class="w-3 w-sm-4 h-3 h-sm-4 ml-2 ml-md-3" data-feather="search"></i>
+					</a>
+					<div class="dropdown-menu dropdown-menu-right w-100 min-w-xs shadow border-0 p-4 position-absolute animated faster fadeInUp" aria-labelledby="headerSearch">
+						{% partial 'searchInputMobile/default' searchinput=searchInputMobile %}
+					</div>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link opacity-70 hover:opacity-100 pl-0 pr-2 pr-md-3 py-1 dropdown-toggle text-white" href="#" id="headerCurrency" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+						<span class="border-left"><span>
+						<i class="w-3 w-sm-4 h-3 h-sm-4 ml-2 ml-md-3" data-feather="dollar-sign"></i>
+					</a>
+					<div class="dropdown-menu dropdown-menu-right min-w-xs shadow border-0 p-4 position-absolute animated faster fadeInUp" aria-labelledby="headerCurrency">
+						{% component 'currencyPicker' %}
+					</div>
+				</li>
+			</ul>
+        </div>
+	</div>
+</div>";s:5:"mtime";i:1599072275;s:6:"markup";s:3460:"<div class="navbar navbar-expand-md bg-dark py-1 px-0">
+	<div class="container px-4">
+		<ul class="navbar-nav d-none d-md-flex font-5">
+			<li class="nav-item">
+				<a class="nav-link text-white opacity-70 hover:opacity-100 pl-0 pr-3 py-1" href="tel:{{ '+267 3116181'|_ }}">
+					<i class="mr-2" data-feather="phone"></i>{{ '+267 3116181'|_ }}
+				</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link text-white opacity-70 hover:opacity-100 pl-0 pr-3 py-1" href="mailto:{{ 'support@bangoe.com'|_ }}">
+					<i class="mr-2" data-feather="mail"></i>{{ 'support@bangoe.com'|_ }}
+				</a>
+			</li>
+		</ul>
+		<ul class="navbar-nav d-block d-md-none">
+            <li class="nav-item dropdown">
+                <a class="nav-link text-white font-4 opacity-70 hover:opacity-100 py-1 dropdown-toggle" href="#" id="headerLinks" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    {{ 'Contact Us'|_ }}
+                    <i data-feather="chevron-down"></i>
+                </a>
+                <ul class="dropdown-menu shadow border-0 position-absolute animated faster fadeInUp" aria-labelledby="headerLinks">
+            		<li class="nav-item">
+            			<a class="dropdown-item py-2 px-4 font-4" href="tel:{{ '+267 3116181'|_ }}">
+            				<i class="mr-2" data-feather="phone"></i>{{ '+2673116181'|_ }}
+            			</a>
+            		</li>
+            		<li class="nav-item">
+            			<a class="dropdown-item py-2 px-4 font-4" href="mailto:{{ 'support@bangoe.com'|_ }}">
+            				<i class="mr-2" data-feather="mail"></i>{{ 'support@bangoe.com'|_ }}
+            			</a>
+            		</li>
+                </ul>
+            </li>
+        </ul>
+		<div class="">
+			<ul class="navbar-nav ml-auto flex-row justify-content-start">
+				{% for fields in this.theme.social_media %}
+				<li class="nav-item">
+					<a class="nav-link opacity-70 hover:opacity-100 pl-0 pr-2 pr-md-3 py-1 text-white" href="{{ fields.social_media_url }}">
+						<i class="w-3 w-sm-4 h-3 h-sm-4" data-feather="{{ fields.social_media_icon }}"></i>
+					</a>
+				</li>
+				{% endfor %}
+				<li class="nav-item dropdown d-block d-md-none position-static">
+					<a class="nav-link opacity-70 hover:opacity-100 pl-0 pr-2 pr-md-3 py-1 dropdown-toggle text-white" href="#" id="headerSearch" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+						<span class="border-left"><span>
+						<i class="w-3 w-sm-4 h-3 h-sm-4 ml-2 ml-md-3" data-feather="search"></i>
+					</a>
+					<div class="dropdown-menu dropdown-menu-right w-100 min-w-xs shadow border-0 p-4 position-absolute animated faster fadeInUp" aria-labelledby="headerSearch">
+						{% partial 'searchInputMobile/default' searchinput=searchInputMobile %}
+					</div>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link opacity-70 hover:opacity-100 pl-0 pr-2 pr-md-3 py-1 dropdown-toggle text-white" href="#" id="headerCurrency" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+						<span class="border-left"><span>
+						<i class="w-3 w-sm-4 h-3 h-sm-4 ml-2 ml-md-3" data-feather="dollar-sign"></i>
+					</a>
+					<div class="dropdown-menu dropdown-menu-right min-w-xs shadow border-0 p-4 position-absolute animated faster fadeInUp" aria-labelledby="headerCurrency">
+						{% component 'currencyPicker' %}
+					</div>
+				</li>
+			</ul>
+        </div>
+	</div>
+</div>";s:4:"code";N;s:11:"description";s:13:"Header Topbar";s:7:"viewBag";a:0:{}}}

@@ -1,0 +1,7 @@
+1599340783a:1:{s:14:"cart/empty.htm";a:6:{s:8:"fileName";s:14:"cart/empty.htm";s:7:"content";s:134:"[viewBag]
+==
+<div class="alert alert-warning text-center" role="alert">
+    {{ 'offline.mall::frontend.cart.empty' | trans }}
+</div>";s:5:"mtime";i:1592589912;s:6:"markup";s:121:"<div class="alert alert-warning text-center" role="alert">
+    {{ 'offline.mall::frontend.cart.empty' | trans }}
+</div>";s:4:"code";N;s:7:"viewBag";a:0:{}}}

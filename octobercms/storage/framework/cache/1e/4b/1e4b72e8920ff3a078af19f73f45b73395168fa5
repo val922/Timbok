@@ -1,0 +1,77 @@
+1599460931a:1:{s:13:"myaccount.htm";a:14:{s:8:"fileName";s:13:"myaccount.htm";s:7:"content";s:1011:"title = "Account"
+url = "/account/:page?"
+layout = "default"
+is_hidden = 0
+
+[session]
+security = "user"
+redirect = "login"
+
+[myAccount]
+page = "{{ :page }}"
+
+[ordersList]
+
+[wishlists]
+
+[imageUploader]
+placeholderText = "Click or drag images to upload"
+maxSize = 1
+fileTypes = ".jpg,.jpeg,.png"
+imageWidth = 280
+imageHeight = 280
+imageMode = "crop"
+==
+<?php
+/*function onInit()
+{
+    $user = Auth::getUser();
+    if($user){
+        $component = $this->addComponent(
+            'Responsiv\Uploader\Components\ImageUploader',
+            'imageUploader',
+            ['modelClass'=>'OFFLINE\Mall\Models\User','modelKeyColumn'=>'avatar', 'deferredBinding' => false]
+        );
+
+        $component->bindModel('avatar', $user);
+    }
+}*/
+
+function onInit()
+{
+    $user = Auth::getUser();
+    if($user){
+        $this->imageUploader->bindModel('avatar', $user);
+    }
+}
+?>
+==
+{% partial 'pageHeader/page' %}
+
+<div class="container pt-lg-4 pb-12 mb-sm-4">
+    {% component 'myAccount' %}
+</div>";s:5:"mtime";i:1592589910;s:6:"markup";s:121:"{% partial 'pageHeader/page' %}
+
+<div class="container pt-lg-4 pb-12 mb-sm-4">
+    {% component 'myAccount' %}
+</div>";s:4:"code";s:526:"/*function onInit()
+{
+    $user = Auth::getUser();
+    if($user){
+        $component = $this->addComponent(
+            'Responsiv\Uploader\Components\ImageUploader',
+            'imageUploader',
+            ['modelClass'=>'OFFLINE\Mall\Models\User','modelKeyColumn'=>'avatar', 'deferredBinding' => false]
+        );
+
+        $component->bindModel('avatar', $user);
+    }
+}*/
+
+function onInit()
+{
+    $user = Auth::getUser();
+    if($user){
+        $this->imageUploader->bindModel('avatar', $user);
+    }
+}";s:5:"title";s:7:"Account";s:3:"url";s:15:"/account/:page?";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:7:"session";a:2:{s:8:"security";s:4:"user";s:8:"redirect";s:5:"login";}s:9:"myAccount";a:1:{s:4:"page";s:11:"{{ :page }}";}s:10:"ordersList";a:0:{}s:9:"wishlists";a:0:{}s:13:"imageUploader";a:6:{s:15:"placeholderText";s:30:"Click or drag images to upload";s:7:"maxSize";s:1:"1";s:9:"fileTypes";s:15:".jpg,.jpeg,.png";s:10:"imageWidth";s:3:"280";s:11:"imageHeight";s:3:"280";s:9:"imageMode";s:4:"crop";}}}

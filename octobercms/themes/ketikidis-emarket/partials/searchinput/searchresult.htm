@@ -1,0 +1,11 @@
+[viewBag]
+==
+<div class="ss-autocomplete-result d-flex my-3">
+    <div class="ss-autocomplete-result__content">
+        {% partial __SELF__ ~ '::content' result = result %}
+    </div>
+    {% if result.thumb %}
+        {% partial  __SELF__ ~ '::thumbnail' result = result %}
+    {% endif %}
+</div>
+{% if not loop.last %}<hr class="opacity-50">{% endif %}

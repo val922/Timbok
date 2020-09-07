@@ -1,0 +1,15 @@
+description = "Footer"
+
+[viewBag]
+==
+<?php
+function onStart()
+{
+    $this['brands'] = \OFFLINE\Mall\Models\Brand::with('products')->get();
+}
+?>
+==
+<div class="footer pt-12 font-5 bg-dark">
+    {% partial 'footer/topbar' %}
+    {% partial 'footer/bottombar' %}
+</div>

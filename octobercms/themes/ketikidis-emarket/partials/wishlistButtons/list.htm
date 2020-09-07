@@ -1,0 +1,13 @@
+[viewBag]
+==
+{% for wishlist in items %}
+    {% partial 'wishlistButtons/item'
+        list_id=wishlist.hash_id
+        product_id=wishlistButtons.property('product')
+        variant_id=wishlistButtons.property('variant') %}
+{% else %}
+    {# always include the "default" list if no other lists are available #}
+    {% partial 'wishlistButtons/item'
+        product_id=wishlistButtons.property('product')
+        variant_id=wishlistButtons.property('variant') %}
+{% endfor %}

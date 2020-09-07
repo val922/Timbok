@@ -1,0 +1,59 @@
+1599460935a:1:{s:10:"search.htm";a:12:{s:8:"fileName";s:10:"search.htm";s:7:"content";s:1199:"title = "Search results"
+url = "/search"
+layout = "default"
+is_hidden = 0
+
+[viewBag]
+localeUrl[en] = "/search"
+
+[searchResults]
+resultsPerPage = 8
+showProviderBadge = 1
+noResultsMessage = "Your search returned no results."
+visitPageMessage = "Visit page"
+
+[products bannerProducts]
+filterComponent = "productsFilter"
+setPageTitle = 0
+includeVariants = 0
+includeChildren = 0
+perPage = 1
+paginate = 0
+==
+{% partial 'pageHeader/search' %}
+
+<div class="container pb-12">
+    <div class="row">
+        <div class="col-lg-9 mb-6 {{ this.theme.shop_layout == 'order-1' ? 'order-2' : 'order-1' }}">
+            {% component 'searchResults' %}
+        </div>
+        <div class="col-lg-3 mb-6 {{ this.theme.shop_layout }}">
+            {% partial 'productCategories/default' %}
+            {% if this.theme.shop_product_banner_section %}
+            {% if this.theme.shop_product_banner_type == 'product' %}
+            {% partial 'widgetBanners/product-banner-bottom' %}
+            {% elseif this.theme.shop_product_banner_type == 'variant' %}
+            {% partial 'widgetBanners/variant-banner-bottom' %}
+            {% endif %}
+            {% endif %}
+        </div>
+    </div>
+</div>";s:5:"mtime";i:1592589910;s:6:"markup";s:797:"{% partial 'pageHeader/search' %}
+
+<div class="container pb-12">
+    <div class="row">
+        <div class="col-lg-9 mb-6 {{ this.theme.shop_layout == 'order-1' ? 'order-2' : 'order-1' }}">
+            {% component 'searchResults' %}
+        </div>
+        <div class="col-lg-3 mb-6 {{ this.theme.shop_layout }}">
+            {% partial 'productCategories/default' %}
+            {% if this.theme.shop_product_banner_section %}
+            {% if this.theme.shop_product_banner_type == 'product' %}
+            {% partial 'widgetBanners/product-banner-bottom' %}
+            {% elseif this.theme.shop_product_banner_type == 'variant' %}
+            {% partial 'widgetBanners/variant-banner-bottom' %}
+            {% endif %}
+            {% endif %}
+        </div>
+    </div>
+</div>";s:4:"code";N;s:5:"title";s:14:"Search results";s:3:"url";s:7:"/search";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:7:"viewBag";a:1:{s:9:"localeUrl";a:1:{s:2:"en";s:7:"/search";}}s:13:"searchResults";a:4:{s:14:"resultsPerPage";s:1:"8";s:17:"showProviderBadge";s:1:"1";s:16:"noResultsMessage";s:32:"Your search returned no results.";s:16:"visitPageMessage";s:10:"Visit page";}s:23:"products bannerProducts";a:6:{s:15:"filterComponent";s:14:"productsFilter";s:12:"setPageTitle";s:1:"0";s:15:"includeVariants";s:1:"0";s:15:"includeChildren";s:1:"0";s:7:"perPage";s:1:"1";s:8:"paginate";s:1:"0";}}}

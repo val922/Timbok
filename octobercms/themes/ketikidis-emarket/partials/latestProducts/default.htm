@@ -1,0 +1,42 @@
+[viewBag]
+==
+<section class="mall-products container pt-sm-4 pb-6 pb-md-12">
+    <h2 class="h3 font-weight-semibold pb-6 max-w-md mx-auto decorated"><span>{{ 'Latest Products'|_ }}</span></h2>
+    {% partial 'latestProducts/entries' %}
+</section>
+
+{% put scripts %}
+<script>
+$('.related-slider').slick({
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    centerMode: false,
+    autoplay: true,
+    autoplaySpeed: 6000,
+    dots: true,
+    arrows: false,
+    lazyLoad: 'ondemand',
+    accessibility: false,
+    responsive: [
+        {
+          breakpoint: 992,
+          settings: {
+            slidesToShow: 4
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 3
+          }
+        },
+        {
+          breakpoint: 576,
+          settings: {
+            slidesToShow: 1
+          }
+        }
+    ]
+});
+</script>
+{% endput %}

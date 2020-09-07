@@ -1,0 +1,42 @@
+[viewBag]
+==
+<div class="py-12 px-4 px-sm-12">
+    <div class="mall-products-item__info-teritary mb-2">
+        {% set rating = item.reviews_rating %}
+        {% if rating > 0 %}
+            <div class="mall-products-item__stars">
+                {% partial 'productsSlider/stars' rating=rating %}
+            </div>
+        {% endif %}
+    </div>
+    <h2 class="font-weight-semibold mb-2">
+        <a class="text-link" href="{{ productPage|page({slug: item.slug, variant: item.variantHashId}) }}" data-mall-item-id="{{ item.prefixedId }}">{{ item.name }}</a>
+    </h2>
+	<div class="lead font-weight-semibold text-muted font-6 mb-2">in
+		{% for category in item.categories %}
+		{{ category.name }}{% if not loop.last %},{% endif %}
+		{% endfor %}
+	</div>
+    {% set price = item.price() %}
+    <h2 class="font-18 font-weight-semibold">
+        <span class="lead text-muted mr-2">
+        {% if price.official %}
+            <del>{{ price.official.string | raw }}</del>
+        {% else %}
+            <del>{{ item.oldPrice.count > 0 ? item.oldPrice().string | raw }}</del>
+        {% endif %}
+        </span>
+        <span class="mall-products-item__price {{ item.oldPrice.count > 0 ? 'text-primary' : 'text-primary' }} {{ price.isCustomerSpecific ? 'mall-products-item__price--special' }}">
+            {{ price.string | raw }}
+        </span>
+    </h2>
+    <h4 class="font-weight-light opacity-70 pb-1 mb-6">{{ item.description_short }}</h4>
+    <div class="d-flex justify-content-between">
+        <a class="my-auto btn btn-primary px-6" href="{{ productPage|page({slug: item.slug, variant: item.variantHashId}) }}" data-mall-item-id="{{ item.prefixedId }}">
+            Shop now <i class="ml-2" data-feather="shopping-cart"></i>
+        </a>
+        <a class="d-block mb-2" href="/brand/{{ item.brand.slug }}?brand={{ item.brand.slug }}&sort=latest">
+            <img src="{{ item.brand.logo.thumb(130, 70, 'crop') }}"  width="130" height="70" alt="{{ item.brand.name }}" class="w-24 w-md-100 img-fluid"/>
+        </a>
+    </div>
+</div>

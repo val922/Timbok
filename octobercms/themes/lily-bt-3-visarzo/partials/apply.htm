@@ -1,0 +1,156 @@
+[viewBag]
+snippetCode = "apply"
+snippetName = "apply"
+==
+{% if applyEnable %}
+
+<section class="apply-style-two">
+    <div class="auto-container">
+        {% if applyTitle %}
+        <div class="top-inner">
+            <div class="row clearfix">
+                <div class="col-lg-5 col-md-12 col-sm-12 title-column">
+                    <div class="sec-title">
+                        {% if applyTop %}<p>{{applyTop}}</p>{% endif %}
+                        <h2>{{applyTitle}}</h2>
+                        <div class="dotted-box">
+                            <span class="dotted"></span>
+                            <span class="dotted"></span>
+                            <span class="dotted"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-12 col-sm-12 text-column">
+                    <div class="text">
+                        <p>{{applyInfo??('Please set it in the backend'|_)}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        <div class="row clearfix">
+
+            {% if applies[0] %}
+
+                {%set item0=applies[0] %}
+                <div class="col-lg-4 col-md-6 col-sm-12 single-column">
+                    <div class="single-item wow fadeInUp animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                        <div class="inner-box">
+                            <h6>{{'Step 1'|_}}</h6>
+                            <div class="icon-box">
+                                <div class="arrow" style="background-image: url({{'assets/images/icons/arrow-1.png'|theme}});"></div>
+                                <i class="{{item0.icon}}"></i>
+                            </div>
+                            <h3><a href="{{item0.url}}">{{item0.title}}</a></h3>
+                            <p>{{item0.info}}</p>
+                        </div>
+                    </div>
+                </div>
+
+            {% endif %}
+
+            {% if applies[1] %}
+
+            {%set item1=applies[1] %}
+            <div class="col-lg-4 col-md-6 col-sm-12 single-column">
+                <div class="single-item wow fadeInUp animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <h6>{{'Step 2'|_}}</h6>
+                        <div class="icon-box">
+                            <div class="arrow" style="background-image: url({{'assets/images/icons/arrow-1.png'|theme}});"></div>
+                            <i class="{{item1.icon}}"></i>
+                        </div>
+                        <h3><a href="{{item1.url}}">{{item1.title}}</a></h3>
+                        <p>{{item1.info}}</p>
+                    </div>
+                </div>
+            </div>
+
+            {% endif %}
+
+            {% if applies[2] %}
+
+            {%set item2=applies[2] %}
+            <div class="col-lg-4 col-md-6 col-sm-12 single-column">
+                <div class="single-item wow fadeInUp animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <h6>{{'Step 3'|_}}</h6>
+                        <div class="icon-box">
+                            <i class="{{item2.icon}}"></i>
+                        </div>
+                        <h3><a href="{{item2.url}}">{{item2.title}}</a></h3>
+                        <p>{{item2.info}}</p>
+                    </div>
+                </div>
+            </div>
+
+            {% endif %}
+
+        </div>
+    </div>
+</section>
+
+{% else %}
+<section class="apply-style-two">
+    <div class="auto-container">
+        <div class="top-inner">
+            <div class="row clearfix">
+                <div class="col-lg-5 col-md-12 col-sm-12 title-column">
+                    <div class="sec-title">
+                        <p>How we help clients</p>
+                        <h2>Following Steps Apply Online Visa</h2>
+                        <div class="dotted-box">
+                            <span class="dotted"></span>
+                            <span class="dotted"></span>
+                            <span class="dotted"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-12 col-sm-12 text-column">
+                    <div class="text">
+                        <p>Sponsoring and managing work visas parts now becoming results the experience aute irure dolor in reprehenderit cepteur sint ocae cat cupidatat non proident sunt in culpa quis.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-lg-4 col-md-6 col-sm-12 single-column">
+                <div class="single-item wow fadeInUp animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <h6>Step 1</h6>
+                        <div class="icon-box">
+                            <div class="arrow" style="background-image: url({{'assets/images/icons/arrow-1.png'|theme}});"></div>
+                            <i class="flaticon-document"></i>
+                        </div>
+                        <h3><a href="">Fill In The <br>Required Form</a></h3>
+                        <p>Kaoreet efficitur leo. Aliquam era volutpat lobortis em consequat sed ipsum.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 single-column">
+                <div class="single-item wow fadeInUp animated animated" data-wow-delay="300ms" data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <h6>Step 2</h6>
+                        <div class="icon-box">
+                            <div class="arrow" style="background-image: url({{'assets/images/icons/arrow-1.png'|theme}});"></div>
+                            <i class="flaticon-copy"></i>
+                        </div>
+                        <h3><a href="">Submit All Your <br>Attested Documents</a></h3>
+                        <p>Kaoreet efficitur leo. Aliquam era volutpat lobortis em consequat sed ipsum.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 single-column">
+                <div class="single-item wow fadeInUp animated animated" data-wow-delay="600ms" data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <h6>Step 3</h6>
+                        <div class="icon-box"><i class="flaticon-plane"></i></div>
+                        <h3><a href="">Get Ready To <br>Receive your Visa</a></h3>
+                        <p>Kaoreet efficitur leo. Aliquam era volutpat lobortis em consequat sed ipsum.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}

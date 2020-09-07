@@ -1,0 +1,56 @@
+[viewBag]
+==
+{% if type %}
+    {% set type = (type ~ '_') %}
+{% endif %}
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="{{ type }}company">{{ 'offline.mall::frontend.form.company' | trans }}</label>
+            <input id="{{ type }}company" type="text"
+                   value="{{ address.company }}"
+                   placeholder="{{ 'offline.mall::frontend.form.company_placeholder' | trans }}" name="{{ type }}company"
+                   class="form-control hover:border-primary">
+            <div data-validate-for="{{ type }}company"></div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="{{ type }}address_name">{{ 'offline.mall::frontend.form.recipient' | trans }}</label>
+            <input id="{{ type }}address_name" type="text"
+                   value="{{ address.name }}"
+                   placeholder="{{ 'offline.mall::frontend.form.recipient_placeholder' | trans }}"
+                   name="{{ type }}address_name"
+                   class="form-control hover:border-primary">
+            <div data-validate-for="{{ type }}address_name"></div>
+        </div>
+    </div>
+</div>
+<div class="form-group">
+    <label for="{{ type }}lines">{{ 'offline.mall::frontend.form.address_lines' | trans }}</label>
+    <textarea id="{{ type }}lines" type="text" name="{{ type }}lines" rows="3" class="form-control hover:border-primary">{{ address.lines }}</textarea>
+    <div data-validate-for="{{ type }}lines"></div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="{{ type }}zip">{{ 'offline.mall::frontend.form.zip' | trans }}</label>
+            <input id="{{ type }}zip" name="{{ type }}zip" type="text"
+                   value="{{ address.zip }}"
+                   class="form-control hover:border-primary">
+            <div data-validate-for="{{ type }}zip"></div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="{{ type }}city">{{ 'offline.mall::frontend.form.city' | trans }}</label>
+            <input id="{{ type }}city" name="{{ type }}city" type="text"
+                   value="{{ address.city }}"
+                   class="form-control hover:border-primary">
+            <div data-validate-for="{{ type }}city"></div>
+        </div>
+    </div>
+</div>
+<div class="{{ __SELF__.useState ? 'row' }}" id="countryState">
+    {% partial __SELF__ ~ '::countrystate' type=type countryId=address.country_id stateId=address.state_id %}
+</div>

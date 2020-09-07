@@ -1,0 +1,9 @@
+[viewBag]
+==
+<div class="mall-checkout-result mall-checkout-result--cancelled text-center">
+    <div class="card p-10 border-0 shadow alert alert-danger"  role="alert">
+		<h3 class="font-weight-semibold text-danger  mall-checkout-result__heading mb-5">{{ 'offline.mall::frontend.checkout.payment.cancelled.heading' | trans }}</h3>
+		<p>{{ 'offline.mall::frontend.checkout.payment.cancelled.line_1' | trans }}</p>
+		{% partial __SELF__ ~ '::resultactions' %}
+    </div>
+</div>

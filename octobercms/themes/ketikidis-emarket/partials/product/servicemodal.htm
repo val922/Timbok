@@ -1,0 +1,91 @@
+[viewBag]
+==
+<div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content overflow-hidden position-relative">
+        <div class="modal-body p-8">
+            <form class="mall-modal__inner"
+                  data-request="onAddToCartWithServices"
+                  data-request-success="window.Mall.Modal.removeClass('mall-modal--visible visible opacity-100').addClass('invisible opacity-0'); $.publish('mall.cart.productAdded', data);"
+                  data-request-validate
+                  data-request-flash>
+                <h3 class="font-8 font-weight-semibold mb-8">{{ 'offline.mall::frontend.services.modal_title' | trans }}</h3>
+            
+                <div class="mall-product-services">
+                    {% for service in services %}
+                    <div class="mall-product-service mb-10">
+                        <h4 class="mall-product-service__name font-6 font-weight-semibold mb-2">{{ service.name }}</h4>
+                        {% if service.description %}
+                        <div class="mall-product-service__description font-5">
+                            {{ html_clean(service.description | raw) }}
+                        </div>
+                        {% endif %}
+                        {% if service.pivot.required %}
+                            <div class="mall-product-service__required visible" data-validate-for="service.{{ service.id }}">
+                                {{ 'offline.mall::frontend.services.required' | trans }}
+                            </div>
+                        {% endif %}
+                        <div class="mall-product-service-options border-bottom">
+                            {% if not service.pivot.required %}
+                            <div class="custom-control custom-radio py-4 border-top">
+                                <input type="radio" name="service[{{ service.id }}][]" value="" id="service-none-{{ service.id }}" checked class="custom-control-input">
+                                <label class="mall-product-service-option custom-control-label" for="service-none-{{ service.id }}">
+                                    <span class="mall-product-service-option__name">
+                                        {{ 'offline.mall::frontend.services.none' | trans }}
+                                    </span>
+                                </label>
+                            </div>
+                            {% endif %}
+                            {% for option in service.options %}
+                            <div class="custom-control custom-radio py-4 border-top">
+                                <input type="radio" name="service[{{ service.id }}][]" value="{{ option.id }}" id="option-{{ option.id }}" class="custom-control-input">
+                                <label class="mall-product-service-option custom-control-label d-block" for="option-{{ option.id }}">
+                                    <div class="d-flex justify-content-between">
+                                        <span class="mall-product-service-option__name">
+                                            {{ option.name }}
+                                        </span>
+                                        <span class="mall-product-service-option__price text-dark font-weight-semibold">
+                                            {{ html_clean(option.price().string | raw) }}
+                                        </span>
+                                    </div>
+                                    {% if option.description %}
+                                    <div class="mall-product-service-option__description font-4 font-weight-normal text-muted mt-1 mb-n4">
+                                        {{ html_clean(option.description | raw) }}
+                                    </div>
+                                    {% endif %}
+                                </label>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            
+                <div class="mall-product-service-error text-danger font-4 mt-2 ml-1" data-validate-for="quantity"></div>
+            
+                <div class="mall-modal__actions d-flex justify-content-between">
+                    <div>
+                        <a href="javascript:;" onclick="window.Mall.Modal.removeClass('mall-modal--visible visible opacity-100').addClass('invisible opacity-0');" class="btn btn-outline-primary">
+                            {{ 'offline.mall::frontend.cancel' | trans }}
+                        </a>
+                    </div>
+                    <div>
+                        <button class="btn btn-primary mall-btn--primary" data-attach-loading>
+                            <i class="mr-2" data-feather="shopping-cart"></i>
+                            {{ 'offline.mall::frontend.cart.add' | trans }}
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <a href="javascript:;" onclick="window.Mall.Modal.removeClass('mall-modal--visible visible opacity-100').addClass('invisible opacity-0');" class="close-btn position-absolute font-10 d-block text-muted right-3 top-3 w-5 h-5 line-height-tight">×</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    window.Mall.Modal.addClass('mall-modal--visible visible opacity-100').removeClass('invisible opacity-0')
+    
+    // Feather Icons
+    $( document ).ready(function() {
+        feather.replace()
+    });
+</script>

@@ -1,0 +1,14 @@
+[viewBag]
+==
+<div class="gdpr-banner__opt-in">
+    <button role="button" 
+            tabindex="0" 
+            aria-pressed="false"
+            class="btn btn-sm btn-primary font-2 font-sm-5 ml-3 gdpr-banner__button gdpr-banner__button--opt-in"
+            data-request="onAccept"
+            data-request-success="$('.gdpr-banner').remove()"
+            data-request-update="'{{ __SELF__.updatePartial }}' : '{{ __SELF__.updateSelector }}'"
+    >
+        {{ 'offline.gdpr::lang.cookie_banner.accept' | trans }}
+    </button>
+</div>

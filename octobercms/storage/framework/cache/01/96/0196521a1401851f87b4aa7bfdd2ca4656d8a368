@@ -1,0 +1,51 @@
+1599327549a:1:{s:18:"wishlists/list.htm";a:6:{s:8:"fileName";s:18:"wishlists/list.htm";s:7:"content";s:881:"[viewBag]
+==
+<ul class="d-flex flex-wrap list-unstyled align-items-center font-5">
+{% for wishlist in items %}
+    {% partial __SELF__ ~ '::item'
+        name=wishlist.name
+        count=wishlist.items.count
+        total=wishlist.totals.totalPostTaxes
+        list_id=wishlist.hash_id
+        product_id=__SELF__.property('product')
+        variant_id=__SELF__.property('variant') %}
+{% endfor %}
+</ul>
+
+<script>
+    var activeClass = 'btn-primary'
+    var items = document.querySelectorAll('.mall-wishlist-item')
+    Array.prototype.forEach.call(items, function (item) {
+        item.addEventListener('click', function () {
+            var active = document.querySelector('.' + activeClass)
+            if (active) {
+                active.classList.remove(activeClass)
+            }
+            this.classList.add(activeClass)
+        })
+    })
+</script>";s:5:"mtime";i:1592589912;s:6:"markup";s:868:"<ul class="d-flex flex-wrap list-unstyled align-items-center font-5">
+{% for wishlist in items %}
+    {% partial __SELF__ ~ '::item'
+        name=wishlist.name
+        count=wishlist.items.count
+        total=wishlist.totals.totalPostTaxes
+        list_id=wishlist.hash_id
+        product_id=__SELF__.property('product')
+        variant_id=__SELF__.property('variant') %}
+{% endfor %}
+</ul>
+
+<script>
+    var activeClass = 'btn-primary'
+    var items = document.querySelectorAll('.mall-wishlist-item')
+    Array.prototype.forEach.call(items, function (item) {
+        item.addEventListener('click', function () {
+            var active = document.querySelector('.' + activeClass)
+            if (active) {
+                active.classList.remove(activeClass)
+            }
+            this.classList.add(activeClass)
+        })
+    })
+</script>";s:4:"code";N;s:7:"viewBag";a:0:{}}}

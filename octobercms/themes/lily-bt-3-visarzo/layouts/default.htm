@@ -1,0 +1,22 @@
+[localePicker]
+forceUrl = 0
+==
+<!DOCTYPE html>
+<html>
+{% partial 'html/head' %}
+<body>
+    <div class="boxed_wrapper">
+        {% partial 'html/loader-wrap' %}
+        {% partial 'html/switcher' %}
+        {% partial 'html/search' %}
+        {% partial 'html/header' %}
+        {% partial 'html/mobile-menu' %}
+
+        {% page %}
+
+        {% partial 'html/footer' %}
+        {% partial 'html/scroll-top' %}
+    </div>
+    {% partial 'html/script' %}
+</body>
+</html>

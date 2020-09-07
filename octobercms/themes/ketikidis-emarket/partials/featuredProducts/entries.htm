@@ -1,0 +1,11 @@
+[viewBag]
+==
+{% if products.items.count %}
+    {% partial 'featuredProducts/items' items=products.items %}
+{% else %}
+    {% partial 'featuredProducts/empty' %}
+{% endif %}
+
+{% if products.dataLayer %}
+    {% partial 'featuredProducts/datalayer' %}
+{% endif %}

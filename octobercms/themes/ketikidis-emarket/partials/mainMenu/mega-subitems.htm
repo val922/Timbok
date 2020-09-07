@@ -1,0 +1,19 @@
+[viewBag]
+==
+{% for item in items if not item.viewBag.isHidden %}
+{% if (item.code == 'banner-1') or (item.code == 'banner-2') or (item.code == 'banner-3') or (item.code == 'banner-4') or (item.code == 'banner-5') or (item.code == 'banner-6')  %}
+{% partial 'mainMenu/banner' item=item %}
+{% else %}
+<div class="{{ item.viewBag.cssClass ? item.viewBag.cssClass : 'col-lg-2 col-md-6' }} {{ itemCssClass }} px-3 mb-6">
+    {% partial 'mainMenu/category-image' item=item %}
+	{% if item.url %}<a href="{{ item.url }}" class="d-block {{ item.isActive or item.isChildActive ? 'active' }}">{% endif %}
+		<h6 class="mb-2 font-6">{{ item.title }}</h6>
+	{% if item.url %}</a>{% endif %}
+	{% if item.items %}
+	<ul class="list-unstyled font-5">
+		{% partial 'mainMenu/mega-childitems' items=item.items %}
+	</ul>
+	{% endif %}
+</div>
+{% endif %}
+{% endfor %}

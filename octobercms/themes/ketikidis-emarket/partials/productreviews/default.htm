@@ -1,0 +1,24 @@
+[viewBag]
+==
+<div class="col-md-4 pb-5">
+    {% if __SELF__.allReviews.count > 0 %}
+    <div class="mall-product-reviews__info card mb-5">
+        {% partial __SELF__ ~ '::overall' %}
+    </div>
+    {% endif %}
+    <a class="btn btn-warning btn-block" data-toggle="collapse" href="#leaveReview" role="button" aria-expanded="false" aria-controls="leaveReview">Leave a review</a>
+    <div class="collapse" id="leaveReview">
+        <div class="card">
+            <div class="mall-product-reviews__info card-body" id="mall-rating-widget">
+                {% partial productReviews ~ '::userreview' %}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mall-reviews col-md-8 pb-12">
+    <h2 class="h3 font-weight-semibold mb-4">{{ 'offline.mall::frontend.reviews.heading' | trans }}</h2>
+    <!-- Review-->
+    {% partial __SELF__ ~ '::reviews' reviews=__SELF__.reviews %}
+</div>
+
+{% partial __SELF__ ~ '::scripts' %}

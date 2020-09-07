@@ -1,0 +1,15 @@
+[viewBag]
+==
+<div class="row align-self-center text-center text-lg-left">
+<div class="col-xl-7 col-lg-6 mb-lg-0 mb-md-4 mb-2 gdpr-banner__column gdpr-banner__column--1">
+    <div class="gdpr-banner__row">
+        {% partial __SELF__ ~ '::message' %}
+    </div>
+</div>
+<div class="col-xl-5 col-lg-6 d-flex justify-content-center flex-wrap gdpr-banner__column gdpr-banner__column--2">
+    {% partial __SELF__ ~ '::settings' %}
+    {% partial __SELF__ ~ '::optout' %}
+    {% partial __SELF__ ~ '::optin' %}
+    {% partial __SELF__ ~ '::dismiss' %}
+</div>
+</div>

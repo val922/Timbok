@@ -1,0 +1,8 @@
+<?php
+
+/** @var \Cms\Models\ThemeData $formModel */
+
+//Add products
+$formModel->addDynamicMethod('getProductOptions', function () {
+    return \Offline\Mall\Models\Product::lists('name', 'id');
+});

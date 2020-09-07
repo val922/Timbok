@@ -1,0 +1,83 @@
+description = "Content Layout"
+
+[cart]
+showDiscountApplier = 1
+showTaxes = 1
+showShipping = 1
+showProceedToCheckoutButton = 0
+
+[mallDependencies]
+
+[session]
+security = "all"
+
+[currencyPicker]
+
+[localePicker]
+forceUrl = 0
+
+[enhancedEcommerceAnalytics]
+
+[staticPage]
+useContent = 0
+default = 0
+
+[searchInput]
+useAutoComplete = 1
+autoCompleteResultCount = 5
+showProviderBadge = 1
+searchPage = "search.htm"
+==
+{% spaceless %}
+<!DOCTYPE html>
+<html lang="{{ activeLocale }}">
+    <head>
+        {% partial 'metaData/default' %}
+        {% partial 'site/css' %}
+        <!-- Jquery -->
+        <script src="{{ ['@jquery']|theme }}"></script>
+        <!--Ecommerce Analytics -->
+        {% component 'enhancedEcommerceAnalytics' %}
+        <!--Eshop Dependencies -->
+        {% component 'mallDependencies' %}
+    </head><!--/#head-->
+    <body class="page-{{ this.page.id }} layout-{{ this.page.layout }}">
+        <!--Google Analytics -->
+        {{ this.theme.google_analytics|raw }}
+        <!-- Loader -->
+        {% partial 'site/loader' %}
+        <!-- Main Wrapper -->
+        <div class="main-wrapper overflow-hidden">
+            <!-- Wrapper -->
+            <div class="page-wrapper">
+                <!-- Header -->
+                {% partial 'header/default' %}
+                
+                {variable name="content_section" tab="Content" label="Content" type="section"}{/variable}
+                {variable name="content_container" tab="Content" label="Container" type="dropdown" showSearch="false" span="storm" cssClass="col-md-4" options="container:Container|container-fluid:Fluid Container"}{/variable}
+                {variable name="content_size" tab="Content" label="Size" type="dropdown" showSearch="false" span="storm" cssClass="col-md-4 p-l-0" options="col-lg-12:12|col-lg-11:11|col-lg-10:10|col-lg-9:9|col-lg-8:8|col-lg-7:7|col-lg-6:6|col-lg-5:5|col-lg-4:4|col-lg-3:3|col-lg-2:2|col-lg-1:1"}{/variable}
+                {variable name="content_bg" tab="Content" label="Background Color" type="dropdown" span="storm" cssClass="col-md-4 p-l-0" options="bg-white:White|bg-dark:Dark|bg-light:Light|bg-primary:Primary|bg-secondary:Secondary|bg-info:Info|bg-success:Success|bg-danger:Danger|bg-warning:Warning"}{/variable}
+                {repeater name="content_column" tab="Content" type="repeater" prompt="Add Column"}
+                    {variable name="content_size" label="Size" type="dropdown" showSearch="false" span="storm" cssClass="col-md-4 p-l-0" options="col-lg-12:12|col-lg-11:11|col-lg-10:10|col-lg-9:9|col-lg-8:8|col-lg-7:7|col-lg-6:6|col-lg-5:5|col-lg-4:4|col-lg-3:3|col-lg-2:2|col-lg-1:1"}{/variable}
+                    {variable name="content_text_bg" label="Background Color" type="dropdown" emptyOption="-- Disabled --" span="storm" cssClass="col-md-4 p-l-0" options="bg-white:White|bg-dark:Dark|bg-light:Light|bg-primary: Primary|bg-secondary:Secondary|bg-info:Info|bg-success:Success|bg-danger:Danger|bg-warning:Warning"}{/variable}
+                    {variable name="content_text_color" label="Font Color" type="dropdown" emptyOption="-- Disabled --" span="storm" cssClass="col-md-4 p-l-0" options="text-white:White|text-dark:Dark|text-muted:Muted|text-body:Body|text-primary:Primary|text-secondary:Secondary|text-info:Info|text-success:Success|text-danger:Danger|text-warning:Warning"}{/variable}
+                    {variable name="content_text" label="Text" type="richeditor" size="giant" span="storm" cssClass="col-md-12 p-l-0"}{/variable}
+                {/repeater}
+                
+                <!-- Content -->
+                {% partial 'static/content' %}
+                <!-- Page -->
+                {% page %}
+                <!-- Info -->
+                {% partial 'site/info' %}
+                <!-- Footer -->
+                {% partial 'footer/default' %}
+                <!-- Scroll to top -->
+                {% partial 'site/scrolltop' %}
+            </div>
+        </div>
+        <!-- Scripts -->
+        {% partial 'site/scripts' %}
+    </body><!--/#body-->
+</html>
+{% endspaceless %}

@@ -1,0 +1,165 @@
+[viewBag]
+snippetCode = "team"
+snippetName = "team"
+==
+{% if teamEnable %}
+
+<section class="team-section">
+    <div class="auto-container">
+        {% if teamTitle %}
+        <div class="top-inner">
+            <div class="row clearfix">
+                <div class="col-lg-5 col-md-12 col-sm-12 title-column">
+                    <div class="sec-title">
+                        {% if teamTop %}<p>{{teamTop}}</p>{% endif %}
+                        <h2>{{teamTitle}}</h2>
+                        <div class="dotted-box">
+                            <span class="dotted"></span>
+                            <span class="dotted"></span>
+                            <span class="dotted"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-12 col-sm-12 text-column">
+                    <div class="text">
+                        <p>{{teamInfo??('Please set it in the backend'|_)}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        <div class="row clearfix">
+
+            {% for item in teams %}
+
+            <div class="col-lg-3 col-md-6 col-sm-12 team-block">
+                <div class="team-block-one wow fadeInUp animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image-box">
+                            <img src="{{item.image|media}}" alt="">
+                            <ul class="social-links clearfix">
+                                <li><a href="{{item.url}}" target="_blank"><i class="fab fa-{{item.ico}}"></i> {{item.text}}</a></li>
+                            </ul>
+                        </figure>
+                        <div class="lower-content">
+                            <h4>{{item.name}}</h4>
+                            <span class="designation">{{item.role}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {% endfor%}
+
+        </div>
+    </div>
+</section>
+
+{% else %}
+<section class="team-section">
+    <div class="auto-container">
+        <div class="top-inner">
+            <div class="row clearfix">
+                <div class="col-lg-5 col-md-12 col-sm-12 title-column">
+                    <div class="sec-title">
+                        <p>How we help clients</p>
+                        <h2>Our Best Experts Ready To Help</h2>
+                        <div class="dotted-box">
+                            <span class="dotted"></span>
+                            <span class="dotted"></span>
+                            <span class="dotted"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-12 col-sm-12 text-column">
+                    <div class="text">
+                        <p>Sponsoring and managing work visas parts now becoming results the experience aute irure dolor in reprehenderit cepteur sint ocae cat cupidatat non proident sunt in culpa quis.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-lg-3 col-md-6 col-sm-12 team-block">
+                <div class="team-block-one wow fadeInUp animated animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image-box">
+                            <img src="{{'assets/images/team/team-1.jpg'|theme}}" alt="">
+                            <ul class="social-links clearfix">
+                                <li><a href=""><i class="fab fa-twitter"></i></a></li>
+                                <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href=""><i class="fab fa-instagram"></i></a></li>
+                                <li><a href=""><i class="fab fa-linkedin-in"></i></a></li>
+                                <li><a href=""><i class="fab fa-google-plus-g"></i></a></li>
+                            </ul>
+                        </figure>
+                        <div class="lower-content">
+                            <h4><a href="">Charles Henry</a></h4>
+                            <span class="designation">CEO - Founder</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 team-block">
+                <div class="team-block-one wow fadeInUp animated animated" data-wow-delay="200ms" data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image-box">
+                            <img src="{{'assets/images/team/team-2.jpg'|theme}}" alt="">
+                            <ul class="social-links clearfix">
+                                <li><a href=""><i class="fab fa-twitter"></i></a></li>
+                                <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href=""><i class="fab fa-instagram"></i></a></li>
+                                <li><a href=""><i class="fab fa-linkedin-in"></i></a></li>
+                                <li><a href=""><i class="fab fa-google-plus-g"></i></a></li>
+                            </ul>
+                        </figure>
+                        <div class="lower-content">
+                            <h4><a href="">edward matthew</a></h4>
+                            <span class="designation">Immigration Expert</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 team-block">
+                <div class="team-block-one wow fadeInUp animated animated" data-wow-delay="400ms" data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image-box">
+                            <img src="{{'assets/images/team/team-3.jpg'|theme}}" alt="">
+                            <ul class="social-links clearfix">
+                                <li><a href=""><i class="fab fa-twitter"></i></a></li>
+                                <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href=""><i class="fab fa-instagram"></i></a></li>
+                                <li><a href=""><i class="fab fa-linkedin-in"></i></a></li>
+                                <li><a href=""><i class="fab fa-google-plus-g"></i></a></li>
+                            </ul>
+                        </figure>
+                        <div class="lower-content">
+                            <h4><a href="">ben christopher</a></h4>
+                            <span class="designation">Senior Engineer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-12 team-block">
+                <div class="team-block-one wow fadeInUp animated animated" data-wow-delay="600ms" data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image-box">
+                            <img src="{{'assets/images/team/team-4.jpg'|theme}}" alt="">
+                            <ul class="social-links clearfix">
+                                <li><a href=""><i class="fab fa-twitter"></i></a></li>
+                                <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href=""><i class="fab fa-instagram"></i></a></li>
+                                <li><a href=""><i class="fab fa-linkedin-in"></i></a></li>
+                                <li><a href=""><i class="fab fa-google-plus-g"></i></a></li>
+                            </ul>
+                        </figure>
+                        <div class="lower-content">
+                            <h4><a href="">lindys thomas</a></h4>
+                            <span class="designation">Marketing Manager</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}

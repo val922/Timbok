@@ -1,0 +1,23 @@
+1599304294a:1:{s:25:"cookiebanner/settings.htm";a:6:{s:8:"fileName";s:25:"cookiebanner/settings.htm";s:7:"content";s:556:"[viewBag]
+==
+{% if __SELF__.cookieManagerPage %}
+    <div class="mx-lg-6 mr-3 gdpr-banner__settings">
+        <u><a role="link" rel="privacy" href="{{ __SELF__.cookieManagerPage | page }}"
+           data-request="onDecline"
+           data-request-success="document.location.href = '{{ __SELF__.cookieManagerPage | page }}'"
+           class="text-white text-nowrap transition-20 hover:text-primary font-1 font-sm-5"
+        >
+            {{ 'offline.gdpr::lang.cookie_banner.advanced_settings' | trans }}
+        </a></u>
+    </div>
+{% endif %}";s:5:"mtime";i:1592589910;s:6:"markup";s:543:"{% if __SELF__.cookieManagerPage %}
+    <div class="mx-lg-6 mr-3 gdpr-banner__settings">
+        <u><a role="link" rel="privacy" href="{{ __SELF__.cookieManagerPage | page }}"
+           data-request="onDecline"
+           data-request-success="document.location.href = '{{ __SELF__.cookieManagerPage | page }}'"
+           class="text-white text-nowrap transition-20 hover:text-primary font-1 font-sm-5"
+        >
+            {{ 'offline.gdpr::lang.cookie_banner.advanced_settings' | trans }}
+        </a></u>
+    </div>
+{% endif %}";s:4:"code";N;s:7:"viewBag";a:0:{}}}

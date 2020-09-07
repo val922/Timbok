@@ -1,0 +1,94 @@
+[viewBag]
+==
+<form data-request="{{ __SELF__ }}::{{ review ? 'onUpdate' : 'onCreate' }}"
+      data-request-validate
+      data-request-flash
+      class="mall-review-form">
+    <div class="mall-product-reviews__overall-ratings">
+        <div class="js-mall-rating mb-4">
+            <input id="rating" name="rating" type="hidden" value="{{ review.rating }}">
+            {% partial __SELF__ ~ '::stars' rating=review.rating variant="big" clickable=true %}
+            <div class="mall-product-reviews__summary font-5 text-dark mr-4">
+                {{ 'offline.mall::frontend.reviews.overall_rating' | trans }}
+                <div data-validate-for="rating"></div>
+            </div>
+        </div>
+        <div class="js-mall-rating mb-4">
+            {% for category in __SELF__.reviewCategories %}
+                {% set rating = review.category_reviews.where('review_category_id', category.id).first().rating %}
+                <input id="category_rating_{{ category.id }}"
+                       name="category_rating[{{ category.id }}]"
+                       value="{{ rating }}"
+                       type="hidden">
+                {% partial __SELF__ ~ '::stars' rating=rating label=category.name variant="big" clickable=true %}
+            {% endfor %}
+        </div>
+    </div>
+    {% if review %}
+        <div class="mall-product-reviews__user-review">
+            <div class="mall-review">
+                {% if review.title %}
+                    <h4 class="mall-review__title font-weight-medium font-5">
+                        {{ review.title }}
+                    </h4>
+                {% endif %}
+                {% if review.description %}
+                    <div class="mall-review__content mt-4">
+                        {{ review.description | nl2br }}
+                    </div>
+                {% endif %}
+            </div>
+            <div class="mall-product-reviews__user-review-actions text-right pt-4">
+                <button class="mall-btn mall-btn--text js-mall-edit-review btn btn-sm btn-warning">
+                    {{ 'offline.mall::frontend.reviews.edit' | trans }}
+                </button>
+            </div>
+        </div>
+    {% endif %}
+    <div class="mall-product-reviews__form-details d-none border-top pt-4">
+        <div class="form-group">
+            <label for="title">{{ 'offline.mall::lang.reviews.title' | trans }}</label>
+            <div class="mall-form-comment font-3">
+                {{ 'offline.mall::frontend.reviews.optional' | trans }}
+            </div>
+            <input id="title" name="title" type="text" value="{{ review.title }}" class="form-control hover:border-primary">
+            <div data-validate-for="title" class="text-danger font-4 mt-2 ml-1"></div>
+        </div>
+        <div class="form-group">
+            <label for="description">{{ 'offline.mall::lang.reviews.review' | trans }}</label>
+            <div class="mall-form-comment font-3">
+                {{ 'offline.mall::frontend.reviews.optional' | trans }}
+            </div>
+            <textarea id="description" name="description" rows="4" class="form-control hover:border-primary">{{ review.description }}</textarea>
+            <div data-validate-for="description" class="text-danger font-4 mt-2 ml-1"></div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="pros">{{ 'offline.mall::lang.reviews.pros' | trans }}</label>
+                    <div class="mall-form-comment font-3">
+                        {{ 'offline.mall::frontend.reviews.one_per_line' | trans }}
+                    </div>
+                    <textarea id="pros" name="pros" rows="3" class="form-control hover:border-primary">{{ review.pros_string }}</textarea>
+                    <div data-validate-for="pros" class="text-danger font-4 mt-2 ml-1"></div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="cons">{{ 'offline.mall::lang.reviews.cons' | trans }}</label>
+                    <div class="mall-form-comment font-3">
+                        {{ 'offline.mall::frontend.reviews.one_per_line' | trans }}
+                    </div>
+                    <textarea id="cons" name="cons" rows="3" class="form-control hover:border-primary">{{ review.cons_string }}</textarea>
+                    <div data-validate-for="cons" class="text-danger font-4 mt-2 ml-1"></div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="text-right pt-4">
+            <button class="mall-btn mall-btn--primary btn btn-sm btn-warning" type="submit" data-attach-loading>
+                {{ ('offline.mall::frontend.reviews.' ~ (review ? 'update' : 'create')) | trans }}
+            </button>
+        </div>
+    </div>
+</form>

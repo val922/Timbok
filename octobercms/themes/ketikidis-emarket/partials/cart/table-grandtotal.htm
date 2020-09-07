@@ -1,0 +1,39 @@
+[viewBag]
+==
+<div class="font-5 pt-3 pb-4">
+    <div class="mall-cart__grand-total d-flex justify-content-between align-items-center mb-2">
+        <span class="font-6 text-muted font-weight-semibold">
+            {% if __SELF__.showShipping %}
+                {{ 'offline.mall::frontend.grand_total' | trans }}
+            {% else %}
+                {{ 'offline.mall::frontend.total' | trans }}
+            {% endif %}
+        </span>
+        <span class="font-12 font-weight-semibold">
+            {% if __SELF__.showShipping %}
+                {{ totals.totalPostTaxes | money }}
+            {% else %}
+                {{ totals.productPostTaxes | money }}
+            {% endif %}
+        </span>
+    </div>
+    {% if __SELF__.showTaxes %}
+    <div class="mall-cart__grand-total d-flex justify-content-between text-muted font-weight-semibold mb-2">
+        {% set tax = entry.total %}
+        {% for entry in totals.taxes %}
+            {% set tax = entry.total %}
+            <span>+ {{ entry.tax.name }}: {{ entry.tax.percentage }} %</span>
+        {% endfor %}
+        {% if totals.taxes.count > 1 %}
+            {% set taxs = totals.totalTaxes %}
+            <span>+ {{ 'offline.mall::frontend.total.taxes' | trans }}</span>
+        {% endif %}
+    
+        {% if __SELF__.showShipping %}
+            {{ (totals.totalPostTaxes + (totals.taxes.count > 1 ? taxs : tax)) | money }}
+        {% else %}
+            {{ (totals.productPostTaxes + (totals.taxes.count > 1 ? taxs : tax)) | money }}
+        {% endif %}
+    </div>
+    {% endif %}
+</div>

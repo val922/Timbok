@@ -1,0 +1,38 @@
+title = "Contact"
+url = "/contact"
+layout = "default"
+is_hidden = 0
+
+[genericForm]
+rules[name] = "required"
+rules[email] = "required|email"
+messages_success = "Your form was successfully submitted"
+messages_errors = "There were errors with your submission"
+inline_errors = "disabled"
+allowed_fields[] = "name"
+allowed_fields[] = "email"
+allowed_fields[] = "phone"
+allowed_fields[] = "subject"
+allowed_fields[] = "comments"
+sanitize_data = "disabled"
+anonymize_ip = "disabled"
+recaptcha_theme = "light"
+recaptcha_type = "image"
+recaptcha_size = "normal"
+skip_database = 0
+emails_date_format = "Y-m-d"
+==
+{% partial 'pageHeader/page' %}
+
+{% partial 'contact/contact-info' %}
+<hr>
+<div class="container pb-12 pt-6 mt-4">
+    <div class="row">
+        <div class="col-lg-7">
+            {% partial 'contact/contact-form' %}
+        </div>
+        <div class="col-lg-5">
+            {% partial 'contact/map' %}
+        </div>
+    </div>
+</div>

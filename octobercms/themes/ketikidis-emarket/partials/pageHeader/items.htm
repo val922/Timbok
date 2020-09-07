@@ -1,0 +1,10 @@
+[viewBag]
+==
+{% for item in items if not item.viewBag.isHidden %}
+    {% if item.isActive or item.isChildActive %}
+        <li class="breadcrumb-item"><a class="text-link" href="{{ item.url }}">{{ item.title }}</a></li>
+        {% if item.items %}
+            {% partial 'pageHeader/items' items=item.items %}
+        {% endif %}
+    {% endif %}
+{% endfor %}

@@ -1,0 +1,41 @@
+description = "Wishlists Button"
+
+[viewBag]
+
+[wishlists]
+==
+{% set totalWishlistItems = 0 %}
+{% for wishlist in wishlists.items %}
+	{% set totalWishlistItems = totalWishlistItems + wishlist.items.count %}
+{% endfor %}
+<li class="nav-item position-relative text-center">
+	<a class="nav-link opacity-70 hover:opacity-100 text-dark my-sm-4 my-3 py-0 px-2 w-16 w-md-18 border-right" href="{{ 'wishlists' | page }}">
+		<i class="mall-wishlist-icon d-block mx-auto w-5 h-5 mb-1 {{ wishlists.hasItems ? 'text-danger' : '' }}" data-feather="heart"></i>
+		<span class="d-block text-uppercase font-1">{{ 'offline.mall::frontend.wishlists' | trans }}</span>
+	</a>
+	<span class="mall-wishlist-count d-flex justify-content-center align-items-center font-1 font-weight-medium text-white bg-primary rounded-circle w-4 w-md-5 h-4 h-md-5 border border-primary position-absolute right-3 top-2 z-10 {{ totalWishlistItems < 1 ? 'invisible' : '' }}">{{ totalWishlistItems }}</span>
+</li>
+
+{% put scripts %}
+    <script>
+        $(function () {
+            $.subscribe('mall.wishlist.productAdded', function () {
+                $('.mall-wishlist-icon').css('color', 'hsl(1.7, 76.3%, 53.7%)')
+            });
+        });
+    </script>
+    <script>
+        $(function () {
+            var baseCount = '{{ totalWishlistItems }}';
+            var $count = $('.mall-wishlist-count');
+            $.subscribe('mall.wishlist.productAdded', function () {
+                $count.removeClass('invisible').text(++ baseCount).show();
+            });
+            $.subscribe('mall.wishlist.productRemoved', function () {
+                baseCount --;
+                if (baseCount < 0) baseCount = 0;
+                $count.text(baseCount);
+            });
+        });
+    </script>
+{% endput %}

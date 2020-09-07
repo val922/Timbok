@@ -1,0 +1,19 @@
+[viewBag]
+==
+{% if not __SELF__.priceRange == false %}
+    <div class="mall-property-group mb-6 pb-4">
+        <div class="mall-property-group__name mall-property-group__name--price position-relative pb-3 mb-5">
+            <h3 class="position-relative font-6 font-weight-semibold mb-0 decorated-right">
+				<span>{{ 'offline.mall::frontend.price' | trans }}</span>
+			</h3>
+            {% partial __SELF__ ~ '::clearfilter' id='price' %}
+        </div>
+        <div class="mall-property pt-3">
+            {% partial __SELF__ ~ '::range'
+                id  = 'price'
+                slug  = 'price'
+                min = __SELF__.priceRange[0]
+                max = __SELF__.priceRange[1] %}
+        </div>
+    </div>
+{% endif %}

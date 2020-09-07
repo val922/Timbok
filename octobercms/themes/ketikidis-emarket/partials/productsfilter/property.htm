@@ -1,0 +1,23 @@
+[viewBag]
+==
+{% set values = __SELF__.values[property.id] %}
+{% if values.count > 0 %}
+    <div class="mall-property mb-2 pb-2">
+        <div class="mall-property__label pb-2 mb-2 position-relative">
+            <h4 class="position-relative font-5 font-weight-semibold mb-0">{{ property.name }}</h4>
+            {% partial __SELF__ ~ '::clearfilter' id=property.slug %}
+        </div>
+
+        {% if property.pivot.filter_type == 'range' %}
+            {% set min = __SELF__.getMinValue(values) %}
+            {% set max = __SELF__.getMaxValue(values) %}
+        {% endif %}
+
+        {% partial __SELF__ ~ '::' ~ property.pivot.filter_type
+            id  = property.id
+            slug = property.slug
+            values = values
+            min = min
+            max = max %}
+    </div>
+{% endif %}

@@ -1,0 +1,78 @@
+title = "Blog Post"
+url = "/blog/post/:slug"
+layout = "default"
+is_hidden = 0
+
+[viewBag]
+localeUrl[gr] = "/blog-post"
+
+[blogPost]
+slug = "{{ :slug }}"
+categoryPage = "blog/blog-category"
+
+[blogCategories]
+slug = "{{ :slug }}"
+displayEmpty = 0
+categoryPage = "blog/blog-category"
+
+[registerVisit]
+
+[blogPosts latestPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 4
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "blog/blog-category"
+postPage = "blog/blog-post"
+
+[topPosts]
+period = 5
+category = 0
+postPerPage = 4
+postPage = "blog/blog-post"
+slug = "{{ :slug }}"
+
+[mailSignup]
+
+[products bannerProducts]
+filterComponent = "productsFilter"
+setPageTitle = 0
+includeVariants = 0
+includeChildren = 0
+perPage = 1
+paginate = 0
+
+[ShareButtons]
+css = 0
+skin = "custom"
+fb = 1
+tw = 1
+==
+{% partial 'pageHeader/blog-post' %}
+
+<div class="container pb-12">
+    <div class="row justify-content-center">
+        <div class="col-lg-9 mb-6 {{ this.theme.blog_post_layout == 'order-lg-1' ? 'order-lg-2' : 'order-lg-1' }}">
+            {% partial 'blogPost/default' post=blogPost.post %}
+            {% partial 'blogRelatedPosts/default' %}
+            {% partial "blogComments/default" %}
+            {% partial "blogNavigation/default" %}
+        </div>
+        {% if this.theme.blog_post_layout is not empty %}
+        <div class="col-lg-3 mb-6 {{ this.theme.blog_post_layout }}">
+            {% partial 'blogCategories/default' %}
+            {% partial 'blogTopPosts/default' %}
+            {% partial 'blogTagList/default' %}
+            {% partial 'blogLatestPosts/default' blogPosts=latestPosts %}
+            {% partial 'mailSignup/default' mailSignup=mailSignup id='Blog' %}
+            {% if this.theme.shop_product_banner_section %}
+            {% if this.theme.shop_product_banner_type == 'product' %}
+            {% partial 'widgetBanners/product-banner-bottom' %}
+            {% elseif this.theme.shop_product_banner_type == 'variant' %}
+            {% partial 'widgetBanners/variant-banner-bottom' %}
+            {% endif %}
+            {% endif %}
+        </div>
+        {% endif %}
+    </div>
+</div>

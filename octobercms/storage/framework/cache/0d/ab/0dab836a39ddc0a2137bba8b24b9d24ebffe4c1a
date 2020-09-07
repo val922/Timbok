@@ -1,0 +1,39 @@
+1599327549a:1:{s:18:"wishlists/item.htm";a:6:{s:8:"fileName";s:18:"wishlists/item.htm";s:7:"content";s:1010:"[viewBag]
+==
+<li class="">
+    <a href="javascript:;"
+       class="mall-wishlist-item btn btn-sm mb-2 mr-2 {{ list_id == __SELF__.currentItem.hashId ? 'btn-primary' }}"
+       data-request="onSelect"
+       data-request-data="id: '{{ list_id }}'"
+    >
+        <div class="mall-wishlist-item__data d-flex align-items-center">
+            <div class="mall-wishlist-item__name">
+                {{ name | default('offline.mall::frontend.wishlist.default_name' | trans) }}
+            </div>
+            <span class="mall-wishlist-item__description d-flex justify-content-center align-items-center font-2 font-weight-medium text-primary bg-white rounded-circle w-4 h-4 border ml-2">
+                <span class="text-primary"><!--{ 'offline.mall::frontend.wishlist.count' | transchoice(count | default(0)) }}-->{{ count }}</span>
+            </span>
+        </div>
+        <!--<div class="mall-wishlist-item__meta">
+            { (total | default(0)) | money }}
+        </div>-->
+    </a>
+</li>";s:5:"mtime";i:1592589912;s:6:"markup";s:997:"<li class="">
+    <a href="javascript:;"
+       class="mall-wishlist-item btn btn-sm mb-2 mr-2 {{ list_id == __SELF__.currentItem.hashId ? 'btn-primary' }}"
+       data-request="onSelect"
+       data-request-data="id: '{{ list_id }}'"
+    >
+        <div class="mall-wishlist-item__data d-flex align-items-center">
+            <div class="mall-wishlist-item__name">
+                {{ name | default('offline.mall::frontend.wishlist.default_name' | trans) }}
+            </div>
+            <span class="mall-wishlist-item__description d-flex justify-content-center align-items-center font-2 font-weight-medium text-primary bg-white rounded-circle w-4 h-4 border ml-2">
+                <span class="text-primary"><!--{ 'offline.mall::frontend.wishlist.count' | transchoice(count | default(0)) }}-->{{ count }}</span>
+            </span>
+        </div>
+        <!--<div class="mall-wishlist-item__meta">
+            { (total | default(0)) | money }}
+        </div>-->
+    </a>
+</li>";s:4:"code";N;s:7:"viewBag";a:0:{}}}

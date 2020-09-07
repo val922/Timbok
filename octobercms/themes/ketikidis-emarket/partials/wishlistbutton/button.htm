@@ -1,0 +1,18 @@
+[viewBag]
+==
+<button class="mall-add-to-wishlist-button btn btn-white btn-block">
+    <i class="mr-2" data-feather="heart"></i>{{ 'offline.mall::frontend.wishlist.add' | trans }}
+</button>
+<script>
+    var btn = document.querySelector('.mall-add-to-wishlist-button')
+    if (btn) {
+        btn.addEventListener('click', function (e) {
+            e.preventDefault()
+            var popup = document.querySelector('.mall-wishlist-button__popup')
+            if (popup) {
+                popup.classList.toggle('opacity-100')
+                popup.classList.toggle('pointer-events-auto')
+            }
+        })
+    }
+</script>

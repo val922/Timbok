@@ -1,0 +1,153 @@
+[viewBag]
+snippetCode = "service"
+snippetName = "service"
+==
+{% if serviceEnable %}
+
+<section class="service-section">
+    <div class="auto-container">
+        {% if serviceTitle %}
+        <div class="top-inner">
+            <div class="row clearfix">
+                <div class="col-lg-5 col-md-12 col-sm-12 title-column">
+                    <div class="sec-title">
+                        {% if serviceTop %}<p>{{serviceTop}}</p>{% endif %}
+                        <h2>{{serviceTitle}}</h2>
+                        <div class="dotted-box">
+                            <span class="dotted"></span>
+                            <span class="dotted"></span>
+                            <span class="dotted"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-12 col-sm-12 text-column">
+                    <div class="text">
+                        <p>{{serviceInfo??('Please set it in the backend'|_)}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        {% if services %}
+        <div class="three-item-carousel owl-carousel owl-theme owl-nav-none">
+
+            {% for item in services %}
+            <div class="service-block-one">
+                <div class="inner-box">
+                    <div class="icon-box"><i class="{{item.icon}}"></i></div>
+                    <h3><a href="{{item.btnUrl}}" target="_blank">{{item.title}}</a></h3>
+                    {% if item.info %}
+                    <p>{{item.info}}</p>
+                    {% endif %}
+                    <div class="link"><a href="{{item.btnUrl}}"><i class="flaticon-send"></i></a></div>
+                </div>
+            </div>
+
+            {% endfor %}
+
+        </div>
+        {% endif %}
+
+    </div>
+</section>
+
+{% else %}
+<section class="service-section">
+    <div class="auto-container">
+        <div class="top-inner">
+            <div class="row clearfix">
+                <div class="col-lg-5 col-md-12 col-sm-12 title-column">
+                    <div class="sec-title">
+                        <p>How Timbok makes you efficient</p>
+                        <h2>Designed for a Wide Array of Organizational Needs.</h2>
+                        <div class="dotted-box">
+                            <span class="dotted"></span>
+                            <span class="dotted"></span>
+                            <span class="dotted"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-12 col-sm-12 text-column">
+                    <div class="text">
+                        <p>By using Timbok Professional Services, a client is guaranteed to find answers and solutions in the shortest time possible and can be confident that the solutions provided by Timbok experts and engineers are most appropriate in any situation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="four-item-carousel owl-carousel owl-theme owl-nav-none">
+            <div class="service-block-one">
+                <div class="inner-box">
+                    <div class="icon-box"><i class="material-icons md-48" style="font-size:90px !important;">construction</i></div>
+                    <span>professional services</span>
+                    <h3><a href="service-details.html">Technical Support</a></h3>
+                    <p>We aim to provide our customers with professional on-time technical support through a web-helpdesk, phone or email, as per support tier.</p>
+                    <div class="link"><!--a href="service-details.html"--><i class="flaticon-send"></i></a></div>
+                </div>
+            </div>
+            <div class="service-block-one">
+                <div class="inner-box">
+                    <div class="icon-box"><i class="material-icons md-48" style="font-size:90px !important;">integration_instructions</i></div>
+                    <span>professional services</span>
+                    <h3><a href="service-details.html">Integration</a></h3>
+                    <p>We assist with integrating Timbok into the customer's IT environment, with corporate requirements and specifications.</p>
+                    <div class="link"><!--a href="service-details.html"--><i class="flaticon-send"></i></a></div>
+                </div>
+            </div>
+            <div class="service-block-one">
+                <div class="inner-box">
+                    <div class="icon-box"><i class="material-icons md-48" style="font-size:90px !important;">done_all</i></div>
+                    <span>professional services</span>
+                    <h3><a href="service-details.html">Turn-Key Solution</a></h3>
+                    <p>Designed to help your organization to start using Timbok in no time. Our engineers will install and configure Timbok remotely or on-site.</p>
+                    <div class="link"><!--a href="service-details.html"--><i class="flaticon-send"></i></a></div>
+                </div>
+            </div>
+            <div class="service-block-one">
+                <div class="inner-box">
+                    <div class="icon-box"><i class="material-icons md-48" style="font-size:90px !important;">upgrade</i></div>
+                    <span>professional services</span>
+                    <h3><a href="service-details.html">Upgrade</a></h3>
+                    <p>Will allow companies that are using older versions of Timbok to upgrade to the latest stable version in the shortest time without data-loss.</p>
+                    <div class="link"><!--a href="service-details.html"--><i class="flaticon-send"></i></a></div>
+                </div>
+            </div>
+            <div class="service-block-one">
+                <div class="inner-box">
+                    <div class="icon-box"><i class="material-icons md-48" style="font-size:90px !important;">airplanemode_active</i></div>
+                    <span>professional services</span>
+                    <h3><a href="service-details.html">Custom Development</a></h3>
+                    <p>Achieve most productivity from your Timbok implementation and address some specific requirements of the business by delivering a complete end-to-end development.</p>
+                    <div class="link"><!--a href="service-details.html"--><i class="flaticon-send"></i></a></div>
+                </div>
+            </div>
+            <div class="service-block-one">
+                <div class="inner-box">
+                    <div class="icon-box"><i class="material-icons md-48" style="font-size:90px !important;">engineering</i></div>
+                    <span>professional services</span>
+                    <h3><a href="service-details.html">Template Building</a></h3>
+                    <p>Designed to provide customers with a comfortable, cost-efficient and secure way to start monitoring their unique or non-standard devices and systems in no time, as per organizational standards.</p>
+                    <div class="link"><!--a href="service-details.html"--><i class="flaticon-send"></i></a></div>
+                </div>
+            </div>
+            <div class="service-block-one">
+                <div class="inner-box">
+                    <div class="icon-box"><i class="material-icons md-48" style="font-size:90px !important;">follow_the_signs</i></div>
+                    <span>professional services</span>
+                    <h3><a href="service-details.html">Consulting</a></h3>
+                    <p>We can assist you in better understanding the benefits and potential from using Timbok software before and after deployment.</p>
+                    <div class="link"><!--a href="service-details.html"--><i class="flaticon-send"></i></a></div>
+                </div>
+            </div>
+            <div class="service-block-one">
+                <div class="inner-box">
+                    <div class="icon-box"><i class="material-icons md-48" style="font-size:90px !important;">live_help</i></div>
+                    <span>professional services</span>
+                    <h3><a href="service-details.html">Remote Troubleshooting</a></h3>
+                    <p>Eliminate any issues you have run into, within hours, not days or weeks, and that the system is fixed correctly, accurately and without losing any valuable data.</p>
+                    <div class="link"><!--a href="service-details.html"--><i class="flaticon-send"></i></a></div>
+                </div>
+            </div>    
+        </div>
+    </div>
+</section>
+{% endif %}

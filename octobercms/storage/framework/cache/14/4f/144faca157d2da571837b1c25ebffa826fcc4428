@@ -1,0 +1,29 @@
+1599460960a:1:{s:28:"malldependencies/default.htm";a:6:{s:8:"fileName";s:28:"malldependencies/default.htm";s:7:"content";s:611:"[viewBag]
+==
+{% put scripts %}
+    <script>
+        window.Mall = window.Mall || {}
+        $(function () {
+            window.Mall.Modal = $('<div class="mall-modal position-fixed inset-0 h-100 w-100 overflow-hidden bg-black-75 opacity-0 invisible z-100">')
+            window.Mall.Modal.on('click', function(e) {
+                if (e.target.classList.contains('mall-modal')) {
+                    window.Mall.Modal.removeClass('mall-modal--visible visible opacity-100')
+                }
+            })
+            window.Mall.Modal.prependTo(document.body)
+        })
+    </script>
+{% endput %}";s:5:"mtime";i:1592589916;s:6:"markup";s:598:"{% put scripts %}
+    <script>
+        window.Mall = window.Mall || {}
+        $(function () {
+            window.Mall.Modal = $('<div class="mall-modal position-fixed inset-0 h-100 w-100 overflow-hidden bg-black-75 opacity-0 invisible z-100">')
+            window.Mall.Modal.on('click', function(e) {
+                if (e.target.classList.contains('mall-modal')) {
+                    window.Mall.Modal.removeClass('mall-modal--visible visible opacity-100')
+                }
+            })
+            window.Mall.Modal.prependTo(document.body)
+        })
+    </script>
+{% endput %}";s:4:"code";N;s:7:"viewBag";a:0:{}}}

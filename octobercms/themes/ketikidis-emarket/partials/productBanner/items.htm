@@ -1,0 +1,7 @@
+[viewBag]
+==
+{% for item in items %}
+    {% if item.user_defined_id == banner %}
+    {% partial 'productBanner/item' item=item %}
+    {% endif %}
+{% endfor %}

@@ -1,0 +1,22 @@
+//
+// Visibility utilities
+//
+
+// Visibility hover
+//
+
+.hover\:visible:hover {
+	visibility: visible !important;
+}
+
+.hover\:invisible:hover {
+	visibility: hidden !important;
+}
+
+.group:hover .group-hover\:visible {
+	visibility: visible !important;
+}
+
+.group:hover .group-hover\:invisible {
+	visibility: hidden !important;
+}

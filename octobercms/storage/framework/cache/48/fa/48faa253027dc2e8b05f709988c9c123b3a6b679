@@ -1,0 +1,33 @@
+1599340747a:1:{s:24:"ShareButtons/default.htm";a:6:{s:8:"fileName";s:24:"ShareButtons/default.htm";s:7:"content";s:685:"[viewBag]
+==
+<span class="sharefake"></span>
+
+<div class="d-flex align-items-center mr-sm-0 mr-auto">
+    <span class="font-5 mr-4">Share:</span>
+    <div class="d-flex flex-wrap">
+    {% for key in share|keys %}
+        {% if __SELF__.property(key) %}
+            <span class="share-{{ key }}" title="{{ ('webvpf.share::lang.buttons.' ~ key ~ '.name')|trans }}">
+                <div class="d-flex justify-content-center align-items-center rounded-circle btn w-10 h-10 p-0 btn-outline-dark {{ not loop.last ? 'mr-2'}}">
+                {% partial __SELF__ ~ '::' ~ key %}
+                </div>
+            </span>
+        {% endif %}
+    {% endfor %}
+    </div>
+</div>";s:5:"mtime";i:1592589912;s:6:"markup";s:672:"<span class="sharefake"></span>
+
+<div class="d-flex align-items-center mr-sm-0 mr-auto">
+    <span class="font-5 mr-4">Share:</span>
+    <div class="d-flex flex-wrap">
+    {% for key in share|keys %}
+        {% if __SELF__.property(key) %}
+            <span class="share-{{ key }}" title="{{ ('webvpf.share::lang.buttons.' ~ key ~ '.name')|trans }}">
+                <div class="d-flex justify-content-center align-items-center rounded-circle btn w-10 h-10 p-0 btn-outline-dark {{ not loop.last ? 'mr-2'}}">
+                {% partial __SELF__ ~ '::' ~ key %}
+                </div>
+            </span>
+        {% endif %}
+    {% endfor %}
+    </div>
+</div>";s:4:"code";N;s:7:"viewBag";a:0:{}}}

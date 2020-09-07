@@ -1,0 +1,18 @@
+[viewBag]
+==
+{% set price = price|default(item.price()) %}
+
+<h2 class="mall-product__current-price font-18 pt-4">
+    {% if price.official or item.oldPrice().integer %}
+    <span class="mall-product__old-price lead text-muted mr-2">
+        {% if price.official %}
+            <del>{{ price.official.string | raw }}</del>
+        {% else %}
+            <del>{{ item.oldPrice().string | raw }}</del>
+        {% endif %}
+    </span>
+    {% endif %}
+    <span class="mall-product__current-price text-primary">
+        {% partial __SELF__ ~ '::currentprice' price=price.string %}
+    </span>
+</h2>

@@ -1,0 +1,61 @@
+[viewBag]
+==
+{% set isActiveMethod = cart.shipping_method.id == method.id %}
+<div class="d-sm-flex align-items-center justify-content-between p-6 border-bottom mall-shipping-method__entry js-mall-select-shipping-method
+     {{ isActiveMethod ? 'mall-shipping-method__entry--active border border-primary' : '' }}"
+     data-id="{{ method.id }}"
+>
+    <div class="media d-block d-md-flex align-items-center text-center text-sm-left">
+        <div class="mall-shipping-method__logo mx-auto mr-sm-5">
+            {% if method.logo %}
+                <img class="mall-shipping-method__logo img-fluid" src="{{ method.logo.thumb(100, 100, 'crop') }}" alt=""/>
+            {% endif %}
+        </div>
+        <div class="mall-shipping-method__text media-body pt-2 max-w-md mx-auto">
+            <div>
+                <div class="mall-shipping-method__heading">
+                    <div class="mall-shipping-method__name mb-2 font-weight-semibold text-dark font-6">{{ method.name }}</div>
+                    <div class="mall-shipping-method__meta">
+                        {% if method.guaranteed_delivery_days %}
+                            <div class="mall-shipping-method__delivery-days font-5">
+                                {% set days = method.guaranteed_delivery_days %}
+                                {{ 'offline.mall::frontend.shipping_method.guaranteed_delivery_days'
+                                    | transchoice(days, {days: days})
+                                }}
+                            </div>
+                        {% endif %}
+                        <div class="mall-shipping-method__price font-5 font-weight-semibold">
+                            {{ method.price().integer > 0
+                            ? (method.price().string | raw)
+                            : ('offline.mall::frontend.no_additional_charges' | trans) }}
+                        </div>
+                    </div>
+                </div>
+                <div class="mall-shipping-method__toggle"
+                     style="{% if not isActiveMethod %}display: none{% endif %}">
+                    {% if method.description %}
+                        <div class="mall-shipping-method__description font-5 font-weight-semibold">
+                            {{ method.description | raw }}
+                        </div>
+                    {% endif %}
+                    <div class="mall-shipping-method__submit">
+                        <button class="mall-btn mall-btn--primary btn btn-sm px-7 btn-primary btn-icon-right" type="submit" data-attach-loading>
+                            <span>{{ 'offline.mall::frontend.shipping_method.proceed' | trans }} <i data-feather="chevron-right"></i></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mall-shipping-method__selector pl-sm-4 mx-auto mx-sm-0 text-center text-sm-left">
+        {% if not isActiveMethod %}
+            <button class="mall-shipping-method__select-button btn btn-sm px-7 btn-outline-primary btn-icon-right"
+                    data-attach-loading
+                    data-request="{{ __SELF__ }}::onChangeMethod"
+                    data-request-success="$.publish('mall.cart.shippingMethodChanged', data)"
+                    data-request-data="id: '{{ method.id }}'">
+                <span>{{ 'offline.mall::frontend.shipping_method.button_label' | trans }} <i data-feather="chevron-right"></i></span>
+            </button>
+        {% endif %}
+    </div>
+</div>

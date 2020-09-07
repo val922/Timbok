@@ -1,0 +1,42 @@
+[viewBag]
+snippetCode = "flag"
+snippetName = "flag"
+==
+{% if flagEnable %}
+<section class="apply-section">
+    <div class="auto-container">
+        <div class="inner-box clearfix">
+            <figure class="image-box"><img src="{{flagImage|media}}" alt=""></figure>
+            <div class="content-box">
+                <div class="icon-box">
+                    <div class="icon icon-1"></div>
+                    <div class="icon icon-2"></div>
+                </div>
+                <h4>{{flagText}}</h4>
+                <h2>{{flagTitle}}</h2>
+                {% if flagEnable %}
+                <a href="{{flagBtnUrl}}" class="theme-btn-one" target="_blank">
+                    <i class="flaticon-send"></i>{{flagBtnText}}
+                </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+{% else %}
+<section class="apply-section">
+    <div class="auto-container">
+        <div class="inner-box clearfix">
+            <figure class="image-box"><img src="{{'assets/images/resource/apply-1.png'|theme}}" alt=""></figure>
+            <div class="content-box">
+                <div class="icon-box">
+                    <div class="icon icon-1"></div>
+                    <div class="icon icon-2"></div>
+                </div>
+                <h4>A solid monitoring solution for multiple environments!</h4>
+                <h2>Built to Scale to Large Environments.</h2>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}

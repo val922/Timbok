@@ -1,0 +1,59 @@
+1599460960a:1:{s:15:"site/loader.htm";a:7:{s:8:"fileName";s:15:"site/loader.htm";s:7:"content";s:1120:"description = "Page Loader"
+
+[viewBag]
+==
+<div class="loader position-fixed inset-0 w-100 h-100 bg-white-75 z-100">
+    <div class="d-flex justify-content-center align-items-center h-100">
+        <svg width="38" height="38" viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg" stroke="#333">
+            <g fill="none" fill-rule="evenodd">
+                <g transform="translate(1 1)" stroke-width="2">
+                    <circle stroke-opacity=".5" cx="18" cy="18" r="18"/>
+                    <path d="M36 18c0-9.94-8.06-18-18-18">
+                        <animateTransform
+                                attributeName="transform"
+                                type="rotate"
+                                from="0 18 18"
+                                to="360 18 18"
+                                dur="1s"
+                                repeatCount="indefinite"/>
+                    </path>
+                </g>
+            </g>
+        </svg>
+    </div>
+</div>
+
+{% put scripts %}
+<script>
+$(window).on('load', function() {
+    $(".loader").fadeOut()
+});
+</script>
+{% endput %}";s:5:"mtime";i:1592589916;s:6:"markup";s:1078:"<div class="loader position-fixed inset-0 w-100 h-100 bg-white-75 z-100">
+    <div class="d-flex justify-content-center align-items-center h-100">
+        <svg width="38" height="38" viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg" stroke="#333">
+            <g fill="none" fill-rule="evenodd">
+                <g transform="translate(1 1)" stroke-width="2">
+                    <circle stroke-opacity=".5" cx="18" cy="18" r="18"/>
+                    <path d="M36 18c0-9.94-8.06-18-18-18">
+                        <animateTransform
+                                attributeName="transform"
+                                type="rotate"
+                                from="0 18 18"
+                                to="360 18 18"
+                                dur="1s"
+                                repeatCount="indefinite"/>
+                    </path>
+                </g>
+            </g>
+        </svg>
+    </div>
+</div>
+
+{% put scripts %}
+<script>
+$(window).on('load', function() {
+    $(".loader").fadeOut()
+});
+</script>
+{% endput %}";s:4:"code";N;s:11:"description";s:11:"Page Loader";s:7:"viewBag";a:0:{}}}

@@ -1,0 +1,11 @@
+1599340787a:1:{s:26:"widgetProducts/entries.htm";a:6:{s:8:"fileName";s:26:"widgetProducts/entries.htm";s:7:"content";s:172:"[viewBag]
+==
+{% if products.items.count %}
+    {% partial 'widgetProducts/items' items=products.items %}
+{% else %}
+    {% partial 'widgetProducts/empty' %}
+{% endif %}";s:5:"mtime";i:1592589910;s:6:"markup";s:159:"{% if products.items.count %}
+    {% partial 'widgetProducts/items' items=products.items %}
+{% else %}
+    {% partial 'widgetProducts/empty' %}
+{% endif %}";s:4:"code";N;s:7:"viewBag";a:0:{}}}

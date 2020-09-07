@@ -1,0 +1,12 @@
+//
+// Misc
+
+// Blockquotes
+//
+
+.blockquote {
+  padding: ($spacer * 3);
+  margin: ($spacer * 2) auto;
+  font-weight: $font-weight-bold;
+  border-left: .25rem solid $primary;
+}

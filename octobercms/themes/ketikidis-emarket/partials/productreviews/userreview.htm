@@ -1,0 +1,12 @@
+[viewBag]
+==
+<h5 class="mall-product-reviews__info-name font-weight-semibold font-6 text-center mb-4">{{ 'offline.mall::frontend.reviews.your_rating' | trans }}</h5>
+<div class="mall-product-reviews__info-content">
+    {% if __SELF__.canReview %}
+        {% partial __SELF__ ~ '::form' review=__SELF__.customerReview %}
+    {% else %}
+        <a href="{{ __SELF__.accountPage | page }}" class="mall-product-reviews__login-required">
+            Login to create a review.
+        </a>
+    {% endif %}
+</div>

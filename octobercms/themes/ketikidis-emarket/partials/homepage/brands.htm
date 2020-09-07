@@ -1,0 +1,59 @@
+description = "Brands Section"
+
+[viewBag]
+==
+<?php
+function onStart()
+{
+    $this['brands'] = \OFFLINE\Mall\Models\Brand::with('products')->get();
+}
+?>
+==
+<section class="container pb-6 mt-md-4">
+    <h2 class="h3 pb-4 decorated max-w-md mx-auto"><span>{{ 'Stores'|_ }}</span></h2>
+    <div class="brands-slider">
+        {% for brand in brands %}
+        <div class="position-relative group">
+            <a class="d-block border py-4 py-sm-6 mx-4" href="/brand/{{ brand.slug }}?brand={{ brand.slug }}&sort=latest">
+                <img class="d-block mx-auto w-40 img-fluid" src="{{ brand.logo.thumb(300, 160, 'crop') }}" width="300" height="160" alt="{{ brand.name }}" loading="lazy">
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+        
+{% put scripts %}
+<script>
+$('.brands-slider').slick({
+    infinite: true,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    dots: false,
+    arrows: false,
+    lazyLoad: 'ondemand',
+    accessibility: false,
+    responsive: [
+        {
+          breakpoint: 992,
+          settings: {
+            slidesToShow: 4
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 3
+          }
+        },
+        {
+          breakpoint: 576,
+          settings: {
+            slidesToShow: 2
+          }
+        }
+    ]
+});
+</script>
+{% endput %}

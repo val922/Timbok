@@ -1,0 +1,32 @@
+[viewBag]
+==
+<?php
+function onStart()
+{    
+    // Product Banner
+    $indexProductBanner = $this->theme->index_product_banner;
+    
+    $this['indexProductBanner'] = \OFFLINE\Mall\Models\Product::find($indexProductBanner);
+    
+    // Variant Banner
+    $indexVariantBanner = $this->theme->index_variant_banner;
+    
+    $this['indexVariantBanner'] = \OFFLINE\Mall\Models\Variant::find($indexVariantBanner);
+    
+    // Product Countdown
+    $this->addJs('assets/vendor/countdown/jquery.countdown.min.js');
+}
+?>
+==
+{% partial 'productBanner/entries' %}
+
+{% put scripts %}
+<script> 
+$("#count-p").countdown("{{ this.theme.index_product_banner_countdown }}", function(event) {
+    $('.days-p').html(event.strftime('%-D'));
+    $('.hours-p').html(event.strftime('%H'));
+    $('.minutes-p').html(event.strftime('%M'));
+    $('.seconds-p').html(event.strftime('%S'));
+});
+</script>
+{% endput %}

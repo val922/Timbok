@@ -1,0 +1,8 @@
+<?php
+
+/** @var \Cms\Models\ThemeData $formModel */
+
+//Add product variant
+$formModel->addDynamicMethod('getVariantOptions', function () {
+    return \Offline\Mall\Models\Variant::lists('name', 'id');
+});

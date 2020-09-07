@@ -1,0 +1,16 @@
+[viewBag]
+==
+{% for item in items if not item.viewBag.isHidden %}
+<li class="{{ item.items ? 'dropdown-submenu'}}">
+	<a href="{{ item.items ? '#' : item.url }}" {{ item.viewBag.isExternal ? 'target="_blank"' }} class="dropdown-item d-flex justify-content-between align-items-center py-2 px-4 font-5 {{ item.isActive or item.isChildActive ? 'active' }} {{ item.items ? 'dropdown-toggle' : '' }}" {% if item.items %}aria-haspopup="true" aria-expanded="false"{% endif %}>
+		{{ item.title }} 
+		{% if item.items %}<i class="ml-1" data-feather="chevron-right"></i>{% endif %}
+	</a>
+	{% if item.items %}
+	<ul class="dropdown-menu shadow border-0 font-5 animated faster {{ 'right' in item.code ? 'menu-right' }} {{ item.viewBag.cssClass ? item.viewBag.cssClass : 'fadeInUp' }}">
+		{% partial 'mainMenu/subitems' items=item.items %}
+	</ul>  
+	{% endif %}
+</li>
+{% if 'divider' in item.code %}<div class="dropdown-divider"></div>{% endif %}
+{% endfor %}

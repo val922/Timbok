@@ -1,0 +1,15 @@
+1599304295a:1:{s:24:"cookiebanner/dismiss.htm";a:6:{s:8:"fileName";s:24:"cookiebanner/dismiss.htm";s:7:"content";s:357:"[viewBag]
+==
+<div class="ml-lg-3 ml-1 w-6 h-6 gdpr-banner__dismiss">
+    <button role="button" 
+      tabindex="0" 
+      aria-pressed="false"
+      class="bg-transparent border-0 text-white w-6 h-6 line-height-none font-8 font-sm-10 gdpr-banner__button--dismiss"
+      onclick="document.querySelector('.gdpr-banner').remove()">&times;</button>
+</div>";s:5:"mtime";i:1592589910;s:6:"markup";s:344:"<div class="ml-lg-3 ml-1 w-6 h-6 gdpr-banner__dismiss">
+    <button role="button" 
+      tabindex="0" 
+      aria-pressed="false"
+      class="bg-transparent border-0 text-white w-6 h-6 line-height-none font-8 font-sm-10 gdpr-banner__button--dismiss"
+      onclick="document.querySelector('.gdpr-banner').remove()">&times;</button>
+</div>";s:4:"code";N;s:7:"viewBag";a:0:{}}}

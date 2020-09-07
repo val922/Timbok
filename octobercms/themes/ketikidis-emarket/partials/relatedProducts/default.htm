@@ -1,0 +1,41 @@
+[viewBag]
+==
+<div class="mall-products container pb-12">
+    <h2 class="h3 font-weight-semibold pb-6">Related Products</h2>
+    {% partial 'relatedProducts/entries' %}
+</div>
+
+{% put scripts %}
+<script>
+$('.related-slider').slick({
+    slidesToShow: 5,
+    slidesToScroll: 5,
+    autoplay: true,
+    autoplaySpeed: 6000,
+    dots: true,
+    arrows: false,
+    lazyLoad: 'ondemand',
+    accessibility: false,
+    responsive: [
+        {
+          breakpoint: 992,
+          settings: {
+            slidesToShow: 4
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 3
+          }
+        },
+        {
+          breakpoint: 576,
+          settings: {
+            slidesToShow: 1
+          }
+        }
+    ]
+});
+</script>
+{% endput %}

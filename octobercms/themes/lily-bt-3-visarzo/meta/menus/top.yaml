@@ -1,0 +1,41 @@
+name: top
+items:
+    -
+        title: Home
+        nesting: '0'
+        type: static-page
+        url: null
+        code: ''
+        reference: index
+        cmsPage: null
+        replace: '0'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Service
+        nesting: '0'
+        type: static-page
+        url: null
+        code: ''
+        reference: service
+        cmsPage: null
+        replace: '0'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Faq
+        nesting: '0'
+        type: static-page
+        url: null
+        code: ''
+        reference: faq
+        cmsPage: null
+        replace: '0'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'

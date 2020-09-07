@@ -1,0 +1,11 @@
+[viewBag]
+==
+<div class="ss-result row align-items-center">
+    <div class="col-md-6 ss-result__content">
+        {% partial __SELF__ ~ '::content' result = result %}
+    </div>
+    <div class="col-md-6">
+        {% partial __SELF__ ~ '::thumbnail' result = result %}
+    </div>
+</div>
+<hr class="my-12">

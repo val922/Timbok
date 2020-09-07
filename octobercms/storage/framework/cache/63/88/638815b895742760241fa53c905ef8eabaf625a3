@@ -1,0 +1,35 @@
+1599460967a:1:{s:26:"mainMenu/mega-subitems.htm";a:6:{s:8:"fileName";s:26:"mainMenu/mega-subitems.htm";s:7:"content";s:860:"[viewBag]
+==
+{% for item in items if not item.viewBag.isHidden %}
+{% if (item.code == 'banner-1') or (item.code == 'banner-2') or (item.code == 'banner-3') or (item.code == 'banner-4') or (item.code == 'banner-5') or (item.code == 'banner-6')  %}
+{% partial 'mainMenu/banner' item=item %}
+{% else %}
+<div class="{{ item.viewBag.cssClass ? item.viewBag.cssClass : 'col-lg-2 col-md-6' }} {{ itemCssClass }} px-3 mb-6">
+    {% partial 'mainMenu/category-image' item=item %}
+	{% if item.url %}<a href="{{ item.url }}" class="d-block {{ item.isActive or item.isChildActive ? 'active' }}">{% endif %}
+		<h6 class="mb-2 font-6">{{ item.title }}</h6>
+	{% if item.url %}</a>{% endif %}
+	{% if item.items %}
+	<ul class="list-unstyled font-5">
+		{% partial 'mainMenu/mega-childitems' items=item.items %}
+	</ul>
+	{% endif %}
+</div>
+{% endif %}
+{% endfor %}";s:5:"mtime";i:1592589912;s:6:"markup";s:847:"{% for item in items if not item.viewBag.isHidden %}
+{% if (item.code == 'banner-1') or (item.code == 'banner-2') or (item.code == 'banner-3') or (item.code == 'banner-4') or (item.code == 'banner-5') or (item.code == 'banner-6')  %}
+{% partial 'mainMenu/banner' item=item %}
+{% else %}
+<div class="{{ item.viewBag.cssClass ? item.viewBag.cssClass : 'col-lg-2 col-md-6' }} {{ itemCssClass }} px-3 mb-6">
+    {% partial 'mainMenu/category-image' item=item %}
+	{% if item.url %}<a href="{{ item.url }}" class="d-block {{ item.isActive or item.isChildActive ? 'active' }}">{% endif %}
+		<h6 class="mb-2 font-6">{{ item.title }}</h6>
+	{% if item.url %}</a>{% endif %}
+	{% if item.items %}
+	<ul class="list-unstyled font-5">
+		{% partial 'mainMenu/mega-childitems' items=item.items %}
+	</ul>
+	{% endif %}
+</div>
+{% endif %}
+{% endfor %}";s:4:"code";N;s:7:"viewBag";a:0:{}}}

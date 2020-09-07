@@ -1,0 +1,139 @@
+[viewBag]
+==
+<div class="row pt-4">
+    {% if user %}
+    <div class="col-xl-3 col-lg-4">
+        {% component 'imageUploader' %}
+        <div class="mt-4 mb-6">
+            <h6 class="font-weight-semibold mb-4 pb-2 border-bottom">{{ 'offline.mall::frontend.customer_profile' | trans }}</h6>
+            <ul class="list-unstyled">
+                <li class="mb-2">
+                    <i class="w-4" data-feather="user"></i>
+                    <a class="nav-link-inline">&nbsp;{{ user.customer.firstname }}&nbsp;{{ user.customer.lastname }}</a>
+                </li>
+                <li class="mb-2">
+                    <i class="w-4" data-feather="mail"></i>
+                    <a class="nav-link-inline" href="mailto:{{ user.email }}">&nbsp;{{ user.email }}</a>
+                </li>
+            </ul>
+            <ul class="list-unstyled border p-4 mb-4">
+                <li class="pb-1"><span class="opacity-80">– Registered:</span><span class="font-weight-semibold ml-1">{{ user.activated_at|date('M d, Y') }}</span></li>
+                <li class="pb-1"><span class="opacity-80">– Total orders:</span><span class="font-weight-semibold ml-1">{{ ordersList.orders.count }}</span></li>
+                <li class="pb-1"><span class="opacity-80">– Total spent:</span>
+                    <span class="font-weight-semibold ml-1">
+                        {% set totalPrice = 0 %}
+                        {% for order in ordersList.orders %}
+                            {% set totalPrice = totalPrice + order.total_post_taxes %}
+                        {% endfor %}
+                        {{ ordersList.orders.currency }} {{ totalPrice|number_format(2, '.', ',') }}
+                    </span>
+                </li>
+                <li><span class="opacity-80">– Wishlist Products:</span>
+                    <span class="font-weight-semibold ml-1">
+                        {% set totalProducts = 0 %}
+                        {% for wishlist in wishlists.items %}
+                            {% set totalProducts = totalProducts + (wishlist.items.count | default(0)) %}
+                        {% endfor %}
+                        {{ totalProducts|number_format }}
+                    </span>
+                </li>
+            </ul>
+            <div class="pt-2">
+                <a class="btn btn-outline-primary btn-sm btn-block" href="{{ 'cart'|page }}">
+                    <i class="w-4" data-feather="shopping-cart"></i>
+                    &nbsp;{{ 'offline.mall::frontend.cart' | trans }}
+                </a>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    <div class="{{ user ? 'col-lg-8 offset-xl-1' : 'col-lg-12' }}">
+        {% if user %}
+        <div class="mall-my-account d-flex flex-wrap justify-content-between pb-6 mb-10 border-bottom">
+            <div class="pt-4 mr-4">
+                <h3 class="mb-0">{{ user.customer.firstname }}&nbsp;{{ user.customer.lastname }}</h3>
+                <span class="font-5 text-primary">{{ user.email }}</span>
+            </div>
+            <div class="pt-4">
+                <a class="btn btn-outline-danger btn-sm" href="javascript:;" data-request="onLogout" data-request-data="redirect: '/'">
+                    <i data-feather="log-out"></i>
+                    &nbsp;{{ 'offline.mall::frontend.session.logout' | trans }}
+                </a>
+            </div>
+        </div>
+        {% endif %}
+        <nav class="mall-my-account__nav navbar navbar-expand-sm p-0 mb-6">
+            <button class="navbar-toggler btn btn-primary bg-primary py-2 px-5 btn-block font-7 mr-0" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <i data-feather="menu"></i>
+                &nbsp;Menu
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav w-100 border-bottom">
+                    {% if user %}
+                    <li class="nav-item">
+                        <a class="nav-link d-flex align-items-center text-link font-weight-medium py-3 px-5" href="/account/orders">
+                            <i data-feather="shopping-cart"></i>
+                            &nbsp;{{ 'offline.mall::frontend.orders' | trans }}
+                            <span class="d-flex justify-content-center align-items-center font-3 font-weight-medium bg-white rounded-circle w-5 h-5 border border-danger ml-2">
+                                <span class="text-danger">{{ ordersList.orders.count }}</span>
+                            </span>
+                        </a>
+                    </li>
+                    {% endif %}
+                    <li class="nav-item active border-bottom border-primary">
+                        <a class="nav-link d-flex align-items-center text-link font-weight-medium py-3 px-5" href="{{ 'wishlists'|page }}">
+                            <i data-feather="heart"></i>
+                            &nbsp;{{ 'offline.mall::frontend.wishlists' | trans }} 
+                            <span class="d-flex justify-content-center align-items-center font-3 font-weight-medium bg-white rounded-circle w-5 h-5 border border-danger ml-2">
+                                <span class="text-danger">{{ wishlists.items.count }}</span>
+                            </span>
+                        </a>
+                    </li>
+                    {% if user %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link d-flex align-items-center text-link font-weight-medium py-3 px-5 dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i data-feather="settings"></i>
+                            &nbsp;{{ 'offline.mall::frontend.session.account_page' | trans }}
+                        </a>
+                        <div class="dropdown-menu border" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item font-weight-medium py-1 px-5" href="/account/profile">
+                                <i data-feather="user"></i>
+                                &nbsp;{{ 'offline.mall::frontend.profile' | trans }}
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item font-weight-medium py-1 px-5" href="/account/addresses">
+                                <i data-feather="map-pin"></i>
+                                &nbsp;{{ 'offline.mall::frontend.addresses' | trans }}
+                            </a>
+                        </div>
+                    </li>
+                    {% endif %}
+                    <li class="nav-item">
+                        <a class="nav-link d-flex align-items-center text-link font-weight-medium py-3 px-5" href="{{ 'gdpr'|page }}">
+                            <i data-feather="lock"></i>
+                            &nbsp;GDPR
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="mall-my-account__content">
+            <div class="mall-wishlists-manager">
+                {% if __SELF__.items.count > 0 %}
+                    <div class="mall-wishlists-manager__lists">
+                        <div class="mall-wishlists">
+                            {% partial __SELF__ ~ '::list' items=__SELF__.items %}
+                        </div>
+                    </div>
+                    <div class="mall-wishlists-manager__contents mall-wishlist-content">
+                        {% partial __SELF__ ~ '::contents' item=__SELF__.currentItem %}
+                    </div>
+                {% else %}
+                    <div class="mall-wishlists-manager__well">
+                        {% partial __SELF__ ~ '::empty' %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

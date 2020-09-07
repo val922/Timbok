@@ -1,0 +1,9 @@
+1599460962a:1:{s:16:"header/brand.htm";a:7:{s:8:"fileName";s:16:"header/brand.htm";s:7:"content";s:234:"description = "Brand"
+
+[viewBag]
+==
+<a class="navbar-brand transition-20" href="{{ 'index'|page }}">
+    <img class="w-20 w-sm-auto" src="{{ this.theme.site_logo.getThumb(false, 60, 'auto') }}" alt="{{ this.theme.site_name }}">
+</a>";s:5:"mtime";i:1592589916;s:6:"markup";s:198:"<a class="navbar-brand transition-20" href="{{ 'index'|page }}">
+    <img class="w-20 w-sm-auto" src="{{ this.theme.site_logo.getThumb(false, 60, 'auto') }}" alt="{{ this.theme.site_name }}">
+</a>";s:4:"code";N;s:11:"description";s:5:"Brand";s:7:"viewBag";a:0:{}}}

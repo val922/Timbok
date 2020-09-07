@@ -1,0 +1,25 @@
+description = "Product Banner Bottom"
+
+[viewBag]
+==
+<?php
+function onStart()
+{    
+    // Product Banner
+    $shopProductBanner = $this->theme->shop_product_banner;
+    
+    $this['shopProductBanner'] = \OFFLINE\Mall\Models\Product::find($shopProductBanner);
+}
+?>
+==
+{% set item = shopProductBanner %}
+<a class="d-block" href="{{ productPage|page({slug: item.slug, variant: item.variantHashId}) }}" data-mall-item-id="{{ item.prefixedId }}">
+    <div class="bg-secondary">
+        <div class="px-4 py-6 text-center">
+            <h4 class="font-5 font-weight-normal pt-1 mb-2">{% for category in item.categories %}{{ category.name }}{% if not loop.last %}, {% endif %}{% endfor %}</h4>
+            <h4 class="h5 pb-2">{{ item.name }}</h4>
+            <div class="btn btn-primary btn-sm">Shop now</div>
+        </div>
+        <img src="{{ item.image.thumb(550, 560, 'crop') }}" width="550" height="560" alt="{{ item.name }}" loading="lazy" class="img-fluid w-100">
+    </div>
+</a>

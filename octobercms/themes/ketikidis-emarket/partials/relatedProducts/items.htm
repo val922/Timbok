@@ -1,0 +1,7 @@
+[viewBag]
+==
+<div class="mall-products__products related-slider">
+    {% for item in items %}
+        {% partial 'relatedProducts/item' item=item %}
+    {% endfor %}
+</div>

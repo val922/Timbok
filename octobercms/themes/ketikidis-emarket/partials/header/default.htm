@@ -1,0 +1,59 @@
+description = "Header"
+
+[viewBag]
+==
+<div class="header-wrapper w-100 z-20 bg-white">
+	<div class="header w-100">
+		<!-- Topbar  -->
+		{% partial 'header/topbar' %}
+		<div class="z-10 w-100 animated faster" data-toggle="sticky-onscroll">
+    		<!-- Infobar  -->
+    		{% partial 'header/infobar' %}
+    		<!-- Navbar  -->
+    		{% partial 'header/navbar' %}
+		</div>
+	</div>
+</div>
+
+{% put scripts %}
+<script>
+// Sticky navigation 
+var brand = $(".header-infobar img");
+var search = $(".header-infobar .search-input");
+var btns = $(".header-infobar .navbar-nav .nav-link");
+var navbar = $(".header-navbar .navbar-link");
+var stickyToggle = function(sticky, stickyWrapper, scrollElement) {
+    var stickyHeight = sticky.outerHeight();
+    var stickyTop = stickyWrapper.offset().top;
+    if (scrollElement.scrollTop() >= stickyTop) {
+        stickyWrapper.height(stickyHeight);
+        sticky.addClass("is-sticky bg-white position-fixed shadow inset-x-0 top-0 z-100 fadeInDown");
+        brand.removeClass("w-sm-auto").addClass("w-sm-20");
+        search.removeClass("my-3");
+        btns.removeClass("my-sm-4");
+        navbar.removeClass("py-md-6 px-md-5 font-md-6").addClass("font-md-5");
+    } else {
+        sticky.removeClass("is-sticky bg-white position-fixed shadow inset-x-0 top-0 z-100 fadeInDown");
+        stickyWrapper.height('auto');
+        brand.addClass("w-sm-auto").removeClass("w-sm-20");
+        search.addClass("my-3");
+        btns.addClass("my-sm-4");
+        navbar.addClass("py-md-6 px-md-5 font-md-6").removeClass("font-md-5");
+    }
+};
+
+// Find all data-toggle="sticky-onscroll" elements
+$('[data-toggle="sticky-onscroll"]').each(function() {
+    var sticky = $(this);
+    var stickyWrapper = $('<div>').addClass('sticky-wrapper'); // insert hidden element to maintain actual top offset on page
+    sticky.before(stickyWrapper);
+    sticky.addClass('sticky');
+    // Scroll & resize events
+    $(window).on('scroll.sticky-onscroll resize.sticky-onscroll', function() {
+        stickyToggle(sticky, stickyWrapper, $(this));
+    });
+    // On page load
+    stickyToggle(sticky, stickyWrapper, $(window));
+});
+</script>
+{% endput %}

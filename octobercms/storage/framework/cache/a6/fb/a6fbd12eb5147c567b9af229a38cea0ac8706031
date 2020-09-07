@@ -1,0 +1,15 @@
+1599460973a:1:{s:24:"cookiebanner/default.htm";a:6:{s:8:"fileName";s:24:"cookiebanner/default.htm";s:7:"content";s:262:"[viewBag]
+==
+{% if not __SELF__.hide %}
+    <div class="bg-dark position-fixed bottom-0 w-100 z-100 py-4 gdpr-banner">
+        <div class="container gdpr-banner__wrapper">
+            {% partial __SELF__ ~ '::inner' %}
+        </div>
+    </div>
+{% endif %}";s:5:"mtime";i:1592589910;s:6:"markup";s:249:"{% if not __SELF__.hide %}
+    <div class="bg-dark position-fixed bottom-0 w-100 z-100 py-4 gdpr-banner">
+        <div class="container gdpr-banner__wrapper">
+            {% partial __SELF__ ~ '::inner' %}
+        </div>
+    </div>
+{% endif %}";s:4:"code";N;s:7:"viewBag";a:0:{}}}

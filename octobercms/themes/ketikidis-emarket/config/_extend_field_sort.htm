@@ -1,0 +1,8 @@
+<?php
+
+/** @var \Cms\Models\ThemeData $formModel */
+
+//Add sort
+$formModel->addDynamicMethod('getSortOptions', function () {
+    return \Offline\Mall\Classes\Categoryfilter\Sortorder\SortOrder::dropdownOptions();
+});

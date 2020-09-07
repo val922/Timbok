@@ -1,0 +1,44 @@
+1599460932a:1:{s:10:"brands.htm";a:9:{s:8:"fileName";s:10:"brands.htm";s:7:"content";s:813:"title = "Brands"
+url = "/brands"
+layout = "default"
+is_hidden = 0
+==
+<?php
+function onStart()
+{
+    $this['brands'] = \OFFLINE\Mall\Models\Brand::with('products')->get();
+}
+?>
+==
+{% partial 'pageHeader/page' %}
+
+<div class="container pb-6 mt-md-4">
+    <div class="row">
+        {% for brand in brands %}
+        <div class="col-md-3 col-sm-4 col-6">
+            <div class="position-relative group">
+                <a class="d-block border py-4 py-sm-6 mb-7" href="/brand/{{ brand.slug }}?brand={{ brand.slug }}&sort=latest">
+                    <img class="d-block mx-auto w-40 img-fluid" src="{{ brand.logo.thumb(300, 160, 'crop') }}" width="300" height="160" alt="{{ brand.name }}" loading="lazy">
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>";s:5:"mtime";i:1592589910;s:6:"markup";s:631:"{% partial 'pageHeader/page' %}
+
+<div class="container pb-6 mt-md-4">
+    <div class="row">
+        {% for brand in brands %}
+        <div class="col-md-3 col-sm-4 col-6">
+            <div class="position-relative group">
+                <a class="d-block border py-4 py-sm-6 mb-7" href="/brand/{{ brand.slug }}?brand={{ brand.slug }}&sort=latest">
+                    <img class="d-block mx-auto w-40 img-fluid" src="{{ brand.logo.thumb(300, 160, 'crop') }}" width="300" height="160" alt="{{ brand.name }}" loading="lazy">
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>";s:4:"code";s:100:"function onStart()
+{
+    $this['brands'] = \OFFLINE\Mall\Models\Brand::with('products')->get();
+}";s:5:"title";s:6:"Brands";s:3:"url";s:7:"/brands";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";}}

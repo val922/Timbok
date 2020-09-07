@@ -1,0 +1,61 @@
+1599340659a:1:{s:17:"metaData/page.htm";a:7:{s:8:"fileName";s:17:"metaData/page.htm";s:7:"content";s:1637:"description = "Page Meta Data"
+
+[viewBag]
+==
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" >
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="{{ this.page.meta_description|default(this.theme.site_description) }}">
+<meta name="keywords" content="{{ this.theme.site_keywords }}">
+{% if (this.page.title) == 'Bangoe' %}
+    <meta name="title" content="Bangoe">
+{% else %}
+    <meta name="title" content="{{ this.page.meta_title|default(this.page.title) }} - {{ this.theme.site_name }}">
+{% endif %}
+
+<meta name="author" content="{{ this.theme.site_author }}">
+<meta name="robots" content="index, follow">
+<meta name="generator" content="{{ this.theme.site_name }}" />
+
+{% if (this.page.meta_title) == 'Bangoe' %}
+    <title>Bangoe</title>
+{% else %}
+    <title>{{ this.page.meta_title|default(this.page.title) }} - {{ this.theme.site_name }}</title>
+{% endif %}
+
+<link rel="canonical" href="{{ '/'|app}}{{ this.page.url }}"/>
+<link rel="icon" type="image/png" href="{{ this.theme.site_favicon.getThumb(32, 32, 'auto') }}" />
+<meta property="og:title" content="{{ this.page.meta_title|default(this.page.title) }} - {{ this.theme.site_name }}" />
+<meta property="og:image" content="{{ this.theme.settings_brand_logo.getThumb(false, 60, 'auto') }}" />
+<meta property="og:url" content="{{ ''| page }}" />
+<meta property="og:site_name" content="{{ this.theme.site_name }}" />
+<meta property="og:description" content="{{ this.page.meta_description|default(this.theme.site_description) }}" />
+<meta property="fb:app_id" content="" />";s:5:"mtime";i:1599122844;s:6:"markup";s:1592:"<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" >
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="{{ this.page.meta_description|default(this.theme.site_description) }}">
+<meta name="keywords" content="{{ this.theme.site_keywords }}">
+{% if (this.page.title) == 'Bangoe' %}
+    <meta name="title" content="Bangoe">
+{% else %}
+    <meta name="title" content="{{ this.page.meta_title|default(this.page.title) }} - {{ this.theme.site_name }}">
+{% endif %}
+
+<meta name="author" content="{{ this.theme.site_author }}">
+<meta name="robots" content="index, follow">
+<meta name="generator" content="{{ this.theme.site_name }}" />
+
+{% if (this.page.meta_title) == 'Bangoe' %}
+    <title>Bangoe</title>
+{% else %}
+    <title>{{ this.page.meta_title|default(this.page.title) }} - {{ this.theme.site_name }}</title>
+{% endif %}
+
+<link rel="canonical" href="{{ '/'|app}}{{ this.page.url }}"/>
+<link rel="icon" type="image/png" href="{{ this.theme.site_favicon.getThumb(32, 32, 'auto') }}" />
+<meta property="og:title" content="{{ this.page.meta_title|default(this.page.title) }} - {{ this.theme.site_name }}" />
+<meta property="og:image" content="{{ this.theme.settings_brand_logo.getThumb(false, 60, 'auto') }}" />
+<meta property="og:url" content="{{ ''| page }}" />
+<meta property="og:site_name" content="{{ this.theme.site_name }}" />
+<meta property="og:description" content="{{ this.page.meta_description|default(this.theme.site_description) }}" />
+<meta property="fb:app_id" content="" />";s:4:"code";N;s:11:"description";s:14:"Page Meta Data";s:7:"viewBag";a:0:{}}}

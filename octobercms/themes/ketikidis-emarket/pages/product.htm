@@ -1,0 +1,83 @@
+title = "Product"
+url = "/product/:slug/:variant?"
+layout = "default"
+is_hidden = 0
+
+[viewBag]
+localeUrl[en] = "/product/:slug/:variant?"
+
+[product]
+product = ":slug"
+variant = ":slug"
+redirectOnPropertyChange = 0
+currentVariantReviewsOnly = 0
+
+[wishlistButton]
+
+[products relatedProducts]
+filterComponent = "productsFilter"
+setPageTitle = 0
+includeVariants = 1
+includeChildren = 0
+perPage = 6
+paginate = 0
+sort = "random"
+
+[ShareButtons]
+css = 0
+skin = "custom"
+fb = 1
+tw = 1
+==
+<?php
+use OFFLINE\Mall\Models\Category;
+
+function onStart() {
+    // Breadcrumbs
+    $controller = new Cms\Classes\Controller;
+    $product    = $this['product']->product;
+    $variant    = $this['product']->variant;
+    $category   = $product->categories->first();
+
+    // Get all parent categories of this product.
+    $breadcrumbs = $category->getParentsAndSelf()->map(function($category) use ($controller) {
+        return ['link' => $controller->pageUrl('category', ['slug' => $category->nested_slug]), 'text' => $category->name];
+    });
+
+    // Add the product itself to the breadcrumbs.
+    $breadcrumbs[] = [
+        'link' => $controller->pageUrl('product', ['slug' => $product->slug, 'variant' => optional($variant)->hashId]),
+        'text' => $product->name
+    ];
+
+    $this['breadcrumbs'] = $breadcrumbs;
+
+
+
+    // Related Products
+    
+    // Fetch the category from the product component.
+    $productComponent = $this->findComponentByName('product');
+    $item = optional($productComponent)->item;
+    if (!$item) {
+        return;
+    }
+    $category = optional($item->categories)->first();
+    if (!$category) {
+        return;
+    }
+    // If a category is available, use it for the products component.
+    $this->findComponentByName('relatedProducts')->category = $category;
+    
+    //if ($category) {
+        // If a category is available, use it for the products component.
+    //    $this->page->components['relatedProducts']->category = $category;
+    //}
+}
+?>
+==
+{% partial 'pageHeader/product' %}
+
+{% component 'product' %}
+
+{% partial 'relatedProducts/default' products=relatedProducts %}

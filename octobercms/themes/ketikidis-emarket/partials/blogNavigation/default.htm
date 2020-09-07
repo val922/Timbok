@@ -1,0 +1,75 @@
+description = "Blog Post Navigation"
+
+[viewBag]
+
+[nextAndPrev]
+category = "current"
+postPage = "blog/blog-post"
+==
+{% set prev = nextAndPrev.prevPost %}
+{% set next = nextAndPrev.nextPost %}
+<div class="page-nav d-none d-md-block invisible opacity-0 transition-80 position-fixed z-10">
+    {% if prev.title %}
+    <div class="previous position-fixed top-half left-0">
+        <a href="{{prev.url}}" rel="prev" class="post-nav-link d-flex justify-content-center align-items-center w-10 h-24 p-0 btn btn-primary rounded-0 group">
+            <i data-feather="chevron-left"></i> 
+            <div class="post-nav-details d-flex flex-column justify-content-center position-absolute left-10 p-4 border-right border-top border-bottom w-auto h-24 text-muted bg-white z-n10 min-w-sm opacity-0 group-hover:opacity-100 transition-40 pointer-events-none">
+                <div class="d-flex justify-content-between">
+                    <span class="font-3 mr-4">Previous Post</span>
+                    <span class="font-3">
+                        {% if date(prev.published_at) > date('-7days') %}
+                        {{ prev.published_at | time_diff }}
+                        {% else %}
+                        <time datetime="{{ prev.published_at|date('Y-m-d\TH:i:sP') }}">
+                            <!--<i data-feather="more-horizontal"></i>--> {{ prev.published_at | strftime('%A') }}, {{ prev.published_at | strftime('%e %B %Y') }}
+                        </time>
+                        {% endif %}
+                        <meta itemprop="datePublished" content="{{ prev.published_at|date('Y-m-dTH:i:sZ') }}"/>
+                    </span>
+                </div>
+                <p class="d-flex justify-content-start text-dark mb-0">{{ prev.title }}</p>
+            </div>
+        </a>
+    </div>
+    {% endif %}
+    {% if next.title %}
+    <div class="next position-fixed top-half right-0">
+        <a href="{{next.url}}" rel="next" class="post-nav-link d-flex justify-content-center align-items-center w-10 h-24 p-0 btn btn-primary rounded-0 group">
+            <i data-feather="chevron-right"></i>
+            <div class="post-nav-details d-flex flex-column justify-content-center position-absolute right-10 p-4 border-left border-top border-bottom w-auto h-24 text-muted bg-white z-n10 min-w-sm opacity-0 group-hover:opacity-100 transition-40 pointer-events-none">
+                <div class="d-flex justify-content-between">
+                    <span class="font-3 mr-4">Next Post</span>
+                    <span class="font-3">
+                        {% if date(next.published_at) > date('-7days') %}
+                        {{ next.published_at | time_diff }}
+                        {% else %}
+                        <time datetime="{{ next.published_at|date('Y-m-d\TH:i:sP') }}">
+                            <!--<i data-feather="more-horizontal"></i>--> {{ next.published_at | strftime('%A') }}, {{ next.published_at | strftime('%e %B %Y') }}
+                        </time>
+                        {% endif %}
+                        <meta itemprop="datePublished" content="{{ next.published_at|date('Y-m-dTH:i:sZ') }}"/>
+                    </span>
+                </div>
+                <p class="d-flex justify-content-end text-dark mb-0">{{ next.title }}</p>
+            </div>
+        </a>
+    </div>
+    {% endif %}
+</div>
+
+{% put scripts %}
+<script>
+//Scroll to top
+var pagenav = $('.page-nav');
+
+$(window).scroll(function() {
+  if ($(window).scrollTop() > 300) {
+    pagenav.addClass('visible opacity-100');
+    pagenav.removeClass('invisible');
+  } else {
+    pagenav.removeClass('visible opacity-100');
+    pagenav.addClass('invisible');
+  }
+});
+</script>
+{% endput %}

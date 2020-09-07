@@ -1,0 +1,28 @@
+1599460934a:1:{s:18:"reset_password.htm";a:11:{s:8:"fileName";s:18:"reset_password.htm";s:7:"content";s:423:"title = "Forgotten your password?"
+url = "/forgot-password/:code?"
+layout = "default"
+is_hidden = 0
+
+[viewBag]
+localeUrl[en] = "/forgot-password/:code?"
+
+[resetPassword]
+paramCode = "code"
+==
+{% partial 'pageHeader/page' %}
+
+<div class="container pb-12 mb-sm-6">
+    <div class="row justify-content-center">
+        <div class="col-lg-9">
+            {% component 'resetPassword' %}
+        </div>
+    </div>
+</div>";s:5:"mtime";i:1592589910;s:6:"markup";s:231:"{% partial 'pageHeader/page' %}
+
+<div class="container pb-12 mb-sm-6">
+    <div class="row justify-content-center">
+        <div class="col-lg-9">
+            {% component 'resetPassword' %}
+        </div>
+    </div>
+</div>";s:4:"code";N;s:5:"title";s:24:"Forgotten your password?";s:3:"url";s:23:"/forgot-password/:code?";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:7:"viewBag";a:1:{s:9:"localeUrl";a:1:{s:2:"en";s:23:"/forgot-password/:code?";}}s:13:"resetPassword";a:1:{s:9:"paramCode";s:4:"code";}}}

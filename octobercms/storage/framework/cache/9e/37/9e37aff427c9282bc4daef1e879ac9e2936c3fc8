@@ -1,0 +1,49 @@
+1599340787a:1:{s:39:"homepage/latest-bestseller-products.htm";a:7:{s:8:"fileName";s:39:"homepage/latest-bestseller-products.htm";s:7:"content";s:1238:"description = "Latest - Bestseller Products Section"
+
+[viewBag]
+==
+<?php
+function onStart()
+{
+    // Latest - Bestseller Category Banner
+    $indexLatestbestBanner = $this->theme->index_latestbest_banner;
+    
+    $this['indexLatestbestBanner'] = \OFFLINE\Mall\Models\Category::find($indexLatestbestBanner);
+}
+?>
+==
+<section class="container pt-sm-4 pb-6 pb-md-12">
+    <div class="row">
+        <div class="col-md-4 col-sm-6 d-block d-sm-none d-md-block mb-4 pr-lg-8" data-sal="flip-right" data-sal-duration="1200">
+            {% partial 'widgetBanners/category-banner-bottom' category=indexLatestbestBanner %}
+        </div>
+        <div class="col-md-4 col-sm-6 mb-2 py-4">
+            <h3 class="d-block position-relative font-7 pb-2 mb-4 decorated-right"><span>{{ 'BestSellers'|_ }}</span></h3>
+            {% partial 'widgetProducts/default' products=widgetBestsellerProducts ratings=false %}
+        </div>
+        <div class="col-md-4 col-sm-6 mb-2 py-4">
+            <h3 class="d-block position-relative font-7 pb-2 mb-4 decorated-right"><span>{{ 'The Latest'|_ }}</span></h3>
+            {% partial 'widgetProducts/default' products=widgetLatestProducts ratings=false %}
+        </div>
+    </div>
+</section>";s:5:"mtime";i:1598456581;s:6:"markup";s:916:"<section class="container pt-sm-4 pb-6 pb-md-12">
+    <div class="row">
+        <div class="col-md-4 col-sm-6 d-block d-sm-none d-md-block mb-4 pr-lg-8" data-sal="flip-right" data-sal-duration="1200">
+            {% partial 'widgetBanners/category-banner-bottom' category=indexLatestbestBanner %}
+        </div>
+        <div class="col-md-4 col-sm-6 mb-2 py-4">
+            <h3 class="d-block position-relative font-7 pb-2 mb-4 decorated-right"><span>{{ 'BestSellers'|_ }}</span></h3>
+            {% partial 'widgetProducts/default' products=widgetBestsellerProducts ratings=false %}
+        </div>
+        <div class="col-md-4 col-sm-6 mb-2 py-4">
+            <h3 class="d-block position-relative font-7 pb-2 mb-4 decorated-right"><span>{{ 'The Latest'|_ }}</span></h3>
+            {% partial 'widgetProducts/default' products=widgetLatestProducts ratings=false %}
+        </div>
+    </div>
+</section>";s:4:"code";s:242:"function onStart()
+{
+    // Latest - Bestseller Category Banner
+    $indexLatestbestBanner = $this->theme->index_latestbest_banner;
+    
+    $this['indexLatestbestBanner'] = \OFFLINE\Mall\Models\Category::find($indexLatestbestBanner);
+}";s:11:"description";s:36:"Latest - Bestseller Products Section";s:7:"viewBag";a:0:{}}}
